@@ -43,10 +43,10 @@ namespace Acura3._0.ModuleForms
         public bool StationMachineIn1;  //工位1入料信号
         public bool B_ScrewStationReadySignal = false;// Screw station ready to request board from buffer
         public bool StationMachineIn2;  //工位2入料信号
-        public bool ConveyorBStation1RobotStart1;  //流道B工位1机器手开始信号
-        public bool ConveyorBStation1RobotComp1;  //流道B工位1机器手完成信号
-        public bool ConveyorBStation2RobotStart2;  //流道B工位2机器手开始信号
-        public bool ConveyorBStation2RobotComp2;  //流道B工位2机器手完成信号
+        public bool ConveyorBStation1Robot1Start; //流道B工位1机器手开始信号
+        public bool ConveyorBStation1Robot1Comp;  //流道B工位1机器手完成信号
+        public bool ConveyorBStation2Robot2Start; //流道B工位2机器手开始信号
+        public bool ConveyorBStation2Robot2Comp;  //流道B工位2机器手完成信号
         //public bool B_ScrewStation1_Available = false; //Screw station1 available to conveyorB buffer station
         //public bool B_ScrewStation2_Available = false; //Screw station2 available to conveyorB buffer station
         //public bool ConveyorBStart1;
@@ -78,8 +78,10 @@ namespace Acura3._0.ModuleForms
             InitializeComponent();
             FlowChartMessage.ResetTimerRaise += FlowChartMessage_ResetTimerRaise;
             SetDoubleBuffer(plProductionSetting);
-            A_syGoleRFID.ReceiveHandler();
-            B_syGoleRFID.ReceiveHandler();
+            RFID1.ReceiveHandler();
+            RFID2.ReceiveHandler();
+            RFID3.ReceiveHandler();
+            RFID4.ReceiveHandler();
         }
 
         private void FlowChartMessage_ResetTimerRaise(object sender, EventArgs e)
@@ -183,42 +185,42 @@ namespace Acura3._0.ModuleForms
         #endregion
 
         #region RFID
-        public SyGoleRFID A_syGoleRFID = new SyGoleRFID();
-        public SyGoleRFID B_syGoleRFID = new SyGoleRFID();
-        public SyGoleRFID C_syGoleRFID = new SyGoleRFID();
-        public SyGoleRFID D_syGoleRFID = new SyGoleRFID();
+        public RFID RFID1 = new RFID();
+        public RFID RFID2 = new RFID();
+        public RFID RFID3 = new RFID();
+        public RFID RFID4 = new RFID();
 
-        List<MyRFIDDataStruct> RFIDDataStructList1 = new List<MyRFIDDataStruct>();
-        List<MyRFIDDataStruct> RFIDDataStructList2 = new List<MyRFIDDataStruct>();
+        List<RFID_Struct> RFID_DataList1 = new List<RFID_Struct>();
+        List<RFID_Struct> RFID_DataList2 = new List<RFID_Struct>();
 
-        public struct MyRFIDDataStruct
+        public struct RFID_Struct
         {
-            public SyGoleRFID SyGoleRFID;
-            public bool ResultBool;
-            public String RFIDReadData;
+            public RFID _RFID;
+            public bool B_RFID;
+            public string S_RFID;
 
-            public MyRFIDDataStruct(SyGoleRFID syGoleRFID, bool resultBool, string rFIDReadData)
+            public RFID_Struct(RFID rFID, bool result, string rFIDData)
             {
-                SyGoleRFID = syGoleRFID;
-                ResultBool = resultBool;
-                RFIDReadData = rFIDReadData;
+                _RFID = rFID;
+                B_RFID = result;
+                S_RFID = rFIDData;
             }
         }
 
-        public MyRFIDDataStruct myRFID1 = new MyRFIDDataStruct();
-        public MyRFIDDataStruct myRFID2 = new MyRFIDDataStruct();
-        public MyRFIDDataStruct myRFID3 = new MyRFIDDataStruct();
-        public MyRFIDDataStruct myRFID4 = new MyRFIDDataStruct();
+        public RFID_Struct myRFID1 = new RFID_Struct();
+        public RFID_Struct myRFID2 = new RFID_Struct();
+        public RFID_Struct myRFID3 = new RFID_Struct();
+        public RFID_Struct myRFID4 = new RFID_Struct();
 
 
         private void B_RFIDAConnect_Click(object sender, EventArgs e)
         {
-            if (A_syGoleRFID.connect)
+            if (RFID1.connect)
             {
                 TextDataShow("Device connected", R_RFIDADataShow, true);
                 return;
             }
-            if (A_syGoleRFID.RFID_Connect(GetRecipeValue("RSet", "A_RFIDIp"), ushort.Parse(GetRecipeValue("RSet", "A_RFIDPort")), GetRecipeValue("RSet", "A_RFIDId")))
+            if (RFID1.RFID_Connect(GetRecipeValue("RSet", "A_RFIDIp"), ushort.Parse(GetRecipeValue("RSet", "A_RFIDPort")), GetRecipeValue("RSet", "A_RFIDId")))
             {
                 B_RFIDAConnect.Enabled = false;
                 TextDataShow("Connection successful", R_RFIDADataShow, true);
@@ -230,12 +232,12 @@ namespace Acura3._0.ModuleForms
 
         private void B_RFIDBConnect_Click(object sender, EventArgs e)
         {
-            if (B_syGoleRFID.connect)
+            if (RFID2.connect)
             {
                 TextDataShow("Device connected", R_RFIDBDataShow, true);
                 return;
             }
-            if (B_syGoleRFID.RFID_Connect(GetRecipeValue("RSet", "B_RFIDIp"), ushort.Parse(GetRecipeValue("RSet", "B_RFIDPort")), GetRecipeValue("RSet", "B_RFIDId")))
+            if (RFID2.RFID_Connect(GetRecipeValue("RSet", "B_RFIDIp"), ushort.Parse(GetRecipeValue("RSet", "B_RFIDPort")), GetRecipeValue("RSet", "B_RFIDId")))
             {
                 B_RFIDBConnect.Enabled = false;
                 TextDataShow("Connection successful", R_RFIDBDataShow, true);
@@ -247,12 +249,12 @@ namespace Acura3._0.ModuleForms
 
         private void B_RFIDCConnect_Click(object sender, EventArgs e)
         {
-            if (C_syGoleRFID.connect)
+            if (RFID3.connect)
             {
                 TextDataShow("Device connected", R_RFIDCDataShow, true);
                 return;
             }
-            if (C_syGoleRFID.RFID_Connect(GetRecipeValue("RSet", "C_RFIDIp"), ushort.Parse(GetRecipeValue("RSet", "C_RFIDPort")), GetRecipeValue("RSet", "C_RFIDId")))
+            if (RFID3.RFID_Connect(GetRecipeValue("RSet", "C_RFIDIp"), ushort.Parse(GetRecipeValue("RSet", "C_RFIDPort")), GetRecipeValue("RSet", "C_RFIDId")))
             {
                 B_RFIDCConnect.Enabled = false;
                 TextDataShow("Connection successful", R_RFIDCDataShow, true);
@@ -264,12 +266,12 @@ namespace Acura3._0.ModuleForms
 
         private void B_RFIDDConnect_Click(object sender, EventArgs e)
         {
-            if (D_syGoleRFID.connect)
+            if (RFID4.connect)
             {
                 TextDataShow("Device connected", R_RFIDDDataShow, true);
                 return;
             }
-            if (D_syGoleRFID.RFID_Connect(GetRecipeValue("RSet", "DRFIDIp"), ushort.Parse(GetRecipeValue("RSet", "D_RFIDPort")), GetRecipeValue("RSet", "D_RFIDId")))
+            if (RFID4.RFID_Connect(GetRecipeValue("RSet", "DRFIDIp"), ushort.Parse(GetRecipeValue("RSet", "D_RFIDPort")), GetRecipeValue("RSet", "D_RFIDId")))
             {
                 B_RFIDDConnect.Enabled = false;
                 TextDataShow("Connection successful", R_RFIDDDataShow, true);
@@ -281,7 +283,7 @@ namespace Acura3._0.ModuleForms
 
         private void B_RFIDADisconnect_Click(object sender, EventArgs e)
         {
-            A_syGoleRFID.RFID_DisConnect();
+            RFID1.RFID_DisConnect();
             B_RFIDAConnect.Enabled = true;
             TextDataShow("Disconnect", R_RFIDADataShow, true);
         }
@@ -289,7 +291,7 @@ namespace Acura3._0.ModuleForms
 
         private void B_RFIDBDisconnect_Click(object sender, EventArgs e)
         {
-            B_syGoleRFID.RFID_DisConnect();
+            RFID2.RFID_DisConnect();
             B_RFIDBConnect.Enabled = true;
             TextDataShow("Disconnect", R_RFIDBDataShow, true);
         }
@@ -297,7 +299,7 @@ namespace Acura3._0.ModuleForms
 
         private void B_RFIDCDisconnect_Click(object sender, EventArgs e)
         {
-            C_syGoleRFID.RFID_DisConnect();
+            RFID3.RFID_DisConnect();
             B_RFIDCConnect.Enabled = true;
             TextDataShow("Disconnect", R_RFIDCDataShow, true);
         }
@@ -305,7 +307,7 @@ namespace Acura3._0.ModuleForms
 
         private void B_RFIDDDisconnect_Click(object sender, EventArgs e)
         {
-            D_syGoleRFID.RFID_DisConnect();
+            RFID4.RFID_DisConnect();
             B_RFIDDConnect.Enabled = true;
             TextDataShow("Disconnect", R_RFIDDDataShow, true);
         }
@@ -313,103 +315,103 @@ namespace Acura3._0.ModuleForms
 
         private void B_RFIDAReadUID_Click(object sender, EventArgs e)
         {
-            if (!A_syGoleRFID.connect)
+            if (!RFID1.connect)
             {
                 TextDataShow("Device not connected", R_RFIDADataShow, false);
                 return;
             }
-            TextDataShow("UID read successfully: " + A_syGoleRFID.RFID_ReadUID(GetRecipeValue("RSet", "A_RFIDId")), R_RFIDADataShow, true);
+            TextDataShow("UID read successfully: " + RFID1.RFID_ReadUID(GetRecipeValue("RSet", "A_RFIDId")), R_RFIDADataShow, true);
         }
 
 
         private void B_RFIDBReadUID_Click(object sender, EventArgs e)
         {
-            if (!B_syGoleRFID.connect)
+            if (!RFID2.connect)
             {
                 TextDataShow("Device not connected", R_RFIDBDataShow, false);
                 return;
             }
-            TextDataShow("UID read successfully: " + B_syGoleRFID.RFID_ReadUID(GetRecipeValue("RSet", "B_RFIDId")), R_RFIDBDataShow, true);
+            TextDataShow("UID read successfully: " + RFID2.RFID_ReadUID(GetRecipeValue("RSet", "B_RFIDId")), R_RFIDBDataShow, true);
         }
 
 
         private void B_RFIDCReadUID_Click(object sender, EventArgs e)
         {
-            if (!C_syGoleRFID.connect)
+            if (!RFID3.connect)
             {
                 TextDataShow("Device not connected", R_RFIDCDataShow, false);
                 return;
             }
-            TextDataShow("UID read successfully: " + C_syGoleRFID.RFID_ReadUID(GetRecipeValue("RSet", "C_RFIDId")), R_RFIDCDataShow, true);
+            TextDataShow("UID read successfully: " + RFID3.RFID_ReadUID(GetRecipeValue("RSet", "C_RFIDId")), R_RFIDCDataShow, true);
         }
 
 
         private void B_RFIDDReadUID_Click(object sender, EventArgs e)
         {
-            if (!D_syGoleRFID.connect)
+            if (!RFID4.connect)
             {
                 TextDataShow("Device not connected", R_RFIDDDataShow, false);
                 return;
             }
-            TextDataShow("UID read successfully: " + D_syGoleRFID.RFID_ReadUID(GetRecipeValue("RSet", "D_RFIDId")), R_RFIDDDataShow, true);
+            TextDataShow("UID read successfully: " + RFID4.RFID_ReadUID(GetRecipeValue("RSet", "D_RFIDId")), R_RFIDDDataShow, true);
         }
 
 
         private void B_RFIDAReadData_Click(object sender, EventArgs e)
         {
-            if (!A_syGoleRFID.connect)
+            if (!RFID1.connect)
             {
                 TextDataShow("Device not connected", R_RFIDADataShow, false);
                 return;
             }
             string pos = T_RFIDAOAdderss.Text == "" ? "0" : T_RFIDAOAdderss.Text;
             string len = T_RFIDAEndAddress.Text == "" ? "16" : T_RFIDAEndAddress.Text;
-            TextDataShow("Read data successfully: " + A_syGoleRFID.RFID_ReadDataTostring(GetRecipeValue("RSet", "A_RFIDId"), pos, len), R_RFIDADataShow, true);
+            TextDataShow("Read data successfully: " + RFID1.RFID_ReadDataTostring(GetRecipeValue("RSet", "A_RFIDId"), pos, len), R_RFIDADataShow, true);
         }
 
 
         private void B_RFIDBReadData_Click(object sender, EventArgs e)
         {
-            if (!B_syGoleRFID.connect)
+            if (!RFID2.connect)
             {
                 TextDataShow("Device not connected", R_RFIDBDataShow, false);
                 return;
             }
             string pos = T_RFIDBOAdderss.Text == "" ? "0" : T_RFIDBOAdderss.Text;
             string len = T_RFIDBEndAddress.Text == "" ? "16" : T_RFIDBEndAddress.Text;
-            TextDataShow("Read data successfully: " + B_syGoleRFID.RFID_ReadDataTostring(GetRecipeValue("RSet", "B_RFIDId"), pos, len), R_RFIDBDataShow, true);
+            TextDataShow("Read data successfully: " + RFID2.RFID_ReadDataTostring(GetRecipeValue("RSet", "B_RFIDId"), pos, len), R_RFIDBDataShow, true);
         }
 
 
         private void B_RFIDCReadData_Click(object sender, EventArgs e)
         {
-            if (!C_syGoleRFID.connect)
+            if (!RFID3.connect)
             {
                 TextDataShow("Device not connected", R_RFIDCDataShow, false);
                 return;
             }
             string pos = T_RFIDCOAdderss.Text == "" ? "0" : T_RFIDCOAdderss.Text;
             string len = T_RFIDCEndAddress.Text == "" ? "16" : T_RFIDCEndAddress.Text;
-            TextDataShow("Read data successfully: " + C_syGoleRFID.RFID_ReadDataTostring(GetRecipeValue("RSet", "C_RFIDId"), pos, len), R_RFIDCDataShow, true);
+            TextDataShow("Read data successfully: " + RFID3.RFID_ReadDataTostring(GetRecipeValue("RSet", "C_RFIDId"), pos, len), R_RFIDCDataShow, true);
         }
 
 
         private void B_RFIDDReadData_Click(object sender, EventArgs e)
         {
-            if (!D_syGoleRFID.connect)
+            if (!RFID4.connect)
             {
                 TextDataShow("Device not connected", R_RFIDDDataShow, false);
                 return;
             }
             string pos = T_RFIDDOAdderss.Text == "" ? "0" : T_RFIDDOAdderss.Text;
             string len = T_RFIDDEndAddress.Text == "" ? "16" : T_RFIDDEndAddress.Text;
-            TextDataShow("Read data successfully: " + D_syGoleRFID.RFID_ReadDataTostring(GetRecipeValue("RSet", "D_RFIDId"), pos, len), R_RFIDDDataShow, true);
+            TextDataShow("Read data successfully: " + RFID4.RFID_ReadDataTostring(GetRecipeValue("RSet", "D_RFIDId"), pos, len), R_RFIDDDataShow, true);
         }
 
 
         private void B_RFIDAWriteData_Click(object sender, EventArgs e)
         {
-            if (!A_syGoleRFID.connect)
+            if (!RFID1.connect)
             {
                 TextDataShow("Device not connected", R_RFIDADataShow, false);
                 return;
@@ -421,13 +423,13 @@ namespace Acura3._0.ModuleForms
             }
             string pos = T_RFIDAOAdderss.Text == "" ? "0" : T_RFIDAOAdderss.Text;
             string len = T_RFIDAEndAddress.Text == "" ? "16" : T_RFIDAEndAddress.Text;
-            TextDataShow("Write data successfully: " + A_syGoleRFID.RFID_Write(GetRecipeValue("RSet", "A_RFIDId"), T_RFIDAWriteData.Text, pos, len), R_RFIDADataShow, true);
+            TextDataShow("Write data successfully: " + RFID1.RFID_Write(GetRecipeValue("RSet", "A_RFIDId"), T_RFIDAWriteData.Text, pos, len), R_RFIDADataShow, true);
         }
 
 
         private void B_RFIDBWriteData_Click(object sender, EventArgs e)
         {
-            if (!B_syGoleRFID.connect)
+            if (!RFID2.connect)
             {
                 TextDataShow("Device not connected", R_RFIDBDataShow, false);
                 return;
@@ -439,13 +441,13 @@ namespace Acura3._0.ModuleForms
             }
             string pos = T_RFIDBOAdderss.Text == "" ? "0" : T_RFIDBOAdderss.Text;
             string len = T_RFIDBEndAddress.Text == "" ? "16" : T_RFIDBEndAddress.Text;
-            TextDataShow("Write data successfully: " + B_syGoleRFID.RFID_Write(GetRecipeValue("RSet", "B_RFIDId"), T_RFIDBWriteData.Text, pos, len), R_RFIDBDataShow, true);
+            TextDataShow("Write data successfully: " + RFID2.RFID_Write(GetRecipeValue("RSet", "B_RFIDId"), T_RFIDBWriteData.Text, pos, len), R_RFIDBDataShow, true);
         }
 
 
         private void B_RFIDCWriteData_Click(object sender, EventArgs e)
         {
-            if (!C_syGoleRFID.connect)
+            if (!RFID3.connect)
             {
                 TextDataShow("Device not connected", R_RFIDCDataShow, false);
                 return;
@@ -457,13 +459,13 @@ namespace Acura3._0.ModuleForms
             }
             string pos = T_RFIDCOAdderss.Text == "" ? "0" : T_RFIDCOAdderss.Text;
             string len = T_RFIDCEndAddress.Text == "" ? "16" : T_RFIDCEndAddress.Text;
-            TextDataShow("Write data successfully: " + C_syGoleRFID.RFID_Write(GetRecipeValue("RSet", "C_RFIDId"), T_RFIDCWriteData.Text, pos, len), R_RFIDCDataShow, true);
+            TextDataShow("Write data successfully: " + RFID3.RFID_Write(GetRecipeValue("RSet", "C_RFIDId"), T_RFIDCWriteData.Text, pos, len), R_RFIDCDataShow, true);
         }
 
 
         private void B_RFIDDWriteData_Click(object sender, EventArgs e)
         {
-            if (!D_syGoleRFID.connect)
+            if (!RFID4.connect)
             {
                 TextDataShow("Device not connected", R_RFIDDDataShow, false);
                 return;
@@ -475,51 +477,51 @@ namespace Acura3._0.ModuleForms
             }
             string pos = T_RFIDDOAdderss.Text == "" ? "0" : T_RFIDDOAdderss.Text;
             string len = T_RFIDDEndAddress.Text == "" ? "16" : T_RFIDDEndAddress.Text;
-            TextDataShow("Write data successfully: " + D_syGoleRFID.RFID_Write(GetRecipeValue("RSet", "D_RFIDId"), T_RFIDDWriteData.Text, pos, len), R_RFIDDDataShow, true);
+            TextDataShow("Write data successfully: " + RFID4.RFID_Write(GetRecipeValue("RSet", "D_RFIDId"), T_RFIDDWriteData.Text, pos, len), R_RFIDDDataShow, true);
         }
 
 
         private void B_RFIDAClearData_Click(object sender, EventArgs e)
         {
-            if (!A_syGoleRFID.connect)
+            if (!RFID1.connect)
             {
                 TextDataShow("Device not connected", R_RFIDADataShow, false);
                 return;
             }
-            TextDataShow("Succeeded in clearing data: " + A_syGoleRFID.RFID_Clear(GetRecipeValue("RSet", "A_RFIDId")), R_RFIDADataShow, true);
+            TextDataShow("Succeeded in clearing data: " + RFID1.RFID_Clear(GetRecipeValue("RSet", "A_RFIDId")), R_RFIDADataShow, true);
         }
 
 
         private void B_RFIDBClearData_Click(object sender, EventArgs e)
         {
-            if (!B_syGoleRFID.connect)
+            if (!RFID2.connect)
             {
                 TextDataShow("Device not connected", R_RFIDBDataShow, false);
                 return;
             }
-            TextDataShow("Succeeded in clearing data: " + B_syGoleRFID.RFID_Clear(GetRecipeValue("RSet", "B_RFIDId")), R_RFIDBDataShow, true);
+            TextDataShow("Succeeded in clearing data: " + RFID2.RFID_Clear(GetRecipeValue("RSet", "B_RFIDId")), R_RFIDBDataShow, true);
         }
 
 
         private void B_RFIDCClearData_Click(object sender, EventArgs e)
         {
-            if (!C_syGoleRFID.connect)
+            if (!RFID3.connect)
             {
                 TextDataShow("Device not connected", R_RFIDCDataShow, false);
                 return;
             }
-            TextDataShow("Succeeded in clearing data: " + C_syGoleRFID.RFID_Clear(GetRecipeValue("RSet", "C_RFIDId")), R_RFIDCDataShow, true);
+            TextDataShow("Succeeded in clearing data: " + RFID3.RFID_Clear(GetRecipeValue("RSet", "C_RFIDId")), R_RFIDCDataShow, true);
         }
 
 
         private void B_RFIDDClearData_Click(object sender, EventArgs e)
         {
-            if (!D_syGoleRFID.connect)
+            if (!RFID4.connect)
             {
                 TextDataShow("Device not connected", R_RFIDDDataShow, false);
                 return;
             }
-            TextDataShow("Succeeded in clearing data: " + D_syGoleRFID.RFID_Clear(GetRecipeValue("RSet", "D_RFIDId")), R_RFIDDDataShow, true);
+            TextDataShow("Succeeded in clearing data: " + RFID4.RFID_Clear(GetRecipeValue("RSet", "D_RFIDId")), R_RFIDDDataShow, true);
         }
 
 
@@ -557,6 +559,7 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart0_11_FlowRun(object sender, EventArgs e)
         {
+            //klkhkjh
             MachineAvailable1 = false;
             MachineAvailable2 = false;
             Station1Start = false;
@@ -572,14 +575,14 @@ namespace Acura3._0.ModuleForms
             DownMachineReady_SMEMA = false;
             StationMachineIn1 = false;
             StationMachineIn2 = false;
-            ConveyorBStation1RobotStart1 = false;
-            ConveyorBStation1RobotComp1 = false;
-            ConveyorBStation2RobotStart2 = false;
-            ConveyorBStation2RobotComp2 = false;
+            ConveyorBStation1Robot1Start = false;
+            ConveyorBStation1Robot1Comp = false;
+            ConveyorBStation2Robot2Start = false;
+            ConveyorBStation2Robot2Comp = false;
             //ConveyorBStart1 = false;
             //ConveyorBStart2 = false;
-            B_ScrewStation1_Available = false;
-            B_ScrewStation2_Available = false;
+            //B_ScrewStation1_Available = false;
+            //B_ScrewStation2_Available = false;
             B_ConveyorB_Station1_Ready = false;
             B_ConveyorB_Station2_Ready = false;
             bInitialOk = true;
@@ -587,15 +590,15 @@ namespace Acura3._0.ModuleForms
             ByPass = MiddleLayer.SystemF.GetSettingValue("PSet", "ByPass");
             Dryrun = MiddleLayer.SystemF.GetSettingValue("PSet", "Dryrun");
             RFID = false;// MiddleLayer.SystemF.GetSettingValue("PSet", "UseRFID");
-            RFIDDataStructList1.Clear();
-            RFIDDataStructList2.Clear();
+            RFID_DataList1.Clear();
+            RFID_DataList2.Clear();
             return FCResultType.IDLE;
         }
 
 
         private FCResultType flowChart55_FlowRun(object sender, EventArgs e)
         {
-            if (A_syGoleRFID.RFID_Connect(GetRecipeValue("RSet", "A_RFIDIp"), ushort.Parse(GetRecipeValue("RSet", "A_RFIDPort")), GetRecipeValue("RSet", "A_RFIDId")))
+            if (RFID1.RFID_Connect(GetRecipeValue("RSet", "A_RFIDIp"), ushort.Parse(GetRecipeValue("RSet", "A_RFIDPort")), GetRecipeValue("RSet", "A_RFIDId")))
             {
                 return FCResultType.NEXT;
             }
@@ -605,7 +608,7 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart56_FlowRun(object sender, EventArgs e)
         {
-            if (A_syGoleRFID.RFID_Connect(GetRecipeValue("RSet", "B_RFIDIp"), ushort.Parse(GetRecipeValue("RSet", "B_RFIDPort")), GetRecipeValue("RSet", "B_RFIDId")))
+            if (RFID2.RFID_Connect(GetRecipeValue("RSet", "B_RFIDIp"), ushort.Parse(GetRecipeValue("RSet", "B_RFIDPort")), GetRecipeValue("RSet", "B_RFIDId")))
             {
                 return FCResultType.NEXT;
             }
@@ -615,7 +618,7 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart57_FlowRun(object sender, EventArgs e)
         {
-            if (A_syGoleRFID.RFID_Connect(GetRecipeValue("RSet", "C_RFIDIp"), ushort.Parse(GetRecipeValue("RSet", "C_RFIDPort")), GetRecipeValue("RSet", "C_RFIDId")))
+            if (RFID3.RFID_Connect(GetRecipeValue("RSet", "C_RFIDIp"), ushort.Parse(GetRecipeValue("RSet", "C_RFIDPort")), GetRecipeValue("RSet", "C_RFIDId")))
             {
                 return FCResultType.NEXT;
             }
@@ -625,7 +628,7 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart58_FlowRun(object sender, EventArgs e)
         {
-            if (A_syGoleRFID.RFID_Connect(GetRecipeValue("RSet", "D_RFIDIp"), ushort.Parse(GetRecipeValue("RSet", "D_RFIDPort")), GetRecipeValue("RSet", "D_RFIDId")))
+            if (RFID4.RFID_Connect(GetRecipeValue("RSet", "D_RFIDIp"), ushort.Parse(GetRecipeValue("RSet", "D_RFIDPort")), GetRecipeValue("RSet", "D_RFIDId")))
             {
                 return FCResultType.NEXT;
             }
@@ -926,7 +929,7 @@ namespace Acura3._0.ModuleForms
             if (Dryrun)
             {
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "Dryrun Mode : " + $"{this.Text} Module {flowChart18.Text} finish", true);
-                myRFID2 = new MyRFIDDataStruct(B_syGoleRFID, true, "OK");
+                //myRFID2 = new MyRFIDDataStruct(B_syGoleRFID, true, "OK");
             }
             Conveyor3Timeout.Restart();
             MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart18.Text} finish", true);
@@ -1027,9 +1030,9 @@ namespace Acura3._0.ModuleForms
             MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart15.Text} finish", true);
             if (IB_Conveyor2_Station1_BoardStop.IsOn() || Dryrun)
             {
-                return FCResultType.NEXT;
+                return FCResultType.CASE1;
             }
-            return FCResultType.CASE1;
+            return FCResultType.NEXT;
         }
 
         private FCResultType flowChart16_FlowRun(object sender, EventArgs e)
@@ -1152,10 +1155,9 @@ namespace Acura3._0.ModuleForms
             if ((IB_Conveyor1_Staiton3_BoardStop.IsOff() && Conveyor2Timeout.IsOn(1000)) || (Dryrun && C_DelayMs(1000)))
             {
                 Conveyor2Timeout.Restart();
-                ConveyorBStart1 = true;
                 Stationwork1Comp = false;
                 MachineAvailable1 = false;
-                RFIDDataStructList1.Add(myRFID1);
+                //RFIDDataStructList1.Add(myRFID1);
                 return FCResultType.NEXT;
             }
 
@@ -1171,12 +1173,11 @@ namespace Acura3._0.ModuleForms
         {
             if (IB_Conveyor1_Staiton3_BoardStop.IsOff() || (Dryrun && C_DelayMs(1000)))
             {
-                ConveyorBStart1 = true;
                 Stationwork2 = false;
                 Stationwork2Comp = false;
                 MachineAvailable2 = false;
                 Conveyor3Timeout.Restart();
-                RFIDDataStructList1.Add(myRFID2);
+                //RFIDDataStructList1.Add(myRFID2);
                 return FCResultType.NEXT;
             }
 
@@ -1187,15 +1188,10 @@ namespace Acura3._0.ModuleForms
             }
             return FCResultType.IDLE;
         }
-                     
+
         private void button2_Click(object sender, EventArgs e)
         {
             DownMachineReady_SMEMA = true;
-        }
-
-        private FCResultType flowChart54_FlowRun(object sender, EventArgs e)
-        {
-            return FCResultType.NEXT;
         }
 
         private FCResultType flowChart72_FlowRun(object sender, EventArgs e)
@@ -1328,7 +1324,7 @@ namespace Acura3._0.ModuleForms
             if (Dryrun)
             {
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "Dryrun Mode : " + $"{this.Text} Module {flowChart8.Text} finish", true);
-                myRFID1 = new MyRFIDDataStruct(A_syGoleRFID, true, "OK");
+                //myRFID1 = new MyRFIDDataStruct(A_syGoleRFID, true, "OK");
             }
             Conveyor2Timeout.Restart();
             MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart8.Text} finish", true);
@@ -1393,7 +1389,7 @@ namespace Acura3._0.ModuleForms
             {
                 Conveyor2Timeout.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart12.Text} finish", true);
-                return FCResultType.NEXT;             
+                return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
         }
@@ -1449,13 +1445,14 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart71_FlowRun(object sender, EventArgs e)
         {
+            OB_Conveyor2_MotorForward.On();
             MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart71.Text} finish", true);
             return FCResultType.NEXT;
         }
 
         private FCResultType flowChart86_FlowRun(object sender, EventArgs e)
         {
-            if (IB_Conveyor2_Station1_BoardStop.IsOn() || (Dryrun && C_DelayMs(2000)))
+            if (IB_Conveyor2_Station1_BoardStop.IsOn() || (Dryrun && C_DelayMs(1500)))
             {
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart86.Text} finish", true);
                 return FCResultType.NEXT;
@@ -1517,6 +1514,365 @@ namespace Acura3._0.ModuleForms
         private FCResultType flowChart91_FlowRun(object sender, EventArgs e)
         {
             MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart91.Text} finish", true);
+            return FCResultType.NEXT;
+        }
+
+        private FCResultType flowChart38_FlowRun(object sender, EventArgs e)
+        {
+            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart38.Text} finish", true);
+            return FCResultType.NEXT;
+        }
+
+        private FCResultType flowChart87_FlowRun(object sender, EventArgs e)
+        {
+            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart87.Text} finish", true);
+            if (IB_Conveyor2_Station2_BoardStop.IsOn() || Dryrun)
+            {
+                return FCResultType.CASE1;
+            }
+            return FCResultType.NEXT;
+        }
+
+        private FCResultType flowChart94_FlowRun(object sender, EventArgs e)
+        {
+            B_ConveyorB_Station1_Ready = true;
+            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart94.Text} finish", true);
+            return FCResultType.NEXT;
+        }
+
+        private FCResultType flowChart95_FlowRun(object sender, EventArgs e)
+        {
+            if (IB_Conveyor2_Station2_BoardStop.IsOn() || (Dryrun && C_DelayMs(1500)))
+            {
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart95.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart96_FlowRun(object sender, EventArgs e)
+        {
+            if (Dryrun)
+            {
+                Conveyor4Timeout.Restart();
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " +"Dryrun Mode : "+ $"{this.Text} Module {flowChart95.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            if (ByPass)
+            {
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "ByPass Mode : " + $"{this.Text} Module {flowChart95.Text} finish", true);
+                return FCResultType.CASE2;
+            }
+            Conveyor4Timeout.Restart();
+            return FCResultType.NEXT;
+        }
+
+        private FCResultType flowChart97_FlowRun(object sender, EventArgs e)
+        {
+            if (CYL_Conveyor2_Station1_Jacking.On())
+            {
+                C_DelayMs(500);
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart97.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart98_FlowRun(object sender, EventArgs e)
+        {
+            ConveyorBStation1Robot1Start = true;
+            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart98.Text} finish", true);
+            return FCResultType.NEXT;
+        }
+
+        private FCResultType flowChart99_FlowRun(object sender, EventArgs e)
+        {
+            if (ConveyorBStation1Robot1Comp)
+            {
+                ConveyorBStation1Robot1Comp = false;
+                Conveyor4Timeout.Restart();
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart99.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart100_FlowRun(object sender, EventArgs e)
+        {
+            if (CYL_Conveyor2_Station1_Jacking.Off())
+            {
+                C_DelayMs(500);
+                Conveyor4Timeout.Restart();
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart100.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart101_FlowRun(object sender, EventArgs e)
+        {
+            if (Dryrun)
+            {
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "Dryrun Mode : " + $"{this.Text} Module {flowChart101.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            return FCResultType.NEXT;
+        }
+
+        private FCResultType flowChart102_FlowRun(object sender, EventArgs e)
+        {
+            if (B_ConveyorB_Station2_Ready)
+            {
+                B_ConveyorB_Station2_Ready = false;
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart102.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart25_FlowRun(object sender, EventArgs e)
+        {
+            OB_Conveyor2_Station2_StopCylinder.On();
+            if (IB_Conveyor2_Station2_StopCylinderDown.IsOn())
+            {
+                Conveyor4Timeout.Restart();
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart25.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart26_FlowRun(object sender, EventArgs e)
+        {
+            if (Conveyor4Timeout.IsOn(500))
+            {              
+                OB_Conveyor2_Station2_StopCylinder.Off();
+                if (IB_Conveyor2_Station2_StopCylinderUp.IsOn())
+                {
+                    Conveyor4Timeout.Restart();
+                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart26.Text} finish", true);
+                    return FCResultType.NEXT;
+                }
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart27_FlowRun(object sender, EventArgs e)
+        {
+            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart27.Text} finish", true);
+            return FCResultType.NEXT;
+        }
+
+        private FCResultType flowChart61_FlowRun(object sender, EventArgs e)
+        {
+            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart61.Text} finish", true);
+            return FCResultType.CASE1;
+        }
+
+        private FCResultType flowChart62_FlowRun(object sender, EventArgs e)
+        {
+            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart62.Text} finish", true);
+            return FCResultType.CASE2;
+        }
+
+        private FCResultType flowChart63_FlowRun(object sender, EventArgs e)
+        {
+            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart63.Text} finish", true);
+            return FCResultType.NEXT;
+        }
+
+        private FCResultType flowChart29_FlowRun(object sender, EventArgs e)
+        {
+            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart29.Text} finish", true);
+            return FCResultType.NEXT;
+        }
+
+        private FCResultType flowChart30_FlowRun(object sender, EventArgs e)
+        {
+            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart30.Text} finish", true);
+            if (IB_Conveyor2_Station3_BoardStop.IsOn() || Dryrun)
+            {
+                return FCResultType.CASE1;
+            }
+            return FCResultType.NEXT;
+        }
+
+        private FCResultType flowChart51_FlowRun(object sender, EventArgs e)
+        {
+            B_ConveyorB_Station2_Ready = true;
+            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart51.Text} finish", true);
+            return FCResultType.NEXT;
+        }
+
+        private FCResultType flowChart52_FlowRun(object sender, EventArgs e)
+        {
+            if (IB_Conveyor2_Station3_BoardStop.IsOn() || (Dryrun && C_DelayMs(1500)))
+            {
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart52.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart53_FlowRun(object sender, EventArgs e)
+        {
+            if (Dryrun)
+            {
+                Conveyor5Timeout.Restart();
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "Dryrun Mode : " + $"{this.Text} Module {flowChart53.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            if (ByPass)
+            {
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "ByPass Mode : " + $"{this.Text} Module {flowChart53.Text} finish", true);
+                return FCResultType.CASE2;
+            }
+            Conveyor5Timeout.Restart();
+            return FCResultType.NEXT;
+        }
+
+        private FCResultType flowChart54_FlowRun(object sender, EventArgs e)
+        {
+            if (CYL_Conveyor2_Station2_Jacking.On())
+            {
+                C_DelayMs(500);
+                Conveyor5Timeout.Restart();
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart54.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart31_FlowRun(object sender, EventArgs e)
+        {
+            ConveyorBStation2Robot2Start = true;
+            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart31.Text} finish", true);
+            return FCResultType.NEXT;
+        }
+
+        private FCResultType flowChart32_FlowRun(object sender, EventArgs e)
+        {
+            if (ConveyorBStation2Robot2Comp)
+            {
+                ConveyorBStation2Robot2Comp = false;
+                Conveyor5Timeout.Restart();
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart32.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart33_FlowRun(object sender, EventArgs e)
+        {
+            if (CYL_Conveyor2_Station2_Jacking.Off())
+            {
+                C_DelayMs(500);
+                Conveyor5Timeout.Restart();
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart33.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart34_FlowRun(object sender, EventArgs e)
+        {
+            if (Dryrun)
+            {
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "Dryrun Mode : " + $"{this.Text} Module {flowChart34.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            return FCResultType.NEXT;
+        }
+
+        private FCResultType flowChart35_FlowRun(object sender, EventArgs e)
+        {
+            OB_LocalMachineAvailable_SMEMA.On();
+            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart35.Text} finish", true);
+            return FCResultType.NEXT;
+        }
+
+        private FCResultType flowChart69_FlowRun(object sender, EventArgs e)
+        {
+            if (IB_DownMachineReady_SMEMA.IsOn() || DownMachineReady_SMEMA)
+            {
+                Conveyor5Timeout.Restart();
+                DownMachineReady_SMEMA = false;
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart69.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart36_FlowRun(object sender, EventArgs e)
+        {
+            OB_Conveyor2_Station3_StopCylinder.On();
+            if (IB_Conveyor2_Station3_StopCylinderDown.IsOn())
+            {
+                Conveyor5Timeout.Restart();
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart36.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart37_FlowRun(object sender, EventArgs e)
+        {
+            if (Conveyor5Timeout.IsOn(500))
+            {
+                OB_Conveyor2_Station3_StopCylinder.Off();
+                if (IB_Conveyor2_Station3_StopCylinderUp.IsOn())
+                {
+                    Conveyor5Timeout.Restart();
+                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart37.Text} finish", true);
+                    return FCResultType.NEXT;
+                }
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart28_FlowRun(object sender, EventArgs e)
+        {
+            if (IB_Conveyor2_Boardout.IsOn() || (Dryrun && C_DelayMs(1000)))
+            {
+                Conveyor5Timeout.Restart();
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart28.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart70_FlowRun(object sender, EventArgs e)
+        {
+            if (IB_Conveyor2_Boardout.IsOff() || (Dryrun && C_DelayMs(1000)))
+            {
+                Conveyor5Timeout.Restart();
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart70.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart103_FlowRun(object sender, EventArgs e)
+        {
+            if (IB_DownMachineReady_SMEMA.IsOff())
+            {
+                Conveyor5Timeout.Restart();
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart103.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart104_FlowRun(object sender, EventArgs e)
+        {
+            OB_LocalMachineAvailable_SMEMA.Off();
+            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart104.Text} finish", true);
+            return FCResultType.NEXT;
+        }
+
+        private FCResultType flowChart105_FlowRun(object sender, EventArgs e)
+        {
+            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart105.Text} finish", true);
             return FCResultType.NEXT;
         }
     }

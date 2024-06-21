@@ -571,7 +571,7 @@
             // 
             this.plProductionSetting.Controls.Add(this.tabControl8);
             this.plProductionSetting.Margin = new System.Windows.Forms.Padding(2);
-            this.plProductionSetting.Size = new System.Drawing.Size(799, 627);
+            this.plProductionSetting.Size = new System.Drawing.Size(1368, 628);
             // 
             // plRecipeEditor
             // 
@@ -603,13 +603,13 @@
             this.plFlowInitial.Controls.Add(this.flowChart0_2);
             this.plFlowInitial.Controls.Add(this.flowChart0_1);
             this.plFlowInitial.Margin = new System.Windows.Forms.Padding(2);
-            this.plFlowInitial.Size = new System.Drawing.Size(799, 627);
+            this.plFlowInitial.Size = new System.Drawing.Size(1368, 628);
             // 
             // plFlowAuto
             // 
             this.plFlowAuto.Controls.Add(this.tabControl6);
             this.plFlowAuto.Margin = new System.Windows.Forms.Padding(2);
-            this.plFlowAuto.Size = new System.Drawing.Size(799, 627);
+            this.plFlowAuto.Size = new System.Drawing.Size(1368, 628);
             // 
             // plMachineStatus
             // 
@@ -3445,7 +3445,7 @@
             this.tabControl6.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl6.Name = "tabControl6";
             this.tabControl6.SelectedIndex = 0;
-            this.tabControl6.Size = new System.Drawing.Size(799, 627);
+            this.tabControl6.Size = new System.Drawing.Size(1368, 628);
             this.tabControl6.TabIndex = 1;
             // 
             // tabPage13
@@ -3455,9 +3455,9 @@
             this.tabPage13.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage13.Name = "tabPage13";
             this.tabPage13.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage13.Size = new System.Drawing.Size(791, 591);
+            this.tabPage13.Size = new System.Drawing.Size(1360, 592);
             this.tabPage13.TabIndex = 0;
-            this.tabPage13.Text = "Gantry";
+            this.tabPage13.Text = "Screw Station2";
             this.tabPage13.UseVisualStyleBackColor = true;
             // 
             // tabControl7
@@ -3474,7 +3474,7 @@
             this.tabControl7.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl7.Name = "tabControl7";
             this.tabControl7.SelectedIndex = 0;
-            this.tabControl7.Size = new System.Drawing.Size(787, 587);
+            this.tabControl7.Size = new System.Drawing.Size(1356, 588);
             this.tabControl7.TabIndex = 0;
             // 
             // tabPage16
@@ -3490,7 +3490,7 @@
             this.tabPage16.Controls.Add(this.flowChart1_1);
             this.tabPage16.Location = new System.Drawing.Point(4, 32);
             this.tabPage16.Name = "tabPage16";
-            this.tabPage16.Size = new System.Drawing.Size(779, 551);
+            this.tabPage16.Size = new System.Drawing.Size(1348, 552);
             this.tabPage16.TabIndex = 5;
             this.tabPage16.Text = "Main Flow";
             this.tabPage16.UseVisualStyleBackColor = true;
@@ -4385,7 +4385,7 @@
             this.tabPage17.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage17.Name = "tabPage17";
             this.tabPage17.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage17.Size = new System.Drawing.Size(779, 551);
+            this.tabPage17.Size = new System.Drawing.Size(1348, 552);
             this.tabPage17.TabIndex = 0;
             this.tabPage17.Text = "Vision Flow";
             this.tabPage17.UseVisualStyleBackColor = true;
@@ -4958,7 +4958,7 @@
             this.tabControl8.Location = new System.Drawing.Point(0, 0);
             this.tabControl8.Name = "tabControl8";
             this.tabControl8.SelectedIndex = 0;
-            this.tabControl8.Size = new System.Drawing.Size(799, 627);
+            this.tabControl8.Size = new System.Drawing.Size(1368, 628);
             this.tabControl8.TabIndex = 0;
             // 
             // tabPage20
@@ -4968,7 +4968,7 @@
             this.tabPage20.Location = new System.Drawing.Point(4, 32);
             this.tabPage20.Name = "tabPage20";
             this.tabPage20.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage20.Size = new System.Drawing.Size(791, 591);
+            this.tabPage20.Size = new System.Drawing.Size(1360, 592);
             this.tabPage20.TabIndex = 0;
             this.tabPage20.Text = "Parameter";
             this.tabPage20.UseVisualStyleBackColor = true;
@@ -6440,7 +6440,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(1);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(1);
-            this.tabPage3.Size = new System.Drawing.Size(1348, 552);
+            this.tabPage3.Size = new System.Drawing.Size(779, 551);
             this.tabPage3.TabIndex = 1;
             this.tabPage3.Text = "Screw Feeder";
             this.tabPage3.UseVisualStyleBackColor = true;

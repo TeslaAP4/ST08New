@@ -43,6 +43,7 @@ namespace Acura3._0.FunctionForms
         {
             Alarm = 0,
             Operation,
+            SystemError,
             Production,
             MachineStatusEvent,
             EventFlow,

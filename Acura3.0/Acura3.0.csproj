@@ -707,12 +707,13 @@
     <Compile Include="Classes\MTCom.cs" />
     <Compile Include="Classes\NPSerialProt.cs" />
     <Compile Include="Classes\NPTCPClient.cs" />
+    <Compile Include="Classes\PressureSensor_Modbus.cs" />
     <Compile Include="Classes\ProcessData.cs" />
     <Compile Include="Classes\ReadCOM.cs" />
     <Compile Include="Classes\ReadDisplacement.cs" />
     <Compile Include="Classes\SaveFile.cs" />
     <Compile Include="Classes\SimpleTcpClient.cs" />
-    <Compile Include="Classes\SyGoleRFID.cs" />
+    <Compile Include="Classes\RFID.cs" />
     <Compile Include="Classes\TCPCLient.cs" />
     <Compile Include="Classes\VirtualKeyboard.cs" />
     <Compile Include="Classes\XMLExpand.cs" />

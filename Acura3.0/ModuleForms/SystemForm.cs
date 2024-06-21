@@ -9,6 +9,8 @@ using System.Reflection;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using static Acura3._0.Forms.SignalTowerForm;
+using ADOX;
+using System.ComponentModel;
 
 namespace Acura3._0.ModuleForms
 {
@@ -587,6 +589,21 @@ namespace Acura3._0.ModuleForms
             }
             while (s < delayMilliseconds);
             return true;
+        }
+
+        int index = 0;
+        public void ErrorDataLogShow(string moduleName, string FlowCharName)
+        {
+            if (index >= 100)
+            {
+                D_ErrorDGV.Rows.Clear();
+            }
+            index = D_ErrorDGV.Rows.Add();
+            D_ErrorDGV.Rows[index].Cells[0].Value = System.DateTime.Now.ToString("G");
+            D_ErrorDGV.Rows[index].Cells[1].Value = moduleName;
+            D_ErrorDGV.Rows[index].Cells[2].Value = FlowCharName;
+            D_ErrorDGV.Sort(D_ErrorDGV.Columns[0], ListSortDirection.Descending);
+            MiddleLayer.LogF.AddLog(LogForm.LogType.SystemError, $"{System.DateTime.Now.ToString("G")},{moduleName},{FlowCharName}");
         }
     }
 }

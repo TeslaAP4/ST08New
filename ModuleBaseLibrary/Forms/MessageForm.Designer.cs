@@ -92,7 +92,7 @@ namespace AcuraLibrary.Forms
             this.btnSkip.Name = "btnSkip";
             this.btnSkip.Size = new System.Drawing.Size(121, 56);
             this.btnSkip.TabIndex = 8;
-            this.btnSkip.Text = "NG";
+            this.btnSkip.Text = "SKIP";
             this.btnSkip.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSkip.UseVisualStyleBackColor = false;
             this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);

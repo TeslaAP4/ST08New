@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Acura3._0.Classes
 {
-   public class SyGoleRFID
+   public class RFID
     {
         HFReader reader = new HFReader();
         Sygole.HFReader.EventHandler<CommEventArgs> _CommReceiveHandler = null;

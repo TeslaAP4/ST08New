@@ -39,9 +39,6 @@
             this.dataColumn10 = new System.Data.DataColumn();
             this.dataColumn11 = new System.Data.DataColumn();
             this.dataColumn12 = new System.Data.DataColumn();
-            this.dataTable2 = new System.Data.DataTable();
-            this.dataColumn3 = new System.Data.DataColumn();
-            this.dataColumn4 = new System.Data.DataColumn();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.btnGotoScrewPos = new System.Windows.Forms.Button();
@@ -67,7 +64,9 @@
             this.annotationDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
-            this.T_CCDIP = new System.Windows.Forms.TextBox();
+            this.btnDisConnect = new System.Windows.Forms.Button();
+            this.btnConnect = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.T_ScrewData = new System.Windows.Forms.TextBox();
             this.btn_ReadScrewData = new System.Windows.Forms.Button();
@@ -78,22 +77,19 @@
             this.btnConnectScrew = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.tabControl4 = new System.Windows.Forms.TabControl();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.R_PsText = new System.Windows.Forms.RichTextBox();
-            this.D_Ps = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.commandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.B_PsClear = new System.Windows.Forms.Button();
-            this.C_Com = new System.Windows.Forms.ComboBox();
-            this.B_PsDisConnect = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
-            this.B_PsDelete = new System.Windows.Forms.Button();
-            this.B_PsAdd = new System.Windows.Forms.Button();
-            this.B_Refresh = new System.Windows.Forms.Button();
-            this.B_PSRead = new System.Windows.Forms.Button();
-            this.B_PsConnect = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox17 = new System.Windows.Forms.TextBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.OPT_LightSourceController = new OPTControl.OPTControl();
             this.tabPage21 = new System.Windows.Forms.TabPage();
@@ -127,17 +123,6 @@
             this.flowChart100_10 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart100_11 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart100_12 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChart0_4 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChart0_5 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChart0_6 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChart0_16 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChart0_8 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChart0_17 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChart0_9 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChart0_14 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChart0_15 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChart0_10 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChart0_11 = new JabilSDK.UserControlLib.FlowChart();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.flowChart100_3 = new JabilSDK.UserControlLib.FlowChart();
@@ -170,13 +155,13 @@
             this.flowChart55 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart3_1 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart3_2 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChartMessage8 = new AcuraLibrary.Forms.FlowChartMessage();
+            this.Alarm1_04 = new AcuraLibrary.Forms.FlowChartMessage();
             this.flowChart3_3 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart3_5 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChartMessage15 = new AcuraLibrary.Forms.FlowChartMessage();
+            this.Alarm1_05 = new AcuraLibrary.Forms.FlowChartMessage();
             this.flowChart5 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart3_6 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChartMessage9 = new AcuraLibrary.Forms.FlowChartMessage();
+            this.Alarm1_06 = new AcuraLibrary.Forms.FlowChartMessage();
             this.flowChart3_4 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart21 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart4 = new JabilSDK.UserControlLib.FlowChart();
@@ -225,6 +210,14 @@
             this.flowChart110_7 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart110_2 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart110_1 = new JabilSDK.UserControlLib.FlowChart();
+            this.flowChart0_9 = new JabilSDK.UserControlLib.FlowChart();
+            this.Alarm1_01 = new AcuraLibrary.Forms.FlowChartMessage();
+            this.flowChart0_14 = new JabilSDK.UserControlLib.FlowChart();
+            this.Alarm1_02 = new AcuraLibrary.Forms.FlowChartMessage();
+            this.flowChart0_15 = new JabilSDK.UserControlLib.FlowChart();
+            this.Alarm1_03 = new AcuraLibrary.Forms.FlowChartMessage();
+            this.flowChart0_10 = new JabilSDK.UserControlLib.FlowChart();
+            this.flowChart0_11 = new JabilSDK.UserControlLib.FlowChart();
             this.D_ScrewResultsShow = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -330,9 +323,8 @@
             this.flowChart42 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart4_1 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart4_7 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChartMessage10 = new AcuraLibrary.Forms.FlowChartMessage();
             this.flowChart4_2 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChartMessage11 = new AcuraLibrary.Forms.FlowChartMessage();
+            this.Alarm1_07 = new AcuraLibrary.Forms.FlowChartMessage();
             this.tabPage18 = new System.Windows.Forms.TabPage();
             this.tabPage19 = new System.Windows.Forms.TabPage();
             this.tabPage27 = new System.Windows.Forms.TabPage();
@@ -346,16 +338,17 @@
             this.dataColumn13 = new System.Data.DataColumn();
             this.dataColumn14 = new System.Data.DataColumn();
             this.dataColumn15 = new System.Data.DataColumn();
-            this.flowChart0_7 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChart0_19 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChart0_12 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChart0_13 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChart0_2 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChart0_3 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart0_1 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart0_18 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart0_20 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart0_21 = new JabilSDK.UserControlLib.FlowChart();
+            this.flowChart13 = new JabilSDK.UserControlLib.FlowChart();
+            this.flowChart14 = new JabilSDK.UserControlLib.FlowChart();
+            this.flowChart15 = new JabilSDK.UserControlLib.FlowChart();
+            this.flowChart16 = new JabilSDK.UserControlLib.FlowChart();
+            this.flowChart17 = new JabilSDK.UserControlLib.FlowChart();
+            this.flowChart18 = new JabilSDK.UserControlLib.FlowChart();
+            this.flowChart20 = new JabilSDK.UserControlLib.FlowChart();
             this.tabControl8 = new System.Windows.Forms.TabControl();
             this.tabPage20 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -379,43 +372,12 @@
             this.label26 = new System.Windows.Forms.Label();
             this.lbSpeedRatio = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.textBox16 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.dataColumn19 = new System.Data.DataColumn();
-            this.dataColumn20 = new System.Data.DataColumn();
-            this.dataColumn21 = new System.Data.DataColumn();
-            this.dataColumn22 = new System.Data.DataColumn();
-            this.dataColumn23 = new System.Data.DataColumn();
-            this.dataColumn24 = new System.Data.DataColumn();
-            this.dataColumn25 = new System.Data.DataColumn();
-            this.dataColumn26 = new System.Data.DataColumn();
-            this.dataColumn27 = new System.Data.DataColumn();
             this.dataColumn28 = new System.Data.DataColumn();
             this.dataColumn29 = new System.Data.DataColumn();
             this.dataColumn30 = new System.Data.DataColumn();
@@ -480,6 +442,16 @@
             this.M_McJogForward = new JabilSDK.Controls.MotorJog();
             this.M_McJogRight = new JabilSDK.Controls.MotorJog();
             this.M_McJogLeft = new JabilSDK.Controls.MotorJog();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.tabControl11 = new System.Windows.Forms.TabControl();
+            this.tabPage30 = new System.Windows.Forms.TabPage();
+            this.tabPage31 = new System.Windows.Forms.TabPage();
+            this.dataColumn19 = new System.Data.DataColumn();
+            this.dataColumn3 = new System.Data.DataColumn();
+            this.dataColumn4 = new System.Data.DataColumn();
             this.plMaintenance.SuspendLayout();
             this.plProductionSetting.SuspendLayout();
             this.plRecipeEditor.SuspendLayout();
@@ -494,7 +466,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.RecipeData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable2)).BeginInit();
             this.tabControl3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -504,10 +475,6 @@
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
-            this.tabControl4.SuspendLayout();
-            this.tabPage9.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.D_Ps)).BeginInit();
             this.tabPage8.SuspendLayout();
             this.tabPage21.SuspendLayout();
             this.groupBox37.SuspendLayout();
@@ -559,6 +526,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            this.tabControl11.SuspendLayout();
+            this.tabPage30.SuspendLayout();
+            this.tabPage31.SuspendLayout();
             this.SuspendLayout();
             // 
             // plMaintenance
@@ -581,35 +552,33 @@
             // 
             // plFlowInitial
             // 
+            this.plFlowInitial.Controls.Add(this.Alarm1_03);
+            this.plFlowInitial.Controls.Add(this.Alarm1_02);
+            this.plFlowInitial.Controls.Add(this.Alarm1_01);
+            this.plFlowInitial.Controls.Add(this.flowChart20);
+            this.plFlowInitial.Controls.Add(this.flowChart18);
+            this.plFlowInitial.Controls.Add(this.flowChart17);
+            this.plFlowInitial.Controls.Add(this.flowChart16);
+            this.plFlowInitial.Controls.Add(this.flowChart15);
+            this.plFlowInitial.Controls.Add(this.flowChart14);
+            this.plFlowInitial.Controls.Add(this.flowChart13);
             this.plFlowInitial.Controls.Add(this.flowChart0_21);
             this.plFlowInitial.Controls.Add(this.flowChart0_20);
-            this.plFlowInitial.Controls.Add(this.flowChart0_19);
             this.plFlowInitial.Controls.Add(this.flowChart0_18);
-            this.plFlowInitial.Controls.Add(this.flowChart0_17);
-            this.plFlowInitial.Controls.Add(this.flowChart0_16);
             this.plFlowInitial.Controls.Add(this.flowChart0_15);
             this.plFlowInitial.Controls.Add(this.flowChart0_14);
-            this.plFlowInitial.Controls.Add(this.flowChart0_13);
-            this.plFlowInitial.Controls.Add(this.flowChart0_12);
-            this.plFlowInitial.Controls.Add(this.flowChart0_7);
             this.plFlowInitial.Controls.Add(this.flowChart0_11);
             this.plFlowInitial.Controls.Add(this.flowChart0_10);
             this.plFlowInitial.Controls.Add(this.flowChart0_9);
-            this.plFlowInitial.Controls.Add(this.flowChart0_8);
-            this.plFlowInitial.Controls.Add(this.flowChart0_6);
-            this.plFlowInitial.Controls.Add(this.flowChart0_5);
-            this.plFlowInitial.Controls.Add(this.flowChart0_4);
-            this.plFlowInitial.Controls.Add(this.flowChart0_3);
-            this.plFlowInitial.Controls.Add(this.flowChart0_2);
             this.plFlowInitial.Controls.Add(this.flowChart0_1);
             this.plFlowInitial.Margin = new System.Windows.Forms.Padding(2);
-            this.plFlowInitial.Size = new System.Drawing.Size(799, 627);
+            this.plFlowInitial.Size = new System.Drawing.Size(1717, 669);
             // 
             // plFlowAuto
             // 
             this.plFlowAuto.Controls.Add(this.tabControl6);
             this.plFlowAuto.Margin = new System.Windows.Forms.Padding(2);
-            this.plFlowAuto.Size = new System.Drawing.Size(799, 627);
+            this.plFlowAuto.Size = new System.Drawing.Size(1717, 669);
             // 
             // plMachineStatus
             // 
@@ -623,38 +592,7 @@
             // 
             // plMotionSetup
             // 
-            this.plMotionSetup.Controls.Add(this.label25);
-            this.plMotionSetup.Controls.Add(this.label26);
-            this.plMotionSetup.Controls.Add(this.lbSpeedRatio);
-            this.plMotionSetup.Controls.Add(this.trackBar1);
-            this.plMotionSetup.Controls.Add(this.label21);
-            this.plMotionSetup.Controls.Add(this.label22);
-            this.plMotionSetup.Controls.Add(this.textBox14);
-            this.plMotionSetup.Controls.Add(this.label23);
-            this.plMotionSetup.Controls.Add(this.textBox15);
-            this.plMotionSetup.Controls.Add(this.label24);
-            this.plMotionSetup.Controls.Add(this.textBox16);
-            this.plMotionSetup.Controls.Add(this.label17);
-            this.plMotionSetup.Controls.Add(this.label18);
-            this.plMotionSetup.Controls.Add(this.textBox11);
-            this.plMotionSetup.Controls.Add(this.label19);
-            this.plMotionSetup.Controls.Add(this.textBox12);
-            this.plMotionSetup.Controls.Add(this.label3);
-            this.plMotionSetup.Controls.Add(this.textBox13);
-            this.plMotionSetup.Controls.Add(this.label13);
-            this.plMotionSetup.Controls.Add(this.label14);
-            this.plMotionSetup.Controls.Add(this.textBox17);
-            this.plMotionSetup.Controls.Add(this.label15);
-            this.plMotionSetup.Controls.Add(this.textBox18);
-            this.plMotionSetup.Controls.Add(this.label16);
-            this.plMotionSetup.Controls.Add(this.textBox19);
-            this.plMotionSetup.Controls.Add(this.label12);
-            this.plMotionSetup.Controls.Add(this.label11);
-            this.plMotionSetup.Controls.Add(this.textBox20);
-            this.plMotionSetup.Controls.Add(this.label10);
-            this.plMotionSetup.Controls.Add(this.textBox21);
-            this.plMotionSetup.Controls.Add(this.label9);
-            this.plMotionSetup.Controls.Add(this.textBox22);
+            this.plMotionSetup.Controls.Add(this.tabControl11);
             this.plMotionSetup.Margin = new System.Windows.Forms.Padding(2);
             this.plMotionSetup.Size = new System.Drawing.Size(799, 627);
             // 
@@ -682,19 +620,11 @@
             // MSet
             // 
             this.MSet.Columns.AddRange(new System.Data.DataColumn[] {
-            this.dataColumn19,
-            this.dataColumn20,
-            this.dataColumn21,
-            this.dataColumn22,
-            this.dataColumn23,
-            this.dataColumn24,
-            this.dataColumn25,
-            this.dataColumn26,
-            this.dataColumn27,
             this.dataColumn28,
             this.dataColumn29,
             this.dataColumn30,
-            this.dataColumn31});
+            this.dataColumn31,
+            this.dataColumn19});
             // 
             // PSet
             // 
@@ -712,7 +642,6 @@
             // 
             this.RecipeData.Tables.AddRange(new System.Data.DataTable[] {
             this.dataTable1,
-            this.dataTable2,
             this.dataTable3,
             this.dataTable4});
             // 
@@ -726,7 +655,9 @@
             this.dataColumn12,
             this.dataColumn33,
             this.dataColumn34,
-            this.dataColumn35});
+            this.dataColumn35,
+            this.dataColumn3,
+            this.dataColumn4});
             // 
             // dataColumn1
             // 
@@ -769,22 +700,7 @@
             // 
             // dataColumn12
             // 
-            this.dataColumn12.ColumnName = "Com";
-            // 
-            // dataTable2
-            // 
-            this.dataTable2.Columns.AddRange(new System.Data.DataColumn[] {
-            this.dataColumn3,
-            this.dataColumn4});
-            this.dataTable2.TableName = "T_PressureSensor ";
-            // 
-            // dataColumn3
-            // 
-            this.dataColumn3.ColumnName = "Name";
-            // 
-            // dataColumn4
-            // 
-            this.dataColumn4.ColumnName = "Command";
+            this.dataColumn12.ColumnName = "PressureCOM";
             // 
             // tabControl3
             // 
@@ -1039,34 +955,58 @@
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.label5);
-            this.tabPage5.Controls.Add(this.T_CCDIP);
+            this.tabPage5.Controls.Add(this.btnDisConnect);
+            this.tabPage5.Controls.Add(this.btnConnect);
+            this.tabPage5.Controls.Add(this.textBox4);
             this.tabPage5.Location = new System.Drawing.Point(4, 32);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(791, 591);
             this.tabPage5.TabIndex = 1;
-            this.tabPage5.Text = "CCD";
+            this.tabPage5.Text = "Robot";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(240, 79);
+            this.label5.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(121, 84);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 23);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "CCDIP:";
+            this.label5.Size = new System.Drawing.Size(33, 23);
+            this.label5.TabIndex = 149;
+            this.label5.Text = "IP :";
             // 
-            // T_CCDIP
+            // btnDisConnect
             // 
-            this.T_CCDIP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.RecipeData, "RSet.CCDIP", true));
-            this.T_CCDIP.Location = new System.Drawing.Point(325, 77);
-            this.T_CCDIP.Margin = new System.Windows.Forms.Padding(2);
-            this.T_CCDIP.Name = "T_CCDIP";
-            this.T_CCDIP.Size = new System.Drawing.Size(180, 29);
-            this.T_CCDIP.TabIndex = 9;
-            this.T_CCDIP.Text = "192.168.1.1";
+            this.btnDisConnect.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnDisConnect.Location = new System.Drawing.Point(556, 80);
+            this.btnDisConnect.Name = "btnDisConnect";
+            this.btnDisConnect.Size = new System.Drawing.Size(128, 38);
+            this.btnDisConnect.TabIndex = 148;
+            this.btnDisConnect.Text = "DisConnect";
+            this.btnDisConnect.UseVisualStyleBackColor = true;
+            this.btnDisConnect.Click += new System.EventHandler(this.btnDisConnect_Click);
+            // 
+            // btnConnect
+            // 
+            this.btnConnect.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnConnect.Location = new System.Drawing.Point(385, 80);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(131, 38);
+            this.btnConnect.TabIndex = 147;
+            this.btnConnect.Text = "Connect";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
+            // textBox4
+            // 
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.RecipeData, "RSet.RobotIP", true));
+            this.textBox4.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.textBox4.Location = new System.Drawing.Point(163, 80);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(187, 29);
+            this.textBox4.TabIndex = 146;
             // 
             // tabPage6
             // 
@@ -1088,6 +1028,7 @@
             // 
             // T_ScrewData
             // 
+            this.T_ScrewData.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
             this.T_ScrewData.Location = new System.Drawing.Point(359, 223);
             this.T_ScrewData.Multiline = true;
             this.T_ScrewData.Name = "T_ScrewData";
@@ -1096,7 +1037,7 @@
             // 
             // btn_ReadScrewData
             // 
-            this.btn_ReadScrewData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ReadScrewData.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
             this.btn_ReadScrewData.Location = new System.Drawing.Point(913, 293);
             this.btn_ReadScrewData.Name = "btn_ReadScrewData";
             this.btn_ReadScrewData.Size = new System.Drawing.Size(109, 38);
@@ -1108,35 +1049,35 @@
             // textBox2
             // 
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.RecipeData, "RSet.ScrewPort", true));
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
             this.textBox2.Location = new System.Drawing.Point(509, 89);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(145, 26);
+            this.textBox2.Size = new System.Drawing.Size(145, 29);
             this.textBox2.TabIndex = 110;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(470, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 24);
+            this.label2.Size = new System.Drawing.Size(33, 23);
             this.label2.TabIndex = 108;
             this.label2.Text = "IP :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(453, 91);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 24);
+            this.label1.Size = new System.Drawing.Size(50, 23);
             this.label1.TabIndex = 109;
             this.label1.Text = "Port :";
             // 
             // btnDisScrew
             // 
-            this.btnDisScrew.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisScrew.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnDisScrew.Location = new System.Drawing.Point(583, 143);
             this.btnDisScrew.Name = "btnDisScrew";
             this.btnDisScrew.Size = new System.Drawing.Size(109, 38);
@@ -1147,7 +1088,7 @@
             // 
             // btnConnectScrew
             // 
-            this.btnConnectScrew.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConnectScrew.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnConnectScrew.Location = new System.Drawing.Point(433, 143);
             this.btnConnectScrew.Name = "btnConnectScrew";
             this.btnConnectScrew.Size = new System.Drawing.Size(109, 38);
@@ -1159,15 +1100,27 @@
             // textBox1
             // 
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.RecipeData, "RSet.ScrewIP", true));
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
             this.textBox1.Location = new System.Drawing.Point(509, 41);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(145, 26);
+            this.textBox1.Size = new System.Drawing.Size(145, 29);
             this.textBox1.TabIndex = 105;
             // 
             // tabPage7
             // 
-            this.tabPage7.Controls.Add(this.tabControl4);
+            this.tabPage7.Controls.Add(this.label15);
+            this.tabPage7.Controls.Add(this.textBox5);
+            this.tabPage7.Controls.Add(this.label14);
+            this.tabPage7.Controls.Add(this.label13);
+            this.tabPage7.Controls.Add(this.button14);
+            this.tabPage7.Controls.Add(this.button13);
+            this.tabPage7.Controls.Add(this.richTextBox1);
+            this.tabPage7.Controls.Add(this.button11);
+            this.tabPage7.Controls.Add(this.button12);
+            this.tabPage7.Controls.Add(this.label11);
+            this.tabPage7.Controls.Add(this.textBox18);
+            this.tabPage7.Controls.Add(this.label12);
+            this.tabPage7.Controls.Add(this.textBox17);
             this.tabPage7.Location = new System.Drawing.Point(4, 32);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
@@ -1176,189 +1129,132 @@
             this.tabPage7.Text = "PressureSensor";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // tabControl4
+            // label15
             // 
-            this.tabControl4.Controls.Add(this.tabPage9);
-            this.tabControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl4.Location = new System.Drawing.Point(3, 3);
-            this.tabControl4.Name = "tabControl4";
-            this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(785, 585);
-            this.tabControl4.TabIndex = 44;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(670, 52);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(163, 23);
+            this.label15.TabIndex = 120;
+            this.label15.Text = "Pressure Limit Max :";
             // 
-            // tabPage9
+            // textBox5
             // 
-            this.tabPage9.AutoScroll = true;
-            this.tabPage9.Controls.Add(this.panel3);
-            this.tabPage9.Location = new System.Drawing.Point(4, 32);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(777, 549);
-            this.tabPage9.TabIndex = 0;
-            this.tabPage9.Text = "Connect";
-            this.tabPage9.UseVisualStyleBackColor = true;
+            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.RecipeData, "RSet.PressureLimitMax", true));
+            this.textBox5.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(851, 49);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(80, 29);
+            this.textBox5.TabIndex = 119;
             // 
-            // panel3
+            // label14
             // 
-            this.panel3.Controls.Add(this.R_PsText);
-            this.panel3.Controls.Add(this.D_Ps);
-            this.panel3.Controls.Add(this.B_PsClear);
-            this.panel3.Controls.Add(this.C_Com);
-            this.panel3.Controls.Add(this.B_PsDisConnect);
-            this.panel3.Controls.Add(this.label20);
-            this.panel3.Controls.Add(this.B_PsDelete);
-            this.panel3.Controls.Add(this.B_PsAdd);
-            this.panel3.Controls.Add(this.B_Refresh);
-            this.panel3.Controls.Add(this.B_PSRead);
-            this.panel3.Controls.Add(this.B_PsConnect);
-            this.panel3.Location = new System.Drawing.Point(6, 7);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(553, 651);
-            this.panel3.TabIndex = 40;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(353, 49);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(97, 23);
+            this.label14.TabIndex = 118;
+            this.label14.Text = "Delay time :";
             // 
-            // R_PsText
+            // label13
             // 
-            this.R_PsText.Location = new System.Drawing.Point(3, 321);
-            this.R_PsText.Name = "R_PsText";
-            this.R_PsText.Size = new System.Drawing.Size(547, 189);
-            this.R_PsText.TabIndex = 40;
-            this.R_PsText.Text = "";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(135, 46);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(55, 23);
+            this.label13.TabIndex = 117;
+            this.label13.Text = "COM :";
             // 
-            // D_Ps
+            // button14
             // 
-            this.D_Ps.AllowUserToAddRows = false;
-            this.D_Ps.AllowUserToDeleteRows = false;
-            this.D_Ps.AutoGenerateColumns = false;
-            this.D_Ps.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.D_Ps.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.D_Ps.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameDataGridViewTextBoxColumn,
-            this.commandDataGridViewTextBoxColumn});
-            this.D_Ps.DataMember = "T_PressureSensor ";
-            this.D_Ps.DataSource = this.RecipeData;
-            this.D_Ps.Dock = System.Windows.Forms.DockStyle.Top;
-            this.D_Ps.Location = new System.Drawing.Point(0, 0);
-            this.D_Ps.Name = "D_Ps";
-            this.D_Ps.RowHeadersVisible = false;
-            this.D_Ps.RowHeadersWidth = 48;
-            this.D_Ps.RowTemplate.Height = 23;
-            this.D_Ps.Size = new System.Drawing.Size(553, 191);
-            this.D_Ps.TabIndex = 39;
+            this.button14.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.Location = new System.Drawing.Point(373, 416);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(109, 38);
+            this.button14.TabIndex = 116;
+            this.button14.Text = "Clear";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
-            // nameDataGridViewTextBoxColumn
+            // button13
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.button13.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Location = new System.Drawing.Point(127, 416);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(109, 38);
+            this.button13.TabIndex = 115;
+            this.button13.Text = "Read";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
-            // commandDataGridViewTextBoxColumn
+            // richTextBox1
             // 
-            this.commandDataGridViewTextBoxColumn.DataPropertyName = "Command";
-            this.commandDataGridViewTextBoxColumn.HeaderText = "Command";
-            this.commandDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.commandDataGridViewTextBoxColumn.Name = "commandDataGridViewTextBoxColumn";
-            this.commandDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.richTextBox1.Location = new System.Drawing.Point(91, 180);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(461, 220);
+            this.richTextBox1.TabIndex = 114;
+            this.richTextBox1.Text = "";
             // 
-            // B_PsClear
+            // button11
             // 
-            this.B_PsClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.B_PsClear.Location = new System.Drawing.Point(268, 583);
-            this.B_PsClear.Name = "B_PsClear";
-            this.B_PsClear.Size = new System.Drawing.Size(144, 37);
-            this.B_PsClear.TabIndex = 32;
-            this.B_PsClear.Text = "Clear";
-            this.B_PsClear.UseVisualStyleBackColor = true;
-            this.B_PsClear.Click += new System.EventHandler(this.B_PsClear_Click);
+            this.button11.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(373, 113);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(109, 38);
+            this.button11.TabIndex = 113;
+            this.button11.Text = "DisConnect";
+            this.button11.UseVisualStyleBackColor = true;
             // 
-            // C_Com
+            // button12
             // 
-            this.C_Com.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.RecipeData, "RSet.Com", true));
-            this.C_Com.FormattingEnabled = true;
-            this.C_Com.Location = new System.Drawing.Point(184, 276);
-            this.C_Com.Margin = new System.Windows.Forms.Padding(2);
-            this.C_Com.Name = "C_Com";
-            this.C_Com.Size = new System.Drawing.Size(118, 31);
-            this.C_Com.TabIndex = 35;
+            this.button12.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.Location = new System.Drawing.Point(139, 113);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(109, 38);
+            this.button12.TabIndex = 112;
+            this.button12.Text = "Connect";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
-            // B_PsDisConnect
+            // label11
             // 
-            this.B_PsDisConnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.B_PsDisConnect.Location = new System.Drawing.Point(268, 540);
-            this.B_PsDisConnect.Name = "B_PsDisConnect";
-            this.B_PsDisConnect.Size = new System.Drawing.Size(144, 37);
-            this.B_PsDisConnect.TabIndex = 25;
-            this.B_PsDisConnect.Text = "DisConnect";
-            this.B_PsDisConnect.UseVisualStyleBackColor = true;
-            this.B_PsDisConnect.Click += new System.EventHandler(this.B_PsDisConnect_Click);
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(-2805, -2297);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(97, 23);
+            this.label11.TabIndex = 111;
+            this.label11.Text = "Delay time :";
             // 
-            // label20
+            // textBox18
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(125, 283);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(46, 23);
-            this.label20.TabIndex = 34;
-            this.label20.Text = "COM";
+            this.textBox18.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.RecipeData, "RSet.PressureDelaytime", true));
+            this.textBox18.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox18.Location = new System.Drawing.Point(472, 46);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(80, 29);
+            this.textBox18.TabIndex = 110;
             // 
-            // B_PsDelete
+            // label12
             // 
-            this.B_PsDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_PsDelete.Location = new System.Drawing.Point(290, 206);
-            this.B_PsDelete.Margin = new System.Windows.Forms.Padding(2);
-            this.B_PsDelete.Name = "B_PsDelete";
-            this.B_PsDelete.Size = new System.Drawing.Size(74, 31);
-            this.B_PsDelete.TabIndex = 38;
-            this.B_PsDelete.Text = "Delete";
-            this.B_PsDelete.UseVisualStyleBackColor = true;
-            this.B_PsDelete.Click += new System.EventHandler(this.B_PsDelete_Click);
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(-3027, -2297);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(55, 23);
+            this.label12.TabIndex = 109;
+            this.label12.Text = "COM :";
             // 
-            // B_PsAdd
+            // textBox17
             // 
-            this.B_PsAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_PsAdd.Location = new System.Drawing.Point(154, 206);
-            this.B_PsAdd.Margin = new System.Windows.Forms.Padding(2);
-            this.B_PsAdd.Name = "B_PsAdd";
-            this.B_PsAdd.Size = new System.Drawing.Size(74, 31);
-            this.B_PsAdd.TabIndex = 38;
-            this.B_PsAdd.Text = "Add";
-            this.B_PsAdd.UseVisualStyleBackColor = true;
-            this.B_PsAdd.Click += new System.EventHandler(this.B_PsAdd_Click);
-            // 
-            // B_Refresh
-            // 
-            this.B_Refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.B_Refresh.Location = new System.Drawing.Point(306, 275);
-            this.B_Refresh.Margin = new System.Windows.Forms.Padding(2);
-            this.B_Refresh.Name = "B_Refresh";
-            this.B_Refresh.Size = new System.Drawing.Size(86, 31);
-            this.B_Refresh.TabIndex = 38;
-            this.B_Refresh.Text = "Refresh";
-            this.B_Refresh.UseVisualStyleBackColor = true;
-            this.B_Refresh.Click += new System.EventHandler(this.B_Refresh_Click);
-            // 
-            // B_PSRead
-            // 
-            this.B_PSRead.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.B_PSRead.Location = new System.Drawing.Point(110, 583);
-            this.B_PSRead.Name = "B_PSRead";
-            this.B_PSRead.Size = new System.Drawing.Size(144, 37);
-            this.B_PSRead.TabIndex = 26;
-            this.B_PSRead.Text = "Read";
-            this.B_PSRead.UseVisualStyleBackColor = true;
-            this.B_PSRead.Click += new System.EventHandler(this.B_PSRead_Click);
-            // 
-            // B_PsConnect
-            // 
-            this.B_PsConnect.Location = new System.Drawing.Point(110, 540);
-            this.B_PsConnect.Name = "B_PsConnect";
-            this.B_PsConnect.Size = new System.Drawing.Size(144, 37);
-            this.B_PsConnect.TabIndex = 24;
-            this.B_PsConnect.Text = "Connect";
-            this.B_PsConnect.UseVisualStyleBackColor = true;
-            this.B_PsConnect.Click += new System.EventHandler(this.B_PsConnect_Click);
+            this.textBox17.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.RecipeData, "RSet.PressureCOM", true));
+            this.textBox17.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox17.Location = new System.Drawing.Point(198, 43);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(80, 29);
+            this.textBox17.TabIndex = 108;
             // 
             // tabPage8
             // 
@@ -1771,199 +1667,12 @@
             this.flowChart100_12.Location = new System.Drawing.Point(211, 489);
             this.flowChart100_12.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart100_12.Name = "flowChart100_12";
-            this.flowChart100_12.NEXT = this.flowChart0_4;
+            this.flowChart100_12.NEXT = null;
             this.flowChart100_12.Size = new System.Drawing.Size(303, 27);
             this.flowChart100_12.TabIndex = 246;
             this.flowChart100_12.Text = "End100.12";
             this.flowChart100_12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart100_12.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart100_12_FlowRun);
-            // 
-            // flowChart0_4
-            // 
-            this.flowChart0_4.BackColor = System.Drawing.Color.White;
-            this.flowChart0_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChart0_4.CASE1 = null;
-            this.flowChart0_4.CASE2 = null;
-            this.flowChart0_4.CASE3 = null;
-            this.flowChart0_4.Location = new System.Drawing.Point(467, 408);
-            this.flowChart0_4.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.flowChart0_4.Name = "flowChart0_4";
-            this.flowChart0_4.NEXT = this.flowChart0_5;
-            this.flowChart0_4.Size = new System.Drawing.Size(332, 27);
-            this.flowChart0_4.TabIndex = 205;
-            this.flowChart0_4.Text = "Goto ThrowScrew Pos0.04";
-            this.flowChart0_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChart0_4.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_4_FlowRun);
-            // 
-            // flowChart0_5
-            // 
-            this.flowChart0_5.BackColor = System.Drawing.Color.White;
-            this.flowChart0_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChart0_5.CASE1 = null;
-            this.flowChart0_5.CASE2 = null;
-            this.flowChart0_5.CASE3 = null;
-            this.flowChart0_5.Location = new System.Drawing.Point(467, 447);
-            this.flowChart0_5.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.flowChart0_5.Name = "flowChart0_5";
-            this.flowChart0_5.NEXT = this.flowChart0_6;
-            this.flowChart0_5.Size = new System.Drawing.Size(332, 27);
-            this.flowChart0_5.TabIndex = 206;
-            this.flowChart0_5.Text = "Close Screw Vacuum 0.05";
-            this.flowChart0_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChart0_5.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_5_FlowRun);
-            // 
-            // flowChart0_6
-            // 
-            this.flowChart0_6.BackColor = System.Drawing.Color.White;
-            this.flowChart0_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChart0_6.CASE1 = null;
-            this.flowChart0_6.CASE2 = null;
-            this.flowChart0_6.CASE3 = null;
-            this.flowChart0_6.Location = new System.Drawing.Point(467, 485);
-            this.flowChart0_6.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.flowChart0_6.Name = "flowChart0_6";
-            this.flowChart0_6.NEXT = this.flowChart0_16;
-            this.flowChart0_6.Size = new System.Drawing.Size(332, 27);
-            this.flowChart0_6.TabIndex = 207;
-            this.flowChart0_6.Text = "SF 1 Lock Cyl retract0.06";
-            this.flowChart0_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChart0_6.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_6_FlowRun);
-            // 
-            // flowChart0_16
-            // 
-            this.flowChart0_16.BackColor = System.Drawing.Color.White;
-            this.flowChart0_16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChart0_16.CASE1 = null;
-            this.flowChart0_16.CASE2 = null;
-            this.flowChart0_16.CASE3 = null;
-            this.flowChart0_16.Location = new System.Drawing.Point(467, 523);
-            this.flowChart0_16.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.flowChart0_16.Name = "flowChart0_16";
-            this.flowChart0_16.NEXT = this.flowChart0_8;
-            this.flowChart0_16.Size = new System.Drawing.Size(332, 27);
-            this.flowChart0_16.TabIndex = 232;
-            this.flowChart0_16.Text = "SF 1 Z CYL extend0.16";
-            this.flowChart0_16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChart0_16.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_16_FlowRun);
-            // 
-            // flowChart0_8
-            // 
-            this.flowChart0_8.BackColor = System.Drawing.Color.White;
-            this.flowChart0_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChart0_8.CASE1 = null;
-            this.flowChart0_8.CASE2 = null;
-            this.flowChart0_8.CASE3 = null;
-            this.flowChart0_8.Location = new System.Drawing.Point(467, 559);
-            this.flowChart0_8.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.flowChart0_8.Name = "flowChart0_8";
-            this.flowChart0_8.NEXT = this.flowChart0_17;
-            this.flowChart0_8.Size = new System.Drawing.Size(332, 27);
-            this.flowChart0_8.TabIndex = 208;
-            this.flowChart0_8.Text = "SF 1 Z CYL retract0.08";
-            this.flowChart0_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChart0_8.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_8_FlowRun);
-            // 
-            // flowChart0_17
-            // 
-            this.flowChart0_17.BackColor = System.Drawing.Color.White;
-            this.flowChart0_17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChart0_17.CASE1 = null;
-            this.flowChart0_17.CASE2 = null;
-            this.flowChart0_17.CASE3 = null;
-            this.flowChart0_17.Location = new System.Drawing.Point(468, 601);
-            this.flowChart0_17.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.flowChart0_17.Name = "flowChart0_17";
-            this.flowChart0_17.NEXT = this.flowChart0_9;
-            this.flowChart0_17.Size = new System.Drawing.Size(332, 27);
-            this.flowChart0_17.TabIndex = 233;
-            this.flowChart0_17.Text = "SF 1 Lock Cyl extend0.17";
-            this.flowChart0_17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChart0_17.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_17_FlowRun);
-            // 
-            // flowChart0_9
-            // 
-            this.flowChart0_9.BackColor = System.Drawing.Color.White;
-            this.flowChart0_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChart0_9.CASE1 = null;
-            this.flowChart0_9.CASE2 = null;
-            this.flowChart0_9.CASE3 = null;
-            this.flowChart0_9.Location = new System.Drawing.Point(467, 639);
-            this.flowChart0_9.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.flowChart0_9.Name = "flowChart0_9";
-            this.flowChart0_9.NEXT = this.flowChart0_14;
-            this.flowChart0_9.Size = new System.Drawing.Size(332, 27);
-            this.flowChart0_9.TabIndex = 209;
-            this.flowChart0_9.Text = "Goto VisionPos10.09";
-            this.flowChart0_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChart0_9.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_9_FlowRun);
-            // 
-            // flowChart0_14
-            // 
-            this.flowChart0_14.BackColor = System.Drawing.Color.White;
-            this.flowChart0_14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChart0_14.CASE1 = null;
-            this.flowChart0_14.CASE2 = null;
-            this.flowChart0_14.CASE3 = null;
-            this.flowChart0_14.Location = new System.Drawing.Point(467, 677);
-            this.flowChart0_14.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.flowChart0_14.Name = "flowChart0_14";
-            this.flowChart0_14.NEXT = this.flowChart0_15;
-            this.flowChart0_14.Size = new System.Drawing.Size(332, 27);
-            this.flowChart0_14.TabIndex = 230;
-            this.flowChart0_14.Text = "Jacking Homing0.14";
-            this.flowChart0_14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChart0_14.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_14_FlowRun);
-            // 
-            // flowChart0_15
-            // 
-            this.flowChart0_15.BackColor = System.Drawing.Color.White;
-            this.flowChart0_15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChart0_15.CASE1 = null;
-            this.flowChart0_15.CASE2 = null;
-            this.flowChart0_15.CASE3 = null;
-            this.flowChart0_15.Location = new System.Drawing.Point(467, 717);
-            this.flowChart0_15.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.flowChart0_15.Name = "flowChart0_15";
-            this.flowChart0_15.NEXT = this.flowChart0_10;
-            this.flowChart0_15.Size = new System.Drawing.Size(332, 27);
-            this.flowChart0_15.TabIndex = 231;
-            this.flowChart0_15.Text = "Jacking Goto SafePos0.15";
-            this.flowChart0_15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChart0_15.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_15_FlowRun);
-            // 
-            // flowChart0_10
-            // 
-            this.flowChart0_10.BackColor = System.Drawing.Color.White;
-            this.flowChart0_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChart0_10.CASE1 = null;
-            this.flowChart0_10.CASE2 = null;
-            this.flowChart0_10.CASE3 = null;
-            this.flowChart0_10.Location = new System.Drawing.Point(467, 755);
-            this.flowChart0_10.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.flowChart0_10.Name = "flowChart0_10";
-            this.flowChart0_10.NEXT = this.flowChart0_11;
-            this.flowChart0_10.Size = new System.Drawing.Size(332, 27);
-            this.flowChart0_10.TabIndex = 210;
-            this.flowChart0_10.Text = "Reset0.10";
-            this.flowChart0_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChart0_10.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_10_FlowRun);
-            // 
-            // flowChart0_11
-            // 
-            this.flowChart0_11.BackColor = System.Drawing.Color.White;
-            this.flowChart0_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChart0_11.CASE1 = null;
-            this.flowChart0_11.CASE2 = null;
-            this.flowChart0_11.CASE3 = null;
-            this.flowChart0_11.Location = new System.Drawing.Point(467, 794);
-            this.flowChart0_11.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.flowChart0_11.Name = "flowChart0_11";
-            this.flowChart0_11.NEXT = null;
-            this.flowChart0_11.Size = new System.Drawing.Size(332, 27);
-            this.flowChart0_11.TabIndex = 211;
-            this.flowChart0_11.Text = "Initial Finsh0.11";
-            this.flowChart0_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChart0_11.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_11_FlowRun);
             // 
             // button7
             // 
@@ -2389,9 +2098,9 @@
             this.flowChart3_1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart3_1.Name = "flowChart3_1";
             this.flowChart3_1.NEXT = this.flowChart3_2;
-            this.flowChart3_1.Size = new System.Drawing.Size(326, 27);
+            this.flowChart3_1.Size = new System.Drawing.Size(378, 33);
             this.flowChart3_1.TabIndex = 208;
-            this.flowChart3_1.Text = "Waiting Start3.01";
+            this.flowChart3_1.Text = "Waiting Start  3.01";
             this.flowChart3_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart3_1.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart3_1_FlowRun);
             // 
@@ -2400,41 +2109,41 @@
             this.flowChart3_2.BackColor = System.Drawing.Color.White;
             this.flowChart3_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowChart3_2.CASE1 = null;
-            this.flowChart3_2.CASE2 = this.flowChartMessage8;
+            this.flowChart3_2.CASE2 = this.Alarm1_04;
             this.flowChart3_2.CASE3 = null;
-            this.flowChart3_2.Location = new System.Drawing.Point(486, 107);
+            this.flowChart3_2.Location = new System.Drawing.Point(486, 114);
             this.flowChart3_2.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart3_2.Name = "flowChart3_2";
             this.flowChart3_2.NEXT = this.flowChart3_3;
-            this.flowChart3_2.Size = new System.Drawing.Size(326, 27);
+            this.flowChart3_2.Size = new System.Drawing.Size(378, 33);
             this.flowChart3_2.TabIndex = 207;
-            this.flowChart3_2.Text = "Jacking Goto PrePressPos3.02";
+            this.flowChart3_2.Text = "Jacking Goto PrePressPos  3.02";
             this.flowChart3_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart3_2.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart3_2_FlowRun);
             // 
-            // flowChartMessage8
+            // Alarm1_04
             // 
-            this.flowChartMessage8.BackColor = System.Drawing.Color.White;
-            this.flowChartMessage8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChartMessage8.ButtonRetryText = "Retry";
-            this.flowChartMessage8.ButtonSkipText = "Skip";
-            this.flowChartMessage8.CASE1 = this.flowChart3_2;
-            this.flowChartMessage8.CASE2 = null;
-            this.flowChartMessage8.CASE3 = null;
-            this.flowChartMessage8.Content = null;
-            this.flowChartMessage8.HideButtonMute = false;
-            this.flowChartMessage8.HideButtonPause = false;
-            this.flowChartMessage8.HideButtonRetry = false;
-            this.flowChartMessage8.HideButtonSkip = false;
-            this.flowChartMessage8.Location = new System.Drawing.Point(293, 107);
-            this.flowChartMessage8.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.flowChartMessage8.Name = "flowChartMessage8";
-            this.flowChartMessage8.NEXT = null;
-            this.flowChartMessage8.Size = new System.Drawing.Size(127, 27);
-            this.flowChartMessage8.TabIndex = 211;
-            this.flowChartMessage8.Text = "Move TimeOut";
-            this.flowChartMessage8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChartMessage8.Title = null;
+            this.Alarm1_04.BackColor = System.Drawing.Color.White;
+            this.Alarm1_04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Alarm1_04.ButtonRetryText = "Retry";
+            this.Alarm1_04.ButtonSkipText = "Skip";
+            this.Alarm1_04.CASE1 = this.flowChart3_2;
+            this.Alarm1_04.CASE2 = null;
+            this.Alarm1_04.CASE3 = null;
+            this.Alarm1_04.Content = null;
+            this.Alarm1_04.HideButtonMute = false;
+            this.Alarm1_04.HideButtonPause = false;
+            this.Alarm1_04.HideButtonRetry = false;
+            this.Alarm1_04.HideButtonSkip = false;
+            this.Alarm1_04.Location = new System.Drawing.Point(293, 114);
+            this.Alarm1_04.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.Alarm1_04.Name = "Alarm1_04";
+            this.Alarm1_04.NEXT = null;
+            this.Alarm1_04.Size = new System.Drawing.Size(125, 33);
+            this.Alarm1_04.TabIndex = 211;
+            this.Alarm1_04.Text = "Alarm1_04";
+            this.Alarm1_04.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Alarm1_04.Title = null;
             // 
             // flowChart3_3
             // 
@@ -2443,13 +2152,13 @@
             this.flowChart3_3.CASE1 = null;
             this.flowChart3_3.CASE2 = null;
             this.flowChart3_3.CASE3 = null;
-            this.flowChart3_3.Location = new System.Drawing.Point(486, 146);
+            this.flowChart3_3.Location = new System.Drawing.Point(486, 161);
             this.flowChart3_3.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart3_3.Name = "flowChart3_3";
             this.flowChart3_3.NEXT = this.flowChart3_5;
-            this.flowChart3_3.Size = new System.Drawing.Size(326, 27);
+            this.flowChart3_3.Size = new System.Drawing.Size(378, 33);
             this.flowChart3_3.TabIndex = 206;
-            this.flowChart3_3.Text = "Start Read Pressdata3.03";
+            this.flowChart3_3.Text = "Start Read Pressdata  3.03";
             this.flowChart3_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart3_3.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart3_3_FlowRun);
             // 
@@ -2458,41 +2167,41 @@
             this.flowChart3_5.BackColor = System.Drawing.Color.White;
             this.flowChart3_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowChart3_5.CASE1 = null;
-            this.flowChart3_5.CASE2 = this.flowChartMessage15;
+            this.flowChart3_5.CASE2 = this.Alarm1_05;
             this.flowChart3_5.CASE3 = null;
-            this.flowChart3_5.Location = new System.Drawing.Point(486, 185);
+            this.flowChart3_5.Location = new System.Drawing.Point(486, 208);
             this.flowChart3_5.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart3_5.Name = "flowChart3_5";
             this.flowChart3_5.NEXT = this.flowChart3_6;
-            this.flowChart3_5.Size = new System.Drawing.Size(326, 27);
+            this.flowChart3_5.Size = new System.Drawing.Size(378, 33);
             this.flowChart3_5.TabIndex = 210;
-            this.flowChart3_5.Text = "Jacking Goto PressLimitPos Waiting Stop3.05";
+            this.flowChart3_5.Text = "Jacking Goto Press Finish Pos  3.04";
             this.flowChart3_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart3_5.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart3_5_FlowRun);
             // 
-            // flowChartMessage15
+            // Alarm1_05
             // 
-            this.flowChartMessage15.BackColor = System.Drawing.Color.White;
-            this.flowChartMessage15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChartMessage15.ButtonRetryText = "Retry";
-            this.flowChartMessage15.ButtonSkipText = "Skip";
-            this.flowChartMessage15.CASE1 = this.flowChart3_2;
-            this.flowChartMessage15.CASE2 = null;
-            this.flowChartMessage15.CASE3 = null;
-            this.flowChartMessage15.Content = null;
-            this.flowChartMessage15.HideButtonMute = false;
-            this.flowChartMessage15.HideButtonPause = false;
-            this.flowChartMessage15.HideButtonRetry = false;
-            this.flowChartMessage15.HideButtonSkip = false;
-            this.flowChartMessage15.Location = new System.Drawing.Point(845, 146);
-            this.flowChartMessage15.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.flowChartMessage15.Name = "flowChartMessage15";
-            this.flowChartMessage15.NEXT = this.flowChart5;
-            this.flowChartMessage15.Size = new System.Drawing.Size(119, 27);
-            this.flowChartMessage15.TabIndex = 214;
-            this.flowChartMessage15.Text = "Pressure NG";
-            this.flowChartMessage15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChartMessage15.Title = null;
+            this.Alarm1_05.BackColor = System.Drawing.Color.White;
+            this.Alarm1_05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Alarm1_05.ButtonRetryText = "Retry";
+            this.Alarm1_05.ButtonSkipText = "Skip";
+            this.Alarm1_05.CASE1 = this.flowChart3_2;
+            this.Alarm1_05.CASE2 = null;
+            this.Alarm1_05.CASE3 = null;
+            this.Alarm1_05.Content = null;
+            this.Alarm1_05.HideButtonMute = false;
+            this.Alarm1_05.HideButtonPause = false;
+            this.Alarm1_05.HideButtonRetry = false;
+            this.Alarm1_05.HideButtonSkip = false;
+            this.Alarm1_05.Location = new System.Drawing.Point(919, 208);
+            this.Alarm1_05.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.Alarm1_05.Name = "Alarm1_05";
+            this.Alarm1_05.NEXT = this.flowChart5;
+            this.Alarm1_05.Size = new System.Drawing.Size(125, 33);
+            this.Alarm1_05.TabIndex = 214;
+            this.Alarm1_05.Text = "Alarm1_05";
+            this.Alarm1_05.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Alarm1_05.Title = null;
             // 
             // flowChart5
             // 
@@ -2501,11 +2210,11 @@
             this.flowChart5.CASE1 = null;
             this.flowChart5.CASE2 = null;
             this.flowChart5.CASE3 = null;
-            this.flowChart5.Location = new System.Drawing.Point(845, 223);
+            this.flowChart5.Location = new System.Drawing.Point(919, 255);
             this.flowChart5.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart5.Name = "flowChart5";
             this.flowChart5.NEXT = this.flowChart3_6;
-            this.flowChart5.Size = new System.Drawing.Size(119, 27);
+            this.flowChart5.Size = new System.Drawing.Size(125, 33);
             this.flowChart5.TabIndex = 215;
             this.flowChart5.Text = "NG";
             this.flowChart5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2516,41 +2225,41 @@
             this.flowChart3_6.BackColor = System.Drawing.Color.White;
             this.flowChart3_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowChart3_6.CASE1 = null;
-            this.flowChart3_6.CASE2 = this.flowChartMessage9;
+            this.flowChart3_6.CASE2 = this.Alarm1_06;
             this.flowChart3_6.CASE3 = null;
-            this.flowChart3_6.Location = new System.Drawing.Point(486, 223);
+            this.flowChart3_6.Location = new System.Drawing.Point(486, 255);
             this.flowChart3_6.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart3_6.Name = "flowChart3_6";
             this.flowChart3_6.NEXT = this.flowChart3_4;
-            this.flowChart3_6.Size = new System.Drawing.Size(326, 27);
+            this.flowChart3_6.Size = new System.Drawing.Size(378, 33);
             this.flowChart3_6.TabIndex = 216;
-            this.flowChart3_6.Text = "Get PressureValue3.06";
+            this.flowChart3_6.Text = "Get PressureValue  3.05";
             this.flowChart3_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart3_6.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart3_6_FlowRun);
             // 
-            // flowChartMessage9
+            // Alarm1_06
             // 
-            this.flowChartMessage9.BackColor = System.Drawing.Color.White;
-            this.flowChartMessage9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChartMessage9.ButtonRetryText = "Retry";
-            this.flowChartMessage9.ButtonSkipText = "Skip";
-            this.flowChartMessage9.CASE1 = this.flowChart3_6;
-            this.flowChartMessage9.CASE2 = null;
-            this.flowChartMessage9.CASE3 = null;
-            this.flowChartMessage9.Content = null;
-            this.flowChartMessage9.HideButtonMute = false;
-            this.flowChartMessage9.HideButtonPause = false;
-            this.flowChartMessage9.HideButtonRetry = false;
-            this.flowChartMessage9.HideButtonSkip = false;
-            this.flowChartMessage9.Location = new System.Drawing.Point(293, 223);
-            this.flowChartMessage9.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.flowChartMessage9.Name = "flowChartMessage9";
-            this.flowChartMessage9.NEXT = this.flowChart3_4;
-            this.flowChartMessage9.Size = new System.Drawing.Size(127, 27);
-            this.flowChartMessage9.TabIndex = 217;
-            this.flowChartMessage9.Text = "TimeOut";
-            this.flowChartMessage9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChartMessage9.Title = null;
+            this.Alarm1_06.BackColor = System.Drawing.Color.White;
+            this.Alarm1_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Alarm1_06.ButtonRetryText = "Retry";
+            this.Alarm1_06.ButtonSkipText = "Skip";
+            this.Alarm1_06.CASE1 = this.flowChart3_6;
+            this.Alarm1_06.CASE2 = null;
+            this.Alarm1_06.CASE3 = null;
+            this.Alarm1_06.Content = null;
+            this.Alarm1_06.HideButtonMute = false;
+            this.Alarm1_06.HideButtonPause = false;
+            this.Alarm1_06.HideButtonRetry = false;
+            this.Alarm1_06.HideButtonSkip = false;
+            this.Alarm1_06.Location = new System.Drawing.Point(293, 255);
+            this.Alarm1_06.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.Alarm1_06.Name = "Alarm1_06";
+            this.Alarm1_06.NEXT = this.flowChart3_4;
+            this.Alarm1_06.Size = new System.Drawing.Size(125, 33);
+            this.Alarm1_06.TabIndex = 217;
+            this.Alarm1_06.Text = "Alarm1_06";
+            this.Alarm1_06.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Alarm1_06.Title = null;
             // 
             // flowChart3_4
             // 
@@ -2559,13 +2268,13 @@
             this.flowChart3_4.CASE1 = null;
             this.flowChart3_4.CASE2 = null;
             this.flowChart3_4.CASE3 = null;
-            this.flowChart3_4.Location = new System.Drawing.Point(486, 262);
+            this.flowChart3_4.Location = new System.Drawing.Point(486, 302);
             this.flowChart3_4.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart3_4.Name = "flowChart3_4";
             this.flowChart3_4.NEXT = this.flowChart21;
-            this.flowChart3_4.Size = new System.Drawing.Size(326, 27);
+            this.flowChart3_4.Size = new System.Drawing.Size(378, 33);
             this.flowChart3_4.TabIndex = 205;
-            this.flowChart3_4.Text = "End3.04";
+            this.flowChart3_4.Text = "End  3.06";
             this.flowChart3_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart3_4.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart3_4_FlowRun);
             // 
@@ -2576,11 +2285,11 @@
             this.flowChart21.CASE1 = null;
             this.flowChart21.CASE2 = null;
             this.flowChart21.CASE3 = null;
-            this.flowChart21.Location = new System.Drawing.Point(164, 262);
+            this.flowChart21.Location = new System.Drawing.Point(164, 302);
             this.flowChart21.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart21.Name = "flowChart21";
             this.flowChart21.NEXT = this.flowChart4;
-            this.flowChart21.Size = new System.Drawing.Size(94, 27);
+            this.flowChart21.Size = new System.Drawing.Size(94, 33);
             this.flowChart21.TabIndex = 209;
             this.flowChart21.Text = "Loop";
             this.flowChart21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2597,7 +2306,7 @@
             this.flowChart4.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart4.Name = "flowChart4";
             this.flowChart4.NEXT = null;
-            this.flowChart4.Size = new System.Drawing.Size(94, 27);
+            this.flowChart4.Size = new System.Drawing.Size(94, 33);
             this.flowChart4.TabIndex = 213;
             this.flowChart4.Text = "Loop";
             this.flowChart4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3357,6 +3066,163 @@
             this.flowChart110_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart110_1.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart110_1_FlowRun);
             // 
+            // flowChart0_9
+            // 
+            this.flowChart0_9.BackColor = System.Drawing.Color.White;
+            this.flowChart0_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowChart0_9.CASE1 = null;
+            this.flowChart0_9.CASE2 = this.Alarm1_01;
+            this.flowChart0_9.CASE3 = null;
+            this.flowChart0_9.Location = new System.Drawing.Point(805, 426);
+            this.flowChart0_9.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.flowChart0_9.Name = "flowChart0_9";
+            this.flowChart0_9.NEXT = this.flowChart0_14;
+            this.flowChart0_9.Size = new System.Drawing.Size(357, 33);
+            this.flowChart0_9.TabIndex = 209;
+            this.flowChart0_9.Text = "Wait initial finish  1.12";
+            this.flowChart0_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flowChart0_9.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_9_FlowRun);
+            // 
+            // Alarm1_01
+            // 
+            this.Alarm1_01.BackColor = System.Drawing.Color.White;
+            this.Alarm1_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Alarm1_01.ButtonRetryText = "Retry";
+            this.Alarm1_01.ButtonSkipText = "Skip";
+            this.Alarm1_01.CASE1 = this.flowChart0_9;
+            this.Alarm1_01.CASE2 = null;
+            this.Alarm1_01.CASE3 = null;
+            this.Alarm1_01.Content = null;
+            this.Alarm1_01.HideButtonMute = false;
+            this.Alarm1_01.HideButtonPause = false;
+            this.Alarm1_01.HideButtonRetry = false;
+            this.Alarm1_01.HideButtonSkip = false;
+            this.Alarm1_01.Location = new System.Drawing.Point(1204, 426);
+            this.Alarm1_01.Margin = new System.Windows.Forms.Padding(8);
+            this.Alarm1_01.Name = "Alarm1_01";
+            this.Alarm1_01.NEXT = null;
+            this.Alarm1_01.Size = new System.Drawing.Size(151, 33);
+            this.Alarm1_01.TabIndex = 246;
+            this.Alarm1_01.Text = "Alarm1_01";
+            this.Alarm1_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Alarm1_01.Title = null;
+            // 
+            // flowChart0_14
+            // 
+            this.flowChart0_14.BackColor = System.Drawing.Color.White;
+            this.flowChart0_14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowChart0_14.CASE1 = null;
+            this.flowChart0_14.CASE2 = this.Alarm1_02;
+            this.flowChart0_14.CASE3 = null;
+            this.flowChart0_14.Location = new System.Drawing.Point(805, 377);
+            this.flowChart0_14.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.flowChart0_14.Name = "flowChart0_14";
+            this.flowChart0_14.NEXT = this.flowChart0_15;
+            this.flowChart0_14.Size = new System.Drawing.Size(357, 33);
+            this.flowChart0_14.TabIndex = 230;
+            this.flowChart0_14.Text = "Jacking Homing  1.13";
+            this.flowChart0_14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flowChart0_14.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_14_FlowRun);
+            // 
+            // Alarm1_02
+            // 
+            this.Alarm1_02.BackColor = System.Drawing.Color.White;
+            this.Alarm1_02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Alarm1_02.ButtonRetryText = "Retry";
+            this.Alarm1_02.ButtonSkipText = "Skip";
+            this.Alarm1_02.CASE1 = this.flowChart0_14;
+            this.Alarm1_02.CASE2 = null;
+            this.Alarm1_02.CASE3 = null;
+            this.Alarm1_02.Content = null;
+            this.Alarm1_02.HideButtonMute = false;
+            this.Alarm1_02.HideButtonPause = false;
+            this.Alarm1_02.HideButtonRetry = false;
+            this.Alarm1_02.HideButtonSkip = false;
+            this.Alarm1_02.Location = new System.Drawing.Point(1204, 377);
+            this.Alarm1_02.Margin = new System.Windows.Forms.Padding(8);
+            this.Alarm1_02.Name = "Alarm1_02";
+            this.Alarm1_02.NEXT = null;
+            this.Alarm1_02.Size = new System.Drawing.Size(151, 33);
+            this.Alarm1_02.TabIndex = 247;
+            this.Alarm1_02.Text = "Alarm1_02";
+            this.Alarm1_02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Alarm1_02.Title = null;
+            // 
+            // flowChart0_15
+            // 
+            this.flowChart0_15.BackColor = System.Drawing.Color.White;
+            this.flowChart0_15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowChart0_15.CASE1 = null;
+            this.flowChart0_15.CASE2 = this.Alarm1_03;
+            this.flowChart0_15.CASE3 = null;
+            this.flowChart0_15.Location = new System.Drawing.Point(805, 328);
+            this.flowChart0_15.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.flowChart0_15.Name = "flowChart0_15";
+            this.flowChart0_15.NEXT = this.flowChart0_10;
+            this.flowChart0_15.Size = new System.Drawing.Size(357, 33);
+            this.flowChart0_15.TabIndex = 231;
+            this.flowChart0_15.Text = "Jacking Goto SafePos  1.14";
+            this.flowChart0_15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flowChart0_15.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_15_FlowRun);
+            // 
+            // Alarm1_03
+            // 
+            this.Alarm1_03.BackColor = System.Drawing.Color.White;
+            this.Alarm1_03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Alarm1_03.ButtonRetryText = "Retry";
+            this.Alarm1_03.ButtonSkipText = "Skip";
+            this.Alarm1_03.CASE1 = this.flowChart0_15;
+            this.Alarm1_03.CASE2 = null;
+            this.Alarm1_03.CASE3 = null;
+            this.Alarm1_03.Content = null;
+            this.Alarm1_03.HideButtonMute = false;
+            this.Alarm1_03.HideButtonPause = false;
+            this.Alarm1_03.HideButtonRetry = false;
+            this.Alarm1_03.HideButtonSkip = false;
+            this.Alarm1_03.Location = new System.Drawing.Point(1204, 328);
+            this.Alarm1_03.Margin = new System.Windows.Forms.Padding(8);
+            this.Alarm1_03.Name = "Alarm1_03";
+            this.Alarm1_03.NEXT = null;
+            this.Alarm1_03.Size = new System.Drawing.Size(151, 33);
+            this.Alarm1_03.TabIndex = 248;
+            this.Alarm1_03.Text = "Alarm1_03";
+            this.Alarm1_03.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Alarm1_03.Title = null;
+            // 
+            // flowChart0_10
+            // 
+            this.flowChart0_10.BackColor = System.Drawing.Color.White;
+            this.flowChart0_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowChart0_10.CASE1 = null;
+            this.flowChart0_10.CASE2 = null;
+            this.flowChart0_10.CASE3 = null;
+            this.flowChart0_10.Location = new System.Drawing.Point(805, 279);
+            this.flowChart0_10.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.flowChart0_10.Name = "flowChart0_10";
+            this.flowChart0_10.NEXT = this.flowChart0_11;
+            this.flowChart0_10.Size = new System.Drawing.Size(357, 33);
+            this.flowChart0_10.TabIndex = 210;
+            this.flowChart0_10.Text = "Reset  1.15";
+            this.flowChart0_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flowChart0_10.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_10_FlowRun);
+            // 
+            // flowChart0_11
+            // 
+            this.flowChart0_11.BackColor = System.Drawing.Color.White;
+            this.flowChart0_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowChart0_11.CASE1 = null;
+            this.flowChart0_11.CASE2 = null;
+            this.flowChart0_11.CASE3 = null;
+            this.flowChart0_11.Location = new System.Drawing.Point(805, 230);
+            this.flowChart0_11.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.flowChart0_11.Name = "flowChart0_11";
+            this.flowChart0_11.NEXT = null;
+            this.flowChart0_11.Size = new System.Drawing.Size(357, 33);
+            this.flowChart0_11.TabIndex = 211;
+            this.flowChart0_11.Text = "Finsh  1.16";
+            this.flowChart0_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flowChart0_11.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_11_FlowRun);
+            // 
             // D_ScrewResultsShow
             // 
             this.D_ScrewResultsShow.AllowUserToAddRows = false;
@@ -3981,7 +3847,7 @@
             this.tabControl6.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl6.Name = "tabControl6";
             this.tabControl6.SelectedIndex = 0;
-            this.tabControl6.Size = new System.Drawing.Size(799, 627);
+            this.tabControl6.Size = new System.Drawing.Size(1717, 669);
             this.tabControl6.TabIndex = 1;
             // 
             // tabPage13
@@ -3991,9 +3857,9 @@
             this.tabPage13.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage13.Name = "tabPage13";
             this.tabPage13.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage13.Size = new System.Drawing.Size(791, 591);
+            this.tabPage13.Size = new System.Drawing.Size(1709, 633);
             this.tabPage13.TabIndex = 0;
-            this.tabPage13.Text = "Gantry";
+            this.tabPage13.Text = "Screw Station1";
             this.tabPage13.UseVisualStyleBackColor = true;
             // 
             // tabControl7
@@ -4010,7 +3876,7 @@
             this.tabControl7.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl7.Name = "tabControl7";
             this.tabControl7.SelectedIndex = 0;
-            this.tabControl7.Size = new System.Drawing.Size(787, 587);
+            this.tabControl7.Size = new System.Drawing.Size(1705, 629);
             this.tabControl7.TabIndex = 0;
             // 
             // tabPage16
@@ -4026,7 +3892,7 @@
             this.tabPage16.Controls.Add(this.flowChart1_1);
             this.tabPage16.Location = new System.Drawing.Point(4, 32);
             this.tabPage16.Name = "tabPage16";
-            this.tabPage16.Size = new System.Drawing.Size(779, 551);
+            this.tabPage16.Size = new System.Drawing.Size(1697, 593);
             this.tabPage16.TabIndex = 5;
             this.tabPage16.Text = "Main Flow";
             this.tabPage16.UseVisualStyleBackColor = true;
@@ -4038,11 +3904,11 @@
             this.flowChart12.CASE1 = null;
             this.flowChart12.CASE2 = null;
             this.flowChart12.CASE3 = null;
-            this.flowChart12.Location = new System.Drawing.Point(775, 118);
+            this.flowChart12.Location = new System.Drawing.Point(863, 142);
             this.flowChart12.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart12.Name = "flowChart12";
             this.flowChart12.NEXT = this.flowChart1_5;
-            this.flowChart12.Size = new System.Drawing.Size(63, 27);
+            this.flowChart12.Size = new System.Drawing.Size(63, 33);
             this.flowChart12.TabIndex = 205;
             this.flowChart12.Text = "NG";
             this.flowChart12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4055,13 +3921,13 @@
             this.flowChart1_5.CASE1 = null;
             this.flowChart1_5.CASE2 = null;
             this.flowChart1_5.CASE3 = null;
-            this.flowChart1_5.Location = new System.Drawing.Point(394, 240);
+            this.flowChart1_5.Location = new System.Drawing.Point(422, 304);
             this.flowChart1_5.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart1_5.Name = "flowChart1_5";
             this.flowChart1_5.NEXT = this.flowChart54;
-            this.flowChart1_5.Size = new System.Drawing.Size(303, 27);
+            this.flowChart1_5.Size = new System.Drawing.Size(378, 33);
             this.flowChart1_5.TabIndex = 201;
-            this.flowChart1_5.Text = "End1.05";
+            this.flowChart1_5.Text = "End  1.05";
             this.flowChart1_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart1_5.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart1_5_FlowRun);
             // 
@@ -4072,11 +3938,11 @@
             this.flowChart54.CASE1 = null;
             this.flowChart54.CASE2 = null;
             this.flowChart54.CASE3 = null;
-            this.flowChart54.Location = new System.Drawing.Point(148, 240);
+            this.flowChart54.Location = new System.Drawing.Point(175, 304);
             this.flowChart54.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart54.Name = "flowChart54";
             this.flowChart54.NEXT = this.flowChart1_1;
-            this.flowChart54.Size = new System.Drawing.Size(72, 27);
+            this.flowChart54.Size = new System.Drawing.Size(72, 33);
             this.flowChart54.TabIndex = 202;
             this.flowChart54.Text = "Loop";
             this.flowChart54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4089,13 +3955,13 @@
             this.flowChart1_1.CASE1 = null;
             this.flowChart1_1.CASE2 = null;
             this.flowChart1_1.CASE3 = null;
-            this.flowChart1_1.Location = new System.Drawing.Point(394, 41);
+            this.flowChart1_1.Location = new System.Drawing.Point(422, 34);
             this.flowChart1_1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart1_1.Name = "flowChart1_1";
             this.flowChart1_1.NEXT = this.flowChart1_2;
-            this.flowChart1_1.Size = new System.Drawing.Size(303, 27);
+            this.flowChart1_1.Size = new System.Drawing.Size(378, 33);
             this.flowChart1_1.TabIndex = 196;
-            this.flowChart1_1.Text = "Waiting Product In Position1.01";
+            this.flowChart1_1.Text = "Waiting Product In Position  1.01";
             this.flowChart1_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart1_1.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart1_1_FlowRun);
             // 
@@ -4106,13 +3972,13 @@
             this.flowChart1_2.CASE1 = this.flowChart12;
             this.flowChart1_2.CASE2 = null;
             this.flowChart1_2.CASE3 = null;
-            this.flowChart1_2.Location = new System.Drawing.Point(394, 79);
+            this.flowChart1_2.Location = new System.Drawing.Point(422, 88);
             this.flowChart1_2.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart1_2.Name = "flowChart1_2";
             this.flowChart1_2.NEXT = this.flowChart1_3;
-            this.flowChart1_2.Size = new System.Drawing.Size(303, 27);
+            this.flowChart1_2.Size = new System.Drawing.Size(378, 33);
             this.flowChart1_2.TabIndex = 198;
-            this.flowChart1_2.Text = "Waiting Jacking Axis In Position1.02";
+            this.flowChart1_2.Text = "Waiting Jacking Axis In Position  1.02";
             this.flowChart1_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart1_2.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart1_2_FlowRun);
             // 
@@ -4123,13 +3989,13 @@
             this.flowChart1_3.CASE1 = this.flowChart12;
             this.flowChart1_3.CASE2 = null;
             this.flowChart1_3.CASE3 = null;
-            this.flowChart1_3.Location = new System.Drawing.Point(394, 118);
+            this.flowChart1_3.Location = new System.Drawing.Point(422, 142);
             this.flowChart1_3.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart1_3.Name = "flowChart1_3";
             this.flowChart1_3.NEXT = this.flowChart1_4;
-            this.flowChart1_3.Size = new System.Drawing.Size(303, 27);
+            this.flowChart1_3.Size = new System.Drawing.Size(378, 33);
             this.flowChart1_3.TabIndex = 199;
-            this.flowChart1_3.Text = "Waiting Vision Finsh1.03";
+            this.flowChart1_3.Text = "Waiting Vision Finsh   1.03";
             this.flowChart1_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart1_3.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart1_3_FlowRun);
             // 
@@ -4140,13 +4006,13 @@
             this.flowChart1_4.CASE1 = this.flowChart12;
             this.flowChart1_4.CASE2 = null;
             this.flowChart1_4.CASE3 = null;
-            this.flowChart1_4.Location = new System.Drawing.Point(394, 157);
+            this.flowChart1_4.Location = new System.Drawing.Point(422, 196);
             this.flowChart1_4.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart1_4.Name = "flowChart1_4";
             this.flowChart1_4.NEXT = this.flowChart1_6;
-            this.flowChart1_4.Size = new System.Drawing.Size(303, 27);
+            this.flowChart1_4.Size = new System.Drawing.Size(378, 33);
             this.flowChart1_4.TabIndex = 200;
-            this.flowChart1_4.Text = "Waiting Screw Finsh1.04";
+            this.flowChart1_4.Text = "Waiting Screw Finsh  1.04";
             this.flowChart1_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart1_4.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart1_4_FlowRun);
             // 
@@ -4157,13 +4023,13 @@
             this.flowChart1_6.CASE1 = this.flowChart7;
             this.flowChart1_6.CASE2 = null;
             this.flowChart1_6.CASE3 = null;
-            this.flowChart1_6.Location = new System.Drawing.Point(394, 198);
+            this.flowChart1_6.Location = new System.Drawing.Point(422, 250);
             this.flowChart1_6.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart1_6.Name = "flowChart1_6";
             this.flowChart1_6.NEXT = this.flowChart1_5;
-            this.flowChart1_6.Size = new System.Drawing.Size(303, 27);
+            this.flowChart1_6.Size = new System.Drawing.Size(378, 33);
             this.flowChart1_6.TabIndex = 203;
-            this.flowChart1_6.Text = "Check All Finsh1.06";
+            this.flowChart1_6.Text = "Check All Finsh  1.06";
             this.flowChart1_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart1_6.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart1_6_FlowRun);
             // 
@@ -4174,11 +4040,11 @@
             this.flowChart7.CASE1 = null;
             this.flowChart7.CASE2 = null;
             this.flowChart7.CASE3 = null;
-            this.flowChart7.Location = new System.Drawing.Point(305, 198);
+            this.flowChart7.Location = new System.Drawing.Point(313, 250);
             this.flowChart7.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart7.Name = "flowChart7";
             this.flowChart7.NEXT = this.flowChart1_3;
-            this.flowChart7.Size = new System.Drawing.Size(63, 27);
+            this.flowChart7.Size = new System.Drawing.Size(63, 33);
             this.flowChart7.TabIndex = 204;
             this.flowChart7.Text = "Loop";
             this.flowChart7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4226,7 +4092,7 @@
             this.tabPage14.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage14.Name = "tabPage14";
             this.tabPage14.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage14.Size = new System.Drawing.Size(779, 551);
+            this.tabPage14.Size = new System.Drawing.Size(1697, 593);
             this.tabPage14.TabIndex = 1;
             this.tabPage14.Text = "Screw Flow";
             this.tabPage14.UseVisualStyleBackColor = true;
@@ -4883,7 +4749,7 @@
             // 
             // tabPage15
             // 
-            this.tabPage15.Controls.Add(this.flowChartMessage9);
+            this.tabPage15.Controls.Add(this.Alarm1_06);
             this.tabPage15.Controls.Add(this.flowChart3_6);
             this.tabPage15.Controls.Add(this.flowChart5);
             this.tabPage15.Controls.Add(this.flowChart4);
@@ -4891,14 +4757,14 @@
             this.tabPage15.Controls.Add(this.flowChart3_4);
             this.tabPage15.Controls.Add(this.flowChart3_3);
             this.tabPage15.Controls.Add(this.flowChart3_1);
-            this.tabPage15.Controls.Add(this.flowChartMessage15);
-            this.tabPage15.Controls.Add(this.flowChartMessage8);
+            this.tabPage15.Controls.Add(this.Alarm1_05);
+            this.tabPage15.Controls.Add(this.Alarm1_04);
             this.tabPage15.Controls.Add(this.flowChart3_5);
             this.tabPage15.Controls.Add(this.flowChart3_2);
             this.tabPage15.Location = new System.Drawing.Point(4, 32);
             this.tabPage15.Name = "tabPage15";
             this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage15.Size = new System.Drawing.Size(779, 551);
+            this.tabPage15.Size = new System.Drawing.Size(1697, 593);
             this.tabPage15.TabIndex = 4;
             this.tabPage15.Text = "Jacking Flow";
             this.tabPage15.UseVisualStyleBackColor = true;
@@ -4914,14 +4780,13 @@
             this.tabPage17.Controls.Add(this.flowChart4_7);
             this.tabPage17.Controls.Add(this.flowChart4_2);
             this.tabPage17.Controls.Add(this.flowChartMessage14);
-            this.tabPage17.Controls.Add(this.flowChartMessage11);
-            this.tabPage17.Controls.Add(this.flowChartMessage10);
+            this.tabPage17.Controls.Add(this.Alarm1_07);
             this.tabPage17.Controls.Add(this.flowChart4_4);
             this.tabPage17.Location = new System.Drawing.Point(4, 32);
             this.tabPage17.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage17.Name = "tabPage17";
             this.tabPage17.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage17.Size = new System.Drawing.Size(779, 551);
+            this.tabPage17.Size = new System.Drawing.Size(1697, 593);
             this.tabPage17.TabIndex = 0;
             this.tabPage17.Text = "Vision Flow";
             this.tabPage17.UseVisualStyleBackColor = true;
@@ -4940,11 +4805,11 @@
             this.flowChartMessage18.HideButtonPause = false;
             this.flowChartMessage18.HideButtonRetry = false;
             this.flowChartMessage18.HideButtonSkip = false;
-            this.flowChartMessage18.Location = new System.Drawing.Point(298, 167);
+            this.flowChartMessage18.Location = new System.Drawing.Point(359, 253);
             this.flowChartMessage18.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChartMessage18.Name = "flowChartMessage18";
             this.flowChartMessage18.NEXT = this.flowChart3;
-            this.flowChartMessage18.Size = new System.Drawing.Size(103, 27);
+            this.flowChartMessage18.Size = new System.Drawing.Size(85, 33);
             this.flowChartMessage18.TabIndex = 216;
             this.flowChartMessage18.Text = "NG";
             this.flowChartMessage18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4957,13 +4822,13 @@
             this.flowChart4_3.CASE1 = null;
             this.flowChart4_3.CASE2 = this.flowChartMessage18;
             this.flowChart4_3.CASE3 = null;
-            this.flowChart4_3.Location = new System.Drawing.Point(492, 167);
+            this.flowChart4_3.Location = new System.Drawing.Point(492, 199);
             this.flowChart4_3.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart4_3.Name = "flowChart4_3";
             this.flowChart4_3.NEXT = this.flowChart4_4;
-            this.flowChart4_3.Size = new System.Drawing.Size(278, 27);
+            this.flowChart4_3.Size = new System.Drawing.Size(378, 33);
             this.flowChart4_3.TabIndex = 197;
-            this.flowChart4_3.Text = "Take Photo4.03";
+            this.flowChart4_3.Text = "Take Photo  4.04";
             this.flowChart4_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart4_3.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart4_3_FlowRun);
             // 
@@ -4974,13 +4839,13 @@
             this.flowChart4_4.CASE1 = null;
             this.flowChart4_4.CASE2 = this.flowChartMessage14;
             this.flowChart4_4.CASE3 = null;
-            this.flowChart4_4.Location = new System.Drawing.Point(492, 204);
+            this.flowChart4_4.Location = new System.Drawing.Point(492, 253);
             this.flowChart4_4.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart4_4.Name = "flowChart4_4";
             this.flowChart4_4.NEXT = this.flowChart4_6;
-            this.flowChart4_4.Size = new System.Drawing.Size(278, 27);
+            this.flowChart4_4.Size = new System.Drawing.Size(378, 33);
             this.flowChart4_4.TabIndex = 196;
-            this.flowChart4_4.Text = "Get VisionData4.04";
+            this.flowChart4_4.Text = "Get VisionData  4.05";
             this.flowChart4_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart4_4.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart4_4_FlowRun);
             // 
@@ -4998,11 +4863,11 @@
             this.flowChartMessage14.HideButtonPause = false;
             this.flowChartMessage14.HideButtonRetry = false;
             this.flowChartMessage14.HideButtonSkip = false;
-            this.flowChartMessage14.Location = new System.Drawing.Point(361, 204);
+            this.flowChartMessage14.Location = new System.Drawing.Point(284, 199);
             this.flowChartMessage14.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChartMessage14.Name = "flowChartMessage14";
             this.flowChartMessage14.NEXT = this.flowChart3;
-            this.flowChartMessage14.Size = new System.Drawing.Size(103, 27);
+            this.flowChartMessage14.Size = new System.Drawing.Size(103, 33);
             this.flowChartMessage14.TabIndex = 214;
             this.flowChartMessage14.Text = "NG";
             this.flowChartMessage14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5015,11 +4880,11 @@
             this.flowChart3.CASE1 = null;
             this.flowChart3.CASE2 = null;
             this.flowChart3.CASE3 = null;
-            this.flowChart3.Location = new System.Drawing.Point(298, 246);
+            this.flowChart3.Location = new System.Drawing.Point(284, 307);
             this.flowChart3.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart3.Name = "flowChart3";
             this.flowChart3.NEXT = this.flowChart4_6;
-            this.flowChart3.Size = new System.Drawing.Size(103, 27);
+            this.flowChart3.Size = new System.Drawing.Size(103, 33);
             this.flowChart3.TabIndex = 215;
             this.flowChart3.Text = "NG";
             this.flowChart3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5032,13 +4897,13 @@
             this.flowChart4_6.CASE1 = null;
             this.flowChart4_6.CASE2 = null;
             this.flowChart4_6.CASE3 = null;
-            this.flowChart4_6.Location = new System.Drawing.Point(492, 246);
+            this.flowChart4_6.Location = new System.Drawing.Point(492, 307);
             this.flowChart4_6.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart4_6.Name = "flowChart4_6";
             this.flowChart4_6.NEXT = this.flowChart42;
-            this.flowChart4_6.Size = new System.Drawing.Size(278, 27);
+            this.flowChart4_6.Size = new System.Drawing.Size(378, 33);
             this.flowChart4_6.TabIndex = 193;
-            this.flowChart4_6.Text = "End4.06";
+            this.flowChart4_6.Text = "End  4.06";
             this.flowChart4_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart4_6.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart4_6_FlowRun);
             // 
@@ -5049,11 +4914,11 @@
             this.flowChart42.CASE1 = this.flowChart3_1;
             this.flowChart42.CASE2 = null;
             this.flowChart42.CASE3 = null;
-            this.flowChart42.Location = new System.Drawing.Point(948, 246);
+            this.flowChart42.Location = new System.Drawing.Point(905, 307);
             this.flowChart42.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart42.Name = "flowChart42";
             this.flowChart42.NEXT = this.flowChart4_1;
-            this.flowChart42.Size = new System.Drawing.Size(94, 27);
+            this.flowChart42.Size = new System.Drawing.Size(73, 33);
             this.flowChart42.TabIndex = 210;
             this.flowChart42.Text = "Loop";
             this.flowChart42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -5066,13 +4931,13 @@
             this.flowChart4_1.CASE1 = null;
             this.flowChart4_1.CASE2 = null;
             this.flowChart4_1.CASE3 = null;
-            this.flowChart4_1.Location = new System.Drawing.Point(492, 55);
+            this.flowChart4_1.Location = new System.Drawing.Point(492, 37);
             this.flowChart4_1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart4_1.Name = "flowChart4_1";
             this.flowChart4_1.NEXT = this.flowChart4_7;
-            this.flowChart4_1.Size = new System.Drawing.Size(278, 27);
+            this.flowChart4_1.Size = new System.Drawing.Size(378, 33);
             this.flowChart4_1.TabIndex = 199;
-            this.flowChart4_1.Text = "Waiting Start4.01";
+            this.flowChart4_1.Text = "Waiting Start  4.01";
             this.flowChart4_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart4_1.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart4_1_FlowRun);
             // 
@@ -5081,82 +4946,58 @@
             this.flowChart4_7.BackColor = System.Drawing.Color.White;
             this.flowChart4_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowChart4_7.CASE1 = null;
-            this.flowChart4_7.CASE2 = this.flowChartMessage10;
+            this.flowChart4_7.CASE2 = null;
             this.flowChart4_7.CASE3 = null;
-            this.flowChart4_7.Location = new System.Drawing.Point(492, 93);
+            this.flowChart4_7.Location = new System.Drawing.Point(492, 91);
             this.flowChart4_7.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart4_7.Name = "flowChart4_7";
             this.flowChart4_7.NEXT = this.flowChart4_2;
-            this.flowChart4_7.Size = new System.Drawing.Size(278, 27);
+            this.flowChart4_7.Size = new System.Drawing.Size(378, 33);
             this.flowChart4_7.TabIndex = 211;
-            this.flowChart4_7.Text = "Z Axis Goto SafePos4.07";
+            this.flowChart4_7.Text = "Robot Goto Photo Pos  4.02";
             this.flowChart4_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart4_7.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart4_7_FlowRun);
-            // 
-            // flowChartMessage10
-            // 
-            this.flowChartMessage10.BackColor = System.Drawing.Color.White;
-            this.flowChartMessage10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChartMessage10.ButtonRetryText = "Retry";
-            this.flowChartMessage10.ButtonSkipText = "Skip";
-            this.flowChartMessage10.CASE1 = this.flowChart4_7;
-            this.flowChartMessage10.CASE2 = null;
-            this.flowChartMessage10.CASE3 = null;
-            this.flowChartMessage10.Content = null;
-            this.flowChartMessage10.HideButtonMute = false;
-            this.flowChartMessage10.HideButtonPause = false;
-            this.flowChartMessage10.HideButtonRetry = false;
-            this.flowChartMessage10.HideButtonSkip = false;
-            this.flowChartMessage10.Location = new System.Drawing.Point(337, 93);
-            this.flowChartMessage10.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.flowChartMessage10.Name = "flowChartMessage10";
-            this.flowChartMessage10.NEXT = null;
-            this.flowChartMessage10.Size = new System.Drawing.Size(127, 27);
-            this.flowChartMessage10.TabIndex = 212;
-            this.flowChartMessage10.Text = "Move TimeOut";
-            this.flowChartMessage10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChartMessage10.Title = null;
             // 
             // flowChart4_2
             // 
             this.flowChart4_2.BackColor = System.Drawing.Color.White;
             this.flowChart4_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowChart4_2.CASE1 = null;
-            this.flowChart4_2.CASE2 = this.flowChartMessage11;
+            this.flowChart4_2.CASE2 = this.Alarm1_07;
             this.flowChart4_2.CASE3 = null;
-            this.flowChart4_2.Location = new System.Drawing.Point(492, 129);
+            this.flowChart4_2.Location = new System.Drawing.Point(492, 145);
             this.flowChart4_2.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart4_2.Name = "flowChart4_2";
             this.flowChart4_2.NEXT = this.flowChart4_3;
-            this.flowChart4_2.Size = new System.Drawing.Size(278, 27);
+            this.flowChart4_2.Size = new System.Drawing.Size(378, 33);
             this.flowChart4_2.TabIndex = 198;
-            this.flowChart4_2.Text = "XY Axis Goto VisionPos4.02";
+            this.flowChart4_2.Text = "Wait Robot Finish  4.03";
             this.flowChart4_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart4_2.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart4_2_FlowRun);
             // 
-            // flowChartMessage11
+            // Alarm1_07
             // 
-            this.flowChartMessage11.BackColor = System.Drawing.Color.White;
-            this.flowChartMessage11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChartMessage11.ButtonRetryText = "Retry";
-            this.flowChartMessage11.ButtonSkipText = "Skip";
-            this.flowChartMessage11.CASE1 = this.flowChart4_2;
-            this.flowChartMessage11.CASE2 = null;
-            this.flowChartMessage11.CASE3 = null;
-            this.flowChartMessage11.Content = null;
-            this.flowChartMessage11.HideButtonMute = false;
-            this.flowChartMessage11.HideButtonPause = false;
-            this.flowChartMessage11.HideButtonRetry = false;
-            this.flowChartMessage11.HideButtonSkip = false;
-            this.flowChartMessage11.Location = new System.Drawing.Point(337, 129);
-            this.flowChartMessage11.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.flowChartMessage11.Name = "flowChartMessage11";
-            this.flowChartMessage11.NEXT = null;
-            this.flowChartMessage11.Size = new System.Drawing.Size(127, 27);
-            this.flowChartMessage11.TabIndex = 213;
-            this.flowChartMessage11.Text = "Move TimeOut";
-            this.flowChartMessage11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChartMessage11.Title = null;
+            this.Alarm1_07.BackColor = System.Drawing.Color.White;
+            this.Alarm1_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Alarm1_07.ButtonRetryText = "Retry";
+            this.Alarm1_07.ButtonSkipText = "Skip";
+            this.Alarm1_07.CASE1 = this.flowChart4_2;
+            this.Alarm1_07.CASE2 = null;
+            this.Alarm1_07.CASE3 = null;
+            this.Alarm1_07.Content = null;
+            this.Alarm1_07.HideButtonMute = false;
+            this.Alarm1_07.HideButtonPause = false;
+            this.Alarm1_07.HideButtonRetry = false;
+            this.Alarm1_07.HideButtonSkip = false;
+            this.Alarm1_07.Location = new System.Drawing.Point(284, 145);
+            this.Alarm1_07.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.Alarm1_07.Name = "Alarm1_07";
+            this.Alarm1_07.NEXT = null;
+            this.Alarm1_07.Size = new System.Drawing.Size(160, 33);
+            this.Alarm1_07.TabIndex = 213;
+            this.Alarm1_07.Text = "Alarm1_07";
+            this.Alarm1_07.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Alarm1_07.Title = null;
             // 
             // tabPage18
             // 
@@ -5174,7 +5015,7 @@
             this.tabPage18.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage18.Name = "tabPage18";
             this.tabPage18.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage18.Size = new System.Drawing.Size(779, 551);
+            this.tabPage18.Size = new System.Drawing.Size(1697, 593);
             this.tabPage18.TabIndex = 2;
             this.tabPage18.Text = "Request Screw Flow";
             this.tabPage18.UseVisualStyleBackColor = true;
@@ -5197,7 +5038,7 @@
             this.tabPage19.Location = new System.Drawing.Point(4, 32);
             this.tabPage19.Name = "tabPage19";
             this.tabPage19.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage19.Size = new System.Drawing.Size(779, 551);
+            this.tabPage19.Size = new System.Drawing.Size(1697, 593);
             this.tabPage19.TabIndex = 3;
             this.tabPage19.Text = "ThrowScrew Flow";
             this.tabPage19.UseVisualStyleBackColor = true;
@@ -5210,7 +5051,7 @@
             this.tabPage27.Controls.Add(this.flowChart7_1);
             this.tabPage27.Location = new System.Drawing.Point(4, 32);
             this.tabPage27.Name = "tabPage27";
-            this.tabPage27.Size = new System.Drawing.Size(779, 551);
+            this.tabPage27.Size = new System.Drawing.Size(1697, 593);
             this.tabPage27.TabIndex = 6;
             this.tabPage27.Text = "ScrewData Flow";
             this.tabPage27.UseVisualStyleBackColor = true;
@@ -5317,108 +5158,6 @@
             // 
             this.dataColumn15.ColumnName = "Annotation";
             // 
-            // flowChart0_7
-            // 
-            this.flowChart0_7.BackColor = System.Drawing.Color.White;
-            this.flowChart0_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChart0_7.CASE1 = null;
-            this.flowChart0_7.CASE2 = null;
-            this.flowChart0_7.CASE3 = null;
-            this.flowChart0_7.Location = new System.Drawing.Point(467, 179);
-            this.flowChart0_7.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.flowChart0_7.Name = "flowChart0_7";
-            this.flowChart0_7.NEXT = this.flowChart0_19;
-            this.flowChart0_7.Size = new System.Drawing.Size(332, 27);
-            this.flowChart0_7.TabIndex = 212;
-            this.flowChart0_7.Text = "SF 1 Screw Feed retract0.07";
-            this.flowChart0_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChart0_7.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_7_FlowRun);
-            // 
-            // flowChart0_19
-            // 
-            this.flowChart0_19.BackColor = System.Drawing.Color.White;
-            this.flowChart0_19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChart0_19.CASE1 = null;
-            this.flowChart0_19.CASE2 = null;
-            this.flowChart0_19.CASE3 = null;
-            this.flowChart0_19.Location = new System.Drawing.Point(467, 217);
-            this.flowChart0_19.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.flowChart0_19.Name = "flowChart0_19";
-            this.flowChart0_19.NEXT = this.flowChart0_12;
-            this.flowChart0_19.Size = new System.Drawing.Size(332, 27);
-            this.flowChart0_19.TabIndex = 235;
-            this.flowChart0_19.Text = "SF 1 Lock Cyl retract0.19";
-            this.flowChart0_19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChart0_19.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_19_FlowRun);
-            // 
-            // flowChart0_12
-            // 
-            this.flowChart0_12.BackColor = System.Drawing.Color.White;
-            this.flowChart0_12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChart0_12.CASE1 = null;
-            this.flowChart0_12.CASE2 = null;
-            this.flowChart0_12.CASE3 = null;
-            this.flowChart0_12.Location = new System.Drawing.Point(467, 255);
-            this.flowChart0_12.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.flowChart0_12.Name = "flowChart0_12";
-            this.flowChart0_12.NEXT = this.flowChart0_13;
-            this.flowChart0_12.Size = new System.Drawing.Size(332, 27);
-            this.flowChart0_12.TabIndex = 213;
-            this.flowChart0_12.Text = "SF 1 Z CYL retract0.12";
-            this.flowChart0_12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChart0_12.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_12_FlowRun);
-            // 
-            // flowChart0_13
-            // 
-            this.flowChart0_13.BackColor = System.Drawing.Color.White;
-            this.flowChart0_13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChart0_13.CASE1 = null;
-            this.flowChart0_13.CASE2 = null;
-            this.flowChart0_13.CASE3 = null;
-            this.flowChart0_13.Location = new System.Drawing.Point(467, 293);
-            this.flowChart0_13.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.flowChart0_13.Name = "flowChart0_13";
-            this.flowChart0_13.NEXT = this.flowChart0_2;
-            this.flowChart0_13.Size = new System.Drawing.Size(332, 27);
-            this.flowChart0_13.TabIndex = 214;
-            this.flowChart0_13.Text = "SF 1 Lock Cyl extend0.13";
-            this.flowChart0_13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChart0_13.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_13_FlowRun);
-            // 
-            // flowChart0_2
-            // 
-            this.flowChart0_2.BackColor = System.Drawing.Color.White;
-            this.flowChart0_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChart0_2.CASE1 = null;
-            this.flowChart0_2.CASE2 = null;
-            this.flowChart0_2.CASE3 = null;
-            this.flowChart0_2.Location = new System.Drawing.Point(467, 329);
-            this.flowChart0_2.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.flowChart0_2.Name = "flowChart0_2";
-            this.flowChart0_2.NEXT = this.flowChart0_3;
-            this.flowChart0_2.Size = new System.Drawing.Size(332, 27);
-            this.flowChart0_2.TabIndex = 203;
-            this.flowChart0_2.Text = "Z Homing0.02";
-            this.flowChart0_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChart0_2.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_2_FlowRun);
-            // 
-            // flowChart0_3
-            // 
-            this.flowChart0_3.BackColor = System.Drawing.Color.White;
-            this.flowChart0_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChart0_3.CASE1 = null;
-            this.flowChart0_3.CASE2 = null;
-            this.flowChart0_3.CASE3 = null;
-            this.flowChart0_3.Location = new System.Drawing.Point(467, 367);
-            this.flowChart0_3.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.flowChart0_3.Name = "flowChart0_3";
-            this.flowChart0_3.NEXT = this.flowChart0_4;
-            this.flowChart0_3.Size = new System.Drawing.Size(332, 27);
-            this.flowChart0_3.TabIndex = 204;
-            this.flowChart0_3.Text = "XY Homing0.03";
-            this.flowChart0_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChart0_3.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_3_FlowRun);
-            // 
             // flowChart0_1
             // 
             this.flowChart0_1.BackColor = System.Drawing.Color.White;
@@ -5426,13 +5165,13 @@
             this.flowChart0_1.CASE1 = null;
             this.flowChart0_1.CASE2 = null;
             this.flowChart0_1.CASE3 = null;
-            this.flowChart0_1.Location = new System.Drawing.Point(467, 24);
+            this.flowChart0_1.Location = new System.Drawing.Point(396, 34);
             this.flowChart0_1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart0_1.Name = "flowChart0_1";
             this.flowChart0_1.NEXT = this.flowChart0_18;
-            this.flowChart0_1.Size = new System.Drawing.Size(332, 27);
+            this.flowChart0_1.Size = new System.Drawing.Size(357, 33);
             this.flowChart0_1.TabIndex = 202;
-            this.flowChart0_1.Text = "Initial0.01";
+            this.flowChart0_1.Text = "Start   1.01";
             this.flowChart0_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart0_1.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_1_FlowRun);
             // 
@@ -5443,13 +5182,13 @@
             this.flowChart0_18.CASE1 = null;
             this.flowChart0_18.CASE2 = null;
             this.flowChart0_18.CASE3 = null;
-            this.flowChart0_18.Location = new System.Drawing.Point(467, 62);
+            this.flowChart0_18.Location = new System.Drawing.Point(396, 83);
             this.flowChart0_18.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart0_18.Name = "flowChart0_18";
             this.flowChart0_18.NEXT = this.flowChart0_20;
-            this.flowChart0_18.Size = new System.Drawing.Size(332, 27);
+            this.flowChart0_18.Size = new System.Drawing.Size(357, 33);
             this.flowChart0_18.TabIndex = 234;
-            this.flowChart0_18.Text = "Connect ScrewControl0.18";
+            this.flowChart0_18.Text = "Connect ScrewControl  1.02";
             this.flowChart0_18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart0_18.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_18_FlowRun);
             // 
@@ -5460,13 +5199,13 @@
             this.flowChart0_20.CASE1 = null;
             this.flowChart0_20.CASE2 = null;
             this.flowChart0_20.CASE3 = null;
-            this.flowChart0_20.Location = new System.Drawing.Point(467, 101);
+            this.flowChart0_20.Location = new System.Drawing.Point(396, 132);
             this.flowChart0_20.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart0_20.Name = "flowChart0_20";
             this.flowChart0_20.NEXT = this.flowChart0_21;
-            this.flowChart0_20.Size = new System.Drawing.Size(332, 27);
+            this.flowChart0_20.Size = new System.Drawing.Size(357, 33);
             this.flowChart0_20.TabIndex = 237;
-            this.flowChart0_20.Text = "Connect PressSensor0.20";
+            this.flowChart0_20.Text = "Connect PressSensor  1.03";
             this.flowChart0_20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart0_20.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_20_FlowRun);
             // 
@@ -5477,15 +5216,134 @@
             this.flowChart0_21.CASE1 = null;
             this.flowChart0_21.CASE2 = null;
             this.flowChart0_21.CASE3 = null;
-            this.flowChart0_21.Location = new System.Drawing.Point(467, 139);
+            this.flowChart0_21.Location = new System.Drawing.Point(396, 181);
             this.flowChart0_21.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart0_21.Name = "flowChart0_21";
-            this.flowChart0_21.NEXT = this.flowChart0_7;
-            this.flowChart0_21.Size = new System.Drawing.Size(332, 27);
+            this.flowChart0_21.NEXT = this.flowChart13;
+            this.flowChart0_21.Size = new System.Drawing.Size(357, 33);
             this.flowChart0_21.TabIndex = 238;
-            this.flowChart0_21.Text = "Connect Displacement0.21";
+            this.flowChart0_21.Text = "Connect Displacement  1.04";
             this.flowChart0_21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart0_21.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart0_21_FlowRun);
+            // 
+            // flowChart13
+            // 
+            this.flowChart13.BackColor = System.Drawing.Color.White;
+            this.flowChart13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowChart13.CASE1 = null;
+            this.flowChart13.CASE2 = null;
+            this.flowChart13.CASE3 = null;
+            this.flowChart13.Location = new System.Drawing.Point(396, 230);
+            this.flowChart13.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.flowChart13.Name = "flowChart13";
+            this.flowChart13.NEXT = this.flowChart14;
+            this.flowChart13.Size = new System.Drawing.Size(357, 33);
+            this.flowChart13.TabIndex = 239;
+            this.flowChart13.Text = "Connect Robot  1.05";
+            this.flowChart13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flowChart13.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart13_FlowRun);
+            // 
+            // flowChart14
+            // 
+            this.flowChart14.BackColor = System.Drawing.Color.White;
+            this.flowChart14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowChart14.CASE1 = null;
+            this.flowChart14.CASE2 = null;
+            this.flowChart14.CASE3 = null;
+            this.flowChart14.Location = new System.Drawing.Point(396, 279);
+            this.flowChart14.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.flowChart14.Name = "flowChart14";
+            this.flowChart14.NEXT = this.flowChart15;
+            this.flowChart14.Size = new System.Drawing.Size(357, 33);
+            this.flowChart14.TabIndex = 240;
+            this.flowChart14.Text = "Start Robot  1.06";
+            this.flowChart14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flowChart14.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart14_FlowRun);
+            // 
+            // flowChart15
+            // 
+            this.flowChart15.BackColor = System.Drawing.Color.White;
+            this.flowChart15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowChart15.CASE1 = null;
+            this.flowChart15.CASE2 = null;
+            this.flowChart15.CASE3 = null;
+            this.flowChart15.Location = new System.Drawing.Point(396, 328);
+            this.flowChart15.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.flowChart15.Name = "flowChart15";
+            this.flowChart15.NEXT = this.flowChart16;
+            this.flowChart15.Size = new System.Drawing.Size(357, 33);
+            this.flowChart15.TabIndex = 241;
+            this.flowChart15.Text = "Set Robot initial speed  1.07";
+            this.flowChart15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flowChart15.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart15_FlowRun);
+            // 
+            // flowChart16
+            // 
+            this.flowChart16.BackColor = System.Drawing.Color.White;
+            this.flowChart16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowChart16.CASE1 = null;
+            this.flowChart16.CASE2 = null;
+            this.flowChart16.CASE3 = null;
+            this.flowChart16.Location = new System.Drawing.Point(396, 377);
+            this.flowChart16.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.flowChart16.Name = "flowChart16";
+            this.flowChart16.NEXT = this.flowChart17;
+            this.flowChart16.Size = new System.Drawing.Size(357, 33);
+            this.flowChart16.TabIndex = 242;
+            this.flowChart16.Text = "Set Robot auto mode  1.08";
+            this.flowChart16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flowChart16.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart16_FlowRun);
+            // 
+            // flowChart17
+            // 
+            this.flowChart17.BackColor = System.Drawing.Color.White;
+            this.flowChart17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowChart17.CASE1 = null;
+            this.flowChart17.CASE2 = null;
+            this.flowChart17.CASE3 = null;
+            this.flowChart17.Location = new System.Drawing.Point(396, 426);
+            this.flowChart17.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.flowChart17.Name = "flowChart17";
+            this.flowChart17.NEXT = this.flowChart18;
+            this.flowChart17.Size = new System.Drawing.Size(357, 33);
+            this.flowChart17.TabIndex = 243;
+            this.flowChart17.Text = "Set Robot recipe  1.09";
+            this.flowChart17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flowChart17.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart17_FlowRun);
+            // 
+            // flowChart18
+            // 
+            this.flowChart18.BackColor = System.Drawing.Color.White;
+            this.flowChart18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowChart18.CASE1 = null;
+            this.flowChart18.CASE2 = null;
+            this.flowChart18.CASE3 = null;
+            this.flowChart18.Location = new System.Drawing.Point(396, 475);
+            this.flowChart18.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.flowChart18.Name = "flowChart18";
+            this.flowChart18.NEXT = this.flowChart20;
+            this.flowChart18.Size = new System.Drawing.Size(357, 33);
+            this.flowChart18.TabIndex = 244;
+            this.flowChart18.Text = "Set dryrun or normal mode  1.10";
+            this.flowChart18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flowChart18.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart18_FlowRun);
+            // 
+            // flowChart20
+            // 
+            this.flowChart20.BackColor = System.Drawing.Color.White;
+            this.flowChart20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowChart20.CASE1 = null;
+            this.flowChart20.CASE2 = null;
+            this.flowChart20.CASE3 = null;
+            this.flowChart20.Location = new System.Drawing.Point(805, 475);
+            this.flowChart20.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.flowChart20.Name = "flowChart20";
+            this.flowChart20.NEXT = this.flowChart0_9;
+            this.flowChart20.Size = new System.Drawing.Size(357, 33);
+            this.flowChart20.TabIndex = 245;
+            this.flowChart20.Text = "Robot initial  1.11";
+            this.flowChart20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flowChart20.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart20_FlowRun);
             // 
             // tabControl8
             // 
@@ -5578,7 +5436,7 @@
             this.groupBox36.Controls.Add(this.label89);
             this.groupBox36.Location = new System.Drawing.Point(379, 7);
             this.groupBox36.Name = "groupBox36";
-            this.groupBox36.Size = new System.Drawing.Size(323, 213);
+            this.groupBox36.Size = new System.Drawing.Size(396, 213);
             this.groupBox36.TabIndex = 146;
             this.groupBox36.TabStop = false;
             this.groupBox36.Text = "Timeout alarm";
@@ -5586,15 +5444,15 @@
             // textBox23
             // 
             this.textBox23.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "PSet.Times", true));
-            this.textBox23.Location = new System.Drawing.Point(181, 166);
+            this.textBox23.Location = new System.Drawing.Point(222, 163);
             this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(112, 29);
+            this.textBox23.Size = new System.Drawing.Size(135, 29);
             this.textBox23.TabIndex = 7;
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(87, 166);
+            this.label27.Location = new System.Drawing.Point(96, 166);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(95, 23);
             this.label27.TabIndex = 6;
@@ -5603,31 +5461,31 @@
             // textBox36
             // 
             this.textBox36.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "PSet.IOTimes", true));
-            this.textBox36.Location = new System.Drawing.Point(181, 120);
+            this.textBox36.Location = new System.Drawing.Point(222, 117);
             this.textBox36.Name = "textBox36";
-            this.textBox36.Size = new System.Drawing.Size(112, 29);
+            this.textBox36.Size = new System.Drawing.Size(135, 29);
             this.textBox36.TabIndex = 5;
             // 
             // textBox35
             // 
             this.textBox35.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "PSet.AutoAsixTimes", true));
-            this.textBox35.Location = new System.Drawing.Point(181, 79);
+            this.textBox35.Location = new System.Drawing.Point(222, 73);
             this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(112, 29);
+            this.textBox35.Size = new System.Drawing.Size(135, 29);
             this.textBox35.TabIndex = 4;
             // 
             // textBox10
             // 
             this.textBox10.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "PSet.IniAsixTimes", true));
-            this.textBox10.Location = new System.Drawing.Point(181, 31);
+            this.textBox10.Location = new System.Drawing.Point(222, 32);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(112, 29);
+            this.textBox10.Size = new System.Drawing.Size(135, 29);
             this.textBox10.TabIndex = 3;
             // 
             // label92
             // 
             this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(6, 35);
+            this.label92.Location = new System.Drawing.Point(15, 35);
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(176, 23);
             this.label92.TabIndex = 2;
@@ -5636,7 +5494,7 @@
             // label90
             // 
             this.label90.AutoSize = true;
-            this.label90.Location = new System.Drawing.Point(67, 120);
+            this.label90.Location = new System.Drawing.Point(76, 120);
             this.label90.Name = "label90";
             this.label90.Size = new System.Drawing.Size(115, 23);
             this.label90.TabIndex = 1;
@@ -5645,7 +5503,7 @@
             // label89
             // 
             this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(10, 79);
+            this.label89.Location = new System.Drawing.Point(19, 79);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(172, 23);
             this.label89.TabIndex = 0;
@@ -5669,18 +5527,18 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(32, 279);
+            this.label25.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label25.Location = new System.Drawing.Point(60, 47);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(182, 24);
+            this.label25.Size = new System.Drawing.Size(147, 23);
             this.label25.TabIndex = 60;
             this.label25.Text = "Aixs Speed Ratio :";
             // 
             // label26
             // 
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(931, 274);
+            this.label26.Location = new System.Drawing.Point(1022, 42);
             this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(23, 34);
@@ -5692,8 +5550,8 @@
             // 
             this.lbSpeedRatio.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbSpeedRatio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbSpeedRatio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSpeedRatio.Location = new System.Drawing.Point(867, 274);
+            this.lbSpeedRatio.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lbSpeedRatio.Location = new System.Drawing.Point(947, 42);
             this.lbSpeedRatio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSpeedRatio.Name = "lbSpeedRatio";
             this.lbSpeedRatio.Size = new System.Drawing.Size(56, 34);
@@ -5704,7 +5562,7 @@
             // trackBar1
             // 
             this.trackBar1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.SettingData, "MSet.AxisSpeedRatio", true));
-            this.trackBar1.Location = new System.Drawing.Point(218, 271);
+            this.trackBar1.Location = new System.Drawing.Point(279, 37);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Minimum = 1;
             this.trackBar1.Name = "trackBar1";
@@ -5712,32 +5570,23 @@
             this.trackBar1.TabIndex = 61;
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trackBar1.Value = 1;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label21.Location = new System.Drawing.Point(1170, 53);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(133, 24);
-            this.label21.TabIndex = 59;
-            this.label21.Text = "AxisJacking :";
+            this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label22.Location = new System.Drawing.Point(1065, 206);
+            this.label22.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label22.Location = new System.Drawing.Point(735, 146);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(140, 24);
+            this.label22.Size = new System.Drawing.Size(114, 23);
             this.label22.TabIndex = 58;
             this.label22.Text = "Deceleration :";
             // 
             // textBox14
             // 
             this.textBox14.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "MSet.DecelerationAxisJacking", true));
-            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox14.Location = new System.Drawing.Point(1209, 202);
+            this.textBox14.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.textBox14.Location = new System.Drawing.Point(888, 141);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(114, 29);
             this.textBox14.TabIndex = 57;
@@ -5745,18 +5594,18 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label23.Location = new System.Drawing.Point(1065, 151);
+            this.label23.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label23.Location = new System.Drawing.Point(379, 146);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(139, 24);
+            this.label23.Size = new System.Drawing.Size(114, 23);
             this.label23.TabIndex = 56;
             this.label23.Text = "Acceleration :";
             // 
             // textBox15
             // 
             this.textBox15.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "MSet.AccelerationAxisJacking", true));
-            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox15.Location = new System.Drawing.Point(1209, 151);
+            this.textBox15.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.textBox15.Location = new System.Drawing.Point(547, 141);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(114, 29);
             this.textBox15.TabIndex = 55;
@@ -5764,267 +5613,21 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label24.Location = new System.Drawing.Point(1072, 101);
+            this.label24.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label24.Location = new System.Drawing.Point(60, 146);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(131, 24);
+            this.label24.Size = new System.Drawing.Size(107, 23);
             this.label24.TabIndex = 54;
             this.label24.Text = "WorkSpeed :";
             // 
             // textBox16
             // 
             this.textBox16.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "MSet.WorkSpeedAxisJacking", true));
-            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox16.Location = new System.Drawing.Point(1209, 96);
+            this.textBox16.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.textBox16.Location = new System.Drawing.Point(206, 141);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(114, 29);
             this.textBox16.TabIndex = 53;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label17.Location = new System.Drawing.Point(848, 53);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(75, 24);
-            this.label17.TabIndex = 52;
-            this.label17.Text = "AxisZ :";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label18.Location = new System.Drawing.Point(704, 206);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(140, 24);
-            this.label18.TabIndex = 51;
-            this.label18.Text = "Deceleration :";
-            // 
-            // textBox11
-            // 
-            this.textBox11.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "MSet.DecelerationZ", true));
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox11.Location = new System.Drawing.Point(852, 201);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(114, 29);
-            this.textBox11.TabIndex = 50;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label19.Location = new System.Drawing.Point(704, 151);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(139, 24);
-            this.label19.TabIndex = 49;
-            this.label19.Text = "Acceleration :";
-            // 
-            // textBox12
-            // 
-            this.textBox12.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "MSet.AccelerationZ", true));
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox12.Location = new System.Drawing.Point(852, 149);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(114, 29);
-            this.textBox12.TabIndex = 48;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(711, 101);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 24);
-            this.label3.TabIndex = 47;
-            this.label3.Text = "WorkSpeed :";
-            // 
-            // textBox13
-            // 
-            this.textBox13.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "MSet.WorkSpeedZ", true));
-            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox13.Location = new System.Drawing.Point(852, 95);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(114, 29);
-            this.textBox13.TabIndex = 46;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(511, 53);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(75, 24);
-            this.label13.TabIndex = 45;
-            this.label13.Text = "AxisY :";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(365, 206);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(140, 24);
-            this.label14.TabIndex = 44;
-            this.label14.Text = "Deceleration :";
-            // 
-            // textBox17
-            // 
-            this.textBox17.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "MSet.DecelerationY", true));
-            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox17.Location = new System.Drawing.Point(509, 202);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(114, 29);
-            this.textBox17.TabIndex = 43;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(365, 151);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(139, 24);
-            this.label15.TabIndex = 42;
-            this.label15.Text = "Acceleration :";
-            // 
-            // textBox18
-            // 
-            this.textBox18.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "MSet.AccelerationY", true));
-            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox18.Location = new System.Drawing.Point(509, 151);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(114, 29);
-            this.textBox18.TabIndex = 41;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(372, 101);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(131, 24);
-            this.label16.TabIndex = 40;
-            this.label16.Text = "WorkSpeed :";
-            // 
-            // textBox19
-            // 
-            this.textBox19.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "MSet.WorkSpeedY", true));
-            this.textBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox19.Location = new System.Drawing.Point(509, 96);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(114, 29);
-            this.textBox19.TabIndex = 39;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(182, 53);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(77, 24);
-            this.label12.TabIndex = 38;
-            this.label12.Text = "AxisX :";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(36, 206);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(140, 24);
-            this.label11.TabIndex = 37;
-            this.label11.Text = "Deceleration :";
-            // 
-            // textBox20
-            // 
-            this.textBox20.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "MSet.DecelerationX", true));
-            this.textBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox20.Location = new System.Drawing.Point(186, 206);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(114, 29);
-            this.textBox20.TabIndex = 36;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(36, 151);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(139, 24);
-            this.label10.TabIndex = 35;
-            this.label10.Text = "Acceleration :";
-            // 
-            // textBox21
-            // 
-            this.textBox21.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "MSet.AccelerationX", true));
-            this.textBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox21.Location = new System.Drawing.Point(186, 154);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(114, 29);
-            this.textBox21.TabIndex = 34;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(43, 101);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(131, 24);
-            this.label9.TabIndex = 33;
-            this.label9.Text = "WorkSpeed :";
-            // 
-            // textBox22
-            // 
-            this.textBox22.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "MSet.WorkSpeedX", true));
-            this.textBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox22.Location = new System.Drawing.Point(186, 101);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(114, 29);
-            this.textBox22.TabIndex = 32;
-            // 
-            // dataColumn19
-            // 
-            this.dataColumn19.ColumnName = "WorkSpeedX";
-            this.dataColumn19.DataType = typeof(double);
-            // 
-            // dataColumn20
-            // 
-            this.dataColumn20.ColumnName = "WorkSpeedY";
-            this.dataColumn20.DataType = typeof(double);
-            // 
-            // dataColumn21
-            // 
-            this.dataColumn21.ColumnName = "WorkSpeedZ";
-            this.dataColumn21.DataType = typeof(double);
-            // 
-            // dataColumn22
-            // 
-            this.dataColumn22.ColumnName = "AccelerationX";
-            this.dataColumn22.DataType = typeof(double);
-            // 
-            // dataColumn23
-            // 
-            this.dataColumn23.ColumnName = "AccelerationY";
-            this.dataColumn23.DataType = typeof(double);
-            // 
-            // dataColumn24
-            // 
-            this.dataColumn24.ColumnName = "AccelerationZ";
-            this.dataColumn24.DataType = typeof(double);
-            // 
-            // dataColumn25
-            // 
-            this.dataColumn25.ColumnName = "DecelerationX";
-            this.dataColumn25.DataType = typeof(double);
-            // 
-            // dataColumn26
-            // 
-            this.dataColumn26.ColumnName = "DecelerationY";
-            this.dataColumn26.DataType = typeof(double);
-            // 
-            // dataColumn27
-            // 
-            this.dataColumn27.ColumnName = "DecelerationZ";
-            this.dataColumn27.DataType = typeof(double);
             // 
             // dataColumn28
             // 
@@ -6721,6 +6324,115 @@
             this.M_McJogLeft.UseVisualStyleBackColor = true;
             this.M_McJogLeft.WorkMotor = null;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(93, 65);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(160, 23);
+            this.label3.TabIndex = 64;
+            this.label3.Text = "Robot Speed Ratio :";
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(1047, 65);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(23, 34);
+            this.label9.TabIndex = 67;
+            this.label9.Text = "%";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label10.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(980, 65);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(56, 34);
+            this.label10.TabIndex = 66;
+            this.label10.Text = "0";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.SettingData, "MSet.RobotSpeedRatio", true));
+            this.trackBar2.Location = new System.Drawing.Point(312, 54);
+            this.trackBar2.Maximum = 100;
+            this.trackBar2.Minimum = 1;
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(630, 45);
+            this.trackBar2.TabIndex = 65;
+            this.trackBar2.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.trackBar2.Value = 30;
+            this.trackBar2.ValueChanged += new System.EventHandler(this.trackBar2_ValueChanged);
+            // 
+            // tabControl11
+            // 
+            this.tabControl11.Controls.Add(this.tabPage30);
+            this.tabControl11.Controls.Add(this.tabPage31);
+            this.tabControl11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl11.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.tabControl11.Location = new System.Drawing.Point(0, 0);
+            this.tabControl11.Name = "tabControl11";
+            this.tabControl11.SelectedIndex = 0;
+            this.tabControl11.Size = new System.Drawing.Size(799, 627);
+            this.tabControl11.TabIndex = 68;
+            // 
+            // tabPage30
+            // 
+            this.tabPage30.Controls.Add(this.trackBar1);
+            this.tabPage30.Controls.Add(this.lbSpeedRatio);
+            this.tabPage30.Controls.Add(this.label26);
+            this.tabPage30.Controls.Add(this.label25);
+            this.tabPage30.Controls.Add(this.textBox16);
+            this.tabPage30.Controls.Add(this.label22);
+            this.tabPage30.Controls.Add(this.label24);
+            this.tabPage30.Controls.Add(this.textBox14);
+            this.tabPage30.Controls.Add(this.textBox15);
+            this.tabPage30.Controls.Add(this.label23);
+            this.tabPage30.Location = new System.Drawing.Point(4, 32);
+            this.tabPage30.Name = "tabPage30";
+            this.tabPage30.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage30.Size = new System.Drawing.Size(1709, 633);
+            this.tabPage30.TabIndex = 0;
+            this.tabPage30.Text = "Jacking Axis";
+            this.tabPage30.UseVisualStyleBackColor = true;
+            // 
+            // tabPage31
+            // 
+            this.tabPage31.Controls.Add(this.label3);
+            this.tabPage31.Controls.Add(this.trackBar2);
+            this.tabPage31.Controls.Add(this.label9);
+            this.tabPage31.Controls.Add(this.label10);
+            this.tabPage31.Location = new System.Drawing.Point(4, 32);
+            this.tabPage31.Name = "tabPage31";
+            this.tabPage31.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage31.Size = new System.Drawing.Size(1709, 633);
+            this.tabPage31.TabIndex = 1;
+            this.tabPage31.Text = "Robot";
+            this.tabPage31.UseVisualStyleBackColor = true;
+            // 
+            // dataColumn19
+            // 
+            this.dataColumn19.ColumnName = "RobotSpeedRatio";
+            this.dataColumn19.DataType = typeof(int);
+            // 
+            // dataColumn3
+            // 
+            this.dataColumn3.ColumnName = "PressureDelaytime";
+            this.dataColumn3.DataType = typeof(int);
+            // 
+            // dataColumn4
+            // 
+            this.dataColumn4.ColumnName = "PressureLimitMax";
+            this.dataColumn4.DataType = typeof(double);
+            // 
             // PCBA_ScrewFasten_Module1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -6736,7 +6448,6 @@
             this.plFlowAuto.ResumeLayout(false);
             this.plMachineStatus.ResumeLayout(false);
             this.plMotionSetup.ResumeLayout(false);
-            this.plMotionSetup.PerformLayout();
             this.plMotorControl.ResumeLayout(false);
             this.plMotorControl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SettingData)).EndInit();
@@ -6745,7 +6456,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.RecipeData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable2)).EndInit();
             this.tabControl3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -6757,11 +6467,7 @@
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             this.tabPage7.ResumeLayout(false);
-            this.tabControl4.ResumeLayout(false);
-            this.tabPage9.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.D_Ps)).EndInit();
+            this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage21.ResumeLayout(false);
             this.groupBox37.ResumeLayout(false);
@@ -6818,6 +6524,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataTable4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            this.tabControl11.ResumeLayout(false);
+            this.tabPage30.ResumeLayout(false);
+            this.tabPage30.PerformLayout();
+            this.tabPage31.ResumeLayout(false);
+            this.tabPage31.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -6832,13 +6544,8 @@
         private System.Data.DataColumn dataColumn10;
         private System.Data.DataColumn dataColumn11;
         private System.Data.DataColumn dataColumn12;
-        private System.Data.DataTable dataTable2;
-        private System.Data.DataColumn dataColumn3;
-        private System.Data.DataColumn dataColumn4;
         private System.Windows.Forms.TabControl tabControl3;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox T_CCDIP;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
@@ -6854,22 +6561,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView D_PcbPoint;
-        private System.Windows.Forms.TabControl tabControl4;
-        private System.Windows.Forms.TabPage tabPage9;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.RichTextBox R_PsText;
-        private System.Windows.Forms.DataGridView D_Ps;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn commandDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button B_PsClear;
-        private System.Windows.Forms.ComboBox C_Com;
-        private System.Windows.Forms.Button B_PsDisConnect;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button B_PsDelete;
-        private System.Windows.Forms.Button B_PsAdd;
-        private System.Windows.Forms.Button B_Refresh;
-        private System.Windows.Forms.Button B_PSRead;
-        private System.Windows.Forms.Button B_PsConnect;
         private OPTControl.OPTControl optControl1;
         private OPTControl.OPTControl OPT_LightSourceController;
         private System.Windows.Forms.DataGridView D_ScrewResultsShow;
@@ -6969,14 +6660,7 @@
         private System.Data.DataColumn dataColumn13;
         private System.Data.DataColumn dataColumn14;
         private System.Data.DataColumn dataColumn15;
-        private JabilSDK.UserControlLib.FlowChart flowChart0_5;
-        private JabilSDK.UserControlLib.FlowChart flowChart0_4;
-        private JabilSDK.UserControlLib.FlowChart flowChart0_3;
-        private JabilSDK.UserControlLib.FlowChart flowChart0_2;
         private JabilSDK.UserControlLib.FlowChart flowChart0_1;
-        private JabilSDK.UserControlLib.FlowChart flowChart0_8;
-        private JabilSDK.UserControlLib.FlowChart flowChart0_6;
-        private JabilSDK.UserControlLib.FlowChart flowChart0_7;
         private JabilSDK.UserControlLib.FlowChart flowChart0_11;
         private JabilSDK.UserControlLib.FlowChart flowChart0_10;
         private JabilSDK.UserControlLib.FlowChart flowChart0_9;
@@ -6992,7 +6676,6 @@
         private System.Data.DataColumn dataColumn16;
         private System.Data.DataColumn dataColumn17;
         private System.Data.DataColumn dataColumn18;
-        private JabilSDK.UserControlLib.FlowChart flowChart0_12;
         private System.Windows.Forms.Panel panel1;
         public JabilSDK.Controls.Motor MTR_Jacking;
         public System.Windows.Forms.Button btn_Gantry1Axis;
@@ -7008,48 +6691,16 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label lbSpeedRatio;
         public System.Windows.Forms.TrackBar trackBar1;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Data.DataColumn dataColumn19;
-        private System.Data.DataColumn dataColumn20;
-        private System.Data.DataColumn dataColumn21;
-        private System.Data.DataColumn dataColumn22;
-        private System.Data.DataColumn dataColumn23;
-        private System.Data.DataColumn dataColumn24;
-        private System.Data.DataColumn dataColumn25;
-        private System.Data.DataColumn dataColumn26;
-        private System.Data.DataColumn dataColumn27;
         private System.Data.DataColumn dataColumn28;
         private System.Data.DataColumn dataColumn29;
         private System.Data.DataColumn dataColumn30;
         private System.Data.DataColumn dataColumn31;
-        private JabilSDK.UserControlLib.FlowChart flowChart0_13;
         private JabilSDK.UserControlLib.FlowChart flowChart2_18;
         private JabilSDK.UserControlLib.FlowChart flowChart0_15;
         private JabilSDK.UserControlLib.FlowChart flowChart0_14;
@@ -7071,9 +6722,7 @@
         private JabilSDK.Controls.MotorJog M_McJogLeft;
         private System.Windows.Forms.TextBox T_McPosX;
         private System.Windows.Forms.Timer T_CurrPos;
-        private JabilSDK.UserControlLib.FlowChart flowChart0_16;
         private JabilSDK.UserControlLib.FlowChart flowChart2_20;
-        private JabilSDK.UserControlLib.FlowChart flowChart0_17;
         private JabilSDK.UserControlLib.FlowChart flowChart2_21;
         private JabilSDK.UserControlLib.FlowChart flowChart3_5;
         private JabilSDK.UserControlLib.FlowChart flowChart6_9;
@@ -7084,7 +6733,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Data.DataColumn dataColumn32;
         private JabilSDK.UserControlLib.FlowChart flowChart0_18;
-        private JabilSDK.UserControlLib.FlowChart flowChart0_19;
         private System.Windows.Forms.TabPage tabPage21;
         private System.Windows.Forms.GroupBox groupBox37;
         private System.Windows.Forms.Label label97;
@@ -7111,9 +6759,8 @@
         private AcuraLibrary.Forms.FlowChartMessage flowChartMessage5;
         private AcuraLibrary.Forms.FlowChartMessage flowChartMessage4;
         private JabilSDK.UserControlLib.FlowChart flowChart6_10;
-        private AcuraLibrary.Forms.FlowChartMessage flowChartMessage8;
-        private AcuraLibrary.Forms.FlowChartMessage flowChartMessage11;
-        private AcuraLibrary.Forms.FlowChartMessage flowChartMessage10;
+        private AcuraLibrary.Forms.FlowChartMessage Alarm1_04;
+        private AcuraLibrary.Forms.FlowChartMessage Alarm1_07;
         private AcuraLibrary.Forms.FlowChartMessage flowChartMessage13;
         private AcuraLibrary.Forms.FlowChartMessage flowChartMessage12;
         private System.Windows.Forms.GroupBox groupBox7;
@@ -7144,7 +6791,7 @@
         private JabilSDK.UserControlLib.FlowChart flowChart3;
         private JabilSDK.UserControlLib.FlowChart flowChart5;
         private JabilSDK.UserControlLib.FlowChart flowChart4;
-        private AcuraLibrary.Forms.FlowChartMessage flowChartMessage15;
+        private AcuraLibrary.Forms.FlowChartMessage Alarm1_05;
         private JabilSDK.UserControlLib.FlowChart flowChart6;
         private AcuraLibrary.Forms.FlowChartMessage flowChartMessage3;
         private System.Windows.Forms.DataGridView D_PressureResultsShow;
@@ -7152,7 +6799,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private AcuraLibrary.Forms.FlowChartMessage flowChartMessage9;
+        private AcuraLibrary.Forms.FlowChartMessage Alarm1_06;
         private JabilSDK.UserControlLib.FlowChart flowChart3_6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -7274,5 +6921,42 @@
         public JabilSDK.Controls.Input IB_Robot_AbnormalAlarm;
         public JabilSDK.Controls.Input IB_Robot_Enable;
         public JabilSDK.Controls.Output OB_CCDLight;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.TrackBar trackBar2;
+        private System.Windows.Forms.TabControl tabControl11;
+        private System.Windows.Forms.TabPage tabPage30;
+        private System.Windows.Forms.TabPage tabPage31;
+        private System.Data.DataColumn dataColumn19;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox17;
+        private System.Data.DataColumn dataColumn3;
+        private JabilSDK.UserControlLib.FlowChart flowChart14;
+        private JabilSDK.UserControlLib.FlowChart flowChart13;
+        private JabilSDK.UserControlLib.FlowChart flowChart15;
+        private JabilSDK.UserControlLib.FlowChart flowChart16;
+        private JabilSDK.UserControlLib.FlowChart flowChart17;
+        private JabilSDK.UserControlLib.FlowChart flowChart18;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnDisConnect;
+        private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private JabilSDK.UserControlLib.FlowChart flowChart20;
+        private AcuraLibrary.Forms.FlowChartMessage Alarm1_01;
+        private AcuraLibrary.Forms.FlowChartMessage Alarm1_02;
+        private AcuraLibrary.Forms.FlowChartMessage Alarm1_03;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Data.DataColumn dataColumn4;
     }
 }

@@ -10,7 +10,7 @@ namespace AcuraLibrary.Forms
     [ToolboxItem(true)]
     public class FlowChartMessage : FlowChart
     {
-        private MessageForm msgForm = new MessageForm();
+        public MessageForm msgForm = new MessageForm();
         //public bool isPauseInitialize = false;
         public bool isPausePress = false;
         public bool isPauseRetry = false;

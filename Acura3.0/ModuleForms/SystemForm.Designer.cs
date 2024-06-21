@@ -77,10 +77,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label82 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.D_ErrorDGV = new System.Windows.Forms.DataGridView();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label38 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -222,6 +219,9 @@
             this.dataColumn15 = new System.Data.DataColumn();
             this.dataColumn16 = new System.Data.DataColumn();
             this.dataColumn17 = new System.Data.DataColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plMaintenance.SuspendLayout();
             this.plProductionSetting.SuspendLayout();
             this.plRecipeEditor.SuspendLayout();
@@ -245,7 +245,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.D_ErrorDGV)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -332,7 +332,7 @@
             // plMachineStatus
             // 
             this.plMachineStatus.Controls.Add(this.tableLayoutPanel3);
-            this.plMachineStatus.Size = new System.Drawing.Size(799, 627);
+            this.plMachineStatus.Size = new System.Drawing.Size(1839, 723);
             // 
             // plMotionSetup
             // 
@@ -638,7 +638,7 @@
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(799, 627);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1839, 723);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // panel4
@@ -647,7 +647,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(793, 621);
+            this.panel4.Size = new System.Drawing.Size(1833, 717);
             this.panel4.TabIndex = 0;
             // 
             // panel3
@@ -655,7 +655,7 @@
             this.panel3.Controls.Add(this.tableLayoutPanel4);
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Controls.Add(this.groupBox9);
-            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.D_ErrorDGV);
             this.panel3.Controls.Add(this.groupBox7);
             this.panel3.Controls.Add(this.groupBox6);
             this.panel3.Controls.Add(this.groupBox4);
@@ -667,7 +667,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(793, 621);
+            this.panel3.Size = new System.Drawing.Size(1833, 717);
             this.panel3.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -853,36 +853,18 @@
             this.label82.TabIndex = 0;
             this.label82.Text = "Product ID:";
             // 
-            // dataGridView1
+            // D_ErrorDGV
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.D_ErrorDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.D_ErrorDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 244);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(609, 220);
-            this.dataGridView1.TabIndex = 49;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ErrorDateTime";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 160;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "ErrorModelName";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 190;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "ErrorFlowCharName";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 280;
+            this.D_ErrorDGV.Location = new System.Drawing.Point(3, 244);
+            this.D_ErrorDGV.Name = "D_ErrorDGV";
+            this.D_ErrorDGV.RowTemplate.Height = 23;
+            this.D_ErrorDGV.Size = new System.Drawing.Size(609, 220);
+            this.D_ErrorDGV.TabIndex = 49;
             // 
             // groupBox7
             // 
@@ -2149,7 +2131,7 @@
             this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox7.Location = new System.Drawing.Point(0, 0);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(793, 621);
+            this.pictureBox7.Size = new System.Drawing.Size(1833, 717);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 45;
             this.pictureBox7.TabStop = false;
@@ -2159,7 +2141,7 @@
             this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox6.Location = new System.Drawing.Point(0, 0);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(793, 621);
+            this.pictureBox6.Size = new System.Drawing.Size(1833, 717);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 44;
             this.pictureBox6.TabStop = false;
@@ -2170,7 +2152,7 @@
             this.pictureBox5.Image = global::Acura3._0.Properties.Resources._1715242262977;
             this.pictureBox5.Location = new System.Drawing.Point(0, 0);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(793, 621);
+            this.pictureBox5.Size = new System.Drawing.Size(1833, 717);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 43;
             this.pictureBox5.TabStop = false;
@@ -2181,7 +2163,7 @@
             this.pictureBox4.Image = global::Acura3._0.Properties.Resources._1715242262977;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(793, 621);
+            this.pictureBox4.Size = new System.Drawing.Size(1833, 717);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 41;
             this.pictureBox4.TabStop = false;
@@ -2664,6 +2646,24 @@
             this.dataColumn17.ColumnName = "CoverAssemblyDryrun";
             this.dataColumn17.DataType = typeof(bool);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ErrorDateTime";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 160;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "ErrorModuleName";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 190;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "ErrorFlowCharName";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 280;
+            // 
             // SystemForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -2696,7 +2696,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.D_ErrorDGV)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox8.ResumeLayout(false);
@@ -2803,10 +2803,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label82;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.GroupBox groupBox8;
@@ -2919,5 +2915,9 @@
         private System.Data.DataColumn dataColumn15;
         private System.Data.DataColumn dataColumn16;
         private System.Data.DataColumn dataColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        public System.Windows.Forms.DataGridView D_ErrorDGV;
     }
 }

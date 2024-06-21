@@ -15,9 +15,9 @@ namespace Acura3._0.Classes
     {
         NoTask,
         Done,
+        Running,
         Stop,
         Alarm,
-        Disconnected
     }
 
     public enum eRobotSafeStatus

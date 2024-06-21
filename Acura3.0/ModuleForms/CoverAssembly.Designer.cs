@@ -1527,7 +1527,7 @@
             this.tabPage14.Controls.Add(this.tabControl8);
             this.tabPage14.Location = new System.Drawing.Point(4, 32);
             this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Size = new System.Drawing.Size(791, 1532);
+            this.tabPage14.Size = new System.Drawing.Size(1672, 1532);
             this.tabPage14.TabIndex = 3;
             this.tabPage14.Text = "Vison Flow";
             this.tabPage14.UseVisualStyleBackColor = true;
@@ -1540,7 +1540,7 @@
             this.tabControl8.Location = new System.Drawing.Point(0, 0);
             this.tabControl8.Name = "tabControl8";
             this.tabControl8.SelectedIndex = 0;
-            this.tabControl8.Size = new System.Drawing.Size(791, 1532);
+            this.tabControl8.Size = new System.Drawing.Size(1672, 1532);
             this.tabControl8.TabIndex = 0;
             // 
             // tabPage19
@@ -1565,7 +1565,7 @@
             this.tabPage19.Location = new System.Drawing.Point(4, 32);
             this.tabPage19.Name = "tabPage19";
             this.tabPage19.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage19.Size = new System.Drawing.Size(783, 1496);
+            this.tabPage19.Size = new System.Drawing.Size(1664, 1496);
             this.tabPage19.TabIndex = 0;
             this.tabPage19.Text = "Pick";
             this.tabPage19.UseVisualStyleBackColor = true;
@@ -2463,7 +2463,7 @@
             this.tabPage16.Location = new System.Drawing.Point(4, 32);
             this.tabPage16.Name = "tabPage16";
             this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage16.Size = new System.Drawing.Size(777, 1490);
+            this.tabPage16.Size = new System.Drawing.Size(1658, 1490);
             this.tabPage16.TabIndex = 1;
             this.tabPage16.Text = "Buffer";
             this.tabPage16.UseVisualStyleBackColor = true;
@@ -2798,7 +2798,7 @@
             this.tabPage18.Location = new System.Drawing.Point(4, 32);
             this.tabPage18.Name = "tabPage18";
             this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage18.Size = new System.Drawing.Size(783, 1496);
+            this.tabPage18.Size = new System.Drawing.Size(1664, 1496);
             this.tabPage18.TabIndex = 1;
             this.tabPage18.Text = "Buffer";
             this.tabPage18.UseVisualStyleBackColor = true;
@@ -3181,7 +3181,7 @@
             this.tabPage23.Controls.Add(this.IB_ScrewFeeder_LackMaterial);
             this.tabPage23.Location = new System.Drawing.Point(4, 32);
             this.tabPage23.Name = "tabPage23";
-            this.tabPage23.Size = new System.Drawing.Size(1672, 1318);
+            this.tabPage23.Size = new System.Drawing.Size(774, 1318);
             this.tabPage23.TabIndex = 3;
             this.tabPage23.Text = "Screw Feeder";
             this.tabPage23.UseVisualStyleBackColor = true;
@@ -3284,7 +3284,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 32);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1672, 1318);
+            this.tabPage6.Size = new System.Drawing.Size(774, 1318);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "Cover Feeder IO";
             this.tabPage6.UseVisualStyleBackColor = true;
