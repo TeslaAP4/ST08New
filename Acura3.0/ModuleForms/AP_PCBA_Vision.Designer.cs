@@ -320,13 +320,13 @@
             this.plFlowInitial.Controls.Add(this.flowChart2);
             this.plFlowInitial.Controls.Add(this.flowChart1);
             this.plFlowInitial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.plFlowInitial.Size = new System.Drawing.Size(1528, 580);
+            this.plFlowInitial.Size = new System.Drawing.Size(799, 627);
             // 
             // plFlowAuto
             // 
             this.plFlowAuto.Controls.Add(this.panel1);
             this.plFlowAuto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.plFlowAuto.Size = new System.Drawing.Size(1528, 580);
+            this.plFlowAuto.Size = new System.Drawing.Size(799, 627);
             // 
             // plMachineStatus
             // 
@@ -780,7 +780,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1511, 1569);
+            this.panel1.Size = new System.Drawing.Size(782, 1569);
             this.panel1.TabIndex = 0;
             // 
             // tabControl2
@@ -792,7 +792,7 @@
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1511, 1569);
+            this.tabControl2.Size = new System.Drawing.Size(782, 1569);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage1

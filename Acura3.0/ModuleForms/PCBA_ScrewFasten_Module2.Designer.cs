@@ -480,6 +480,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.MTR_Jacking = new JabilSDK.Controls.Motor();
             this.btn_Gantry1Axis = new System.Windows.Forms.Button();
+            this.IB_ScrewNgCount = new JabilSDK.Controls.Input();
             this.plMaintenance.SuspendLayout();
             this.plProductionSetting.SuspendLayout();
             this.plRecipeEditor.SuspendLayout();
@@ -571,7 +572,7 @@
             // 
             this.plProductionSetting.Controls.Add(this.tabControl8);
             this.plProductionSetting.Margin = new System.Windows.Forms.Padding(2);
-            this.plProductionSetting.Size = new System.Drawing.Size(1368, 628);
+            this.plProductionSetting.Size = new System.Drawing.Size(799, 627);
             // 
             // plRecipeEditor
             // 
@@ -603,13 +604,13 @@
             this.plFlowInitial.Controls.Add(this.flowChart0_2);
             this.plFlowInitial.Controls.Add(this.flowChart0_1);
             this.plFlowInitial.Margin = new System.Windows.Forms.Padding(2);
-            this.plFlowInitial.Size = new System.Drawing.Size(1368, 628);
+            this.plFlowInitial.Size = new System.Drawing.Size(799, 627);
             // 
             // plFlowAuto
             // 
             this.plFlowAuto.Controls.Add(this.tabControl6);
             this.plFlowAuto.Margin = new System.Windows.Forms.Padding(2);
-            this.plFlowAuto.Size = new System.Drawing.Size(1368, 628);
+            this.plFlowAuto.Size = new System.Drawing.Size(799, 627);
             // 
             // plMachineStatus
             // 
@@ -3445,7 +3446,7 @@
             this.tabControl6.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl6.Name = "tabControl6";
             this.tabControl6.SelectedIndex = 0;
-            this.tabControl6.Size = new System.Drawing.Size(1368, 628);
+            this.tabControl6.Size = new System.Drawing.Size(799, 627);
             this.tabControl6.TabIndex = 1;
             // 
             // tabPage13
@@ -3455,7 +3456,7 @@
             this.tabPage13.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage13.Name = "tabPage13";
             this.tabPage13.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage13.Size = new System.Drawing.Size(1360, 592);
+            this.tabPage13.Size = new System.Drawing.Size(791, 591);
             this.tabPage13.TabIndex = 0;
             this.tabPage13.Text = "Screw Station2";
             this.tabPage13.UseVisualStyleBackColor = true;
@@ -3474,7 +3475,7 @@
             this.tabControl7.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl7.Name = "tabControl7";
             this.tabControl7.SelectedIndex = 0;
-            this.tabControl7.Size = new System.Drawing.Size(1356, 588);
+            this.tabControl7.Size = new System.Drawing.Size(787, 587);
             this.tabControl7.TabIndex = 0;
             // 
             // tabPage16
@@ -3490,7 +3491,7 @@
             this.tabPage16.Controls.Add(this.flowChart1_1);
             this.tabPage16.Location = new System.Drawing.Point(4, 32);
             this.tabPage16.Name = "tabPage16";
-            this.tabPage16.Size = new System.Drawing.Size(1348, 552);
+            this.tabPage16.Size = new System.Drawing.Size(779, 551);
             this.tabPage16.TabIndex = 5;
             this.tabPage16.Text = "Main Flow";
             this.tabPage16.UseVisualStyleBackColor = true;
@@ -3690,7 +3691,7 @@
             this.tabPage14.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage14.Name = "tabPage14";
             this.tabPage14.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage14.Size = new System.Drawing.Size(779, 551);
+            this.tabPage14.Size = new System.Drawing.Size(1348, 552);
             this.tabPage14.TabIndex = 1;
             this.tabPage14.Text = "Screw Flow";
             this.tabPage14.UseVisualStyleBackColor = true;
@@ -4362,7 +4363,7 @@
             this.tabPage15.Location = new System.Drawing.Point(4, 32);
             this.tabPage15.Name = "tabPage15";
             this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage15.Size = new System.Drawing.Size(779, 551);
+            this.tabPage15.Size = new System.Drawing.Size(1348, 552);
             this.tabPage15.TabIndex = 4;
             this.tabPage15.Text = "Jacking Flow";
             this.tabPage15.UseVisualStyleBackColor = true;
@@ -4638,7 +4639,7 @@
             this.tabPage18.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage18.Name = "tabPage18";
             this.tabPage18.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage18.Size = new System.Drawing.Size(779, 551);
+            this.tabPage18.Size = new System.Drawing.Size(1348, 552);
             this.tabPage18.TabIndex = 2;
             this.tabPage18.Text = "Request Screw Flow";
             this.tabPage18.UseVisualStyleBackColor = true;
@@ -4661,7 +4662,7 @@
             this.tabPage19.Location = new System.Drawing.Point(4, 32);
             this.tabPage19.Name = "tabPage19";
             this.tabPage19.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage19.Size = new System.Drawing.Size(779, 551);
+            this.tabPage19.Size = new System.Drawing.Size(1348, 552);
             this.tabPage19.TabIndex = 3;
             this.tabPage19.Text = "ThrowScrew Flow";
             this.tabPage19.UseVisualStyleBackColor = true;
@@ -4674,7 +4675,7 @@
             this.tabPage27.Controls.Add(this.flowChart7_1);
             this.tabPage27.Location = new System.Drawing.Point(4, 32);
             this.tabPage27.Name = "tabPage27";
-            this.tabPage27.Size = new System.Drawing.Size(779, 551);
+            this.tabPage27.Size = new System.Drawing.Size(1348, 552);
             this.tabPage27.TabIndex = 6;
             this.tabPage27.Text = "ScrewData Flow";
             this.tabPage27.UseVisualStyleBackColor = true;
@@ -4958,7 +4959,7 @@
             this.tabControl8.Location = new System.Drawing.Point(0, 0);
             this.tabControl8.Name = "tabControl8";
             this.tabControl8.SelectedIndex = 0;
-            this.tabControl8.Size = new System.Drawing.Size(1368, 628);
+            this.tabControl8.Size = new System.Drawing.Size(799, 627);
             this.tabControl8.TabIndex = 0;
             // 
             // tabPage20
@@ -4968,7 +4969,7 @@
             this.tabPage20.Location = new System.Drawing.Point(4, 32);
             this.tabPage20.Name = "tabPage20";
             this.tabPage20.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage20.Size = new System.Drawing.Size(1360, 592);
+            this.tabPage20.Size = new System.Drawing.Size(791, 591);
             this.tabPage20.TabIndex = 0;
             this.tabPage20.Text = "Parameter";
             this.tabPage20.UseVisualStyleBackColor = true;
@@ -6440,7 +6441,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(1);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(1);
-            this.tabPage3.Size = new System.Drawing.Size(779, 551);
+            this.tabPage3.Size = new System.Drawing.Size(1348, 552);
             this.tabPage3.TabIndex = 1;
             this.tabPage3.Text = "Screw Feeder";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -6531,6 +6532,7 @@
             // 
             // tabPage12
             // 
+            this.tabPage12.Controls.Add(this.IB_ScrewNgCount);
             this.tabPage12.Controls.Add(this.OB_ModuleAlram_Light);
             this.tabPage12.Controls.Add(this.OB_CCDLight);
             this.tabPage12.Controls.Add(this.IB_PressureSensor6);
@@ -6543,7 +6545,7 @@
             this.tabPage12.Margin = new System.Windows.Forms.Padding(1);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(1);
-            this.tabPage12.Size = new System.Drawing.Size(779, 551);
+            this.tabPage12.Size = new System.Drawing.Size(1348, 552);
             this.tabPage12.TabIndex = 2;
             this.tabPage12.Text = "Module";
             this.tabPage12.UseVisualStyleBackColor = true;
@@ -6553,7 +6555,7 @@
             this.OB_ModuleAlram_Light.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_ModuleAlram_Light.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
             this.OB_ModuleAlram_Light.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.OB_ModuleAlram_Light.Location = new System.Drawing.Point(464, 74);
+            this.OB_ModuleAlram_Light.Location = new System.Drawing.Point(807, 74);
             this.OB_ModuleAlram_Light.Margin = new System.Windows.Forms.Padding(3);
             this.OB_ModuleAlram_Light.Name = "OB_ModuleAlram_Light";
             this.OB_ModuleAlram_Light.Port = "11115";
@@ -6567,7 +6569,7 @@
             this.OB_CCDLight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_CCDLight.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
             this.OB_CCDLight.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.OB_CCDLight.Location = new System.Drawing.Point(464, 27);
+            this.OB_CCDLight.Location = new System.Drawing.Point(807, 27);
             this.OB_CCDLight.Margin = new System.Windows.Forms.Padding(3);
             this.OB_CCDLight.Name = "OB_CCDLight";
             this.OB_CCDLight.Port = "11001";
@@ -6725,6 +6727,20 @@
             this.btn_Gantry1Axis.Text = "Axis Control";
             this.btn_Gantry1Axis.UseVisualStyleBackColor = true;
             this.btn_Gantry1Axis.Click += new System.EventHandler(this.btn_Gantry1Axis_Click);
+            // 
+            // IB_ScrewNgCount
+            // 
+            this.IB_ScrewNgCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IB_ScrewNgCount.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
+            this.IB_ScrewNgCount.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_ScrewNgCount.Location = new System.Drawing.Point(435, 27);
+            this.IB_ScrewNgCount.Margin = new System.Windows.Forms.Padding(5);
+            this.IB_ScrewNgCount.Name = "IB_ScrewNgCount";
+            this.IB_ScrewNgCount.Port = "01105";
+            this.IB_ScrewNgCount.Size = new System.Drawing.Size(317, 35);
+            this.IB_ScrewNgCount.TabIndex = 114;
+            this.IB_ScrewNgCount.Text = "Screw NG counter sensor2";
+            this.IB_ScrewNgCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PCBA_ScrewFasten_Module2
             // 
@@ -7279,5 +7295,6 @@
         public JabilSDK.Controls.Input IB_Robot_BatteryAlarm;
         public JabilSDK.Controls.Input IB_Robot_AbnormalAlarm;
         public JabilSDK.Controls.Input IB_Robot_Enable;
+        public JabilSDK.Controls.Input IB_ScrewNgCount;
     }
 }

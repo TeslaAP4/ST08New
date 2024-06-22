@@ -2463,7 +2463,7 @@
             this.tabPage16.Location = new System.Drawing.Point(4, 32);
             this.tabPage16.Name = "tabPage16";
             this.tabPage16.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage16.Size = new System.Drawing.Size(1658, 1490);
+            this.tabPage16.Size = new System.Drawing.Size(777, 1490);
             this.tabPage16.TabIndex = 1;
             this.tabPage16.Text = "Buffer";
             this.tabPage16.UseVisualStyleBackColor = true;
@@ -2798,7 +2798,7 @@
             this.tabPage18.Location = new System.Drawing.Point(4, 32);
             this.tabPage18.Name = "tabPage18";
             this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage18.Size = new System.Drawing.Size(1664, 1496);
+            this.tabPage18.Size = new System.Drawing.Size(783, 1496);
             this.tabPage18.TabIndex = 1;
             this.tabPage18.Text = "Buffer";
             this.tabPage18.UseVisualStyleBackColor = true;
@@ -4622,7 +4622,7 @@
             this.tabPage21.Controls.Add(this.Vision_CoverPickTask2);
             this.tabPage21.Location = new System.Drawing.Point(4, 32);
             this.tabPage21.Name = "tabPage21";
-            this.tabPage21.Size = new System.Drawing.Size(783, 555);
+            this.tabPage21.Size = new System.Drawing.Size(1681, 831);
             this.tabPage21.TabIndex = 5;
             this.tabPage21.Text = "Cover Pick Task2";
             this.tabPage21.UseVisualStyleBackColor = true;
@@ -4636,7 +4636,7 @@
             this.Vision_CoverPickTask2.Location = new System.Drawing.Point(0, 0);
             this.Vision_CoverPickTask2.Margin = new System.Windows.Forms.Padding(8, 15, 8, 15);
             this.Vision_CoverPickTask2.Name = "Vision_CoverPickTask2";
-            this.Vision_CoverPickTask2.Size = new System.Drawing.Size(783, 555);
+            this.Vision_CoverPickTask2.Size = new System.Drawing.Size(1681, 831);
             this.Vision_CoverPickTask2.TabIndex = 2;
             this.Vision_CoverPickTask2.VppPath = "";
             this.Vision_CoverPickTask2.WokId = 10;
@@ -4647,7 +4647,7 @@
             this.tabPage11.Controls.Add(this.Vision_CoverPlaceTask1);
             this.tabPage11.Location = new System.Drawing.Point(4, 32);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(783, 555);
+            this.tabPage11.Size = new System.Drawing.Size(1681, 831);
             this.tabPage11.TabIndex = 2;
             this.tabPage11.Text = "Cover Place Task1";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -4661,7 +4661,7 @@
             this.Vision_CoverPlaceTask1.Location = new System.Drawing.Point(0, 0);
             this.Vision_CoverPlaceTask1.Margin = new System.Windows.Forms.Padding(8, 15, 8, 15);
             this.Vision_CoverPlaceTask1.Name = "Vision_CoverPlaceTask1";
-            this.Vision_CoverPlaceTask1.Size = new System.Drawing.Size(783, 555);
+            this.Vision_CoverPlaceTask1.Size = new System.Drawing.Size(1681, 831);
             this.Vision_CoverPlaceTask1.TabIndex = 2;
             this.Vision_CoverPlaceTask1.VppPath = "";
             this.Vision_CoverPlaceTask1.WokId = 11;
@@ -4672,7 +4672,7 @@
             this.tabPage22.Controls.Add(this.Vision_CoverPlaceTask2);
             this.tabPage22.Location = new System.Drawing.Point(4, 32);
             this.tabPage22.Name = "tabPage22";
-            this.tabPage22.Size = new System.Drawing.Size(783, 555);
+            this.tabPage22.Size = new System.Drawing.Size(1681, 831);
             this.tabPage22.TabIndex = 6;
             this.tabPage22.Text = "Cover Place Task2";
             this.tabPage22.UseVisualStyleBackColor = true;
@@ -4686,7 +4686,7 @@
             this.Vision_CoverPlaceTask2.Location = new System.Drawing.Point(0, 0);
             this.Vision_CoverPlaceTask2.Margin = new System.Windows.Forms.Padding(13, 29, 13, 29);
             this.Vision_CoverPlaceTask2.Name = "Vision_CoverPlaceTask2";
-            this.Vision_CoverPlaceTask2.Size = new System.Drawing.Size(783, 555);
+            this.Vision_CoverPlaceTask2.Size = new System.Drawing.Size(1681, 831);
             this.Vision_CoverPlaceTask2.TabIndex = 3;
             this.Vision_CoverPlaceTask2.VppPath = "";
             this.Vision_CoverPlaceTask2.WokId = 12;
@@ -4698,7 +4698,7 @@
             this.tabPage10.Location = new System.Drawing.Point(4, 32);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(783, 555);
+            this.tabPage10.Size = new System.Drawing.Size(1681, 831);
             this.tabPage10.TabIndex = 1;
             this.tabPage10.Text = "Calibaration";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -4744,7 +4744,7 @@
             this.tabPage13.Controls.Add(this.flowChart54);
             this.tabPage13.Location = new System.Drawing.Point(4, 32);
             this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Size = new System.Drawing.Size(783, 555);
+            this.tabPage13.Size = new System.Drawing.Size(1681, 831);
             this.tabPage13.TabIndex = 4;
             this.tabPage13.Text = "Auto 9-Points Calibration Flow";
             this.tabPage13.UseVisualStyleBackColor = true;
