@@ -193,6 +193,7 @@
             this.IB_CoverFeeder_LowMaterial = new JabilSDK.Controls.Input();
             this.IB_CoverFeeder_Ready = new JabilSDK.Controls.Input();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.IB_ScrewNgCount = new JabilSDK.Controls.Input();
             this.CYL_TransferCylinder = new JabilSDK.Controls.Cylinder();
             this.IB_TransferCylinderRetract = new JabilSDK.Controls.Input();
             this.OB_TransferCylinderRetract = new JabilSDK.Controls.Output();
@@ -1527,7 +1528,7 @@
             this.tabPage14.Controls.Add(this.tabControl8);
             this.tabPage14.Location = new System.Drawing.Point(4, 32);
             this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Size = new System.Drawing.Size(1672, 1532);
+            this.tabPage14.Size = new System.Drawing.Size(791, 1532);
             this.tabPage14.TabIndex = 3;
             this.tabPage14.Text = "Vison Flow";
             this.tabPage14.UseVisualStyleBackColor = true;
@@ -1540,7 +1541,7 @@
             this.tabControl8.Location = new System.Drawing.Point(0, 0);
             this.tabControl8.Name = "tabControl8";
             this.tabControl8.SelectedIndex = 0;
-            this.tabControl8.Size = new System.Drawing.Size(1672, 1532);
+            this.tabControl8.Size = new System.Drawing.Size(791, 1532);
             this.tabControl8.TabIndex = 0;
             // 
             // tabPage19
@@ -1565,7 +1566,7 @@
             this.tabPage19.Location = new System.Drawing.Point(4, 32);
             this.tabPage19.Name = "tabPage19";
             this.tabPage19.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage19.Size = new System.Drawing.Size(1664, 1496);
+            this.tabPage19.Size = new System.Drawing.Size(783, 1496);
             this.tabPage19.TabIndex = 0;
             this.tabPage19.Text = "Pick";
             this.tabPage19.UseVisualStyleBackColor = true;
@@ -1926,7 +1927,7 @@
             this.tabPage20.Location = new System.Drawing.Point(4, 32);
             this.tabPage20.Name = "tabPage20";
             this.tabPage20.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage20.Size = new System.Drawing.Size(783, 1496);
+            this.tabPage20.Size = new System.Drawing.Size(1664, 1496);
             this.tabPage20.TabIndex = 1;
             this.tabPage20.Text = "Place";
             this.tabPage20.UseVisualStyleBackColor = true;
@@ -2278,7 +2279,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 32);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(791, 1532);
+            this.tabPage2.Size = new System.Drawing.Size(1672, 1532);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Pick FLow";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -2291,7 +2292,7 @@
             this.tabControl6.Location = new System.Drawing.Point(3, 3);
             this.tabControl6.Name = "tabControl6";
             this.tabControl6.SelectedIndex = 0;
-            this.tabControl6.Size = new System.Drawing.Size(785, 1526);
+            this.tabControl6.Size = new System.Drawing.Size(1666, 1526);
             this.tabControl6.TabIndex = 42;
             // 
             // tabPage15
@@ -2306,7 +2307,7 @@
             this.tabPage15.Location = new System.Drawing.Point(4, 32);
             this.tabPage15.Name = "tabPage15";
             this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage15.Size = new System.Drawing.Size(777, 1490);
+            this.tabPage15.Size = new System.Drawing.Size(1658, 1490);
             this.tabPage15.TabIndex = 0;
             this.tabPage15.Text = "Feeder";
             this.tabPage15.UseVisualStyleBackColor = true;
@@ -2613,7 +2614,7 @@
             this.tabPage3.Controls.Add(this.tabControl7);
             this.tabPage3.Location = new System.Drawing.Point(4, 32);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(791, 1532);
+            this.tabPage3.Size = new System.Drawing.Size(1672, 1532);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Place FLow";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -2626,7 +2627,7 @@
             this.tabControl7.Location = new System.Drawing.Point(0, 0);
             this.tabControl7.Name = "tabControl7";
             this.tabControl7.SelectedIndex = 0;
-            this.tabControl7.Size = new System.Drawing.Size(791, 1532);
+            this.tabControl7.Size = new System.Drawing.Size(1672, 1532);
             this.tabControl7.TabIndex = 62;
             // 
             // tabPage17
@@ -2641,7 +2642,7 @@
             this.tabPage17.Location = new System.Drawing.Point(4, 32);
             this.tabPage17.Name = "tabPage17";
             this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage17.Size = new System.Drawing.Size(783, 1496);
+            this.tabPage17.Size = new System.Drawing.Size(1664, 1496);
             this.tabPage17.TabIndex = 0;
             this.tabPage17.Text = "Assembly";
             this.tabPage17.UseVisualStyleBackColor = true;
@@ -2798,7 +2799,7 @@
             this.tabPage18.Location = new System.Drawing.Point(4, 32);
             this.tabPage18.Name = "tabPage18";
             this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage18.Size = new System.Drawing.Size(783, 1496);
+            this.tabPage18.Size = new System.Drawing.Size(1664, 1496);
             this.tabPage18.TabIndex = 1;
             this.tabPage18.Text = "Buffer";
             this.tabPage18.UseVisualStyleBackColor = true;
@@ -3417,6 +3418,7 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.IB_ScrewNgCount);
             this.tabPage7.Controls.Add(this.CYL_TransferCylinder);
             this.tabPage7.Controls.Add(this.OB_TransferCylinderRetract);
             this.tabPage7.Controls.Add(this.OB_TransferCylinderExtend);
@@ -3430,6 +3432,20 @@
             this.tabPage7.TabIndex = 2;
             this.tabPage7.Text = "Module IO";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // IB_ScrewNgCount
+            // 
+            this.IB_ScrewNgCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IB_ScrewNgCount.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
+            this.IB_ScrewNgCount.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_ScrewNgCount.Location = new System.Drawing.Point(57, 156);
+            this.IB_ScrewNgCount.Margin = new System.Windows.Forms.Padding(5);
+            this.IB_ScrewNgCount.Name = "IB_ScrewNgCount";
+            this.IB_ScrewNgCount.Port = "03102";
+            this.IB_ScrewNgCount.Size = new System.Drawing.Size(306, 35);
+            this.IB_ScrewNgCount.TabIndex = 121;
+            this.IB_ScrewNgCount.Text = "Screw NG counter sensor3";
+            this.IB_ScrewNgCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CYL_TransferCylinder
             // 
@@ -4622,7 +4638,7 @@
             this.tabPage21.Controls.Add(this.Vision_CoverPickTask2);
             this.tabPage21.Location = new System.Drawing.Point(4, 32);
             this.tabPage21.Name = "tabPage21";
-            this.tabPage21.Size = new System.Drawing.Size(1681, 831);
+            this.tabPage21.Size = new System.Drawing.Size(783, 555);
             this.tabPage21.TabIndex = 5;
             this.tabPage21.Text = "Cover Pick Task2";
             this.tabPage21.UseVisualStyleBackColor = true;
@@ -4636,7 +4652,7 @@
             this.Vision_CoverPickTask2.Location = new System.Drawing.Point(0, 0);
             this.Vision_CoverPickTask2.Margin = new System.Windows.Forms.Padding(8, 15, 8, 15);
             this.Vision_CoverPickTask2.Name = "Vision_CoverPickTask2";
-            this.Vision_CoverPickTask2.Size = new System.Drawing.Size(1681, 831);
+            this.Vision_CoverPickTask2.Size = new System.Drawing.Size(783, 555);
             this.Vision_CoverPickTask2.TabIndex = 2;
             this.Vision_CoverPickTask2.VppPath = "";
             this.Vision_CoverPickTask2.WokId = 10;
@@ -4647,7 +4663,7 @@
             this.tabPage11.Controls.Add(this.Vision_CoverPlaceTask1);
             this.tabPage11.Location = new System.Drawing.Point(4, 32);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(1681, 831);
+            this.tabPage11.Size = new System.Drawing.Size(783, 555);
             this.tabPage11.TabIndex = 2;
             this.tabPage11.Text = "Cover Place Task1";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -4661,7 +4677,7 @@
             this.Vision_CoverPlaceTask1.Location = new System.Drawing.Point(0, 0);
             this.Vision_CoverPlaceTask1.Margin = new System.Windows.Forms.Padding(8, 15, 8, 15);
             this.Vision_CoverPlaceTask1.Name = "Vision_CoverPlaceTask1";
-            this.Vision_CoverPlaceTask1.Size = new System.Drawing.Size(1681, 831);
+            this.Vision_CoverPlaceTask1.Size = new System.Drawing.Size(783, 555);
             this.Vision_CoverPlaceTask1.TabIndex = 2;
             this.Vision_CoverPlaceTask1.VppPath = "";
             this.Vision_CoverPlaceTask1.WokId = 11;
@@ -4672,7 +4688,7 @@
             this.tabPage22.Controls.Add(this.Vision_CoverPlaceTask2);
             this.tabPage22.Location = new System.Drawing.Point(4, 32);
             this.tabPage22.Name = "tabPage22";
-            this.tabPage22.Size = new System.Drawing.Size(1681, 831);
+            this.tabPage22.Size = new System.Drawing.Size(783, 555);
             this.tabPage22.TabIndex = 6;
             this.tabPage22.Text = "Cover Place Task2";
             this.tabPage22.UseVisualStyleBackColor = true;
@@ -4686,7 +4702,7 @@
             this.Vision_CoverPlaceTask2.Location = new System.Drawing.Point(0, 0);
             this.Vision_CoverPlaceTask2.Margin = new System.Windows.Forms.Padding(13, 29, 13, 29);
             this.Vision_CoverPlaceTask2.Name = "Vision_CoverPlaceTask2";
-            this.Vision_CoverPlaceTask2.Size = new System.Drawing.Size(1681, 831);
+            this.Vision_CoverPlaceTask2.Size = new System.Drawing.Size(783, 555);
             this.Vision_CoverPlaceTask2.TabIndex = 3;
             this.Vision_CoverPlaceTask2.VppPath = "";
             this.Vision_CoverPlaceTask2.WokId = 12;
@@ -4698,7 +4714,7 @@
             this.tabPage10.Location = new System.Drawing.Point(4, 32);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(1681, 831);
+            this.tabPage10.Size = new System.Drawing.Size(783, 555);
             this.tabPage10.TabIndex = 1;
             this.tabPage10.Text = "Calibaration";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -4744,7 +4760,7 @@
             this.tabPage13.Controls.Add(this.flowChart54);
             this.tabPage13.Location = new System.Drawing.Point(4, 32);
             this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Size = new System.Drawing.Size(1681, 831);
+            this.tabPage13.Size = new System.Drawing.Size(783, 555);
             this.tabPage13.TabIndex = 4;
             this.tabPage13.Text = "Auto 9-Points Calibration Flow";
             this.tabPage13.UseVisualStyleBackColor = true;
@@ -5781,5 +5797,6 @@
         public JabilSDK.Controls.Output OB_TransferCylinderRetract;
         public JabilSDK.Controls.Input IB_TransferCylinderExtend;
         public JabilSDK.Controls.Output OB_TransferCylinderExtend;
+        public JabilSDK.Controls.Input IB_ScrewNgCount;
     }
 }

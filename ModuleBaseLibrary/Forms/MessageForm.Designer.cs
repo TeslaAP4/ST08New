@@ -85,12 +85,12 @@ namespace AcuraLibrary.Forms
             // btnSkip
             // 
             this.btnSkip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(230)))));
-            this.btnSkip.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSkip.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSkip.ForeColor = System.Drawing.Color.Black;
-            this.btnSkip.Location = new System.Drawing.Point(369, 10);
+            this.btnSkip.Location = new System.Drawing.Point(275, 10);
             this.btnSkip.Margin = new System.Windows.Forms.Padding(5);
             this.btnSkip.Name = "btnSkip";
-            this.btnSkip.Size = new System.Drawing.Size(121, 56);
+            this.btnSkip.Size = new System.Drawing.Size(195, 56);
             this.btnSkip.TabIndex = 8;
             this.btnSkip.Text = "SKIP";
             this.btnSkip.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -100,12 +100,12 @@ namespace AcuraLibrary.Forms
             // btnMute
             // 
             this.btnMute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(230)))));
-            this.btnMute.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMute.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMute.ForeColor = System.Drawing.Color.Black;
             this.btnMute.Location = new System.Drawing.Point(5, 10);
             this.btnMute.Margin = new System.Windows.Forms.Padding(5);
             this.btnMute.Name = "btnMute";
-            this.btnMute.Size = new System.Drawing.Size(121, 56);
+            this.btnMute.Size = new System.Drawing.Size(116, 56);
             this.btnMute.TabIndex = 7;
             this.btnMute.Text = "MUTE";
             this.btnMute.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -115,12 +115,12 @@ namespace AcuraLibrary.Forms
             // btnRetry
             // 
             this.btnRetry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(230)))));
-            this.btnRetry.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRetry.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRetry.ForeColor = System.Drawing.Color.Black;
-            this.btnRetry.Location = new System.Drawing.Point(554, 10);
+            this.btnRetry.Location = new System.Drawing.Point(489, 10);
             this.btnRetry.Margin = new System.Windows.Forms.Padding(5);
             this.btnRetry.Name = "btnRetry";
-            this.btnRetry.Size = new System.Drawing.Size(121, 56);
+            this.btnRetry.Size = new System.Drawing.Size(188, 56);
             this.btnRetry.TabIndex = 5;
             this.btnRetry.Text = "RETRY";
             this.btnRetry.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -130,12 +130,12 @@ namespace AcuraLibrary.Forms
             // btnPause
             // 
             this.btnPause.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(230)))));
-            this.btnPause.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPause.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPause.ForeColor = System.Drawing.Color.Black;
-            this.btnPause.Location = new System.Drawing.Point(181, 10);
+            this.btnPause.Location = new System.Drawing.Point(140, 10);
             this.btnPause.Margin = new System.Windows.Forms.Padding(5);
             this.btnPause.Name = "btnPause";
-            this.btnPause.Size = new System.Drawing.Size(121, 56);
+            this.btnPause.Size = new System.Drawing.Size(116, 56);
             this.btnPause.TabIndex = 4;
             this.btnPause.Text = "PAUSE";
             this.btnPause.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

@@ -1632,145 +1632,57 @@ namespace Acura3._0.ModuleForms
             return FCResultType.IDLE;
         }
 
-        private FCResultType flowChart2_2_FlowRun(object sender, EventArgs e)
-        {
-            B_ScrewRequest = true;
-            screwStartTime = DateTime.Now;
-            J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_2.Text} finish", true);
-            return FCResultType.NEXT;
-        }
         VppComp.Point3D point3D;
         private FCResultType flowChart2_17_FlowRun(object sender, EventArgs e)
         {
-            ScrewAxisPos AxisZ = GetScrewPointList("SafePos");
-            bool bFinsh = MTR_Z.Goto(AxisZ.z);
-            if (bFinsh)
+            double offsetX = 0;
+            double offsetY = 0;
+            if (I_ScrewCount == 1 || I_ScrewCount == 2)
             {
-                SafetyPos = false;
+                offsetX = Math.Round(point3D.x, 2);
+                offsetY = Math.Round(point3D.y, 2);
+            }
+            if (F_Robot.SetTaskIndex(I_ScrewCount) && F_Robot.SetVisionResultX(offsetX) && F_Robot.SetVisionResultY(offsetY) && F_Robot.SetRobotTask(4))
+            {
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_17.Text} finish", true);
                 return FCResultType.NEXT;
             }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "AutoAsixTimes")))
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart24_FlowRun(object sender, EventArgs e)
+        {
+            if (F_Robot.GetCurrentTaskState() == eRobotState.Done)
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_17.Text} overtime", false);
-                GantryAlarm("3014", flowChartMessage4);
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart24.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            if (F_Robot.GetCurrentTaskState() == eRobotState.Alarm)
+            {
+                J_AxisAutoTm.Restart();
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart24.Text} robot alarm", false);
+                MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart24.Text);
+                RefreshDifferentThreadUI(Alarm2_01, () =>
+                {
+                    Alarm2_01.msgForm.btnRetry.Text = "Continue Wait";
+                    Alarm2_01.msgForm.btnSkip.Text = "Screw Again";
+                });
+                RobotAlarm(Alarm2_01);
                 return FCResultType.CASE2;
             }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart2_3_FlowRun(object sender, EventArgs e)
-        {
-            ScrewAxisPos AxisXY = GetScrewPointList($"ScrewPos{I_ScrewCount}");
-            ScrewAxisPos AxisZ = GetScrewPointList($"SafePos");
-            if (B_GantryMoveL(AxisXY.x + point3D.x, AxisXY.y + point3D.y, AxisXY.z, AxisZ.z))
+            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IniAsixTimes")))
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_3.Text} finish", true);
-                return FCResultType.NEXT;
-            }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "AutoAsixTimes")))
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_3.Text} overtime", false);
-                GantryAlarm("3014", flowChartMessage5);
-                return FCResultType.CASE2;
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart2_4_FlowRun(object sender, EventArgs e)
-        {
-            if (!B_ScrewRequest && B_ScrewRequestResult)
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_4.Text} finish", true);
-                return FCResultType.NEXT;
-            }
-            else if (!B_ScrewRequest && !B_ScrewRequestResult)
-            {
-                GantryAlarm("3016", flowChartMessage1);
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_4.Text} overtime", false);
-                return FCResultType.CASE2;
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart2_20_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewNailingCylinder.On();
-            if (IB_ScrewNailingCylinderExtend.IsOn() && IB_ScrewNailingCylinderRetract.IsOff())
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_20.Text} finish", true);
-                return FCResultType.NEXT;
-            }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_20.Text} overtime", false);
-                JSDK.Alarm.Show("3056");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart2_6_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewLockCylinder.Off();
-            if (IB_ScrewLockCylinderExtend.IsOff() && IB_ScrewLockCylinderRetract.IsOn())
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_6.Text} finish", true);
-                return FCResultType.NEXT;
-            }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_6.Text} overtime", false);
-                JSDK.Alarm.Show("3053");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart2_7_FlowRun(object sender, EventArgs e)
-        {
-            OB_ScrewStart.Off();
-            OB_ScrewStop.Off();
-            OB_ScrewProgram_1.Off();
-            OB_ScrewProgram_2.Off();
-            DelayMs(300);
-            OB_ScrewProgram_1.On();
-            J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_7.Text} finish", true);
-            return FCResultType.NEXT;
-        }
-
-        private FCResultType flowChart2_8_FlowRun(object sender, EventArgs e)
-        {
-            if (SysPara.IsDryRun || B_GantryDryRun)
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "Dryrun Mode :" + $"{this.Text} Module {flowChart2_8.Text} finish", true);
-                return FCResultType.NEXT;
-            }
-            OB_ScrewStart.On();
-            OB_ScrewProgram_1.On();
-            J_AxisAutoTm.Restart();
-            if (IB_Screw_Running.IsOn())
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_8.Text} finish", true);
-                return FCResultType.NEXT;
-            }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_8.Text} overtime", false);
-                GantryAlarm("3018", flowChartMessage2);
-                return FCResultType.CASE2;
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart24.Text} robot overtime", false);
+                MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart24.Text);
+                RefreshDifferentThreadUI(flowChartMessage4, () =>
+                {
+                    flowChartMessage4.msgForm.btnRetry.Text = "Continue Wait";
+                });
+                GantryAlarm("4001", flowChartMessage4, false);
+                return FCResultType.CASE1;
             }
             return FCResultType.IDLE;
         }
@@ -1783,35 +1695,36 @@ namespace Acura3._0.ModuleForms
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "Dryrun Mode :" + $"{this.Text} Module {flowChart2_10.Text} finish", true);
                 return FCResultType.NEXT;
             }
-            if (IB_Screw_OK.IsOn() || IB_Screw_NG.IsOn())
+            if (F_Robot.ReflashRobotR())
             {
                 if (B_ByPassScrew)
                 {
-                    OB_ScrewStart.Off();
                     J_AxisAutoTm.Restart();
                     MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "ByPass Screw Result Mode :" + $"{this.Text} Module {flowChart2_10.Text} finish", true);
                     return FCResultType.NEXT;
                 }
-                OB_ScrewStart.Off();
-                if (IB_Screw_OK.IsOn())
+                if (F_Robot.D_ReadRobotR[30] == 1)
                 {
-                    J_AxisAutoTm.Restart();
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_10.Text} finish", true);
-                    return FCResultType.NEXT;
+                    if (F_Robot.WriteR(30, 0))
+                    {
+                        J_AxisAutoTm.Restart();
+                        MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_10.Text} finish", true);
+                        return FCResultType.NEXT;
+                    }
                 }
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_10.Text} screw result NG", false);
-                JSDK.Alarm.Show("3020");
-                J_AxisAutoTm.Restart();
-                return FCResultType.CASE2;
+                if (F_Robot.D_ReadRobotR[30] == 2)
+                {
+                    if (F_Robot.WriteR(30, 0))
+                    {
+                        B_GantryResult = false;
+                        MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_10.Text} screw result NG", false);
+                        JSDK.Alarm.Show("3020");
+                        J_AxisAutoTm.Restart();
+                        return FCResultType.CASE2;
+                    }
+                }
             }
             return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart2_11_FlowRun(object sender, EventArgs e)
-        {
-            OB_ScrewVacuum.Off();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_11.Text} finish", true);
-            return FCResultType.NEXT;
         }
 
         private FCResultType flowChart2_12_FlowRun(object sender, EventArgs e)
@@ -1849,6 +1762,7 @@ namespace Acura3._0.ModuleForms
                 }
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_22.Text} ---- Screw dispalcement height over limit", false);
+                MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart2_22.Text);
                 GantryAlarm("3030", flowChartMessage17);
                 return FCResultType.CASE1;
             }
@@ -1857,83 +1771,20 @@ namespace Acura3._0.ModuleForms
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_22.Text} overtime", false);
                 SysPara.newReadCOM.DisconnectCom3();
                 SysPara.newReadCOM.ConnectCom(GetRecipeValue("RSet", "DisplacementCom"));
-                GantryAlarm("3028", flowChartMessage16);
+                MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart2_22.Text);
+                GantryAlarm("3028", flowChartMessage16, false);
                 return FCResultType.CASE2;
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart2_13_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewNailingCylinder.Off();
-            if (IB_ScrewNailingCylinderExtend.IsOff() && IB_ScrewNailingCylinderRetract.IsOn())
-            {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_13.Text} finish", true);
-                J_AxisAutoTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_13.Text} Screw Nailing Cylinder Retract overtime", false);
-                JSDK.Alarm.Show("3057");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart2_21_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewLockCylinder.On();
-            if (IB_ScrewLockCylinderExtend.IsOn() && IB_ScrewLockCylinderRetract.IsOff())
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_21.Text} finish", true);
-                return FCResultType.NEXT;
-            }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_21.Text} overtime", false);
-                JSDK.Alarm.Show("3052");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart2_18_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewFeedCylinder.Off();
-            if (IB_ScrewFeedCylinderExtend.IsOff() && IB_ScrewFeedCylinderRetract.IsOn())
-            {
-                WriteScrewData(screwData);
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_18.Text} finish", true);
-                J_AxisAutoTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_18.Text} overtime", false);
-                JSDK.Alarm.Show("3055");
             }
             return FCResultType.IDLE;
         }
 
         private FCResultType flowChart2_14_FlowRun(object sender, EventArgs e)
         {
-            ScrewAxisPos AxisZ = GetScrewPointList("SafePos");
-            bool bFinsh = MTR_Z.Goto(AxisZ.z);
-            if (bFinsh)
+            if (F_Robot.SetTaskIndex(1) && F_Robot.SetRobotTask(3))
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_14.Text} finish", true);
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4_7.Text} finish", true);
                 return FCResultType.NEXT;
-            }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "AutoAsixTimes")))
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_14.Text} overtime", false);
-                GantryAlarm("3014", flowChartMessage6);
-                return FCResultType.CASE2;
             }
             return FCResultType.IDLE;
         }
@@ -1942,7 +1793,7 @@ namespace Acura3._0.ModuleForms
         {
             MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_15.Text} finish", true);
             J_AxisAutoTm.Restart();
-            if (I_ScrewCount > 7 || !B_GantryResult)
+            if (I_ScrewCount > 9 || !B_GantryResult)
             {
                 return FCResultType.NEXT;
             }
@@ -1951,19 +1802,34 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart2_19_FlowRun(object sender, EventArgs e)
         {
-            JackingAxisPos AxisZ = GetJackingPointList("SafePos");
-            bool bFinsh = MTR_Jacking.Goto(AxisZ.Position);
-            if (bFinsh)
+            if (F_Robot.GetCurrentTaskState() == eRobotState.Done)
             {
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_19.Text} finish", true);
                 return FCResultType.NEXT;
             }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "AutoAsixTimes")))
+            if (F_Robot.GetCurrentTaskState() == eRobotState.Alarm)
+            {
+                J_AxisAutoTm.Restart();
+                MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart2_19.Text);
+                RefreshDifferentThreadUI(Alarm2_01, () =>
+                {
+                    Alarm2_01.msgForm.btnRetry.Text = "Continue Wait";
+                });
+                RobotAlarm(Alarm2_02, false);
+                return FCResultType.CASE3;
+            }
+            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IniAsixTimes")))
             {
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_19.Text} overtime", false);
-                GantryAlarm("3014", flowChartMessage7);
+                MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart2_19.Text);
+                RefreshDifferentThreadUI(flowChartMessage1, () =>
+                {
+                    flowChartMessage1.msgForm.btnRetry.Text = "Continue Wait";
+                    flowChartMessage1.msgForm.btnSkip.Text = "Move Again";
+                });
+                GantryAlarm("4001", flowChartMessage1);
                 return FCResultType.CASE2;
             }
             return FCResultType.IDLE;
@@ -2065,6 +1931,7 @@ namespace Acura3._0.ModuleForms
             {
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_2.Text} overtime", false);
+                MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart3_2.Text);
                 GantryAlarm("3014", Alarm3_01, false);
                 return FCResultType.CASE2;
             }
@@ -2150,6 +2017,7 @@ namespace Acura3._0.ModuleForms
             {
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_5.Text} overtime", false);
                 J_AxisAutoTm.Restart();
+                MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart3_5.Text);
                 GantryAlarm("3022", Alarm3_02);
                 return FCResultType.CASE2;
             }
@@ -2223,6 +2091,7 @@ namespace Acura3._0.ModuleForms
             {
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_6.Text} overtime", false);
+                MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart3_6.Text);
                 GantryAlarm("3026", Alarm3_03);
                 return FCResultType.CASE2;
             }
@@ -2302,6 +2171,7 @@ namespace Acura3._0.ModuleForms
             {
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4_2.Text} overtime", false);
+                MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart4_2.Text);
                 GantryAlarm("4001", Alarm4_02);
                 return FCResultType.CASE2;
             }
@@ -2348,6 +2218,7 @@ namespace Acura3._0.ModuleForms
                     return FCResultType.NEXT;
                 }
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4_3.Text} NG", false);
+                MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart4_3.Text);
                 GantryAlarm("3034", Alarm4_04);
                 return FCResultType.CASE2;
             }
@@ -2355,6 +2226,7 @@ namespace Acura3._0.ModuleForms
             {
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4_3.Text} overtime", false);
+                MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart4_3.Text);
                 GantryAlarm("3034", Alarm4_04);
                 return FCResultType.CASE2;
             }
@@ -2415,10 +2287,11 @@ namespace Acura3._0.ModuleForms
                     MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4_4.Text} finish", true);
                     return FCResultType.NEXT;
                 }
-                else 
+                else
                 {
                     J_AxisAutoTm.Restart();
                     MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4_4.Text} vision offset overlimit", false);
+                    MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart4_4.Text);
                     GantryAlarm("8004", Alarm4_03);
                     return FCResultType.CASE2;
                 }
@@ -2427,6 +2300,7 @@ namespace Acura3._0.ModuleForms
             {
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4_4.Text} vision run NG", false);
+                MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart4_4.Text);
                 GantryAlarm("3038", Alarm4_03);
                 return FCResultType.CASE2;
             }
@@ -2458,146 +2332,6 @@ namespace Acura3._0.ModuleForms
         {
             //J_AxisAutoTm.Restart();
             //MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart42.Text} finish", true);
-            return FCResultType.NEXT;
-        }
-        #endregion
-
-        #region RequestScrew Flow
-        private FCResultType flowChart5_1_FlowRun(object sender, EventArgs e)
-        {
-            if (B_ScrewRequest)
-            {
-                OB_ScrewArrived1.Off();
-                J_ScrewAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart5_1.Text} finish", true);
-                return FCResultType.NEXT;
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart5_2_FlowRun(object sender, EventArgs e)
-        {
-            if (SysPara.IsDryRun || B_GantryDryRun)
-            {
-                J_ScrewAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + " Dryrun Mode : " + $"{this.Text} Module {flowChart5_2.Text} finish", true);
-                return FCResultType.NEXT;
-            }
-            if (IB_ScrewFeeder_Ready.IsOn())
-            {
-                OB_ScrewFeeder_SplitNail.On();
-                J_ScrewAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart5_2.Text} finish", true);
-                return FCResultType.NEXT;
-            }
-            if (J_ScrewAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_ScrewAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart5_2.Text} overtime", false);
-                GantryAlarm("3024", flowChartMessage3);
-                return FCResultType.CASE2;
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart5_3_FlowRun(object sender, EventArgs e)
-        {
-            if (SysPara.IsDryRun || B_GantryDryRun)
-            {
-                OB_ScrewArrived1.Off();
-                J_ScrewAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + " Dryrun Mode : " + $"{this.Text} Module {flowChart5_3.Text} finish", true);
-                return FCResultType.NEXT;
-            }
-            if (IB_ScrewArrived1.IsOn())
-            {
-                OB_ScrewVacuum.On();
-                J_ScrewAutoTm.Restart();
-                OB_ScrewArrived1.Off();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart5_3.Text} finish", true);
-                return FCResultType.NEXT;
-            }
-            if (J_ScrewAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_ScrewAutoTm.Restart();
-                OB_ScrewArrived1.Off();
-                B_ScrewRequestResult = false;
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart5_3.Text} overtime", false);
-                return FCResultType.CASE1;
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart5_4_FlowRun(object sender, EventArgs e)
-        {
-            if (J_ScrewAutoTm.IsOn(500))
-            {
-                CYL_Conveyor1_ScrewFeedCylinder.On();
-                if (IB_ScrewFeedCylinderExtend.IsOn() && IB_ScrewFeedCylinderRetract.IsOff())
-                {
-                    OB_ScrewVacuum.On();
-                    J_ScrewAutoTm.Restart();
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart5_4.Text} finish", true);
-                    return FCResultType.NEXT;
-                }
-                if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-                {
-                    J_AxisAutoTm.Restart();
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart5_4.Text} overtime", false);
-                    JSDK.Alarm.Show("3054");
-                }
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart5_5_FlowRun(object sender, EventArgs e)
-        {
-            if (SysPara.IsDryRun || B_GantryDryRun)
-            {
-                J_ScrewAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + " Dryrun Mode : " + $"{this.Text} Module {flowChart5_5.Text} finish", true);
-                return FCResultType.NEXT;
-            }
-            if (IB_ScrewVacuum.IsOn())
-            {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart5_5.Text} finish", true);
-                return FCResultType.NEXT;
-            }
-            if (J_ScrewAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                B_ScrewRequestResult = false;
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart5_5.Text} overtime", false);
-                return FCResultType.CASE1;
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart5_6_FlowRun(object sender, EventArgs e)
-        {
-            B_ScrewRequestResult = true;
-            return FCResultType.NEXT;
-        }
-
-        private FCResultType flowChart5_7_FlowRun(object sender, EventArgs e)
-        {
-            OB_ScrewArrived1.Off();
-            OB_ScrewFeeder_SplitNail.Off();
-            B_ScrewRequest = false;
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart5_7.Text} finish", true);
-            return FCResultType.NEXT;
-        }
-
-        private FCResultType flowChart31_FlowRun(object sender, EventArgs e)
-        {
-            J_ScrewAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart31.Text} finish", true);
-            return FCResultType.NEXT;
-        }
-
-        private FCResultType flowChart55_FlowRun(object sender, EventArgs e)
-        {
-            J_ScrewAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart55.Text} finish", true);
             return FCResultType.NEXT;
         }
         #endregion
@@ -3560,6 +3294,11 @@ namespace Acura3._0.ModuleForms
         }
 
         private FCResultType flowChart22_FlowRun(object sender, EventArgs e)
+        {
+            return FCResultType.NEXT;
+        }
+
+        private FCResultType flowChart2_FlowRun_1(object sender, EventArgs e)
         {
             return FCResultType.NEXT;
         }
