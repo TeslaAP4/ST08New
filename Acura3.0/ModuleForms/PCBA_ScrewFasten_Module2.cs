@@ -1922,7 +1922,6 @@ namespace Acura3._0.ModuleForms
             return FCResultType.IDLE;
         }
 
-
         private FCResultType flowChart3_4_FlowRun(object sender, EventArgs e)
         {
             SetAxisSpeed();
