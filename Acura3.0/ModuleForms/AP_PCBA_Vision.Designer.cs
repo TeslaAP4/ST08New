@@ -320,7 +320,7 @@
             this.plFlowInitial.Controls.Add(this.flowChart2);
             this.plFlowInitial.Controls.Add(this.flowChart1);
             this.plFlowInitial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.plFlowInitial.Size = new System.Drawing.Size(799, 627);
+            this.plFlowInitial.Size = new System.Drawing.Size(1528, 580);
             // 
             // plFlowAuto
             // 

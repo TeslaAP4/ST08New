@@ -18,6 +18,7 @@ namespace Acura3._0.Classes
         Running,
         Stop,
         Alarm,
+        Disconnected
     }
 
     public enum eRobotSafeStatus

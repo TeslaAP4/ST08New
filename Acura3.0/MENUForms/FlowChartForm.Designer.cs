@@ -56,7 +56,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(823, 588);
+            this.tabControl1.Size = new System.Drawing.Size(823, 543);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             // 
@@ -65,9 +65,9 @@
             this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Controls.Add(this.tcFlowInitial);
             this.tabPage1.Location = new System.Drawing.Point(4, 54);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(815, 530);
+            this.tabPage1.Size = new System.Drawing.Size(815, 485);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Flow Initial";
             // 
@@ -78,12 +78,12 @@
             this.tcFlowInitial.Controls.Add(this.tabPage4);
             this.tcFlowInitial.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcFlowInitial.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcFlowInitial.ItemSize = new System.Drawing.Size(200, 50);
+            this.tcFlowInitial.ItemSize = new System.Drawing.Size(350, 50);
             this.tcFlowInitial.Location = new System.Drawing.Point(0, 0);
             this.tcFlowInitial.Margin = new System.Windows.Forms.Padding(0);
             this.tcFlowInitial.Name = "tcFlowInitial";
             this.tcFlowInitial.SelectedIndex = 0;
-            this.tcFlowInitial.Size = new System.Drawing.Size(815, 530);
+            this.tcFlowInitial.Size = new System.Drawing.Size(815, 485);
             this.tcFlowInitial.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tcFlowInitial.TabIndex = 4;
             // 
@@ -91,10 +91,10 @@
             // 
             this.tabPage3.BackColor = System.Drawing.Color.White;
             this.tabPage3.Location = new System.Drawing.Point(4, 54);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage3.Size = new System.Drawing.Size(807, 472);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Size = new System.Drawing.Size(807, 427);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Module #1";
             // 
@@ -102,10 +102,10 @@
             // 
             this.tabPage4.BackColor = System.Drawing.Color.White;
             this.tabPage4.Location = new System.Drawing.Point(4, 54);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage4.Size = new System.Drawing.Size(732, 419);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage4.Size = new System.Drawing.Size(807, 427);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Module #2";
             // 
@@ -114,9 +114,9 @@
             this.tabPage2.BackColor = System.Drawing.Color.White;
             this.tabPage2.Controls.Add(this.tcFlowAuto);
             this.tabPage2.Location = new System.Drawing.Point(4, 54);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(740, 477);
+            this.tabPage2.Size = new System.Drawing.Size(815, 485);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Flow Auto";
             // 
@@ -132,7 +132,7 @@
             this.tcFlowAuto.Margin = new System.Windows.Forms.Padding(0);
             this.tcFlowAuto.Name = "tcFlowAuto";
             this.tcFlowAuto.SelectedIndex = 0;
-            this.tcFlowAuto.Size = new System.Drawing.Size(740, 477);
+            this.tcFlowAuto.Size = new System.Drawing.Size(815, 485);
             this.tcFlowAuto.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tcFlowAuto.TabIndex = 4;
             // 
@@ -140,10 +140,10 @@
             // 
             this.tabPage5.BackColor = System.Drawing.Color.White;
             this.tabPage5.Location = new System.Drawing.Point(4, 54);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage5.Size = new System.Drawing.Size(732, 419);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage5.Size = new System.Drawing.Size(807, 427);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "Module #1";
             // 
@@ -151,21 +151,21 @@
             // 
             this.tabPage6.BackColor = System.Drawing.Color.White;
             this.tabPage6.Location = new System.Drawing.Point(4, 54);
-            this.tabPage6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage6.Size = new System.Drawing.Size(734, 430);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage6.Size = new System.Drawing.Size(732, 382);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "Module #2";
             // 
             // FlowChartForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(823, 588);
+            this.ClientSize = new System.Drawing.Size(823, 543);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FlowChartForm";
             this.Text = "Flow Chart";
             this.Load += new System.EventHandler(this.FlowChartForm_Load);

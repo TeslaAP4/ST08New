@@ -49,8 +49,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cogRecord_Robot2 = new Cognex.VisionPro.CogRecordDisplay();
             this.cogRecord_Robot3 = new Cognex.VisionPro.CogRecordDisplay();
-            this.cogRecord_FeederPick = new Cognex.VisionPro.CogRecordDisplay();
-            this.cogRecord_Place = new Cognex.VisionPro.CogRecordDisplay();
+            this.Cog_CoverAssembly1 = new Cognex.VisionPro.CogRecordDisplay();
+            this.Cog_CoverAssembly2 = new Cognex.VisionPro.CogRecordDisplay();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -107,8 +107,8 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cogRecord_Robot2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cogRecord_Robot3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cogRecord_FeederPick)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cogRecord_Place)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cog_CoverAssembly1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cog_CoverAssembly2)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -123,58 +123,50 @@
             // plMaintenance
             // 
             this.plMaintenance.Enabled = false;
-            this.plMaintenance.Location = new System.Drawing.Point(2, 2);
-            this.plMaintenance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.plMaintenance.Size = new System.Drawing.Size(1697, 645);
+            this.plMaintenance.Margin = new System.Windows.Forms.Padding(4);
+            this.plMaintenance.Size = new System.Drawing.Size(1695, 643);
             // 
             // plProductionSetting
             // 
             this.plProductionSetting.Enabled = false;
-            this.plProductionSetting.Location = new System.Drawing.Point(2, 2);
-            this.plProductionSetting.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.plProductionSetting.Size = new System.Drawing.Size(801, 629);
+            this.plProductionSetting.Margin = new System.Windows.Forms.Padding(4);
+            this.plProductionSetting.Size = new System.Drawing.Size(1695, 643);
             // 
             // plRecipeEditor
             // 
             this.plRecipeEditor.Enabled = false;
-            this.plRecipeEditor.Location = new System.Drawing.Point(2, 2);
-            this.plRecipeEditor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.plRecipeEditor.Size = new System.Drawing.Size(801, 629);
+            this.plRecipeEditor.Margin = new System.Windows.Forms.Padding(4);
+            this.plRecipeEditor.Size = new System.Drawing.Size(1695, 643);
             // 
             // plFlowInitial
             // 
             this.plFlowInitial.Enabled = false;
-            this.plFlowInitial.Location = new System.Drawing.Point(2, 2);
-            this.plFlowInitial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.plFlowInitial.Size = new System.Drawing.Size(1697, 645);
+            this.plFlowInitial.Margin = new System.Windows.Forms.Padding(4);
+            this.plFlowInitial.Size = new System.Drawing.Size(799, 627);
             // 
             // plFlowAuto
             // 
             this.plFlowAuto.Enabled = false;
-            this.plFlowAuto.Location = new System.Drawing.Point(2, 2);
-            this.plFlowAuto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.plFlowAuto.Size = new System.Drawing.Size(1697, 645);
+            this.plFlowAuto.Margin = new System.Windows.Forms.Padding(4);
+            this.plFlowAuto.Size = new System.Drawing.Size(1695, 643);
             // 
             // plMachineStatus
             // 
             this.plMachineStatus.Controls.Add(this.tabControl2);
-            this.plMachineStatus.Location = new System.Drawing.Point(2, 2);
-            this.plMachineStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.plMachineStatus.Size = new System.Drawing.Size(1697, 645);
+            this.plMachineStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.plMachineStatus.Size = new System.Drawing.Size(1695, 643);
             // 
             // plMotionSetup
             // 
             this.plMotionSetup.Enabled = false;
-            this.plMotionSetup.Location = new System.Drawing.Point(2, 2);
-            this.plMotionSetup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.plMotionSetup.Size = new System.Drawing.Size(801, 629);
+            this.plMotionSetup.Margin = new System.Windows.Forms.Padding(4);
+            this.plMotionSetup.Size = new System.Drawing.Size(799, 627);
             // 
             // plMotorControl
             // 
             this.plMotorControl.Enabled = false;
-            this.plMotorControl.Location = new System.Drawing.Point(2, 2);
-            this.plMotorControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.plMotorControl.Size = new System.Drawing.Size(801, 629);
+            this.plMotorControl.Margin = new System.Windows.Forms.Padding(4);
+            this.plMotorControl.Size = new System.Drawing.Size(799, 627);
             // 
             // timer1
             // 
@@ -198,7 +190,7 @@
             this.tabPage3.Controls.Add(this.R_Show);
             this.tabPage3.Location = new System.Drawing.Point(4, 30);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1799, 816);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "LogRun";
@@ -378,8 +370,8 @@
             this.tableLayoutPanel1.Controls.Add(this.label9, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.cogRecord_Robot2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.cogRecord_Robot3, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.cogRecord_FeederPick, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cogRecord_Place, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.Cog_CoverAssembly1, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Cog_CoverAssembly2, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.label12, 3, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 7);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -450,41 +442,41 @@
             this.cogRecord_Robot3.Size = new System.Drawing.Size(444, 284);
             this.cogRecord_Robot3.TabIndex = 73;
             // 
-            // cogRecord_FeederPick
+            // Cog_CoverAssembly1
             // 
-            this.cogRecord_FeederPick.ColorMapLowerClipColor = System.Drawing.Color.Black;
-            this.cogRecord_FeederPick.ColorMapLowerRoiLimit = 0D;
-            this.cogRecord_FeederPick.ColorMapPredefined = Cognex.VisionPro.Display.CogDisplayColorMapPredefinedConstants.None;
-            this.cogRecord_FeederPick.ColorMapUpperClipColor = System.Drawing.Color.Black;
-            this.cogRecord_FeederPick.ColorMapUpperRoiLimit = 1D;
-            this.cogRecord_FeederPick.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cogRecord_FeederPick.DoubleTapZoomCycleLength = 2;
-            this.cogRecord_FeederPick.DoubleTapZoomSensitivity = 2.5D;
-            this.cogRecord_FeederPick.Location = new System.Drawing.Point(1353, 3);
-            this.cogRecord_FeederPick.MouseWheelMode = Cognex.VisionPro.Display.CogDisplayMouseWheelModeConstants.Zoom1;
-            this.cogRecord_FeederPick.MouseWheelSensitivity = 1D;
-            this.cogRecord_FeederPick.Name = "cogRecord_FeederPick";
-            this.cogRecord_FeederPick.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("cogRecord_FeederPick.OcxState")));
-            this.cogRecord_FeederPick.Size = new System.Drawing.Size(445, 284);
-            this.cogRecord_FeederPick.TabIndex = 74;
+            this.Cog_CoverAssembly1.ColorMapLowerClipColor = System.Drawing.Color.Black;
+            this.Cog_CoverAssembly1.ColorMapLowerRoiLimit = 0D;
+            this.Cog_CoverAssembly1.ColorMapPredefined = Cognex.VisionPro.Display.CogDisplayColorMapPredefinedConstants.None;
+            this.Cog_CoverAssembly1.ColorMapUpperClipColor = System.Drawing.Color.Black;
+            this.Cog_CoverAssembly1.ColorMapUpperRoiLimit = 1D;
+            this.Cog_CoverAssembly1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Cog_CoverAssembly1.DoubleTapZoomCycleLength = 2;
+            this.Cog_CoverAssembly1.DoubleTapZoomSensitivity = 2.5D;
+            this.Cog_CoverAssembly1.Location = new System.Drawing.Point(1353, 3);
+            this.Cog_CoverAssembly1.MouseWheelMode = Cognex.VisionPro.Display.CogDisplayMouseWheelModeConstants.Zoom1;
+            this.Cog_CoverAssembly1.MouseWheelSensitivity = 1D;
+            this.Cog_CoverAssembly1.Name = "Cog_CoverAssembly1";
+            this.Cog_CoverAssembly1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Cog_CoverAssembly1.OcxState")));
+            this.Cog_CoverAssembly1.Size = new System.Drawing.Size(445, 284);
+            this.Cog_CoverAssembly1.TabIndex = 74;
             // 
-            // cogRecord_Place
+            // Cog_CoverAssembly2
             // 
-            this.cogRecord_Place.ColorMapLowerClipColor = System.Drawing.Color.Black;
-            this.cogRecord_Place.ColorMapLowerRoiLimit = 0D;
-            this.cogRecord_Place.ColorMapPredefined = Cognex.VisionPro.Display.CogDisplayColorMapPredefinedConstants.None;
-            this.cogRecord_Place.ColorMapUpperClipColor = System.Drawing.Color.Black;
-            this.cogRecord_Place.ColorMapUpperRoiLimit = 1D;
-            this.cogRecord_Place.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cogRecord_Place.DoubleTapZoomCycleLength = 2;
-            this.cogRecord_Place.DoubleTapZoomSensitivity = 2.5D;
-            this.cogRecord_Place.Location = new System.Drawing.Point(1353, 318);
-            this.cogRecord_Place.MouseWheelMode = Cognex.VisionPro.Display.CogDisplayMouseWheelModeConstants.Zoom1;
-            this.cogRecord_Place.MouseWheelSensitivity = 1D;
-            this.cogRecord_Place.Name = "cogRecord_Place";
-            this.cogRecord_Place.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("cogRecord_Place.OcxState")));
-            this.cogRecord_Place.Size = new System.Drawing.Size(445, 284);
-            this.cogRecord_Place.TabIndex = 75;
+            this.Cog_CoverAssembly2.ColorMapLowerClipColor = System.Drawing.Color.Black;
+            this.Cog_CoverAssembly2.ColorMapLowerRoiLimit = 0D;
+            this.Cog_CoverAssembly2.ColorMapPredefined = Cognex.VisionPro.Display.CogDisplayColorMapPredefinedConstants.None;
+            this.Cog_CoverAssembly2.ColorMapUpperClipColor = System.Drawing.Color.Black;
+            this.Cog_CoverAssembly2.ColorMapUpperRoiLimit = 1D;
+            this.Cog_CoverAssembly2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Cog_CoverAssembly2.DoubleTapZoomCycleLength = 2;
+            this.Cog_CoverAssembly2.DoubleTapZoomSensitivity = 2.5D;
+            this.Cog_CoverAssembly2.Location = new System.Drawing.Point(1353, 318);
+            this.Cog_CoverAssembly2.MouseWheelMode = Cognex.VisionPro.Display.CogDisplayMouseWheelModeConstants.Zoom1;
+            this.Cog_CoverAssembly2.MouseWheelSensitivity = 1D;
+            this.Cog_CoverAssembly2.Name = "Cog_CoverAssembly2";
+            this.Cog_CoverAssembly2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Cog_CoverAssembly2.OcxState")));
+            this.Cog_CoverAssembly2.Size = new System.Drawing.Size(445, 284);
+            this.Cog_CoverAssembly2.TabIndex = 75;
             // 
             // tabControl2
             // 
@@ -502,7 +494,7 @@
             this.tabPage1.Controls.Add(this.tableLayoutPanel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 32);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1813, 856);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Vision ";
@@ -534,7 +526,7 @@
             this.tabPage5.Controls.Add(this.tableLayoutPanel2);
             this.tabPage5.Location = new System.Drawing.Point(4, 32);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(1805, 820);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "MCU_PCBA_Module 1";
@@ -746,8 +738,8 @@
             this.tabPage6.Controls.Add(this.tableLayoutPanel3);
             this.tabPage6.Location = new System.Drawing.Point(4, 32);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage6.Size = new System.Drawing.Size(1808, 825);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1805, 820);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "MCU_PCBA_Module 2";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -958,7 +950,7 @@
             this.tabPage2.Controls.Add(this.tabControl3);
             this.tabPage2.Location = new System.Drawing.Point(4, 32);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1813, 856);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Log ";
@@ -969,7 +961,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1709, 707);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RecordForm";
             this.Text = "RecordForm";
             this.plMachineStatus.ResumeLayout(false);
@@ -987,8 +979,8 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cogRecord_Robot2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cogRecord_Robot3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cogRecord_FeederPick)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cogRecord_Place)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cog_CoverAssembly1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cog_CoverAssembly2)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
@@ -1020,8 +1012,8 @@
         public Cognex.VisionPro.CogRecordDisplay cogRecord_Gantry2;
         public Cognex.VisionPro.CogRecordDisplay cogRecord_Robot2;
         public Cognex.VisionPro.CogRecordDisplay cogRecord_Robot3;
-        public Cognex.VisionPro.CogRecordDisplay cogRecord_FeederPick;
-        public Cognex.VisionPro.CogRecordDisplay cogRecord_Place;
+        public Cognex.VisionPro.CogRecordDisplay Cog_CoverAssembly1;
+        public Cognex.VisionPro.CogRecordDisplay Cog_CoverAssembly2;
 
         public Cognex.VisionPro.CogRecordDisplay CogRecord_Gantry1
         {
@@ -1055,13 +1047,13 @@
         }
         public Cognex.VisionPro.CogRecordDisplay CogRecord_FeederPick
         {
-            get => cogRecord_FeederPick;
-            set => cogRecord_FeederPick = value;
+            get => Cog_CoverAssembly1;
+            set => Cog_CoverAssembly1 = value;
         }
         public Cognex.VisionPro.CogRecordDisplay CogRecord_Place
         {
-            get => cogRecord_Place;
-            set => cogRecord_Place = value;
+            get => Cog_CoverAssembly2;
+            set => Cog_CoverAssembly2 = value;
         }
 
 

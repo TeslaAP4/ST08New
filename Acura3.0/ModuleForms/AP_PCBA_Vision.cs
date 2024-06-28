@@ -426,12 +426,12 @@ namespace Acura3._0.ModuleForms
         int num = 0;
         private FCResultType flowChart10_FlowRun(object sender, EventArgs e)
         {
-            if (MiddleLayer.ConveyorF.ConveyorBStation1RobotStart1 || B_Start)
+            if (MiddleLayer.ConveyorF.ConveyorBStation1Robot1Start || B_Start)
             {
                 time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 TimeStart = DateTime.Now;
                 B_Start = false;
-                MiddleLayer.ConveyorF.ConveyorBStation1RobotStart1 = false;
+                MiddleLayer.ConveyorF.ConveyorBStation1Robot1Start = false;
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart10.Text} finish", true);
                 return FCResultType.NEXT;
             }
@@ -478,13 +478,13 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart15_FlowRun(object sender, EventArgs e)
         {
-            if (B_DetectionResult&& B_HeightMeasureResult)
+            if (B_DetectionResult && B_HeightMeasureResult)
             {
-                MiddleLayer.ConveyorF.myRFID3.ResultBool = true;
+                //MiddleLayer.ConveyorF.myRFID3.ResultBool = true;
             }
             else
-                MiddleLayer.ConveyorF.myRFID3.ResultBool = false;
-            MiddleLayer.ConveyorF.ConveyorBStation1RobotComp1 = true;
+                //MiddleLayer.ConveyorF.myRFID3.ResultBool = false;
+                MiddleLayer.ConveyorF.ConveyorBStation1Robot1Comp = true;
             MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart15.Text} finish", true);
             J_AutoRun.Restart();
             return FCResultType.NEXT;

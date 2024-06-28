@@ -463,10 +463,10 @@ namespace Acura3._0
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            MiddleLayer.MCU_PCBA_Module1F.J_AxisAutoTm.Restart();
-            MiddleLayer.MCU_PCBA_Module1F.J_ScrewAutoTm.Restart();
-            MiddleLayer.MCU_PCBA_Module2F.J_AxisAutoTm.Restart();
-            MiddleLayer.MCU_PCBA_Module2F.J_ScrewAutoTm.Restart();
+            MiddleLayer.PCBA_ScrewFasten_Module1F.J_AxisAutoTm.Restart();
+            MiddleLayer.PCBA_ScrewFasten_Module1F.J_ScrewAutoTm.Restart();
+            MiddleLayer.PCBA_ScrewFasten_Module2F.J_AxisAutoTm.Restart();
+            MiddleLayer.PCBA_ScrewFasten_Module2F.J_ScrewAutoTm.Restart();
             SysPara.isBtnStartPress = true;
             switch (SysPara.SystemMode)
             {

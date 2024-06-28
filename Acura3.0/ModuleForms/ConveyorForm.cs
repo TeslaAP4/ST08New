@@ -641,7 +641,7 @@ namespace Acura3._0.ModuleForms
             OB_Conveyor1_Station1_JackingCylinderDown.On();
             OB_Conveyor1_Station2_JackingCylinderDown.On();
             OB_Conveyor2_Station1_JackingCylinderDown.On();
-            OB_Conveyor2_Station3_JackingCylinderDown.On();
+
             return FCResultType.NEXT;
         }
 
@@ -1733,7 +1733,7 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart54_FlowRun(object sender, EventArgs e)
         {
-            if (CYL_Conveyor2_Station2_Jacking.On())
+            if (/*CYL_Conveyor2_Station2_Jacking.On()*/true)
             {
                 C_DelayMs(500);
                 Conveyor5Timeout.Restart();
@@ -1764,7 +1764,7 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart33_FlowRun(object sender, EventArgs e)
         {
-            if (CYL_Conveyor2_Station2_Jacking.Off())
+            if (/*CYL_Conveyor2_Station2_Jacking.Off()*/true)
             {
                 C_DelayMs(500);
                 Conveyor5Timeout.Restart();

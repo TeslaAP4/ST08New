@@ -78,6 +78,9 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label82 = new System.Windows.Forms.Label();
             this.D_ErrorDGV = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label38 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -219,9 +222,6 @@
             this.dataColumn15 = new System.Data.DataColumn();
             this.dataColumn16 = new System.Data.DataColumn();
             this.dataColumn17 = new System.Data.DataColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plMaintenance.SuspendLayout();
             this.plProductionSetting.SuspendLayout();
             this.plRecipeEditor.SuspendLayout();
@@ -311,7 +311,7 @@
             // plProductionSetting
             // 
             this.plProductionSetting.Controls.Add(this.tabControl2);
-            this.plProductionSetting.Size = new System.Drawing.Size(799, 627);
+            this.plProductionSetting.Size = new System.Drawing.Size(1839, 723);
             // 
             // plRecipeEditor
             // 
@@ -332,7 +332,7 @@
             // plMachineStatus
             // 
             this.plMachineStatus.Controls.Add(this.tableLayoutPanel3);
-            this.plMachineStatus.Size = new System.Drawing.Size(1839, 723);
+            this.plMachineStatus.Size = new System.Drawing.Size(799, 627);
             // 
             // plMotionSetup
             // 
@@ -551,7 +551,7 @@
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(799, 627);
+            this.tabControl2.Size = new System.Drawing.Size(1839, 723);
             this.tabControl2.TabIndex = 24;
             // 
             // tabPage1
@@ -560,7 +560,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 54);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(791, 569);
+            this.tabPage1.Size = new System.Drawing.Size(1831, 665);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Machine Setting";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -572,7 +572,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(785, 563);
+            this.panel2.Size = new System.Drawing.Size(1825, 659);
             this.panel2.TabIndex = 26;
             // 
             // dataColumn12
@@ -638,7 +638,7 @@
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1839, 723);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(799, 627);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // panel4
@@ -647,7 +647,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1833, 717);
+            this.panel4.Size = new System.Drawing.Size(793, 621);
             this.panel4.TabIndex = 0;
             // 
             // panel3
@@ -667,7 +667,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1833, 717);
+            this.panel3.Size = new System.Drawing.Size(793, 621);
             this.panel3.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -865,6 +865,24 @@
             this.D_ErrorDGV.RowTemplate.Height = 23;
             this.D_ErrorDGV.Size = new System.Drawing.Size(609, 220);
             this.D_ErrorDGV.TabIndex = 49;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ErrorDateTime";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 160;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "ErrorModuleName";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 190;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "ErrorFlowCharName";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 280;
             // 
             // groupBox7
             // 
@@ -2131,7 +2149,7 @@
             this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox7.Location = new System.Drawing.Point(0, 0);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(1833, 717);
+            this.pictureBox7.Size = new System.Drawing.Size(793, 621);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 45;
             this.pictureBox7.TabStop = false;
@@ -2141,7 +2159,7 @@
             this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox6.Location = new System.Drawing.Point(0, 0);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(1833, 717);
+            this.pictureBox6.Size = new System.Drawing.Size(793, 621);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 44;
             this.pictureBox6.TabStop = false;
@@ -2152,7 +2170,7 @@
             this.pictureBox5.Image = global::Acura3._0.Properties.Resources._1715242262977;
             this.pictureBox5.Location = new System.Drawing.Point(0, 0);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(1833, 717);
+            this.pictureBox5.Size = new System.Drawing.Size(793, 621);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 43;
             this.pictureBox5.TabStop = false;
@@ -2163,7 +2181,7 @@
             this.pictureBox4.Image = global::Acura3._0.Properties.Resources._1715242262977;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(1833, 717);
+            this.pictureBox4.Size = new System.Drawing.Size(793, 621);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 41;
             this.pictureBox4.TabStop = false;
@@ -2172,7 +2190,7 @@
             // 
             this.OB_FluorescentLight2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_FluorescentLight2.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_FluorescentLight2.Location = new System.Drawing.Point(358, 392);
+            this.OB_FluorescentLight2.Location = new System.Drawing.Point(363, 391);
             this.OB_FluorescentLight2.Margin = new System.Windows.Forms.Padding(5);
             this.OB_FluorescentLight2.Name = "OB_FluorescentLight2";
             this.OB_FluorescentLight2.Port = "10014";
@@ -2460,7 +2478,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(417, 317);
+            this.label2.Location = new System.Drawing.Point(422, 316);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(172, 24);
@@ -2493,7 +2511,7 @@
             // 
             this.OB_FluorescentLight1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_FluorescentLight1.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_FluorescentLight1.Location = new System.Drawing.Point(358, 347);
+            this.OB_FluorescentLight1.Location = new System.Drawing.Point(363, 346);
             this.OB_FluorescentLight1.Margin = new System.Windows.Forms.Padding(5);
             this.OB_FluorescentLight1.Name = "OB_FluorescentLight1";
             this.OB_FluorescentLight1.Port = "10013";
@@ -2645,24 +2663,6 @@
             // 
             this.dataColumn17.ColumnName = "CoverAssemblyDryrun";
             this.dataColumn17.DataType = typeof(bool);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ErrorDateTime";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 160;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "ErrorModuleName";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 190;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "ErrorFlowCharName";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 280;
             // 
             // SystemForm
             // 

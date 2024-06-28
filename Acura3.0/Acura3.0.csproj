@@ -698,7 +698,6 @@
     <Compile Include="Classes\EthernetPF.cs" />
     <Compile Include="Classes\ExtensionsWrapper.cs" />
     <Compile Include="Classes\Fanuc_RobotControl.cs" />
-    <Compile Include="Classes\GantryMove.cs" />
     <Compile Include="Classes\INIHelper.cs" />
     <Compile Include="Classes\IX_1000.cs" />
     <Compile Include="Classes\KeyenceBarcode.cs" />

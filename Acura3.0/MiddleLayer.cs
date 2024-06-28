@@ -33,8 +33,8 @@ namespace Acura3._0
         //public static PCBAModuleForm PCBAModuleF;
         //public static BackplateModuleForm BackplateModuleF;
         //public static RobotScrewModuleForm ScrewFastenModuleF;
-        public static PCBA_ScrewFasten_Module1 MCU_PCBA_Module1F;
-        public static PCBA_ScrewFasten_Module2 MCU_PCBA_Module2F;
+        public static PCBA_ScrewFasten_Module1 PCBA_ScrewFasten_Module1F;
+        public static PCBA_ScrewFasten_Module2 PCBA_ScrewFasten_Module2F;
         public static AP_PCBA_Vision AP_PCBA_V;
         public static CoverAssembly CoverF;
         public static RecordForm RecordF;
@@ -109,8 +109,8 @@ namespace Acura3._0
             //PCBAModuleF = CreateForm(PCBAModuleF, "PCBAModuleForm");
             //BackplateModuleF = CreateForm(BackplateModuleF, "BackplateModuleForm");
             //ScrewFastenModuleF = CreateForm(ScrewFastenModuleF, "ScrewFastenModuleForm");
-            MCU_PCBA_Module1F = CreateForm(MCU_PCBA_Module1F, "MCU_PCBA_Module1");
-            MCU_PCBA_Module2F = CreateForm(MCU_PCBA_Module2F, "MCU_PCBA_Module2");
+            PCBA_ScrewFasten_Module1F = CreateForm(PCBA_ScrewFasten_Module1F, "PCBA_ScrewFasten_Module1");
+            PCBA_ScrewFasten_Module2F = CreateForm(PCBA_ScrewFasten_Module2F, "PCBA_ScrewFasten_Module2");
 
             AP_PCBA_V = CreateForm(AP_PCBA_V, "AP_PCBA_Vision");
             CoverF = CreateForm(CoverF, "CoverAssembly");

@@ -312,18 +312,12 @@
             this.IB_Station1_MotorAlarm = new JabilSDK.Controls.Input();
             this.tabPage19 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.CYL_Conveyor2_Station2_Jacking = new JabilSDK.Controls.Cylinder();
-            this.IB_Conveyor2_Station3_JackingCylinderDown = new JabilSDK.Controls.Input();
-            this.OB_Conveyor2_Station3_JackingCylinderDown = new JabilSDK.Controls.Output();
-            this.IB_Conveyor2_Station3_JackingCylinderUp = new JabilSDK.Controls.Input();
-            this.OB_Conveyor2_Station3_JackingCylinderUp = new JabilSDK.Controls.Output();
             this.OB_Conveyor2_Station3_StopCylinder = new JabilSDK.Controls.Output();
-            this.IB_ConvyorBStopper2BoardOut = new JabilSDK.Controls.Input();
             this.IB_Conveyor2_Station3_StopCylinderDown = new JabilSDK.Controls.Input();
             this.IB_Conveyor2_Station3_StopCylinderUp = new JabilSDK.Controls.Input();
-            this.IB_Lifter2liftInPosition = new JabilSDK.Controls.Input();
             this.IB_Conveyor2_Boardout = new JabilSDK.Controls.Input();
             this.IB_Conveyor2_Station3_BoardStop = new JabilSDK.Controls.Input();
+            this.IB_Lifter1liftInPosition = new JabilSDK.Controls.Input();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.CYL_Conveyor2_Station1_Jacking = new JabilSDK.Controls.Cylinder();
             this.IB_Conveyor2_Station1_JackingCylinderDown = new JabilSDK.Controls.Input();
@@ -334,7 +328,6 @@
             this.IB_Conveyor2_Station2_StopCylinderDown = new JabilSDK.Controls.Input();
             this.IB_Conveyor2_Station2_StopCylinderUp = new JabilSDK.Controls.Input();
             this.IB_Conveyor2_Station2_BoardStop = new JabilSDK.Controls.Input();
-            this.IB_Lifter1liftInPosition = new JabilSDK.Controls.Input();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.OB_Conveyor2_Station1_StopCylinder = new JabilSDK.Controls.Output();
             this.IB_Conveyor2_Station1_StopCylinderDown = new JabilSDK.Controls.Input();
@@ -424,13 +417,13 @@
             // 
             this.plMachineStatus.Enabled = false;
             this.plMachineStatus.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.plMachineStatus.Size = new System.Drawing.Size(1851, 915);
+            this.plMachineStatus.Size = new System.Drawing.Size(799, 627);
             // 
             // plMotionSetup
             // 
             this.plMotionSetup.Enabled = false;
             this.plMotionSetup.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.plMotionSetup.Size = new System.Drawing.Size(799, 627);
+            this.plMotionSetup.Size = new System.Drawing.Size(1851, 915);
             // 
             // plMotorControl
             // 
@@ -4466,25 +4459,19 @@
             this.tabPage19.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tabPage19.Name = "tabPage19";
             this.tabPage19.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.tabPage19.Size = new System.Drawing.Size(791, 509);
+            this.tabPage19.Size = new System.Drawing.Size(1843, 797);
             this.tabPage19.TabIndex = 1;
             this.tabPage19.Text = "Conveyor B";
             this.tabPage19.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.CYL_Conveyor2_Station2_Jacking);
-            this.groupBox6.Controls.Add(this.OB_Conveyor2_Station3_JackingCylinderDown);
-            this.groupBox6.Controls.Add(this.OB_Conveyor2_Station3_JackingCylinderUp);
-            this.groupBox6.Controls.Add(this.IB_Conveyor2_Station3_JackingCylinderDown);
-            this.groupBox6.Controls.Add(this.IB_Conveyor2_Station3_JackingCylinderUp);
             this.groupBox6.Controls.Add(this.OB_Conveyor2_Station3_StopCylinder);
-            this.groupBox6.Controls.Add(this.IB_ConvyorBStopper2BoardOut);
             this.groupBox6.Controls.Add(this.IB_Conveyor2_Station3_StopCylinderDown);
             this.groupBox6.Controls.Add(this.IB_Conveyor2_Station3_StopCylinderUp);
-            this.groupBox6.Controls.Add(this.IB_Lifter2liftInPosition);
             this.groupBox6.Controls.Add(this.IB_Conveyor2_Boardout);
             this.groupBox6.Controls.Add(this.IB_Conveyor2_Station3_BoardStop);
+            this.groupBox6.Controls.Add(this.IB_Lifter1liftInPosition);
             this.groupBox6.Location = new System.Drawing.Point(1035, 10);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.groupBox6.Name = "groupBox6";
@@ -4493,86 +4480,6 @@
             this.groupBox6.TabIndex = 14;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Station 3";
-            // 
-            // CYL_Conveyor2_Station2_Jacking
-            // 
-            this.CYL_Conveyor2_Station2_Jacking.BackColor = System.Drawing.Color.White;
-            this.CYL_Conveyor2_Station2_Jacking.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CYL_Conveyor2_Station2_Jacking.CyOff_BtnText = "OFF";
-            this.CYL_Conveyor2_Station2_Jacking.CyOff_IB1 = this.IB_Conveyor2_Station3_JackingCylinderDown;
-            this.CYL_Conveyor2_Station2_Jacking.CyOff_IB2 = null;
-            this.CYL_Conveyor2_Station2_Jacking.CyOff_IB3 = null;
-            this.CYL_Conveyor2_Station2_Jacking.CyOff_IB4 = null;
-            this.CYL_Conveyor2_Station2_Jacking.CyOff_OB1 = this.OB_Conveyor2_Station3_JackingCylinderDown;
-            this.CYL_Conveyor2_Station2_Jacking.CyOff_OB2 = null;
-            this.CYL_Conveyor2_Station2_Jacking.CyOff_TimeoutAlarmCode = null;
-            this.CYL_Conveyor2_Station2_Jacking.CyOn_BtnText = "ON";
-            this.CYL_Conveyor2_Station2_Jacking.CyOn_IB1 = this.IB_Conveyor2_Station3_JackingCylinderUp;
-            this.CYL_Conveyor2_Station2_Jacking.CyOn_IB2 = null;
-            this.CYL_Conveyor2_Station2_Jacking.CyOn_IB3 = null;
-            this.CYL_Conveyor2_Station2_Jacking.CyOn_IB4 = null;
-            this.CYL_Conveyor2_Station2_Jacking.CyOn_OB1 = this.OB_Conveyor2_Station3_JackingCylinderUp;
-            this.CYL_Conveyor2_Station2_Jacking.CyOn_OB2 = null;
-            this.CYL_Conveyor2_Station2_Jacking.CyOn_TimeoutAlarmCode = null;
-            this.CYL_Conveyor2_Station2_Jacking.CyTimeoutTime = 30000;
-            this.CYL_Conveyor2_Station2_Jacking.ForeColor = System.Drawing.Color.Black;
-            this.CYL_Conveyor2_Station2_Jacking.Location = new System.Drawing.Point(308, 321);
-            this.CYL_Conveyor2_Station2_Jacking.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.CYL_Conveyor2_Station2_Jacking.Name = "CYL_Conveyor2_Station2_Jacking";
-            this.CYL_Conveyor2_Station2_Jacking.Size = new System.Drawing.Size(221, 33);
-            this.CYL_Conveyor2_Station2_Jacking.TabIndex = 24;
-            // 
-            // IB_Conveyor2_Station3_JackingCylinderDown
-            // 
-            this.IB_Conveyor2_Station3_JackingCylinderDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IB_Conveyor2_Station3_JackingCylinderDown.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Conveyor2_Station3_JackingCylinderDown.Location = new System.Drawing.Point(308, 160);
-            this.IB_Conveyor2_Station3_JackingCylinderDown.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.IB_Conveyor2_Station3_JackingCylinderDown.Name = "IB_Conveyor2_Station3_JackingCylinderDown";
-            this.IB_Conveyor2_Station3_JackingCylinderDown.Port = "03015";
-            this.IB_Conveyor2_Station3_JackingCylinderDown.Size = new System.Drawing.Size(221, 33);
-            this.IB_Conveyor2_Station3_JackingCylinderDown.TabIndex = 21;
-            this.IB_Conveyor2_Station3_JackingCylinderDown.Text = "Lifter 3 down";
-            this.IB_Conveyor2_Station3_JackingCylinderDown.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // OB_Conveyor2_Station3_JackingCylinderDown
-            // 
-            this.OB_Conveyor2_Station3_JackingCylinderDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.OB_Conveyor2_Station3_JackingCylinderDown.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Conveyor2_Station3_JackingCylinderDown.Location = new System.Drawing.Point(308, 267);
-            this.OB_Conveyor2_Station3_JackingCylinderDown.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.OB_Conveyor2_Station3_JackingCylinderDown.Name = "OB_Conveyor2_Station3_JackingCylinderDown";
-            this.OB_Conveyor2_Station3_JackingCylinderDown.Port = "13015";
-            this.OB_Conveyor2_Station3_JackingCylinderDown.Size = new System.Drawing.Size(221, 33);
-            this.OB_Conveyor2_Station3_JackingCylinderDown.TabIndex = 23;
-            this.OB_Conveyor2_Station3_JackingCylinderDown.Text = "Lifter 3 down";
-            this.OB_Conveyor2_Station3_JackingCylinderDown.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IB_Conveyor2_Station3_JackingCylinderUp
-            // 
-            this.IB_Conveyor2_Station3_JackingCylinderUp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IB_Conveyor2_Station3_JackingCylinderUp.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Conveyor2_Station3_JackingCylinderUp.Location = new System.Drawing.Point(308, 110);
-            this.IB_Conveyor2_Station3_JackingCylinderUp.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.IB_Conveyor2_Station3_JackingCylinderUp.Name = "IB_Conveyor2_Station3_JackingCylinderUp";
-            this.IB_Conveyor2_Station3_JackingCylinderUp.Port = "03014";
-            this.IB_Conveyor2_Station3_JackingCylinderUp.Size = new System.Drawing.Size(221, 33);
-            this.IB_Conveyor2_Station3_JackingCylinderUp.TabIndex = 20;
-            this.IB_Conveyor2_Station3_JackingCylinderUp.Text = "Lifter 3 up";
-            this.IB_Conveyor2_Station3_JackingCylinderUp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // OB_Conveyor2_Station3_JackingCylinderUp
-            // 
-            this.OB_Conveyor2_Station3_JackingCylinderUp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.OB_Conveyor2_Station3_JackingCylinderUp.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Conveyor2_Station3_JackingCylinderUp.Location = new System.Drawing.Point(308, 215);
-            this.OB_Conveyor2_Station3_JackingCylinderUp.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.OB_Conveyor2_Station3_JackingCylinderUp.Name = "OB_Conveyor2_Station3_JackingCylinderUp";
-            this.OB_Conveyor2_Station3_JackingCylinderUp.Port = "13014";
-            this.OB_Conveyor2_Station3_JackingCylinderUp.Size = new System.Drawing.Size(221, 33);
-            this.OB_Conveyor2_Station3_JackingCylinderUp.TabIndex = 22;
-            this.OB_Conveyor2_Station3_JackingCylinderUp.Text = "Lifter 3 up";
-            this.OB_Conveyor2_Station3_JackingCylinderUp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // OB_Conveyor2_Station3_StopCylinder
             // 
@@ -4586,19 +4493,6 @@
             this.OB_Conveyor2_Station3_StopCylinder.TabIndex = 17;
             this.OB_Conveyor2_Station3_StopCylinder.Text = "Stopper 3 down";
             this.OB_Conveyor2_Station3_StopCylinder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IB_ConvyorBStopper2BoardOut
-            // 
-            this.IB_ConvyorBStopper2BoardOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IB_ConvyorBStopper2BoardOut.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_ConvyorBStopper2BoardOut.Location = new System.Drawing.Point(20, 321);
-            this.IB_ConvyorBStopper2BoardOut.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.IB_ConvyorBStopper2BoardOut.Name = "IB_ConvyorBStopper2BoardOut";
-            this.IB_ConvyorBStopper2BoardOut.Port = "03007";
-            this.IB_ConvyorBStopper2BoardOut.Size = new System.Drawing.Size(245, 33);
-            this.IB_ConvyorBStopper2BoardOut.TabIndex = 16;
-            this.IB_ConvyorBStopper2BoardOut.Text = "Stopper 2 board out";
-            this.IB_ConvyorBStopper2BoardOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // IB_Conveyor2_Station3_StopCylinderDown
             // 
@@ -4626,19 +4520,6 @@
             this.IB_Conveyor2_Station3_StopCylinderUp.Text = "Stopper 3 up";
             this.IB_Conveyor2_Station3_StopCylinderUp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // IB_Lifter2liftInPosition
-            // 
-            this.IB_Lifter2liftInPosition.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IB_Lifter2liftInPosition.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Lifter2liftInPosition.Location = new System.Drawing.Point(20, 267);
-            this.IB_Lifter2liftInPosition.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.IB_Lifter2liftInPosition.Name = "IB_Lifter2liftInPosition";
-            this.IB_Lifter2liftInPosition.Port = "03006";
-            this.IB_Lifter2liftInPosition.Size = new System.Drawing.Size(245, 33);
-            this.IB_Lifter2liftInPosition.TabIndex = 15;
-            this.IB_Lifter2liftInPosition.Text = "Lifter2 lift in-Position";
-            this.IB_Lifter2liftInPosition.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // IB_Conveyor2_Boardout
             // 
             this.IB_Conveyor2_Boardout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -4647,7 +4528,7 @@
             this.IB_Conveyor2_Boardout.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.IB_Conveyor2_Boardout.Name = "IB_Conveyor2_Boardout";
             this.IB_Conveyor2_Boardout.Port = "03004";
-            this.IB_Conveyor2_Boardout.Size = new System.Drawing.Size(221, 33);
+            this.IB_Conveyor2_Boardout.Size = new System.Drawing.Size(241, 33);
             this.IB_Conveyor2_Boardout.TabIndex = 10;
             this.IB_Conveyor2_Boardout.Text = "Board out Sensor";
             this.IB_Conveyor2_Boardout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4665,6 +4546,19 @@
             this.IB_Conveyor2_Station3_BoardStop.Text = "In position sensor 3";
             this.IB_Conveyor2_Station3_BoardStop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // IB_Lifter1liftInPosition
+            // 
+            this.IB_Lifter1liftInPosition.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IB_Lifter1liftInPosition.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
+            this.IB_Lifter1liftInPosition.Location = new System.Drawing.Point(308, 110);
+            this.IB_Lifter1liftInPosition.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.IB_Lifter1liftInPosition.Name = "IB_Lifter1liftInPosition";
+            this.IB_Lifter1liftInPosition.Port = "03200";
+            this.IB_Lifter1liftInPosition.Size = new System.Drawing.Size(241, 33);
+            this.IB_Lifter1liftInPosition.TabIndex = 15;
+            this.IB_Lifter1liftInPosition.Text = "Lifter1 lift in-Position";
+            this.IB_Lifter1liftInPosition.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.CYL_Conveyor2_Station1_Jacking);
@@ -4676,7 +4570,6 @@
             this.groupBox5.Controls.Add(this.IB_Conveyor2_Station1_JackingCylinderDown);
             this.groupBox5.Controls.Add(this.IB_Conveyor2_Station2_BoardStop);
             this.groupBox5.Controls.Add(this.IB_Conveyor2_Station1_JackingCylinderUp);
-            this.groupBox5.Controls.Add(this.IB_Lifter1liftInPosition);
             this.groupBox5.Location = new System.Drawing.Point(377, 6);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.groupBox5.Name = "groupBox5";
@@ -4818,19 +4711,6 @@
             this.IB_Conveyor2_Station2_BoardStop.Text = "In position sensor 2";
             this.IB_Conveyor2_Station2_BoardStop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // IB_Lifter1liftInPosition
-            // 
-            this.IB_Lifter1liftInPosition.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IB_Lifter1liftInPosition.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Lifter1liftInPosition.Location = new System.Drawing.Point(32, 249);
-            this.IB_Lifter1liftInPosition.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.IB_Lifter1liftInPosition.Name = "IB_Lifter1liftInPosition";
-            this.IB_Lifter1liftInPosition.Port = "03200";
-            this.IB_Lifter1liftInPosition.Size = new System.Drawing.Size(246, 33);
-            this.IB_Lifter1liftInPosition.TabIndex = 15;
-            this.IB_Lifter1liftInPosition.Text = "Lifter1 lift in-Position";
-            this.IB_Lifter1liftInPosition.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.OB_Conveyor2_Station1_StopCylinder);
@@ -4845,7 +4725,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.groupBox4.Size = new System.Drawing.Size(368, 499);
+            this.groupBox4.Size = new System.Drawing.Size(368, 787);
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Station 1";
@@ -4854,7 +4734,7 @@
             // 
             this.OB_Conveyor2_Station1_StopCylinder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Conveyor2_Station1_StopCylinder.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Conveyor2_Station1_StopCylinder.Location = new System.Drawing.Point(76, 250);
+            this.OB_Conveyor2_Station1_StopCylinder.Location = new System.Drawing.Point(65, 250);
             this.OB_Conveyor2_Station1_StopCylinder.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.OB_Conveyor2_Station1_StopCylinder.Name = "OB_Conveyor2_Station1_StopCylinder";
             this.OB_Conveyor2_Station1_StopCylinder.Port = "13008";
@@ -4867,7 +4747,7 @@
             // 
             this.IB_Conveyor2_Station1_StopCylinderDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_Conveyor2_Station1_StopCylinderDown.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Conveyor2_Station1_StopCylinderDown.Location = new System.Drawing.Point(76, 198);
+            this.IB_Conveyor2_Station1_StopCylinderDown.Location = new System.Drawing.Point(65, 198);
             this.IB_Conveyor2_Station1_StopCylinderDown.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.IB_Conveyor2_Station1_StopCylinderDown.Name = "IB_Conveyor2_Station1_StopCylinderDown";
             this.IB_Conveyor2_Station1_StopCylinderDown.Port = "03007";
@@ -4880,7 +4760,7 @@
             // 
             this.IB_Conveyor2_Station1_StopCylinderUp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_Conveyor2_Station1_StopCylinderUp.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Conveyor2_Station1_StopCylinderUp.Location = new System.Drawing.Point(75, 146);
+            this.IB_Conveyor2_Station1_StopCylinderUp.Location = new System.Drawing.Point(64, 146);
             this.IB_Conveyor2_Station1_StopCylinderUp.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.IB_Conveyor2_Station1_StopCylinderUp.Name = "IB_Conveyor2_Station1_StopCylinderUp";
             this.IB_Conveyor2_Station1_StopCylinderUp.Port = "03006";
@@ -4893,7 +4773,7 @@
             // 
             this.OB_Conveyor2_MotorReverse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Conveyor2_MotorReverse.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Conveyor2_MotorReverse.Location = new System.Drawing.Point(76, 365);
+            this.OB_Conveyor2_MotorReverse.Location = new System.Drawing.Point(65, 365);
             this.OB_Conveyor2_MotorReverse.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.OB_Conveyor2_MotorReverse.Name = "OB_Conveyor2_MotorReverse";
             this.OB_Conveyor2_MotorReverse.Port = "13101";
@@ -4906,7 +4786,7 @@
             // 
             this.OB_Conveyor2_MotorForward.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Conveyor2_MotorForward.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Conveyor2_MotorForward.Location = new System.Drawing.Point(76, 309);
+            this.OB_Conveyor2_MotorForward.Location = new System.Drawing.Point(65, 309);
             this.OB_Conveyor2_MotorForward.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.OB_Conveyor2_MotorForward.Name = "OB_Conveyor2_MotorForward";
             this.OB_Conveyor2_MotorForward.Port = "13100";
@@ -4919,7 +4799,7 @@
             // 
             this.IB_Conveyor2_MotorAlarm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_Conveyor2_MotorAlarm.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Conveyor2_MotorAlarm.Location = new System.Drawing.Point(75, 94);
+            this.IB_Conveyor2_MotorAlarm.Location = new System.Drawing.Point(64, 94);
             this.IB_Conveyor2_MotorAlarm.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.IB_Conveyor2_MotorAlarm.Name = "IB_Conveyor2_MotorAlarm";
             this.IB_Conveyor2_MotorAlarm.Port = "03100";
@@ -4932,7 +4812,7 @@
             // 
             this.IB_Conveyor2_Station1_BoardStop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_Conveyor2_Station1_BoardStop.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Conveyor2_Station1_BoardStop.Location = new System.Drawing.Point(75, 42);
+            this.IB_Conveyor2_Station1_BoardStop.Location = new System.Drawing.Point(64, 42);
             this.IB_Conveyor2_Station1_BoardStop.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.IB_Conveyor2_Station1_BoardStop.Name = "IB_Conveyor2_Station1_BoardStop";
             this.IB_Conveyor2_Station1_BoardStop.Port = "03001";
@@ -5177,16 +5057,9 @@
         public JabilSDK.Controls.Input IB_Station1_MotorAlarm;
         private System.Windows.Forms.TabPage tabPage19;
         private System.Windows.Forms.GroupBox groupBox6;
-        private JabilSDK.Controls.Cylinder CYL_Conveyor2_Station2_Jacking;
-        public JabilSDK.Controls.Input IB_Conveyor2_Station3_JackingCylinderDown;
-        public JabilSDK.Controls.Output OB_Conveyor2_Station3_JackingCylinderDown;
-        public JabilSDK.Controls.Input IB_Conveyor2_Station3_JackingCylinderUp;
-        public JabilSDK.Controls.Output OB_Conveyor2_Station3_JackingCylinderUp;
         public JabilSDK.Controls.Output OB_Conveyor2_Station3_StopCylinder;
-        public JabilSDK.Controls.Input IB_ConvyorBStopper2BoardOut;
         public JabilSDK.Controls.Input IB_Conveyor2_Station3_StopCylinderDown;
         public JabilSDK.Controls.Input IB_Conveyor2_Station3_StopCylinderUp;
-        public JabilSDK.Controls.Input IB_Lifter2liftInPosition;
         public JabilSDK.Controls.Input IB_Conveyor2_Boardout;
         public JabilSDK.Controls.Input IB_Conveyor2_Station3_BoardStop;
         private System.Windows.Forms.GroupBox groupBox5;

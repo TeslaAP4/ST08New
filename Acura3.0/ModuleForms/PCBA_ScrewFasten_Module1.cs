@@ -25,6 +25,7 @@ using System.IO;
 using Cognex.VisionPro;
 using JabilSDK.UserControlLib;
 using static JabilSDK.AlarmClass;
+using System.Windows.Documents;
 
 namespace Acura3._0.ModuleForms
 {
@@ -48,7 +49,6 @@ namespace Acura3._0.ModuleForms
         public int I_NGCount = 1;
         public int I_ScrewCount = 1;
 
-        public int I_9VisionCount = 1;
         public int I_ThrowScrewtestCount = 1;
         public int I_ThrowScrewtestOkCount = 0;
         public int I_ThrowScrewtestNgCount = 0;
@@ -101,6 +101,14 @@ namespace Acura3._0.ModuleForms
         public double D_offSetXLimitMax { get => GetRecipeValue("RSet", "offSetX_Max"); }
 
         public double D_offSetYLimitMax { get => GetRecipeValue("RSet", "offSetY_Max"); }
+
+        public double pressureLimitMax { get => GetRecipeValue("RSet", "PressureLimitMax"); }
+
+        //public double pressureLimitMin { get => GetRecipeValue("RSet", "PressureLimitMin"); }
+
+        //public double PressureLimitOverLoad { get => GetRecipeValue("RSet", "PressureLimitOverLoad"); }
+
+        public int delaytime { get => GetSettingValue("RSet", "PressureDelaytime"); }
         #endregion
 
         public PCBA_ScrewFasten_Module1()
@@ -113,6 +121,7 @@ namespace Acura3._0.ModuleForms
             Thread PFAlivethread = new Thread(KeepAlive);
             PFAlivethread.IsBackground = true;
             PFAlivethread.Start();
+            ReadProductData();
             #region 螺丝曲线图控件1
             //ScrewData1.BackColor = Color.WhiteSmoke;
             //ScrewData1.BackGradientStyle = GradientStyle.TopBottom;
@@ -228,7 +237,6 @@ namespace Acura3._0.ModuleForms
             flowChart2_1.TaskReset();
             flowChart3_1.TaskReset();
             flowChart4_1.TaskReset();
-            flowChart5_1.TaskReset();
             flowChart6_1.TaskReset();
             flowChart7_1.TaskReset();
         }
@@ -239,7 +247,6 @@ namespace Acura3._0.ModuleForms
             flowChart2_1.TaskRun();
             flowChart3_1.TaskRun();
             flowChart4_1.TaskRun();
-            flowChart5_1.TaskRun();
             flowChart6_1.TaskRun();
             flowChart7_1.TaskRun();
         }
@@ -267,7 +274,7 @@ namespace Acura3._0.ModuleForms
 
         public override void SetSpeed(int SpeedRatio)
         {
-            SetAxisSpeed();
+
         }
 
         #endregion
@@ -331,8 +338,8 @@ namespace Acura3._0.ModuleForms
                 if (PFClient.Controller != null && PFClient.Controller._client != null && !PFClient.Controller._client.Connected)
                 {
                     PFClient.Disconnect();
-                    PFClient.IP = GetRecipeValue("RSet", "ScrewIP");
-                    PFClient.Port = GetRecipeValue("RSet", "ScrewPort");
+                    PFClient.IP = GetSettingValue("RSet", "ScrewIP");
+                    PFClient.Port = GetSettingValue("RSet", "ScrewPort");
                     BConnect();
                 }
                 if (PFClient.Controller != null && PFClient.Controller._client != null && PFClient.Controller._client.Connected && PFClient.KeepAliveTick > 7000)
@@ -388,6 +395,7 @@ namespace Acura3._0.ModuleForms
         public struct ScrewData
         {
             public int screwName;
+            public DateTime screwTime;
             public double finalTorque;
             public double Angle;
             public double cycleTime;
@@ -395,25 +403,83 @@ namespace Acura3._0.ModuleForms
             public double DisplacementValue;
             public bool State;
         }
-        //写入螺丝数据
-        public void WriteScrewData(ScrewData screwData)
+
+        ////写入螺丝数据
+        //public void WriteScrewData(ScrewData screwData)
+        //{
+        //    RefreshDifferentThreadUI(D_ScrewResultsShow, () =>
+        //    {
+        //        int index = D_ScrewResultsShow.Rows.Add();
+        //        D_ScrewResultsShow.ClearSelection();
+        //        D_ScrewResultsShow.Rows[index].Cells[0].Value = screwData.screwName.ToString();
+        //        D_ScrewResultsShow.Rows[index].Cells[1].Value = screwData.finalTorque.ToString("f3");
+        //        D_ScrewResultsShow.Rows[index].Cells[2].Value = screwData.Angle.ToString("f3");
+        //        D_ScrewResultsShow.Rows[index].Cells[3].Value = screwData.cycleTime.ToString();
+        //        D_ScrewResultsShow.Rows[index].Cells[4].Value = screwData.NumbleOfTurns.ToString();
+        //        D_ScrewResultsShow.Rows[index].Cells[5].Value = screwData.DisplacementValue.ToString();
+        //        D_ScrewResultsShow.Rows[index].Cells[6].Value = screwData.State ? "OK" : "NG";
+        //        if (screwData.State) { D_ScrewResultsShow.Rows[index].DefaultCellStyle.BackColor = Color.Green; }
+        //        else { D_ScrewResultsShow.Rows[index].DefaultCellStyle.BackColor = Color.Red; }
+        //        D_ScrewResultsShow.Rows[index].Selected = true;
+        //        D_ScrewResultsShow.FirstDisplayedScrollingRowIndex = index;
+        //    });
+        //}
+
+        public void ScrewDataShowUI(ScrewData screwData)
         {
+            //CT = DateTime.Now.Subtract(TimeStart).TotalSeconds.ToString("F2");
+            string[] data = new string[7];
+            data[0] = screwData.screwName.ToString();
+            data[1] = screwData.screwTime.ToString("yyyy-MM-dd HH:mm:ss");
+            data[2] = screwData.finalTorque.ToString("f3");
+            data[3] = screwData.Angle.ToString("f3");
+            data[4] = screwData.cycleTime.ToString();
+            data[5] = screwData.DisplacementValue.ToString();
+            data[6] = screwData.State ? "OK" : "NG";
+
             RefreshDifferentThreadUI(D_ScrewResultsShow, () =>
             {
-                int index = D_ScrewResultsShow.Rows.Add();
-                D_ScrewResultsShow.ClearSelection();
-                D_ScrewResultsShow.Rows[index].Cells[0].Value = screwData.screwName.ToString();
-                D_ScrewResultsShow.Rows[index].Cells[1].Value = screwData.finalTorque.ToString("f3");
-                D_ScrewResultsShow.Rows[index].Cells[2].Value = screwData.Angle.ToString("f3");
-                D_ScrewResultsShow.Rows[index].Cells[3].Value = screwData.cycleTime.ToString();
-                D_ScrewResultsShow.Rows[index].Cells[4].Value = screwData.NumbleOfTurns.ToString();
-                D_ScrewResultsShow.Rows[index].Cells[5].Value = screwData.DisplacementValue.ToString();
-                D_ScrewResultsShow.Rows[index].Cells[6].Value = screwData.State ? "OK" : "NG";
-                if (screwData.State) { D_ScrewResultsShow.Rows[index].DefaultCellStyle.BackColor = Color.Green; }
-                else { D_ScrewResultsShow.Rows[index].DefaultCellStyle.BackColor = Color.Red; }
-                D_ScrewResultsShow.Rows[index].Selected = true;
-                D_ScrewResultsShow.FirstDisplayedScrollingRowIndex = index;
+                textBox28.Text = Guid.NewGuid().ToString();
+                D_ScrewResultsShow.Rows.Insert(0, data);
+                D_ScrewResultsShow.Rows[0].Cells[2].Style.ForeColor = screwData.State ? Color.LimeGreen : Color.Red;
+                D_ScrewResultsShow.Rows[0].Cells[3].Style.ForeColor = screwData.State ? Color.LimeGreen : Color.Red;
+                D_ScrewResultsShow.Rows[0].Cells[6].Style.BackColor = screwData.State ? Color.LimeGreen : Color.Red;
+                D_ScrewResultsShow.Refresh();
+                D_ScrewResultsShow.Update();
+                SaveProductData();
             });
+        }
+
+        INIHelper ProductionIni;
+        public void SaveProductData()
+        {
+            try
+            {
+                string ProductionPath = $"{System.IO.Directory.GetCurrentDirectory()}\\ProductionData\\{this.Text} module.ini";
+                ProductionIni = new INIHelper(ProductionPath);
+                ProductionIni.WriteIniFile("ProductData", "OK", textBox29.Text);
+                ProductionIni.WriteIniFile("ProductData", "NG", textBox30.Text);
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        public void ReadProductData()
+        {
+            try
+            {
+                string ProductionPath = $"{System.IO.Directory.GetCurrentDirectory()}\\ProductionData\\{this.Text} module.ini";
+                if (File.Exists(ProductionPath))
+                {
+                    textBox29.Text = ProductionIni.ReadIniFile("ProductData", "OK", textBox29.Text);
+                    textBox30.Text = ProductionIni.ReadIniFile("ProductData", "NG", textBox30.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         //保存螺丝数据
@@ -471,32 +537,72 @@ namespace Acura3._0.ModuleForms
 
         public struct PressureData
         {
-            public int SensorNum;
-            public double PressureLimit;
-            public double CurPressureValue;
             public string Time;
-            public bool state;
+            public double[] CurPressureValue;
+            public double PressureLimitMax;
+            public bool State;
         }
-        //写入压力数据
-        public void WritepressureData(PressureData pressureData)
+
+        ////写入压力数据
+        //public void WritepressureData(PressureData pressureData)
+        //{
+        //    RefreshDifferentThreadUI(D_PressureResultsShow, () =>
+        //    {
+        //        int index = D_PressureResultsShow.Rows.Add();
+        //        D_PressureResultsShow.ClearSelection();
+        //        D_PressureResultsShow.Rows[index].Cells[0].Value = pressureData.SensorNum.ToString();
+        //        D_PressureResultsShow.Rows[index].Cells[1].Value = pressureData.Time;
+        //        D_PressureResultsShow.Rows[index].Cells[2].Value = pressureData.PressureLimit.ToString("f3");
+        //        D_PressureResultsShow.Rows[index].Cells[3].Value = pressureData.CurPressureValue.ToString("f3");
+        //        if (pressureData.state) { D_PressureResultsShow.Rows[index].DefaultCellStyle.BackColor = Color.Green; }
+        //        else { D_PressureResultsShow.Rows[index].DefaultCellStyle.BackColor = Color.Red; }
+        //        D_PressureResultsShow.Rows[index].Selected = true;
+        //        D_PressureResultsShow.FirstDisplayedScrollingRowIndex = index;
+        //    });
+        //}
+
+        int num = 0;
+
+        /// <summary>
+        /// Update Pressure UI
+        /// </summary>
+        /// <param name="pressureData"></param>
+        public void PressureDataShowUI(PressureData pressureData)
         {
+            num++;
+            string[] data = new string[10];
+            data[0] = num.ToString();
+            data[1] = pressureData.Time;
+            for (int i = 0; i < pressureData.CurPressureValue.Length; i++)
+            {
+                data[2 + i] = pressureData.CurPressureValue[i].ToString();
+            }
+            data[8] = pressureData.PressureLimitMax.ToString();
+            data[9] = pressureData.State ? "OK" : "NG";
+
             RefreshDifferentThreadUI(D_PressureResultsShow, () =>
             {
-                int index = D_PressureResultsShow.Rows.Add();
-                D_PressureResultsShow.ClearSelection();
-                D_PressureResultsShow.Rows[index].Cells[0].Value = pressureData.SensorNum.ToString();
-                D_PressureResultsShow.Rows[index].Cells[1].Value = pressureData.Time;
-                D_PressureResultsShow.Rows[index].Cells[2].Value = pressureData.PressureLimit.ToString("f3");
-                D_PressureResultsShow.Rows[index].Cells[3].Value = pressureData.CurPressureValue.ToString("f3");
-                if (pressureData.state) { D_PressureResultsShow.Rows[index].DefaultCellStyle.BackColor = Color.Green; }
-                else { D_PressureResultsShow.Rows[index].DefaultCellStyle.BackColor = Color.Red; }
-                D_PressureResultsShow.Rows[index].Selected = true;
-                D_PressureResultsShow.FirstDisplayedScrollingRowIndex = index;
+                textBox28.Text = Guid.NewGuid().ToString();
+                D_ScrewResultsShow.Rows.Insert(0, data);
+                for (int i = 0; i < 6; i++)
+                {
+                    if (pressureData.CurPressureValue[i] > pressureData.PressureLimitMax)
+                    {
+                        D_PressureResultsShow.Rows[0].Cells[2 + i].Style.ForeColor = Color.Red;
+                    }
+                }
+                D_ScrewResultsShow.Rows[0].Cells[9].Style.ForeColor = pressureData.State ? Color.LimeGreen : Color.Red;
+                D_ScrewResultsShow.Refresh();
+                D_ScrewResultsShow.Update();
+                SaveProductData();
             });
         }
 
         public void SetAxisSpeed()
         {
+            MTR_Jacking.WorkSpeed = GetSettingValue("MSet", "WorkSpeedAxisJacking");
+            MTR_Jacking.Acceleration = GetSettingValue("MSet", "AccelerationAxisJacking");
+            MTR_Jacking.Deceleration = GetSettingValue("MSet", "DecelerationAxisJacking");
             MTR_Jacking.SpeedRatio = GetSettingValue("MSet", "AxisSpeedRatio");
         }
 
@@ -599,36 +705,24 @@ namespace Acura3._0.ModuleForms
         }
         private void btnConnectScrew_Click(object sender, EventArgs e)
         {
-            PFClient.IP = GetRecipeValue("RSet", "ScrewIP");
-            PFClient.Port = GetRecipeValue("RSet", "ScrewPort");
+            PFClient.IP = GetSettingValue("RSet", "ScrewIP");
+            PFClient.Port = GetSettingValue("RSet", "ScrewPort");
             BConnect();
-            //bConnect = true;
-            //bComStart = true;
-            //bSubscribe = true;
             if (bConnect && bComStart && bSubscribe)
             {
-                btnConnectScrew.BackColor = Color.Green;
+                btnDisScrew.BackColor = Color.Green;
             }
             else
             {
-                btnConnectScrew.BackColor = Color.Red;
+                btnDisScrew.BackColor = Color.Red;
             }
-            //ScrewDriver.Atlas_Connect(GetRecipeValue("RSet", "ScrewIP"), GetRecipeValue("RSet", "ScrewPort"));
-            //if (ScrewDriver.bConnectStatus)
-            //{
-            //    btnConnectScrew.BackColor = Color.Green;
-            //}
-            //else
-            //{
-            //    btnConnectScrew.BackColor = Color.Red;
-            //}
         }
 
         private void btnDisScrew_Click(object sender, EventArgs e)
         {
             PFClient.Disconnect();
             bConnect = false;
-            btnConnectScrew.BackColor = Color.White;
+            btnDisScrew.BackColor = Color.White;
             //ScrewDriver.Disconnect();
             //btnConnectScrew.BackColor = Color.Transparent;
         }
@@ -636,21 +730,15 @@ namespace Acura3._0.ModuleForms
         private void btn_ReadScrewData_Click(object sender, EventArgs e)
         {
             PFClient.SubscribeLastTighteningResult();
-            T_ScrewData.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " 结果:" + PFClient.LastTighteningResult.TIGHTENING_STATUS.ToString() + " 扭力:" + PFClient.LastTighteningResult.TORQUE.ToString() + " 角度:" + PFClient.LastTighteningResult.ANGLE.ToString() + "\r\n");
-            //Task.Factory.StartNew(() =>
-            //{
-            //    AtlasLibrary1._Result result = ScrewDriver.Atlas_ReadTighteningResult();
-            //    RefreshDifferentThreadUI(T_ScrewData, () =>
-            //    {
-            //        T_ScrewData.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " 结果:" + result.TotalStatus.ToString() + " 扭力:" + result.PeekTorque.ToString() + " 角度:" + result.TotalAngle.ToString());
-            //    });
-            //    //T_ScrewData.Invoke(() =>
-            //    //{
-            //    //    T_ScrewData.AppendText(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " 结果:" + result.TotalStatus.ToString() + " 扭力:" + result.PeekTorque.ToString() + " 角度:" + result.TotalAngle.ToString());
-            //    //});
-
-            //});
+            string str = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " 结果:" + PFClient.LastTighteningResult.TIGHTENING_STATUS.ToString() + " 扭力:" + PFClient.LastTighteningResult.TORQUE.ToString() + " 角度:" + PFClient.LastTighteningResult.ANGLE.ToString() + "\r\n";
+            T_ScrewData.AppendText(str);
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            T_ScrewData.Clear();
+        }
+
         #endregion
 
         #region Robot 
@@ -658,7 +746,7 @@ namespace Acura3._0.ModuleForms
         public Fanuc_RobotControl F_Robot = new Fanuc_RobotControl();
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            F_Robot.RobotIP = GetRecipeValue("RSet", "RobotIP");
+            F_Robot.RobotIP = GetSettingValue("RSet", "RobotIP");
             btnConnect.BackColor = F_Robot.ConnectToRobot() ? Color.LimeGreen : Color.Red;
         }
 
@@ -714,7 +802,7 @@ namespace Acura3._0.ModuleForms
                         JSDK.Alarm.Show("4033");
                         if (flow != null && JSDK.Alarm.IsExistInSummary("4033", ref alarmDataClass))
                         {
-                            flow.Title = "ScrewFastenModuleRobotAlarm";
+                            flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
@@ -722,7 +810,7 @@ namespace Acura3._0.ModuleForms
                         JSDK.Alarm.Show("4034");
                         if (flow != null && JSDK.Alarm.IsExistInSummary("4034", ref alarmDataClass))
                         {
-                            flow.Title = "ScrewFastenModuleRobotAlarm";
+                            flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
@@ -730,7 +818,7 @@ namespace Acura3._0.ModuleForms
                         JSDK.Alarm.Show("4035");
                         if (flow != null && JSDK.Alarm.IsExistInSummary("4035", ref alarmDataClass))
                         {
-                            flow.Title = "ScrewFastenModuleRobotAlarm";
+                            flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
@@ -738,7 +826,7 @@ namespace Acura3._0.ModuleForms
                         JSDK.Alarm.Show("4036");
                         if (flow != null && JSDK.Alarm.IsExistInSummary("4036", ref alarmDataClass))
                         {
-                            flow.Title = "ScrewFastenModuleRobotAlarm";
+                            flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
@@ -746,7 +834,7 @@ namespace Acura3._0.ModuleForms
                         JSDK.Alarm.Show("4037");
                         if (flow != null && JSDK.Alarm.IsExistInSummary("4037", ref alarmDataClass))
                         {
-                            flow.Title = "ScrewFastenModuleRobotAlarm";
+                            flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
@@ -754,7 +842,7 @@ namespace Acura3._0.ModuleForms
                         JSDK.Alarm.Show("4038");
                         if (flow != null && JSDK.Alarm.IsExistInSummary("4038", ref alarmDataClass))
                         {
-                            flow.Title = "ScrewFastenModuleRobotAlarm";
+                            flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
@@ -762,7 +850,7 @@ namespace Acura3._0.ModuleForms
                         JSDK.Alarm.Show("4039");
                         if (flow != null && JSDK.Alarm.IsExistInSummary("4039", ref alarmDataClass))
                         {
-                            flow.Title = "ScrewFastenModuleRobotAlarm";
+                            flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
@@ -770,7 +858,7 @@ namespace Acura3._0.ModuleForms
                         JSDK.Alarm.Show("4040");
                         if (flow != null && JSDK.Alarm.IsExistInSummary("4040", ref alarmDataClass))
                         {
-                            flow.Title = "ScrewFastenModuleRobotAlarm";
+                            flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
@@ -778,7 +866,7 @@ namespace Acura3._0.ModuleForms
                         JSDK.Alarm.Show("4041");
                         if (flow != null && JSDK.Alarm.IsExistInSummary("4041", ref alarmDataClass))
                         {
-                            flow.Title = "ScrewFastenModuleRobotAlarm";
+                            flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
@@ -786,7 +874,7 @@ namespace Acura3._0.ModuleForms
                         JSDK.Alarm.Show("4042");
                         if (flow != null && JSDK.Alarm.IsExistInSummary("4042", ref alarmDataClass))
                         {
-                            flow.Title = "ScrewFastenModuleRobotAlarm";
+                            flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
@@ -794,7 +882,7 @@ namespace Acura3._0.ModuleForms
                         JSDK.Alarm.Show("4043");
                         if (flow != null && JSDK.Alarm.IsExistInSummary("4043", ref alarmDataClass))
                         {
-                            flow.Title = "ScrewFastenModuleRobotAlarm";
+                            flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
@@ -802,7 +890,7 @@ namespace Acura3._0.ModuleForms
                         JSDK.Alarm.Show("4044");
                         if (flow != null && JSDK.Alarm.IsExistInSummary("4044", ref alarmDataClass))
                         {
-                            flow.Title = "ScrewFastenModuleRobotAlarm";
+                            flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
@@ -810,7 +898,7 @@ namespace Acura3._0.ModuleForms
                         JSDK.Alarm.Show("4045");
                         if (flow != null && JSDK.Alarm.IsExistInSummary("4045", ref alarmDataClass))
                         {
-                            flow.Title = "ScrewFastenModuleRobotAlarm";
+                            flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
@@ -818,7 +906,7 @@ namespace Acura3._0.ModuleForms
                         JSDK.Alarm.Show("4046");
                         if (flow != null && JSDK.Alarm.IsExistInSummary("4046", ref alarmDataClass))
                         {
-                            flow.Title = "ScrewFastenModuleRobotAlarm";
+                            flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
@@ -826,7 +914,7 @@ namespace Acura3._0.ModuleForms
                         JSDK.Alarm.Show("4047");
                         if (flow != null && JSDK.Alarm.IsExistInSummary("4047", ref alarmDataClass))
                         {
-                            flow.Title = "ScrewFastenModuleRobotAlarm";
+                            flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
@@ -834,7 +922,7 @@ namespace Acura3._0.ModuleForms
                         JSDK.Alarm.Show("4048");
                         if (flow != null && JSDK.Alarm.IsExistInSummary("4048", ref alarmDataClass))
                         {
-                            flow.Title = "ScrewFastenModuleRobotAlarm";
+                            flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
@@ -842,7 +930,7 @@ namespace Acura3._0.ModuleForms
                         JSDK.Alarm.Show("4049");
                         if (flow != null && JSDK.Alarm.IsExistInSummary("4049", ref alarmDataClass))
                         {
-                            flow.Title = "ScrewFastenModuleRobotAlarm";
+                            flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
@@ -850,7 +938,7 @@ namespace Acura3._0.ModuleForms
                         JSDK.Alarm.Show("4050");
                         if (flow != null && JSDK.Alarm.IsExistInSummary("4050", ref alarmDataClass))
                         {
-                            flow.Title = "ScrewFastenModuleRobotAlarm";
+                            flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
@@ -858,7 +946,7 @@ namespace Acura3._0.ModuleForms
                         JSDK.Alarm.Show("4051");
                         if (flow != null && JSDK.Alarm.IsExistInSummary("4051", ref alarmDataClass))
                         {
-                            flow.Title = "ScrewFastenModuleRobotAlarm";
+                            flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
@@ -866,7 +954,7 @@ namespace Acura3._0.ModuleForms
                         JSDK.Alarm.Show("4052");
                         if (flow != null && JSDK.Alarm.IsExistInSummary("4052", ref alarmDataClass))
                         {
-                            flow.Title = "ScrewFastenModuleRobotAlarm";
+                            flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
@@ -892,6 +980,12 @@ namespace Acura3._0.ModuleForms
             public double Position;
             public string Remark;
         }
+
+        /// <summary>
+        /// Manual Move Axis bool
+        /// </summary>
+        public bool B_AxisManualMove = false;
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             DialogResult reult = MessageBox.Show("Sure Add Points ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
@@ -1088,334 +1182,18 @@ namespace Acura3._0.ModuleForms
         }
         #endregion
 
-
-        /// <summary>
-        /// Manual Move Axis bool
-        /// </summary>
-        public bool B_AxisManualMove = false;
-        private void btnAddScrewPos_Click(object sender, EventArgs e)
-        {
-            DialogResult reult = MessageBox.Show("Sure Add Points ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
-            if (reult == DialogResult.No)
-            {
-                return;
-            }
-            DataTable D_dt = RecipeData.Tables["T_ScrewPos"];
-            int I_Rows = D_dt.Rows.Count;
-            DataRow D_dr = D_dt.NewRow();
-            D_dr[0] = (I_Rows + 1);
-            D_dr[1] = MTR_X.GetCommandPosition().ToString("F3");
-            D_dr[2] = MTR_Y.GetCommandPosition().ToString("F3");
-            D_dr[3] = MTR_Z.GetCommandPosition().ToString("F3");
-            D_dt.Rows.Add(D_dr);
-            //LogShow(SysPara.UserName + "  " + "Add screw points the number" + D_dr[0] + "point" + "X:" + D_dr[1] + "  " + "Y:" + D_dr[2] + "  " + "Z:" + D_dr[3], true);
-        }
-
-        private void btnInsertScrewPos_Click(object sender, EventArgs e)
-        {
-            DialogResult reult = MessageBox.Show("Sure Insert Points ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
-
-            if (reult == DialogResult.No)
-            {
-                return;
-            }
-            DataGridView D_dgv = D_StressScrewPos;
-            if ((D_dgv.CurrentRow != null) && (D_dgv.CurrentRow.Index >= 0))
-            {
-                DataTable D_dt = RecipeData.Tables["T_ScrewPos"];
-                int I_Rows = D_dt.Rows.Count;
-                DataRow D_dr = D_dt.NewRow();
-                D_dr[0] = (I_Rows + 1);
-                D_dr[1] = MTR_X.GetCommandPosition().ToString("F3");
-                D_dr[2] = MTR_Y.GetCommandPosition().ToString("F3");
-                D_dr[3] = MTR_Z.GetCommandPosition().ToString("F3");
-                D_dt.Rows.InsertAt(D_dr, D_dgv.CurrentRow.Index);
-                //LogShow(SysPara.UserName + "  " + "StressPos datagridview Row " + D_dr[0] + " insert point " + "X:" + D_dr[1] + " " + "Y:" + D_dr[2] + " " + "Z:" + D_dr[3], true);
-            }
-            else
-            {
-                MessageBox.Show("faied, datasheet have no data");
-                //LogShow(SysPara.UserName + "  " + "insert faied, datasheet have no data", false);
-            }
-        }
-
-        private void btnDeleteScrewPos_Click(object sender, EventArgs e)
-        {
-            DialogResult reult = MessageBox.Show("Sure delete Points ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
-
-            if (reult == DialogResult.No)
-            {
-                return;
-            }
-            DataGridView D_dgv = D_StressScrewPos;
-            if ((D_dgv.CurrentRow != null) && (D_dgv.CurrentRow.Index >= 0))
-            {
-                DataTable D_dt = RecipeData.Tables["T_ScrewPos"];
-                D_dt.Rows.RemoveAt(D_dgv.CurrentRow.Index);
-                // LogShow(SysPara.UserName + "  " + "delete stress point", true);
-            }
-            else
-            {
-                MessageBox.Show("faied, datasheet have no data");
-                // LogShow(SysPara.UserName + "  " + "delete faied, datasheet have no data", false);
-            }
-        }
-
-        private void btnRepalceScrewPos_Click(object sender, EventArgs e)
-        {
-            DialogResult reult = MessageBox.Show("Sure Replace Points ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
-
-            if (reult == DialogResult.No)
-            {
-                return;
-            }
-            DataGridView D_dgv = D_StressScrewPos;
-            if ((D_dgv.CurrentRow != null) && (D_dgv.CurrentRow.Index >= 0))
-            {
-                DataTable D_dt = RecipeData.Tables["T_ScrewPos"];
-                DataRow D_dr = D_dt.Rows[D_dgv.CurrentRow.Index];
-                D_dr[0] = D_dr[0];
-                D_dr[1] = MTR_X.GetCommandPosition().ToString("F3");
-                D_dr[2] = MTR_Y.GetCommandPosition().ToString("F3");
-                D_dr[3] = MTR_Z.GetCommandPosition().ToString("F3");
-                // LogShow(SysPara.UserName + "  " + "StressPos datagridview Row " + D_dr[0] + " replace point " + "X:" + D_dr[1] + " " + "Y:" + D_dr[2] + " " + "Z:" + D_dr[3], true);
-            }
-            else
-            {
-                MessageBox.Show("faied, datasheet have no data");
-                // LogShow(SysPara.UserName + "  " + "replace faied, datasheet have no data", false);
-            }
-        }
-
-        private void btnGotoScrewPos_Click(object sender, EventArgs e)
-        {
-            DialogResult reult = MessageBox.Show("Confirm to move to the selected point?", "", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
-            if (reult == DialogResult.No)
-            {
-                return;
-            }
-            DataGridView D_dgv = D_StressScrewPos;
-            if ((D_dgv.CurrentRow != null) && (D_dgv.CurrentRow.Index >= 0))
-            {
-                SetAxisSpeed();
-                ScrewAxisPos axisPos = GetScrewPointList(D_dgv.CurrentRow.Cells[4].Value.ToString());
-                ScrewAxisPos SafeaxisPos = GetScrewPointList("SafePos");
-                B_AxisManualMove = false;
-                SafetyPos = false;
-                J_AxisAutoTm.Restart();
-                while (!B_AxisManualMove)
-                {
-                    if (B_GantryMoveL(axisPos.x, axisPos.y, axisPos.z, SafeaxisPos.z))
-                    {
-                        B_AxisManualMove = true;
-                        J_AxisAutoTm.Restart();
-                        MessageBox.Show("Move Finsh", "", MessageBoxButtons.OK);
-                        //LogShow(SysPara.UserName + "  " + "X:" + axisPos.x + " " + "Y:" + axisPos.y + " " + "Z:" + axisPos.z, true);
-                    }
-                    if (J_AxisAutoTm.IsOn(50000))
-                    {
-                        B_AxisManualMove = true;
-                        J_AxisAutoTm.Restart();
-                        //LogShow(SysPara.UserName + "  " + "X:" + D_dr[1] + " " + "Y:" + D_dr[2] + " " + "Z:" + D_dr[3], false);
-                        JSDK.Alarm.Show("0205");
-                    }
-                    Thread.Sleep(100);
-                    Application.DoEvents();
-                }
-            }
-            else
-            {
-                MessageBox.Show("faied, datasheet have no data");
-            }
-        }
-#endregion
-
         #region 9point
         public static List<ScrewAxisPos> Axis9Pos = new List<ScrewAxisPos>();
-
         /// <summary>
-        /// Get data for a point
+        /// Axis Pos Struct
         /// </summary>
-        /// <param name="pointName">Point name</param>
-        /// <returns></returns>
-        public ScrewAxisPos Get9PointList(string pointName)
+        public struct ScrewAxisPos
         {
-            Load9PointList();
-            ScrewAxisPos modelHPostData = new ScrewAxisPos();
-            for (int i = 0; i < Axis9Pos.Count; i++)
-            {
-                if (Axis9Pos[i].Annotation == pointName)
-                {
-                    modelHPostData = Axis9Pos[i];
-                }
-            }
-            return modelHPostData;
+            public double x;
+            public double y;
+            public string Annotation;
         }
 
-
-        /// <summary>
-        /// Data in a table in RecipeData
-        /// </summary>
-        public void Load9PointList()
-        {
-            Axis9Pos.Clear();
-            System.Data.DataTable H1dt = RecipeData.Tables["T_AutoCalibration"];
-            for (int i = 0; i < H1dt.Rows.Count; i++)
-            {
-                System.Data.DataRow dr = H1dt.Rows[i];
-                ScrewAxisPos ToSolderPoint = new ScrewAxisPos
-                {
-                    x = Convert.ToDouble(dr["AxisX"]),
-                    y = Convert.ToDouble(dr["AxisY"]),
-                    z = Convert.ToDouble(dr["AxisZ"]),
-                    Annotation = dr["Annotation"].ToString()
-                };
-                Axis9Pos.Add(ToSolderPoint);
-            }
-        }
-
-        private void btn_Add9Point_Click(object sender, EventArgs e)
-        {
-            DialogResult reult = MessageBox.Show("Sure Add Points ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
-            if (reult == DialogResult.No)
-            {
-                return;
-            }
-            DataTable D_dt = RecipeData.Tables["T_AutoCalibration"];
-            int I_Rows = D_dt.Rows.Count;
-            DataRow D_dr = D_dt.NewRow();
-            D_dr[0] = (I_Rows + 1);
-            D_dr[1] = MTR_X.GetCommandPosition().ToString("F3");
-            D_dr[2] = MTR_Y.GetCommandPosition().ToString("F3");
-            D_dr[3] = MTR_Z.GetCommandPosition().ToString("F3");
-            D_dt.Rows.Add(D_dr);
-
-        }
-
-        private void btn_Insert9Point_Click(object sender, EventArgs e)
-        {
-            DialogResult reult = MessageBox.Show("Sure Insert Points ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
-
-            if (reult == DialogResult.No)
-            {
-                return;
-            }
-            DataGridView D_dgv = D_9PointPos;
-            if ((D_dgv.CurrentRow != null) && (D_dgv.CurrentRow.Index >= 0))
-            {
-                DataTable D_dt = RecipeData.Tables["T_AutoCalibration"];
-                int I_Rows = D_dt.Rows.Count;
-                DataRow D_dr = D_dt.NewRow();
-                D_dr[0] = (I_Rows + 1);
-                D_dr[1] = MTR_X.GetCommandPosition().ToString("F3");
-                D_dr[2] = MTR_Y.GetCommandPosition().ToString("F3");
-                D_dr[3] = MTR_Z.GetCommandPosition().ToString("F3");
-                D_dt.Rows.InsertAt(D_dr, D_dgv.CurrentRow.Index);
-
-            }
-            else
-            {
-                MessageBox.Show("faied, datasheet have no data");
-
-            }
-        }
-
-        private void btn_Replace9Point_Click(object sender, EventArgs e)
-        {
-            DialogResult reult = MessageBox.Show("Sure Replace Points ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
-
-            if (reult == DialogResult.No)
-            {
-                return;
-            }
-            try
-            {
-                DataGridView D_dgv = D_9PointPos;
-                if ((D_dgv.CurrentRow != null) && (D_dgv.CurrentRow.Index >= 0))
-                {
-                    DataTable D_dt = RecipeData.Tables["T_AutoCalibration"];
-                    DataRow D_dr = D_dt.Rows[D_dgv.CurrentRow.Index];
-                    D_dr[0] = D_dr[0];
-                    D_dr[1] = MTR_X.GetCommandPosition().ToString("F3");
-                    D_dr[2] = MTR_Y.GetCommandPosition().ToString("F3");
-                    D_dr[3] = MTR_Z.GetCommandPosition().ToString("F3");
-                    // LogShow(SysPara.UserName + "  " + "StressPos datagridview Row " + D_dr[0] + " replace point " + "X:" + D_dr[1] + " " + "Y:" + D_dr[2] + " " + "Z:" + D_dr[3], true);
-                }
-                else
-                {
-                    MessageBox.Show("faied, datasheet have no data");
-                    // LogShow(SysPara.UserName + "  " + "replace faied, datasheet have no data", false);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void btn_Goto9Point_Click(object sender, EventArgs e)
-        {
-            DialogResult reult = MessageBox.Show("Confirm to move to the selected point?", "", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
-            if (reult == DialogResult.No)
-            {
-                return;
-            }
-            DataGridView D_dgv = D_9PointPos;
-            if ((D_dgv.CurrentRow != null) && (D_dgv.CurrentRow.Index >= 0))
-            {
-                SetAxisSpeed();
-                ScrewAxisPos axisPos = Get9PointList(D_dgv.CurrentRow.Cells[4].Value.ToString());
-                ScrewAxisPos SafeaxisPos = GetScrewPointList("SafePos");
-                B_AxisManualMove = false;
-                SafetyPos = false;
-                J_AxisAutoTm.Restart();
-                while (!B_AxisManualMove)
-                {
-                    if (B_GantryMoveL(axisPos.x, axisPos.y, axisPos.z, SafeaxisPos.z))
-                    {
-                        B_AxisManualMove = true;
-                        J_AxisAutoTm.Restart();
-                        MessageBox.Show("Move Finsh", "", MessageBoxButtons.OK);
-                        //LogShow(SysPara.UserName + "  " + "X:" + axisPos.x + " " + "Y:" + axisPos.y + " " + "Z:" + axisPos.z, true);
-                    }
-                    if (J_AxisAutoTm.IsOn(50000))
-                    {
-                        B_AxisManualMove = true;
-                        J_AxisAutoTm.Restart();
-                        //LogShow(SysPara.UserName + "  " + "X:" + D_dr[1] + " " + "Y:" + D_dr[2] + " " + "Z:" + D_dr[3], false);
-                        JSDK.Alarm.Show("0205");
-                    }
-                    Thread.Sleep(100);
-                    Application.DoEvents();
-                }
-            }
-            else
-            {
-                MessageBox.Show("faied, datasheet have no data");
-            }
-        }
-
-        private void btn_Delete9Point_Click(object sender, EventArgs e)
-        {
-            DialogResult reult = MessageBox.Show("Sure delete Points ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
-
-            if (reult == DialogResult.No)
-            {
-                return;
-            }
-            DataGridView D_dgv = D_9PointPos;
-            if ((D_dgv.CurrentRow != null) && (D_dgv.CurrentRow.Index >= 0))
-            {
-                DataTable D_dt = RecipeData.Tables["T_AutoCalibration"];
-                D_dt.Rows.RemoveAt(D_dgv.CurrentRow.Index);
-                // LogShow(SysPara.UserName + "  " + "delete stress point", true);
-            }
-            else
-            {
-                MessageBox.Show("faied, datasheet have no data");
-                // LogShow(SysPara.UserName + "  " + "delete faied, datasheet have no data", false);
-            }
-        }
         #endregion
 
         #region Initial Flow
@@ -1428,15 +1206,15 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart0_18_FlowRun(object sender, EventArgs e)
         {
-            PFClient.IP = GetRecipeValue("RSet", "ScrewIP");
-            PFClient.Port = GetRecipeValue("RSet", "ScrewPort");
+            PFClient.IP = GetSettingValue("RSet", "ScrewIP");
+            PFClient.Port = GetSettingValue("RSet", "ScrewPort");
             BConnect();
             if (bConnect && bComStart && bSubscribe)
             {
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_18.Text} finish", true);
                 return FCResultType.NEXT;
             }
-            if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "Times")))
+            if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "IOTimes")))
             {
                 J_AxisIniTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_18.Text} overtime", false);
@@ -1452,7 +1230,7 @@ namespace Acura3._0.ModuleForms
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_20.Text} finish", true);
                 return FCResultType.NEXT;
             }
-            if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "Times")))
+            if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "IOTimes")))
             {
                 J_AxisIniTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_20.Text} overtime", false);
@@ -1463,12 +1241,12 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart0_21_FlowRun(object sender, EventArgs e)
         {
-            if (SysPara.newReadCOM.SPCom.ConnectStates() || SysPara.newReadCOM.ConnectCom(GetRecipeValue("RSet", "DisplacementCom")))
+            if (SysPara.newReadCOM.SPCom.ConnectStates() || SysPara.newReadCOM.ConnectCom(GetSettingValue("RSet", "DisplacementCom")))
             {
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_21.Text} finish", true);
                 return FCResultType.NEXT;
             }
-            if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "Times")))
+            if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "IOTimes")))
             {
                 J_AxisIniTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_21.Text} overtime", false);
@@ -1485,12 +1263,13 @@ namespace Acura3._0.ModuleForms
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_14.Text} finish", true);
                 return FCResultType.NEXT;
             }
-            if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "IniAsixTimes")))
+            if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "AxisTimes")))
             {
                 J_AxisIniTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_14.Text} overtime", false);
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart0_14.Text);
                 GantryAlarm("3010", Alarm1_02, false);
+                return FCResultType.CASE2;
             }
             return FCResultType.IDLE;
         }
@@ -1504,12 +1283,13 @@ namespace Acura3._0.ModuleForms
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_15.Text} finish", true);
                 return FCResultType.NEXT;
             }
-            if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "IniAsixTimes")))
+            if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "AxisTimes")))
             {
                 J_AxisIniTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_15.Text} overtime", false);
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart0_15.Text);
                 GantryAlarm("3012", Alarm1_03, false);
+                return FCResultType.CASE2;
             }
             return FCResultType.IDLE;
         }
@@ -1598,7 +1378,7 @@ namespace Acura3._0.ModuleForms
             J_AxisAutoTm.Restart();
             if (I_ScrewCount > 10)
             {
-                MiddleLayer.ConveyorF.myRFID1.ResultBool = true;
+                //MiddleLayer.ConveyorF.myRFID1.ResultBool = true;
                 I_ScrewCount = 1;
                 return FCResultType.NEXT;
             }
@@ -1644,6 +1424,7 @@ namespace Acura3._0.ModuleForms
             }
             if (F_Robot.SetTaskIndex(I_ScrewCount) && F_Robot.SetVisionResultX(offsetX) && F_Robot.SetVisionResultY(offsetY) && F_Robot.SetRobotTask(4))
             {
+                screwStartTime = DateTime.Now;
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_17.Text} finish", true);
                 return FCResultType.NEXT;
@@ -1672,7 +1453,7 @@ namespace Acura3._0.ModuleForms
                 RobotAlarm(Alarm2_01);
                 return FCResultType.CASE2;
             }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IniAsixTimes")))
+            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "RobotTimes")))
             {
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart24.Text} robot overtime", false);
@@ -1681,7 +1462,7 @@ namespace Acura3._0.ModuleForms
                 {
                     flowChartMessage4.msgForm.btnRetry.Text = "Continue Wait";
                 });
-                GantryAlarm("4001", flowChartMessage4, false);
+                GantryAlarm("4203", flowChartMessage4, false);
                 return FCResultType.CASE1;
             }
             return FCResultType.IDLE;
@@ -1703,7 +1484,7 @@ namespace Acura3._0.ModuleForms
                     MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "ByPass Screw Result Mode :" + $"{this.Text} Module {flowChart2_10.Text} finish", true);
                     return FCResultType.NEXT;
                 }
-                if (F_Robot.D_ReadRobotR[30] == 1)
+                if (F_Robot.D_ReadRobotR[35] == 1)
                 {
                     if (F_Robot.WriteR(30, 0))
                     {
@@ -1712,7 +1493,7 @@ namespace Acura3._0.ModuleForms
                         return FCResultType.NEXT;
                     }
                 }
-                if (F_Robot.D_ReadRobotR[30] == 2)
+                if (F_Robot.D_ReadRobotR[35] == -1)
                 {
                     if (F_Robot.WriteR(30, 0))
                     {
@@ -1729,7 +1510,7 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart2_12_FlowRun(object sender, EventArgs e)
         {
-            if (SysPara.IsDryRun || B_GantryDryRun)
+            if (SysPara.IsDryRun || B_GantryDryRun || B_ByPassScrew)
             {
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "Dryrun Mode :" + $"{this.Text} Module {flowChart2_12.Text} finish", true);
@@ -1766,11 +1547,11 @@ namespace Acura3._0.ModuleForms
                 GantryAlarm("3030", flowChartMessage17);
                 return FCResultType.CASE1;
             }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "Times")))
+            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
             {
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_22.Text} overtime", false);
                 SysPara.newReadCOM.DisconnectCom3();
-                SysPara.newReadCOM.ConnectCom(GetRecipeValue("RSet", "DisplacementCom"));
+                SysPara.newReadCOM.ConnectCom(GetSettingValue("RSet", "DisplacementCom"));
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart2_22.Text);
                 GantryAlarm("3028", flowChartMessage16, false);
                 return FCResultType.CASE2;
@@ -1800,6 +1581,11 @@ namespace Acura3._0.ModuleForms
             return FCResultType.CASE1;
         }
 
+        private FCResultType flowChart2_FlowRun_1(object sender, EventArgs e)
+        {
+            return FCResultType.NEXT;
+        }
+
         private FCResultType flowChart2_19_FlowRun(object sender, EventArgs e)
         {
             if (F_Robot.GetCurrentTaskState() == eRobotState.Done)
@@ -1819,7 +1605,7 @@ namespace Acura3._0.ModuleForms
                 RobotAlarm(Alarm2_02, false);
                 return FCResultType.CASE3;
             }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IniAsixTimes")))
+            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "RobotTimes")))
             {
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_19.Text} overtime", false);
@@ -1829,7 +1615,7 @@ namespace Acura3._0.ModuleForms
                     flowChartMessage1.msgForm.btnRetry.Text = "Continue Wait";
                     flowChartMessage1.msgForm.btnSkip.Text = "Move Again";
                 });
-                GantryAlarm("4001", flowChartMessage1);
+                GantryAlarm("4203", flowChartMessage1);
                 return FCResultType.CASE2;
             }
             return FCResultType.IDLE;
@@ -1876,12 +1662,6 @@ namespace Acura3._0.ModuleForms
             return FCResultType.CASE1;
         }
 
-        private FCResultType flowChart12_FlowRun(object sender, EventArgs e)
-        {
-            J_AxisAutoTm.Restart();
-            //MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart12.Text} finish", true);
-            return FCResultType.CASE1;
-        }
         private FCResultType flowChart19_FlowRun(object sender, EventArgs e)
         {
             J_AxisAutoTm.Restart();
@@ -1889,13 +1669,7 @@ namespace Acura3._0.ModuleForms
             return FCResultType.CASE1;
         }
 
-        private FCResultType flowChart6_FlowRun(object sender, EventArgs e)
-        {
-            B_GantryResult = false;
-            J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6.Text} finish", true);
-            return FCResultType.NEXT;
-        }
+
         #endregion
 
         #region Jacking Flow
@@ -1903,6 +1677,7 @@ namespace Acura3._0.ModuleForms
         {
             if (B_Press)
             {
+                SetAxisSpeed();
                 B_GantryResult = true;
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_1.Text} finish", true);
                 J_AxisAutoTm.Restart();
@@ -1918,7 +1693,7 @@ namespace Acura3._0.ModuleForms
             if (bFinsh)
             {
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_2.Text} finish", true);
-                MTR_Jacking.WorkSpeed = 5;
+                MTR_Jacking.WorkSpeed = 1;
                 J_AxisAutoTm.Restart();
                 B_StartReadPressure = true;
                 B_PressureOverlimit = false;
@@ -1927,7 +1702,7 @@ namespace Acura3._0.ModuleForms
                 j = 0;
                 return FCResultType.NEXT;
             }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "AutoAsixTimes")))
+            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "AxisTimes")))
             {
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_2.Text} overtime", false);
@@ -1944,15 +1719,13 @@ namespace Acura3._0.ModuleForms
         public List<double> data = new List<double>();
         private FCResultType flowChart3_3_FlowRun(object sender, EventArgs e)
         {
-            int delaytime = GetRecipeValue("RSet", "PressureDelaytime");
-            double pressureLimitMax = GetRecipeValue("RSet", "PressureLimitMax");
             if (!myPressureCom.IsConnected)
             {
                 if (ConnectPressureCom())
                 {
                     J_AxisIniTm.Restart();
                 }
-                if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "Times")))
+                if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "IOTimes")))
                 {
                     J_AxisIniTm.Restart();
                     MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_3.Text} overtime", false);
@@ -1960,6 +1733,7 @@ namespace Acura3._0.ModuleForms
                     return FCResultType.IDLE;
                 }
             }
+            pressureQueue.Clear();
             Task.Run(() =>
             {
                 while (B_StartReadPressure)
@@ -1989,44 +1763,54 @@ namespace Acura3._0.ModuleForms
             JackingAxisPos AxisZ = GetJackingPointList("JackingLimitPos");
             bool bFinsh = MTR_Jacking.Goto(AxisZ.Position);
 
-            bool A = IB_PressureSensor1.IsOn();
-            bool B = IB_PressureSensor2.IsOn();
-            bool C = IB_PressureSensor3.IsOn();
-            bool D = IB_PressureSensor4.IsOn();
-            bool E = IB_PressureSensor5.IsOn();
-            bool F = IB_PressureSensor6.IsOn();
-
-            if (B_PressureOverlimit)
+            if (!SysPara.IsDryRun && !B_GantryDryRun && !B_ByPassPressure)
             {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module  {flowChart3_5.Text}  number{j} PressureValue overlimit", false);
-                J_AxisAutoTm.Restart();
-                GantryAlarm("3036", Alarm3_02, false, j);
-                return FCResultType.CASE2;
-            }
+                if (B_PressureOverlimit)
+                {
+                    B_StartReadPressure = false;
+                    B_PressureOverlimit = false;
+                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module  {flowChart3_5.Text}  number{j} PressureValue overlimit", false);
+                    J_AxisAutoTm.Restart();
+                    GantryAlarm("3036", Alarm3_02, true, j);
+                    return FCResultType.CASE2;
+                }
 
-            if (A && B && C && D && E && F && bFinsh)
-            {
-                B_StartReadPressure = false;
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_5.Text} finish", true);
-                MTR_Jacking.Stop();
-                J_AxisAutoTm.Restart();
-                return FCResultType.NEXT;
-            }
+                bool A = IB_PressureSensor1.IsOff();
+                bool B = IB_PressureSensor2.IsOff();
+                bool C = IB_PressureSensor3.IsOff();
+                bool D = IB_PressureSensor4.IsOff();
+                bool E = IB_PressureSensor5.IsOff();
+                bool F = IB_PressureSensor6.IsOff();
+                if (bFinsh)
+                {
+                    B_StartReadPressure = false;
+                    if ((A || B || C || D || E || F) && !SysPara.IsDryRun && !B_GantryDryRun && !B_ByPassPressure)
+                    {
+                        MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_5.Text} pressure NG", false);
+                        J_AxisAutoTm.Restart();
+                        GantryAlarm("3047", Alarm3_02);
+                        return FCResultType.CASE2;
+                    }
+                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_5.Text} finish", true);
+                    J_AxisAutoTm.Restart();
+                    return FCResultType.NEXT;
+                }
 
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "AutoAsixTimes")))
-            {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_5.Text} overtime", false);
-                J_AxisAutoTm.Restart();
-                MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart3_5.Text);
-                GantryAlarm("3022", Alarm3_02);
-                return FCResultType.CASE2;
+                if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "AxisTimes")))
+                {
+                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_5.Text} overtime", false);
+                    J_AxisAutoTm.Restart();
+                    MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart3_5.Text);
+                    GantryAlarm("3022", Alarm3_02);
+                    return FCResultType.CASE2;
+                }
             }
             return FCResultType.IDLE;
         }
 
         private FCResultType flowChart3_6_FlowRun(object sender, EventArgs e)
         {
-            if (SysPara.IsDryRun || B_GantryDryRun)
+            if (SysPara.IsDryRun || B_GantryDryRun || B_ByPassPressure)
             {
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_6.Text} finish", true);
@@ -2038,7 +1822,7 @@ namespace Acura3._0.ModuleForms
                 {
                     J_AxisIniTm.Restart();
                 }
-                if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "Times")))
+                if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "IOTimes")))
                 {
                     J_AxisIniTm.Restart();
                     MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_6.Text} overtime", false);
@@ -2046,48 +1830,34 @@ namespace Acura3._0.ModuleForms
                     return FCResultType.IDLE;
                 }
             }
-            int delaytime = GetRecipeValue("RSet", "PressureDelaytime");
-            double pressureLimitMax = GetRecipeValue("RSet", "PressureLimitMax");
             string[] str = myPressureCom.ReadAllPressureValue(6, delaytime);
             if (str != null)
             {
+                pressureData.Time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                pressureData.PressureLimitMax = pressureLimitMax;
                 for (int i = 0; i < str.Length; i++)
                 {
-                    pressureData.SensorNum = i + 1;
-                    pressureData.PressureLimit = pressureLimitMax;
-                    pressureData.CurPressureValue = double.Parse(str[i]);
-                    pressureData.Time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                    switch (i)
-                    {
-                        case 0:
-                            pressureData.state = IB_PressureSensor1.IsOn();
-                            break;
-                        case 1:
-                            pressureData.state = IB_PressureSensor2.IsOn();
-                            break;
-                        case 2:
-                            pressureData.state = IB_PressureSensor3.IsOn();
-                            break;
-                        case 3:
-                            pressureData.state = IB_PressureSensor4.IsOn();
-                            break;
-                        case 4:
-                            pressureData.state = IB_PressureSensor5.IsOn();
-                            break;
-                        case 5:
-                            pressureData.state = IB_PressureSensor6.IsOn();
-                            break;
-                        default:
-                            break;
-                    }
-                    WritepressureData(pressureData);
+                    pressureData.CurPressureValue[i] = double.Parse(str[i]);
                 }
+                for (int i = 0; i < pressureData.CurPressureValue.Length; i++)
+                {
+                    if (pressureData.CurPressureValue[i] > pressureLimitMax)
+                    {
+                        pressureData.State = false;
+                        break;
+                    }
+                    else
+                    {
+                        pressureData.State = true;
+                    }
+                }
+                PressureDataShowUI(pressureData);
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_6.Text} finish", true);
                 return FCResultType.NEXT;
             }
 
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "Times")))
+            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
             {
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_6.Text} overtime", false);
@@ -2165,15 +1935,20 @@ namespace Acura3._0.ModuleForms
                 J_AxisAutoTm.Restart();
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart4_2.Text);
                 RobotAlarm(Alarm4_01, false);
-                return FCResultType.CASE3;
+                return FCResultType.CASE2;
             }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IniAsixTimes")))
+            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "AxisTimes")))
             {
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4_2.Text} overtime", false);
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart4_2.Text);
-                GantryAlarm("4001", Alarm4_02);
-                return FCResultType.CASE2;
+                RefreshDifferentThreadUI(Alarm4_02, () =>
+                {
+                    Alarm4_02.msgForm.btnRetry.Text = "Continue Wait";
+                    Alarm4_02.msgForm.btnSkip.Text = "Move Again";
+                });
+                GantryAlarm("4203", Alarm4_02);
+                return FCResultType.CASE1;
             }
             return FCResultType.IDLE;
         }
@@ -2222,7 +1997,7 @@ namespace Acura3._0.ModuleForms
                 GantryAlarm("3034", Alarm4_04);
                 return FCResultType.CASE2;
             }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "Times")))
+            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
             {
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4_3.Text} overtime", false);
@@ -2351,139 +2126,42 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart6_2_FlowRun(object sender, EventArgs e)
         {
-            ScrewAxisPos AxisZ = GetScrewPointList("SafePos");
-            bool bFinsh = MTR_Z.Goto(AxisZ.z);
-            if (bFinsh)
+            if (F_Robot.SetTaskIndex(1) && F_Robot.SetRobotTask(5))
             {
-                SafetyPos = false;
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6_2.Text} finish", true);
                 return FCResultType.NEXT;
-            }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "AutoAsixTimes")))
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6_2.Text} overtime", false);
-                GantryAlarm("3014", flowChartMessage12);
-                return FCResultType.CASE2;
             }
             return FCResultType.IDLE;
         }
 
         private FCResultType flowChart6_3_FlowRun(object sender, EventArgs e)
         {
-            ScrewAxisPos AxisXY = GetScrewPointList("ThrowScrewPos");
-            ScrewAxisPos AxisZ = GetScrewPointList("SafePos");
-            if (B_GantryMoveL(AxisXY.x, AxisXY.y, AxisXY.z, AxisZ.z))
+            if (F_Robot.GetCurrentTaskState() == eRobotState.Done)
             {
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6_3.Text} finish", true);
                 return FCResultType.NEXT;
             }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "AutoAsixTimes")))
+            if (F_Robot.GetCurrentTaskState() == eRobotState.Alarm)
+            {
+                J_AxisAutoTm.Restart();
+                MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart6_3.Text);
+                RobotAlarm(Alarm6_01, false);
+                return FCResultType.CASE2;
+            }
+            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "AxisTimes")))
             {
                 J_AxisAutoTm.Restart();
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6_3.Text} overtime", false);
-                GantryAlarm("3014", flowChartMessage13);
-                return FCResultType.CASE2;
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart6_4_FlowRun(object sender, EventArgs e)
-        {
-            OB_ScrewVacuum.Off();
-            J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6_4.Text} finish", true);
-            return FCResultType.NEXT;
-        }
-
-        private FCResultType flowChart6_5_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewNailingCylinder.On();
-            if (IB_ScrewNailingCylinderExtend.IsOn() && IB_ScrewNailingCylinderRetract.IsOff())
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6_5.Text} finish", true);
-                return FCResultType.NEXT;
-            }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6_5.Text} overtime", false);
-                JSDK.Alarm.Show("3056");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart6_8_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewLockCylinder.Off();
-            if (IB_ScrewLockCylinderExtend.IsOff() && IB_ScrewLockCylinderRetract.IsOn())
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6_8.Text} finish", true);
-                return FCResultType.NEXT;
-            }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6_8.Text} overtime", false);
-                JSDK.Alarm.Show("3053");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart6_6_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewNailingCylinder.Off();
-            if (IB_ScrewNailingCylinderExtend.IsOff() && IB_ScrewNailingCylinderRetract.IsOn())
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6_6.Text} finish", true);
-                return FCResultType.NEXT;
-            }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6_6.Text} overtime", false);
-                JSDK.Alarm.Show("3057");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart6_9_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewLockCylinder.On();
-            if (IB_ScrewLockCylinderExtend.IsOn() && IB_ScrewLockCylinderRetract.IsOff())
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6_9.Text} finish", true);
-                return FCResultType.NEXT;
-            }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6_9.Text} overtime", false);
-                JSDK.Alarm.Show("3052");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart6_10_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewFeedCylinder.Off();
-            if (IB_ScrewFeedCylinderExtend.IsOff() && IB_ScrewFeedCylinderRetract.IsOn())
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6_10.Text} finish", true);
-                return FCResultType.NEXT;
-            }
-            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6_10.Text} overtime", false);
-                JSDK.Alarm.Show("3055");
+                MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart6_3.Text);
+                RefreshDifferentThreadUI(flowChartMessage12, () =>
+                {
+                    flowChartMessage12.msgForm.btnRetry.Text = "Continue Wait";
+                    flowChartMessage12.msgForm.btnSkip.Text = "Move Again";
+                });
+                GantryAlarm("4203", Alarm1_02);
+                return FCResultType.CASE1;
             }
             return FCResultType.IDLE;
         }
@@ -2506,9 +2184,8 @@ namespace Acura3._0.ModuleForms
         #region Displacement
         private void btnConnectDisplacement_Click(object sender, EventArgs e)
         {
-            if (SysPara.newReadCOM.SPCom.ConnectStates() || SysPara.newReadCOM.ConnectCom(GetRecipeValue("RSet", "DisplacementCom")))
+            if (SysPara.newReadCOM.SPCom.ConnectStates() || SysPara.newReadCOM.ConnectCom(GetSettingValue("RSet", "DisplacementCom")))
             {
-                //btnConnectDisplacement_Click(this, null);
                 btnConnectDisplacement.BackColor = Color.Green;
             }
             else
@@ -2525,217 +2202,196 @@ namespace Acura3._0.ModuleForms
             textBox37.Text = SysPara.newReadCOM.ReadContent_COM("01 03 00 00 00 02 C4 0B");
         }
 
-
         #endregion
 
         #region Auto Calibration
-        private void button6_Click(object sender, EventArgs e)
+
+        public bool B_Auto_NinePoint_Calibration = false;
+
+        int calibration_Index = 1;
+
+        double RobotX, RobotY;
+        private void button4_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Start Auto Calibration?", "Auto Calibration", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (result == System.Windows.Forms.DialogResult.Cancel)
+            DialogResult reult = MessageBox.Show("Sure to start auto 9-points calibration ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
+
+            if (reult == DialogResult.No)
+            {
                 return;
-            B_PosFlow = true;
-            flowChart100_1.TaskReset();
-            Task.Factory.StartNew(() =>
+            }
+            DialogResult reult1 = MessageBox.Show("Check jacking axis is on-Position ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
+            if (reult1 == DialogResult.No)
             {
-                while (B_PosFlow)
+                return;
+            }
+
+            calibration_Index = 1;
+            B_Auto_NinePoint_Calibration = true;
+            flowChart23.TaskReset();
+            Task.Run(() =>
+            {
+                while (B_Auto_NinePoint_Calibration)
                 {
-                    flowChart100_1.TaskRun();
-                    Thread.Sleep(0);
-                    Application.DoEvents();
+                    flowChart23.TaskRun();
                 }
             });
+            button4.Enabled = false;
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button9_Click(object sender, EventArgs e)
         {
-            B_PosFlow = false;
-            StopRun();
-        }
-        private FCResultType flowChart100_1_FlowRun(object sender, EventArgs e)
-        {
-            J_Auto9pointTm.Restart();
-            I_9VisionCount = 1;
-            return FCResultType.NEXT;
-        }
-
-        private FCResultType flowChart100_2_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewFeedCylinder.Off();
-            if (IB_ScrewFeedCylinderExtend.IsOff() && IB_ScrewFeedCylinderRetract.IsOn())
-            {
-                J_Auto9pointTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_Auto9pointTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_Auto9pointTm.Restart();
-                JSDK.Alarm.Show("3055");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart100_3_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewLockCylinder.Off();
-            if (IB_ScrewLockCylinderExtend.IsOff() && IB_ScrewLockCylinderRetract.IsOn())
-            {
-                J_Auto9pointTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_Auto9pointTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_Auto9pointTm.Restart();
-                JSDK.Alarm.Show("3053");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart100_4_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewNailingCylinder.Off();
-            if (IB_ScrewNailingCylinderExtend.IsOff() && IB_ScrewNailingCylinderRetract.IsOn())
-            {
-                J_Auto9pointTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_Auto9pointTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_Auto9pointTm.Restart();
-                JSDK.Alarm.Show("3057");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart100_5_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewLockCylinder.On();
-            if (IB_ScrewLockCylinderExtend.IsOn() && IB_ScrewLockCylinderRetract.IsOff())
-            {
-                J_Auto9pointTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_Auto9pointTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_Auto9pointTm.Restart();
-                JSDK.Alarm.Show("3052");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart100_6_FlowRun(object sender, EventArgs e)
-        {
-            if (MTR_Z.Home())
-            {
-                J_Auto9pointTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_Auto9pointTm.IsOn(GetSettingValue("PSet", "IniAsixTimes")))
-            {
-                J_Auto9pointTm.Restart();
-                JSDK.Alarm.Show("3006");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart100_7_FlowRun(object sender, EventArgs e)
-        {
-            bool a = MTR_X.Home();
-            bool b = MTR_Y.Home();
-            if (a && b)
-            {
-                SafetyPos = false;
-                J_Auto9pointTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_Auto9pointTm.IsOn(GetSettingValue("PSet", "IniAsixTimes")))
-            {
-                J_Auto9pointTm.Restart();
-                JSDK.Alarm.Show("3008");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart100_8_FlowRun(object sender, EventArgs e)
-        {
-            ScrewAxisPos AxisXY = Get9PointList($"CalibrationPos{I_9VisionCount}");
-            ScrewAxisPos AxisZ = GetScrewPointList("SafePos");
-
-            if (B_GantryMoveL(AxisXY.x, AxisXY.y, AxisXY.z, AxisZ.z))
-            {
-                J_Auto9pointTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_Auto9pointTm.IsOn(GetSettingValue("PSet", "IniAsixTimes")))
-            {
-                J_Auto9pointTm.Restart();
-                JSDK.Alarm.Show("3012");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart100_9_FlowRun(object sender, EventArgs e)
-        {
-            bool B_OK = false;
-            bool B_Ng = false;
-            ScrewAxisPos AxisXY = Get9PointList($"CalibrationPos{I_9VisionCount}");
-            RefreshDifferentThreadUI(C_9PosCcd1Show, () =>
-            {
-                if (H1_9Pos.SetCalibPoint(H1_9Pos.CameraSN, 1, I_9VisionCount, AxisXY.x, AxisXY.y, out ICogRecord cogRecord)/*&& H1_9Pos.SetCalibPoint(H1_9Pos.CameraSN, 2, I_9VisionCount, AxisXY.x, AxisXY.y, out ICogRecord cogRecord1)*/)
-                {
-                    VisionShow(C_9PosCcd1Show, cogRecord);
-                    J_Auto9pointTm.Restart();
-                    B_OK = true;
-                }
-                else
-                    B_Ng = true;
-
-            });
-            if (B_OK || B_Ng)
-            {
-                if (B_OK)
-                    return FCResultType.NEXT;
-                JSDK.Alarm.Show("3032");
-            }
-            if (J_Auto9pointTm.IsOn(5000))
-            {
-                J_Auto9pointTm.Restart();
-                JSDK.Alarm.Show("3032");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart100_10_FlowRun(object sender, EventArgs e)
-        {
-            J_Auto9pointTm.Restart();
-            return FCResultType.NEXT;
-        }
-
-        private FCResultType flowChart100_11_FlowRun(object sender, EventArgs e)
-        {
-            I_9VisionCount++;
-            if (I_9VisionCount > 9)
-            {
-                I_9VisionCount = 1;
-                J_Auto9pointTm.Restart();
-                return FCResultType.NEXT;
-            }
-            J_Auto9pointTm.Restart();
-            return FCResultType.CASE1;
-        }
-
-        private FCResultType flowChart100_12_FlowRun(object sender, EventArgs e)
-        {
-            B_PosFlow = false;
-            StopRun();
-            return FCResultType.IDLE;
+            calibration_Index = 1;
+            B_Auto_NinePoint_Calibration = false;
+            button4.Enabled = true;
         }
 
         private FCResultType flowChart23_FlowRun(object sender, EventArgs e)
         {
-            J_Auto9pointTm.Restart();
+            F_Robot.RobotIP = GetSettingValue("RSet", "RobotIP");
+            if (F_Robot.ConnectToRobot())
+            {
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart25_FlowRun(object sender, EventArgs e)
+        {
+            if (RobotStart())
+            {
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart27_FlowRun(object sender, EventArgs e)
+        {
+            if (F_Robot.SetRecipe(1))
+            {
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart76_FlowRun(object sender, EventArgs e)
+        {
+            if (F_Robot.SetRobotMode(1))
+            {
+                F_Robot.SetSpeed(5);
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart33_FlowRun(object sender, EventArgs e)
+        {
+            if (F_Robot.SetRobotTask(1))
+            {
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart34_FlowRun(object sender, EventArgs e)
+        {
+            if (F_Robot.GetCurrentTaskState() == eRobotState.Done)
+            {
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart51_FlowRun(object sender, EventArgs e)
+        {
+            if (F_Robot.WriteToRobotR(2, calibration_Index) && F_Robot.WriteToRobotR(1, 6))
+            {
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart96_FlowRun(object sender, EventArgs e)
+        {
+            if (F_Robot.ReflashRobotR())
+            {
+                //F_Robot.SetSpeed(10);
+                RobotX = F_Robot.d_ReadRobotR[41];
+                RobotY = F_Robot.d_ReadRobotR[42];
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart55_FlowRun(object sender, EventArgs e)
+        {
+            OB_CCDLight.On();
             return FCResultType.NEXT;
         }
+
+        private FCResultType flowChart60_FlowRun(object sender, EventArgs e)
+        {
+            bool result = false;
+            RefreshDifferentThreadUI(H1_9Pos, () =>
+            {
+                if (H1_9Pos.SetCalibPoint(V_ScrewControl1.CameraSN, 1, calibration_Index - 1, RobotX, RobotY, out ICogRecord cogRecord))
+                {
+                    RefreshDifferentThreadUI(cog_Auto9PointCalibration, () =>
+                    {
+                        cog_Auto9PointCalibration.Record = cogRecord;
+                        cog_Auto9PointCalibration.AutoFit = true;
+                        cog_Auto9PointCalibration.Fit();
+                    });
+                }
+            });
+            if (result)
+            {
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart57_FlowRun(object sender, EventArgs e)
+        {
+            OB_CCDLight.Off();
+            return FCResultType.NEXT;
+        }
+
+        private FCResultType flowChart62_FlowRun(object sender, EventArgs e)
+        {
+            calibration_Index++;
+            if (calibration_Index >= 10)
+            {
+                calibration_Index = 1;
+                return FCResultType.NEXT;
+            }
+            return FCResultType.CASE1;
+        }
+
+        private FCResultType flowChart64_FlowRun(object sender, EventArgs e)
+        {
+            if (F_Robot.SetTaskIndex(1) && F_Robot.SetRobotTask(2))
+            {
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart65_FlowRun(object sender, EventArgs e)
+        {
+            if (F_Robot.GetCurrentTaskState() == eRobotState.Done)
+            {
+                return FCResultType.NEXT;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart66_FlowRun(object sender, EventArgs e)
+        {
+            B_Auto_NinePoint_Calibration = false;
+            button4.Enabled = true;
+            return FCResultType.IDLE;
+        }
+
         #endregion
 
         #region GetScrewDataFlow
@@ -2744,7 +2400,6 @@ namespace Acura3._0.ModuleForms
             if (B_GetScrewData)
             {
                 B_GetScrewData = false;
-                J_AxisAutoTm.Restart();
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -2756,12 +2411,11 @@ namespace Acura3._0.ModuleForms
             {
                 PFClient.TighteningResultUpdated = false;
                 screwData.screwName = I_ScrewCount;
+                screwData.screwTime = DateTime.Now;
                 screwData.finalTorque = PFClient.LastTighteningResult.TORQUE;
                 screwData.Angle = PFClient.LastTighteningResult.ANGLE;
                 screwData.cycleTime = (DateTime.Now - screwStartTime).TotalSeconds;
-                screwData.NumbleOfTurns = 0;
                 screwData.State = PFClient.LastTighteningResult.TIGHTENING_STATUS;
-                J_AxisAutoTm.Restart();
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -2769,350 +2423,18 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart7_3_FlowRun(object sender, EventArgs e)
         {
+            ScrewDataShowUI(screwData);
             J_AxisAutoTm.Restart();
             return FCResultType.NEXT;
         }
 
         private FCResultType flowChart8_FlowRun(object sender, EventArgs e)
         {
-            J_AxisAutoTm.Restart();
             return FCResultType.NEXT;
         }
         #endregion
 
         #region ThrowScrewSmallProgramFlow
-        private FCResultType flowChart110_1_FlowRun(object sender, EventArgs e)
-        {
-            J_ThrowScrewtestTm.Restart();
-            I_ThrowScrewtestCount = 1;
-            I_ThrowScrewtestNgCount = 0;
-            I_ThrowScrewtestOkCount = 0;
-
-
-            return FCResultType.NEXT;
-        }
-
-        private FCResultType flowChart110_2_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewFeedCylinder.Off();
-            if (IB_ScrewFeedCylinderExtend.IsOff() && IB_ScrewFeedCylinderRetract.IsOn())
-            {
-                J_ThrowScrewtestTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_ThrowScrewtestTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_ThrowScrewtestTm.Restart();
-                JSDK.Alarm.Show("3055");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart110_3_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewLockCylinder.Off();
-            if (IB_ScrewLockCylinderExtend.IsOff() && IB_ScrewLockCylinderRetract.IsOn())
-            {
-                J_ThrowScrewtestTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_ThrowScrewtestTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_ThrowScrewtestTm.Restart();
-                JSDK.Alarm.Show("3053");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart110_4_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewNailingCylinder.Off();
-            if (IB_ScrewNailingCylinderExtend.IsOff() && IB_ScrewNailingCylinderRetract.IsOn())
-            {
-                J_ThrowScrewtestTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_ThrowScrewtestTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_ThrowScrewtestTm.Restart();
-                JSDK.Alarm.Show("3057");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart110_5_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewLockCylinder.On();
-            if (IB_ScrewLockCylinderExtend.IsOn() && IB_ScrewLockCylinderRetract.IsOff())
-            {
-                J_ThrowScrewtestTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_ThrowScrewtestTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_ThrowScrewtestTm.Restart();
-                JSDK.Alarm.Show("3052");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart110_6_FlowRun(object sender, EventArgs e)
-        {
-            if (MTR_Z.Home())
-            {
-                J_ThrowScrewtestTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_ThrowScrewtestTm.IsOn(GetSettingValue("PSet", "IniAsixTimes")))
-            {
-                J_ThrowScrewtestTm.Restart();
-                JSDK.Alarm.Show("3006");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart110_7_FlowRun(object sender, EventArgs e)
-        {
-            bool a = MTR_X.Home();
-            bool b = MTR_Y.Home();
-            if (a && b)
-            {
-                SafetyPos = false;
-                J_ThrowScrewtestTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_ThrowScrewtestTm.IsOn(GetSettingValue("PSet", "IniAsixTimes")))
-            {
-                J_ThrowScrewtestTm.Restart();
-                JSDK.Alarm.Show("3008");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart110_8_FlowRun(object sender, EventArgs e)
-        {
-            if (IB_ScrewFeeder_Ready.IsOn())
-            {
-                OB_ScrewFeeder_SplitNail.On();
-                J_ThrowScrewtestTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_ScrewAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_ThrowScrewtestTm.Restart();
-                return FCResultType.CASE1;
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart110_9_FlowRun(object sender, EventArgs e)
-        {
-            if (IB_ScrewArrived1.IsOn())
-            {
-                OB_ScrewVacuum.On();
-                J_ThrowScrewtestTm.Restart();
-                OB_ScrewArrived1.Off();
-                return FCResultType.NEXT;
-            }
-            if (J_ScrewAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_ThrowScrewtestTm.Restart();
-                OB_ScrewArrived1.Off();
-                return FCResultType.CASE1;
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart110_10_FlowRun(object sender, EventArgs e)
-        {
-            if (J_ThrowScrewtestTm.IsOn(500))
-            {
-                CYL_Conveyor1_ScrewFeedCylinder.On();
-                if (IB_ScrewFeedCylinderExtend.IsOn() && IB_ScrewFeedCylinderRetract.IsOff())
-                {
-                    OB_ScrewVacuum.On();
-                    J_ThrowScrewtestTm.Restart();
-                    return FCResultType.NEXT;
-                }
-                if (J_ThrowScrewtestTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-                {
-                    J_ThrowScrewtestTm.Restart();
-                }
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart110_11_FlowRun(object sender, EventArgs e)
-        {
-            if (IB_ScrewVacuum.IsOn())
-            {
-                I_ThrowScrewtestOkCount++;
-                J_ThrowScrewtestTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_ScrewAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_ThrowScrewtestTm.Restart();
-                return FCResultType.CASE1;
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart110_12_FlowRun(object sender, EventArgs e)
-        {
-            ScrewAxisPos AxisXY = GetScrewPointList("ThrowScrewPos");
-            ScrewAxisPos AxisZ = GetScrewPointList("SafePos");
-            if (B_GantryMoveL(AxisXY.x, AxisXY.y, AxisXY.z, AxisZ.z))
-            {
-                J_ThrowScrewtestTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_ThrowScrewtestTm.IsOn(GetSettingValue("PSet", "AutoAsixTimes")))
-            {
-                J_ThrowScrewtestTm.Restart();
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart110_13_FlowRun(object sender, EventArgs e)
-        {
-            OB_ScrewVacuum.Off();
-            J_ThrowScrewtestTm.Restart();
-            return FCResultType.NEXT;
-        }
-
-        private FCResultType flowChart110_14_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewNailingCylinder.On();
-            if (IB_ScrewNailingCylinderExtend.IsOn() && IB_ScrewNailingCylinderRetract.IsOff())
-            {
-                J_ThrowScrewtestTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_ThrowScrewtestTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_ThrowScrewtestTm.Restart();
-                JSDK.Alarm.Show("3056");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart110_15_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewLockCylinder.Off();
-            if (IB_ScrewLockCylinderExtend.IsOff() && IB_ScrewLockCylinderRetract.IsOn())
-            {
-                J_ThrowScrewtestTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_ThrowScrewtestTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_ThrowScrewtestTm.Restart();
-                JSDK.Alarm.Show("3053");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart110_16_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewNailingCylinder.Off();
-            if (IB_ScrewNailingCylinderExtend.IsOff() && IB_ScrewNailingCylinderRetract.IsOn())
-            {
-                J_ThrowScrewtestTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_ThrowScrewtestTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_ThrowScrewtestTm.Restart();
-                JSDK.Alarm.Show("3057");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart110_17_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewLockCylinder.On();
-            if (IB_ScrewLockCylinderExtend.IsOn() && IB_ScrewLockCylinderRetract.IsOff())
-            {
-                J_ThrowScrewtestTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_ThrowScrewtestTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_ThrowScrewtestTm.Restart();
-                JSDK.Alarm.Show("3052");
-            }
-            return FCResultType.IDLE;
-        }
-
-        private FCResultType flowChart110_18_FlowRun(object sender, EventArgs e)
-        {
-            CYL_Conveyor1_ScrewFeedCylinder.Off();
-            if (IB_ScrewFeedCylinderExtend.IsOff() && IB_ScrewFeedCylinderRetract.IsOn())
-            {
-                J_ThrowScrewtestTm.Restart();
-                return FCResultType.NEXT;
-            }
-            if (J_ThrowScrewtestTm.IsOn(GetSettingValue("PSet", "IOTimes")))
-            {
-                J_ThrowScrewtestTm.Restart();
-                JSDK.Alarm.Show("3055");
-            }
-            return FCResultType.IDLE;
-        }
-
-
-        private FCResultType flowChart110_19_FlowRun(object sender, EventArgs e)
-        {
-            SaveLog($"总数：{I_ThrowScrewtestOkCount + I_ThrowScrewtestNgCount}  OK数：{I_ThrowScrewtestOkCount}  NG数：{I_ThrowScrewtestNgCount}");
-            I_ThrowScrewtestCount++;
-            if (I_ThrowScrewtestCount > Convert.ToInt32(textBox3.Text))
-            {
-                J_ThrowScrewtestTm.Restart();
-                return FCResultType.NEXT;
-            }
-            return FCResultType.CASE1;
-        }
-
-        private FCResultType flowChart110_20_FlowRun(object sender, EventArgs e)
-        {
-            J_ThrowScrewtestTm.Restart();
-            return FCResultType.NEXT;
-        }
-        private FCResultType flowChart10_FlowRun(object sender, EventArgs e)
-        {
-            I_ThrowScrewtestNgCount++;
-            return FCResultType.NEXT;
-        }
-
-        private void btn_StartThrowScrewtest_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Start throw screw test?", "throw test", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (result == System.Windows.Forms.DialogResult.Cancel)
-                return;
-            B_ThrowScrewtestFlow = true;
-            flowChart110_1.TaskReset();
-            Task.Factory.StartNew(() =>
-            {
-                while (B_ThrowScrewtestFlow)
-                {
-                    flowChart110_1.TaskRun();
-                    Thread.Sleep(0);
-                    Application.DoEvents();
-                }
-            });
-        }
-
-        private void btn_StopThrowScrewtest_Click(object sender, EventArgs e)
-        {
-            B_ThrowScrewtestFlow = false;
-            StopRun();
-        }
-
-        private FCResultType flowChart9_FlowRun(object sender, EventArgs e)
-        {
-            return FCResultType.NEXT;
-        }
 
         #endregion
 
@@ -3126,7 +2448,7 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart12_FlowRun_1(object sender, EventArgs e)
         {
-            MiddleLayer.ConveyorF.myRFID1.ResultBool = false;
+            //MiddleLayer.ConveyorF.myRFID1.ResultBool = false;
             J_AxisAutoTm.Restart();
             MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart5.Text} finish", true);
             return FCResultType.NEXT;
@@ -3161,7 +2483,7 @@ namespace Acura3._0.ModuleForms
         public bool ConnectPressureCom()
         {
             myPressureCom.DisConnect();
-            myPressureCom.PortName = GetRecipeValue("RSet", "PressureCOM");
+            myPressureCom.PortName = GetSettingValue("RSet", "PressureCOM");
             return myPressureCom.Connect();
         }
 
@@ -3178,7 +2500,7 @@ namespace Acura3._0.ModuleForms
             try
             {
                 string[] result = new string[6];
-                int delaytime = GetRecipeValue("RSet", "PressureDelaytime");
+                int delaytime = GetSettingValue("RSet", "PressureDelaytime");
                 result = myPressureCom.ReadAllPressureValue(6, delaytime);
                 for (int i = 0; i < result.Length; i++)
                 {
@@ -3198,7 +2520,7 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart13_FlowRun(object sender, EventArgs e)
         {
-            F_Robot.RobotIP = GetRecipeValue("RSet", "RobotIP");
+            F_Robot.RobotIP = GetSettingValue("RSet", "RobotIP");
             if (F_Robot.ConnectToRobot())
             {
                 MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart13.Text} finish", true);
@@ -3246,7 +2568,7 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart18_FlowRun(object sender, EventArgs e)
         {
-            if (SysPara.IsDryRun)
+            if (SysPara.IsDryRun || B_GantryDryRun)
             {
                 if (F_Robot.SetDryRun(1))
                 {
@@ -3286,9 +2608,58 @@ namespace Acura3._0.ModuleForms
             }
             if (F_Robot.GetCurrentTaskState() == eRobotState.Alarm)
             {
-                RobotAlarm(Alarm1_01, false);
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart0_9.Text);
+                RobotAlarm(Alarm1_01, false);
                 return FCResultType.CASE2;
+            }
+            if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "RobotTimes")))
+            {
+                J_AxisIniTm.Restart();
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_9.Text} robot overtime", false);
+                MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart0_9.Text);
+                RefreshDifferentThreadUI(flowChartMessage3, () =>
+                {
+                    flowChartMessage3.msgForm.btnRetry.Text = "Continue Wait";
+                    flowChartMessage3.msgForm.btnSkip.Text = "Move Again";
+                });
+                GantryAlarm("4202", flowChartMessage3);
+                return FCResultType.CASE3;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart63_FlowRun(object sender, EventArgs e)
+        {
+            return FCResultType.CASE1;
+        }
+
+        private FCResultType flowChart9_FlowRun(object sender, EventArgs e)
+        {
+            SetAxisSpeed();
+            JackingAxisPos AxisZ = GetJackingPointList("SafePos");
+            bool bFinsh = MTR_Jacking.Goto(AxisZ.Position);
+            if (bFinsh)
+            {
+                J_AxisAutoTm.Restart();
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart9.Text} finish", true);
+                return FCResultType.NEXT;
+            }
+            if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "AxisTimes")))
+            {
+                J_AxisAutoTm.Restart();
+                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart9.Text} overtime", false);
+                MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart9.Text);
+                GantryAlarm("3012", flowChartMessage2, false);
+                return FCResultType.CASE1;
+            }
+            return FCResultType.IDLE;
+        }
+
+        private FCResultType flowChart6_FlowRun(object sender, EventArgs e)
+        {
+            if (F_Robot.GetCurrentTaskState() == eRobotState.Done)
+            {
+                return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
         }
@@ -3299,9 +2670,7 @@ namespace Acura3._0.ModuleForms
         }
 
 
-        private FCResultType flowChart2_FlowRun_1(object sender, EventArgs e)
-        {
-            return FCResultType.NEXT;
-        }
+
+
     }
 }

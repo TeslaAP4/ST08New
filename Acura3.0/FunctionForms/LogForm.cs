@@ -70,7 +70,7 @@ namespace Acura3._0.FunctionForms
             lvArray = new ListView[Enum.GetNames(typeof(LogType)).Count()];
             TabPage LogSearchPage = tabLogForm;
             tabLogPage.TabPages.Clear();
-            for (int i = 0; i < Enum.GetNames(typeof(LogType)).Count(); i++)
+            for (int i = 0; i < Enum.GetNames(typeof(LogType)).Count()-1; i++)
             {
                 ListView _lv = new ListView();
                 lvArray[i] = _lv;
