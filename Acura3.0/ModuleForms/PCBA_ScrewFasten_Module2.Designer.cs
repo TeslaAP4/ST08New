@@ -106,14 +106,14 @@
             this.tabControl7 = new System.Windows.Forms.TabControl();
             this.tabPage16 = new System.Windows.Forms.TabPage();
             this.flowChart12 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChart1_5 = new JabilSDK.UserControlLib.FlowChart();
-            this.flowChart54 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart1_1 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart1_2 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart1_3 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart1_4 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart1_6 = new JabilSDK.UserControlLib.FlowChart();
             this.flowChart7 = new JabilSDK.UserControlLib.FlowChart();
+            this.flowChart1_5 = new JabilSDK.UserControlLib.FlowChart();
+            this.flowChart54 = new JabilSDK.UserControlLib.FlowChart();
             this.tabPage14 = new System.Windows.Forms.TabPage();
             this.flowChartMessage2 = new AcuraLibrary.Forms.FlowChartMessage();
             this.flowChart9 = new JabilSDK.UserControlLib.FlowChart();
@@ -277,6 +277,7 @@
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.tabPage33 = new System.Windows.Forms.TabPage();
+            this.label37 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox37 = new System.Windows.Forms.TextBox();
@@ -384,8 +385,6 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.tabPage26 = new System.Windows.Forms.TabPage();
-            this.panel88 = new System.Windows.Forms.Panel();
             this.tabPage21 = new System.Windows.Forms.TabPage();
             this.label97 = new System.Windows.Forms.Label();
             this.textBox41 = new System.Windows.Forms.TextBox();
@@ -504,7 +503,6 @@
             this.tabPage24.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tabPage9.SuspendLayout();
-            this.tabPage26.SuspendLayout();
             this.tabPage21.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage11.SuspendLayout();
@@ -558,7 +556,7 @@
             this.plFlowInitial.Controls.Add(this.flowChart0_9);
             this.plFlowInitial.Controls.Add(this.flowChart0_1);
             this.plFlowInitial.Margin = new System.Windows.Forms.Padding(2);
-            this.plFlowInitial.Size = new System.Drawing.Size(799, 627);
+            this.plFlowInitial.Size = new System.Drawing.Size(1824, 903);
             // 
             // plFlowAuto
             // 
@@ -573,7 +571,7 @@
             this.plMachineStatus.Controls.Add(this.pictureBox2);
             this.plMachineStatus.Controls.Add(this.pictureBox1);
             this.plMachineStatus.Margin = new System.Windows.Forms.Padding(2);
-            this.plMachineStatus.Size = new System.Drawing.Size(1824, 903);
+            this.plMachineStatus.Size = new System.Drawing.Size(799, 627);
             // 
             // plMotionSetup
             // 
@@ -1278,182 +1276,182 @@
             // 
             this.OB_Robot_Program4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Robot_Program4.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Robot_Program4.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_Robot_Program4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.OB_Robot_Program4.Location = new System.Drawing.Point(474, 364);
             this.OB_Robot_Program4.Margin = new System.Windows.Forms.Padding(5);
             this.OB_Robot_Program4.Name = "OB_Robot_Program4";
             this.OB_Robot_Program4.Port = "15015";
-            this.OB_Robot_Program4.Size = new System.Drawing.Size(376, 35);
+            this.OB_Robot_Program4.Size = new System.Drawing.Size(448, 35);
             this.OB_Robot_Program4.TabIndex = 140;
-            this.OB_Robot_Program4.Text = "Robot 1# - Program 4";
+            this.OB_Robot_Program4.Text = "Robot 2# - Program 4";
             this.OB_Robot_Program4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // OB_Robot_Program3
             // 
             this.OB_Robot_Program3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Robot_Program3.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Robot_Program3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_Robot_Program3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.OB_Robot_Program3.Location = new System.Drawing.Point(474, 319);
             this.OB_Robot_Program3.Margin = new System.Windows.Forms.Padding(5);
             this.OB_Robot_Program3.Name = "OB_Robot_Program3";
             this.OB_Robot_Program3.Port = "15014";
-            this.OB_Robot_Program3.Size = new System.Drawing.Size(376, 35);
+            this.OB_Robot_Program3.Size = new System.Drawing.Size(448, 35);
             this.OB_Robot_Program3.TabIndex = 139;
-            this.OB_Robot_Program3.Text = "Robot 1# - Program 3";
+            this.OB_Robot_Program3.Text = "Robot 2# - Program 3";
             this.OB_Robot_Program3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // IB_Robot_EStop
             // 
             this.IB_Robot_EStop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_Robot_EStop.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Robot_EStop.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_Robot_EStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.IB_Robot_EStop.Location = new System.Drawing.Point(31, 229);
             this.IB_Robot_EStop.Margin = new System.Windows.Forms.Padding(5);
             this.IB_Robot_EStop.Name = "IB_Robot_EStop";
             this.IB_Robot_EStop.Port = "05009";
             this.IB_Robot_EStop.Size = new System.Drawing.Size(361, 35);
             this.IB_Robot_EStop.TabIndex = 138;
-            this.IB_Robot_EStop.Text = "Robot 1# E-Stop press";
+            this.IB_Robot_EStop.Text = "Robot 2# E-Stop press";
             this.IB_Robot_EStop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // OB_Robot_Stop
             // 
             this.OB_Robot_Stop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Robot_Stop.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Robot_Stop.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_Robot_Stop.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.OB_Robot_Stop.Location = new System.Drawing.Point(474, 274);
             this.OB_Robot_Stop.Margin = new System.Windows.Forms.Padding(5);
             this.OB_Robot_Stop.Name = "OB_Robot_Stop";
             this.OB_Robot_Stop.Port = "15013";
-            this.OB_Robot_Stop.Size = new System.Drawing.Size(376, 35);
+            this.OB_Robot_Stop.Size = new System.Drawing.Size(448, 35);
             this.OB_Robot_Stop.TabIndex = 137;
-            this.OB_Robot_Stop.Text = "Robot 1# - Program 2 / STOP";
+            this.OB_Robot_Stop.Text = "Robot 2# - Program 2 / STOP";
             this.OB_Robot_Stop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // OB_Robot_Program1
             // 
             this.OB_Robot_Program1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Robot_Program1.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Robot_Program1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_Robot_Program1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.OB_Robot_Program1.Location = new System.Drawing.Point(474, 229);
             this.OB_Robot_Program1.Margin = new System.Windows.Forms.Padding(5);
             this.OB_Robot_Program1.Name = "OB_Robot_Program1";
             this.OB_Robot_Program1.Port = "15012";
-            this.OB_Robot_Program1.Size = new System.Drawing.Size(376, 35);
+            this.OB_Robot_Program1.Size = new System.Drawing.Size(448, 35);
             this.OB_Robot_Program1.TabIndex = 136;
-            this.OB_Robot_Program1.Text = "Robot 1# - Program 1";
+            this.OB_Robot_Program1.Text = "Robot 2# - Program 1";
             this.OB_Robot_Program1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // OB_Robot_Enable
             // 
             this.OB_Robot_Enable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Robot_Enable.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Robot_Enable.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_Robot_Enable.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.OB_Robot_Enable.Location = new System.Drawing.Point(474, 182);
             this.OB_Robot_Enable.Margin = new System.Windows.Forms.Padding(5);
             this.OB_Robot_Enable.Name = "OB_Robot_Enable";
             this.OB_Robot_Enable.Port = "15011";
-            this.OB_Robot_Enable.Size = new System.Drawing.Size(376, 35);
+            this.OB_Robot_Enable.Size = new System.Drawing.Size(448, 35);
             this.OB_Robot_Enable.TabIndex = 135;
-            this.OB_Robot_Enable.Text = "Robot 1# - Enable";
+            this.OB_Robot_Enable.Text = "Robot 2# - Enable";
             this.OB_Robot_Enable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // OB_Robot_Start
             // 
             this.OB_Robot_Start.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Robot_Start.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Robot_Start.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_Robot_Start.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.OB_Robot_Start.Location = new System.Drawing.Point(474, 137);
             this.OB_Robot_Start.Margin = new System.Windows.Forms.Padding(5);
             this.OB_Robot_Start.Name = "OB_Robot_Start";
             this.OB_Robot_Start.Port = "15010";
-            this.OB_Robot_Start.Size = new System.Drawing.Size(376, 35);
+            this.OB_Robot_Start.Size = new System.Drawing.Size(448, 35);
             this.OB_Robot_Start.TabIndex = 134;
-            this.OB_Robot_Start.Text = "Robot 1# - Start";
+            this.OB_Robot_Start.Text = "Robot 2# - Start";
             this.OB_Robot_Start.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // OB_Robot_Reset
             // 
             this.OB_Robot_Reset.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Robot_Reset.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Robot_Reset.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_Robot_Reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.OB_Robot_Reset.Location = new System.Drawing.Point(474, 93);
             this.OB_Robot_Reset.Margin = new System.Windows.Forms.Padding(5);
             this.OB_Robot_Reset.Name = "OB_Robot_Reset";
             this.OB_Robot_Reset.Port = "15009";
-            this.OB_Robot_Reset.Size = new System.Drawing.Size(376, 35);
+            this.OB_Robot_Reset.Size = new System.Drawing.Size(448, 35);
             this.OB_Robot_Reset.TabIndex = 133;
-            this.OB_Robot_Reset.Text = "Robot 1# - Reset";
+            this.OB_Robot_Reset.Text = "Robot 2# - Reset";
             this.OB_Robot_Reset.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // OB_Robot_Maintain
             // 
             this.OB_Robot_Maintain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Robot_Maintain.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Robot_Maintain.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_Robot_Maintain.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.OB_Robot_Maintain.Location = new System.Drawing.Point(474, 45);
             this.OB_Robot_Maintain.Margin = new System.Windows.Forms.Padding(5);
             this.OB_Robot_Maintain.Name = "OB_Robot_Maintain";
             this.OB_Robot_Maintain.Port = "15008";
-            this.OB_Robot_Maintain.Size = new System.Drawing.Size(376, 35);
+            this.OB_Robot_Maintain.Size = new System.Drawing.Size(448, 35);
             this.OB_Robot_Maintain.TabIndex = 132;
-            this.OB_Robot_Maintain.Text = "Robot 1# - Pause";
+            this.OB_Robot_Maintain.Text = "Robot 2# - Pause";
             this.OB_Robot_Maintain.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // IB_Robot_Busy
             // 
             this.IB_Robot_Busy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_Robot_Busy.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Robot_Busy.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_Robot_Busy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.IB_Robot_Busy.Location = new System.Drawing.Point(31, 182);
             this.IB_Robot_Busy.Margin = new System.Windows.Forms.Padding(5);
             this.IB_Robot_Busy.Name = "IB_Robot_Busy";
             this.IB_Robot_Busy.Port = "05007";
             this.IB_Robot_Busy.Size = new System.Drawing.Size(361, 35);
             this.IB_Robot_Busy.TabIndex = 131;
-            this.IB_Robot_Busy.Text = "Robot 1# Busy";
+            this.IB_Robot_Busy.Text = "Robot 2# Busy";
             this.IB_Robot_Busy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // IB_Robot_BatteryAlarm
             // 
             this.IB_Robot_BatteryAlarm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_Robot_BatteryAlarm.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Robot_BatteryAlarm.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_Robot_BatteryAlarm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.IB_Robot_BatteryAlarm.Location = new System.Drawing.Point(31, 137);
             this.IB_Robot_BatteryAlarm.Margin = new System.Windows.Forms.Padding(5);
             this.IB_Robot_BatteryAlarm.Name = "IB_Robot_BatteryAlarm";
             this.IB_Robot_BatteryAlarm.Port = "05006";
             this.IB_Robot_BatteryAlarm.Size = new System.Drawing.Size(361, 35);
             this.IB_Robot_BatteryAlarm.TabIndex = 130;
-            this.IB_Robot_BatteryAlarm.Text = "Robot 1# Battery alarm";
+            this.IB_Robot_BatteryAlarm.Text = "Robot 2# Battery alarm";
             this.IB_Robot_BatteryAlarm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // IB_Robot_AbnormalAlarm
             // 
             this.IB_Robot_AbnormalAlarm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_Robot_AbnormalAlarm.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Robot_AbnormalAlarm.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_Robot_AbnormalAlarm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.IB_Robot_AbnormalAlarm.Location = new System.Drawing.Point(31, 93);
             this.IB_Robot_AbnormalAlarm.Margin = new System.Windows.Forms.Padding(5);
             this.IB_Robot_AbnormalAlarm.Name = "IB_Robot_AbnormalAlarm";
             this.IB_Robot_AbnormalAlarm.Port = "05005";
             this.IB_Robot_AbnormalAlarm.Size = new System.Drawing.Size(361, 35);
             this.IB_Robot_AbnormalAlarm.TabIndex = 129;
-            this.IB_Robot_AbnormalAlarm.Text = "Robot 1# Abnormal alarm";
+            this.IB_Robot_AbnormalAlarm.Text = "Robot 2# Abnormal alarm";
             this.IB_Robot_AbnormalAlarm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // IB_Robot_Enable
             // 
             this.IB_Robot_Enable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_Robot_Enable.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Robot_Enable.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_Robot_Enable.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.IB_Robot_Enable.Location = new System.Drawing.Point(31, 47);
             this.IB_Robot_Enable.Margin = new System.Windows.Forms.Padding(5);
             this.IB_Robot_Enable.Name = "IB_Robot_Enable";
             this.IB_Robot_Enable.Port = "05004";
             this.IB_Robot_Enable.Size = new System.Drawing.Size(361, 35);
             this.IB_Robot_Enable.TabIndex = 128;
-            this.IB_Robot_Enable.Text = "Robot 1# Enable feedback";
+            this.IB_Robot_Enable.Text = "Robot 2# Enable feedback";
             this.IB_Robot_Enable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tabPage3
@@ -1477,84 +1475,84 @@
             // 
             this.OB_ScrewFeeder_CoverOpen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_ScrewFeeder_CoverOpen.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_ScrewFeeder_CoverOpen.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.OB_ScrewFeeder_CoverOpen.Location = new System.Drawing.Point(473, 86);
+            this.OB_ScrewFeeder_CoverOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_ScrewFeeder_CoverOpen.Location = new System.Drawing.Point(492, 86);
             this.OB_ScrewFeeder_CoverOpen.Margin = new System.Windows.Forms.Padding(5);
             this.OB_ScrewFeeder_CoverOpen.Name = "OB_ScrewFeeder_CoverOpen";
             this.OB_ScrewFeeder_CoverOpen.Port = "11207";
-            this.OB_ScrewFeeder_CoverOpen.Size = new System.Drawing.Size(376, 35);
+            this.OB_ScrewFeeder_CoverOpen.Size = new System.Drawing.Size(395, 35);
             this.OB_ScrewFeeder_CoverOpen.TabIndex = 97;
-            this.OB_ScrewFeeder_CoverOpen.Text = "Screw Feeder 1 Cover Open";
+            this.OB_ScrewFeeder_CoverOpen.Text = "Screw Feeder 2 Cover Open";
             this.OB_ScrewFeeder_CoverOpen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // OB_ScrewFeeder_Reset
             // 
             this.OB_ScrewFeeder_Reset.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_ScrewFeeder_Reset.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_ScrewFeeder_Reset.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.OB_ScrewFeeder_Reset.Location = new System.Drawing.Point(473, 41);
+            this.OB_ScrewFeeder_Reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_ScrewFeeder_Reset.Location = new System.Drawing.Point(492, 41);
             this.OB_ScrewFeeder_Reset.Margin = new System.Windows.Forms.Padding(5);
             this.OB_ScrewFeeder_Reset.Name = "OB_ScrewFeeder_Reset";
             this.OB_ScrewFeeder_Reset.Port = "11206";
-            this.OB_ScrewFeeder_Reset.Size = new System.Drawing.Size(376, 35);
+            this.OB_ScrewFeeder_Reset.Size = new System.Drawing.Size(395, 35);
             this.OB_ScrewFeeder_Reset.TabIndex = 96;
-            this.OB_ScrewFeeder_Reset.Text = "Screw Feeder 1 Reset";
+            this.OB_ScrewFeeder_Reset.Text = "Screw Feeder 2 Reset";
             this.OB_ScrewFeeder_Reset.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // IB_ScrewFeeder_CoverClose
             // 
             this.IB_ScrewFeeder_CoverClose.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_ScrewFeeder_CoverClose.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_ScrewFeeder_CoverClose.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.IB_ScrewFeeder_CoverClose.Location = new System.Drawing.Point(103, 176);
+            this.IB_ScrewFeeder_CoverClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_ScrewFeeder_CoverClose.Location = new System.Drawing.Point(64, 176);
             this.IB_ScrewFeeder_CoverClose.Margin = new System.Windows.Forms.Padding(5);
             this.IB_ScrewFeeder_CoverClose.Name = "IB_ScrewFeeder_CoverClose";
             this.IB_ScrewFeeder_CoverClose.Port = "01112";
-            this.IB_ScrewFeeder_CoverClose.Size = new System.Drawing.Size(328, 35);
+            this.IB_ScrewFeeder_CoverClose.Size = new System.Drawing.Size(367, 35);
             this.IB_ScrewFeeder_CoverClose.TabIndex = 94;
-            this.IB_ScrewFeeder_CoverClose.Text = "Screw feeder 1 Cover Close";
+            this.IB_ScrewFeeder_CoverClose.Text = "Screw feeder 2 Cover Close";
             this.IB_ScrewFeeder_CoverClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // IB_ScrewFeeder_Faulty
             // 
             this.IB_ScrewFeeder_Faulty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_ScrewFeeder_Faulty.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_ScrewFeeder_Faulty.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.IB_ScrewFeeder_Faulty.Location = new System.Drawing.Point(103, 132);
+            this.IB_ScrewFeeder_Faulty.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_ScrewFeeder_Faulty.Location = new System.Drawing.Point(64, 132);
             this.IB_ScrewFeeder_Faulty.Margin = new System.Windows.Forms.Padding(5);
             this.IB_ScrewFeeder_Faulty.Name = "IB_ScrewFeeder_Faulty";
             this.IB_ScrewFeeder_Faulty.Port = "01115";
-            this.IB_ScrewFeeder_Faulty.Size = new System.Drawing.Size(328, 35);
+            this.IB_ScrewFeeder_Faulty.Size = new System.Drawing.Size(367, 35);
             this.IB_ScrewFeeder_Faulty.TabIndex = 93;
-            this.IB_ScrewFeeder_Faulty.Text = "Screw feeder 1 Alarm";
+            this.IB_ScrewFeeder_Faulty.Text = "Screw feeder 2 Alarm";
             this.IB_ScrewFeeder_Faulty.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // IB_ScrewFeeder_Running
             // 
             this.IB_ScrewFeeder_Running.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_ScrewFeeder_Running.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_ScrewFeeder_Running.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.IB_ScrewFeeder_Running.Location = new System.Drawing.Point(103, 86);
+            this.IB_ScrewFeeder_Running.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_ScrewFeeder_Running.Location = new System.Drawing.Point(64, 86);
             this.IB_ScrewFeeder_Running.Margin = new System.Windows.Forms.Padding(5);
             this.IB_ScrewFeeder_Running.Name = "IB_ScrewFeeder_Running";
             this.IB_ScrewFeeder_Running.Port = "01114";
-            this.IB_ScrewFeeder_Running.Size = new System.Drawing.Size(328, 35);
+            this.IB_ScrewFeeder_Running.Size = new System.Drawing.Size(367, 35);
             this.IB_ScrewFeeder_Running.TabIndex = 92;
-            this.IB_ScrewFeeder_Running.Text = "Screw feeder 1 Running";
+            this.IB_ScrewFeeder_Running.Text = "Screw feeder 2 Running";
             this.IB_ScrewFeeder_Running.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // IB_ScrewFeeder_LackMaterial
             // 
             this.IB_ScrewFeeder_LackMaterial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_ScrewFeeder_LackMaterial.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_ScrewFeeder_LackMaterial.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.IB_ScrewFeeder_LackMaterial.Location = new System.Drawing.Point(103, 41);
+            this.IB_ScrewFeeder_LackMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_ScrewFeeder_LackMaterial.Location = new System.Drawing.Point(64, 41);
             this.IB_ScrewFeeder_LackMaterial.Margin = new System.Windows.Forms.Padding(5);
             this.IB_ScrewFeeder_LackMaterial.Name = "IB_ScrewFeeder_LackMaterial";
             this.IB_ScrewFeeder_LackMaterial.Port = "01113";
-            this.IB_ScrewFeeder_LackMaterial.Size = new System.Drawing.Size(328, 35);
+            this.IB_ScrewFeeder_LackMaterial.Size = new System.Drawing.Size(367, 35);
             this.IB_ScrewFeeder_LackMaterial.TabIndex = 91;
-            this.IB_ScrewFeeder_LackMaterial.Text = "Screw feeder 1 Low Material";
+            this.IB_ScrewFeeder_LackMaterial.Text = "Screw feeder 2 Low Material";
             this.IB_ScrewFeeder_LackMaterial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tabPage12
@@ -1581,54 +1579,54 @@
             // 
             this.IB_ScrewNgCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_ScrewNgCount.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_ScrewNgCount.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_ScrewNgCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.IB_ScrewNgCount.Location = new System.Drawing.Point(449, 35);
             this.IB_ScrewNgCount.Margin = new System.Windows.Forms.Padding(5);
             this.IB_ScrewNgCount.Name = "IB_ScrewNgCount";
             this.IB_ScrewNgCount.Port = "01105";
-            this.IB_ScrewNgCount.Size = new System.Drawing.Size(317, 35);
+            this.IB_ScrewNgCount.Size = new System.Drawing.Size(337, 35);
             this.IB_ScrewNgCount.TabIndex = 113;
-            this.IB_ScrewNgCount.Text = "Screw NG counter sensor1";
+            this.IB_ScrewNgCount.Text = "Screw NG counter sensor2";
             this.IB_ScrewNgCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // OB_ModuleAlram_Light
             // 
             this.OB_ModuleAlram_Light.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_ModuleAlram_Light.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_ModuleAlram_Light.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_ModuleAlram_Light.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.OB_ModuleAlram_Light.Location = new System.Drawing.Point(838, 79);
             this.OB_ModuleAlram_Light.Margin = new System.Windows.Forms.Padding(5);
             this.OB_ModuleAlram_Light.Name = "OB_ModuleAlram_Light";
             this.OB_ModuleAlram_Light.Port = "11115";
-            this.OB_ModuleAlram_Light.Size = new System.Drawing.Size(280, 35);
+            this.OB_ModuleAlram_Light.Size = new System.Drawing.Size(401, 35);
             this.OB_ModuleAlram_Light.TabIndex = 112;
-            this.OB_ModuleAlram_Light.Text = "Module1 Alarm Light ";
+            this.OB_ModuleAlram_Light.Text = "Module2  Alarm  Light ";
             this.OB_ModuleAlram_Light.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // OB_CCDLight
             // 
             this.OB_CCDLight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_CCDLight.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_CCDLight.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_CCDLight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.OB_CCDLight.Location = new System.Drawing.Point(838, 35);
             this.OB_CCDLight.Margin = new System.Windows.Forms.Padding(5);
             this.OB_CCDLight.Name = "OB_CCDLight";
             this.OB_CCDLight.Port = "11001";
-            this.OB_CCDLight.Size = new System.Drawing.Size(280, 35);
+            this.OB_CCDLight.Size = new System.Drawing.Size(401, 35);
             this.OB_CCDLight.TabIndex = 111;
-            this.OB_CCDLight.Text = "Robot1 CCD Light";
+            this.OB_CCDLight.Text = "Robot2  CCD  Light";
             this.OB_CCDLight.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // IB_PressureSensor6
             // 
             this.IB_PressureSensor6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_PressureSensor6.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_PressureSensor6.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.IB_PressureSensor6.Location = new System.Drawing.Point(65, 260);
+            this.IB_PressureSensor6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_PressureSensor6.Location = new System.Drawing.Point(32, 260);
             this.IB_PressureSensor6.Margin = new System.Windows.Forms.Padding(5);
             this.IB_PressureSensor6.Name = "IB_PressureSensor6";
             this.IB_PressureSensor6.Port = "01305";
-            this.IB_PressureSensor6.Size = new System.Drawing.Size(317, 35);
+            this.IB_PressureSensor6.Size = new System.Drawing.Size(350, 35);
             this.IB_PressureSensor6.TabIndex = 106;
             this.IB_PressureSensor6.Text = "SF1 Press pressure sensor6";
             this.IB_PressureSensor6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1637,12 +1635,12 @@
             // 
             this.IB_PressureSensor5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_PressureSensor5.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_PressureSensor5.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.IB_PressureSensor5.Location = new System.Drawing.Point(65, 215);
+            this.IB_PressureSensor5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_PressureSensor5.Location = new System.Drawing.Point(32, 215);
             this.IB_PressureSensor5.Margin = new System.Windows.Forms.Padding(5);
             this.IB_PressureSensor5.Name = "IB_PressureSensor5";
             this.IB_PressureSensor5.Port = "01304";
-            this.IB_PressureSensor5.Size = new System.Drawing.Size(317, 35);
+            this.IB_PressureSensor5.Size = new System.Drawing.Size(350, 35);
             this.IB_PressureSensor5.TabIndex = 105;
             this.IB_PressureSensor5.Text = "SF1 Press pressure sensor5";
             this.IB_PressureSensor5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1651,12 +1649,12 @@
             // 
             this.IB_PressureSensor4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_PressureSensor4.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_PressureSensor4.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.IB_PressureSensor4.Location = new System.Drawing.Point(65, 170);
+            this.IB_PressureSensor4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_PressureSensor4.Location = new System.Drawing.Point(32, 170);
             this.IB_PressureSensor4.Margin = new System.Windows.Forms.Padding(5);
             this.IB_PressureSensor4.Name = "IB_PressureSensor4";
             this.IB_PressureSensor4.Port = "01303";
-            this.IB_PressureSensor4.Size = new System.Drawing.Size(317, 35);
+            this.IB_PressureSensor4.Size = new System.Drawing.Size(350, 35);
             this.IB_PressureSensor4.TabIndex = 104;
             this.IB_PressureSensor4.Text = "SF1 Press pressure sensor4";
             this.IB_PressureSensor4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1665,12 +1663,12 @@
             // 
             this.IB_PressureSensor3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_PressureSensor3.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_PressureSensor3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.IB_PressureSensor3.Location = new System.Drawing.Point(65, 125);
+            this.IB_PressureSensor3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_PressureSensor3.Location = new System.Drawing.Point(32, 125);
             this.IB_PressureSensor3.Margin = new System.Windows.Forms.Padding(5);
             this.IB_PressureSensor3.Name = "IB_PressureSensor3";
             this.IB_PressureSensor3.Port = "01302";
-            this.IB_PressureSensor3.Size = new System.Drawing.Size(317, 35);
+            this.IB_PressureSensor3.Size = new System.Drawing.Size(350, 35);
             this.IB_PressureSensor3.TabIndex = 103;
             this.IB_PressureSensor3.Text = "SF1 Press pressure sensor3";
             this.IB_PressureSensor3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1679,12 +1677,12 @@
             // 
             this.IB_PressureSensor2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_PressureSensor2.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_PressureSensor2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.IB_PressureSensor2.Location = new System.Drawing.Point(65, 80);
+            this.IB_PressureSensor2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_PressureSensor2.Location = new System.Drawing.Point(32, 80);
             this.IB_PressureSensor2.Margin = new System.Windows.Forms.Padding(5);
             this.IB_PressureSensor2.Name = "IB_PressureSensor2";
             this.IB_PressureSensor2.Port = "01301";
-            this.IB_PressureSensor2.Size = new System.Drawing.Size(317, 35);
+            this.IB_PressureSensor2.Size = new System.Drawing.Size(350, 35);
             this.IB_PressureSensor2.TabIndex = 102;
             this.IB_PressureSensor2.Text = "SF1 Press pressure sensor2";
             this.IB_PressureSensor2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1693,12 +1691,12 @@
             // 
             this.IB_PressureSensor1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_PressureSensor1.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_PressureSensor1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.IB_PressureSensor1.Location = new System.Drawing.Point(65, 35);
+            this.IB_PressureSensor1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_PressureSensor1.Location = new System.Drawing.Point(32, 35);
             this.IB_PressureSensor1.Margin = new System.Windows.Forms.Padding(5);
             this.IB_PressureSensor1.Name = "IB_PressureSensor1";
             this.IB_PressureSensor1.Port = "01300";
-            this.IB_PressureSensor1.Size = new System.Drawing.Size(317, 35);
+            this.IB_PressureSensor1.Size = new System.Drawing.Size(350, 35);
             this.IB_PressureSensor1.TabIndex = 101;
             this.IB_PressureSensor1.Text = "SF1 Press pressure sensor1";
             this.IB_PressureSensor1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1834,46 +1832,12 @@
             this.flowChart12.Location = new System.Drawing.Point(863, 142);
             this.flowChart12.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.flowChart12.Name = "flowChart12";
-            this.flowChart12.NEXT = this.flowChart1_5;
+            this.flowChart12.NEXT = this.flowChart1_1;
             this.flowChart12.Size = new System.Drawing.Size(63, 33);
             this.flowChart12.TabIndex = 205;
             this.flowChart12.Text = "NG";
             this.flowChart12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart12.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart12_FlowRun_1);
-            // 
-            // flowChart1_5
-            // 
-            this.flowChart1_5.BackColor = System.Drawing.Color.White;
-            this.flowChart1_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChart1_5.CASE1 = null;
-            this.flowChart1_5.CASE2 = null;
-            this.flowChart1_5.CASE3 = null;
-            this.flowChart1_5.Location = new System.Drawing.Point(422, 304);
-            this.flowChart1_5.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.flowChart1_5.Name = "flowChart1_5";
-            this.flowChart1_5.NEXT = this.flowChart54;
-            this.flowChart1_5.Size = new System.Drawing.Size(378, 33);
-            this.flowChart1_5.TabIndex = 201;
-            this.flowChart1_5.Text = "End  1.05";
-            this.flowChart1_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChart1_5.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart1_5_FlowRun);
-            // 
-            // flowChart54
-            // 
-            this.flowChart54.BackColor = System.Drawing.Color.White;
-            this.flowChart54.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowChart54.CASE1 = null;
-            this.flowChart54.CASE2 = null;
-            this.flowChart54.CASE3 = null;
-            this.flowChart54.Location = new System.Drawing.Point(175, 304);
-            this.flowChart54.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.flowChart54.Name = "flowChart54";
-            this.flowChart54.NEXT = this.flowChart1_1;
-            this.flowChart54.Size = new System.Drawing.Size(72, 33);
-            this.flowChart54.TabIndex = 202;
-            this.flowChart54.Text = "Loop";
-            this.flowChart54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.flowChart54.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart54_FlowRun);
             // 
             // flowChart1_1
             // 
@@ -1976,6 +1940,40 @@
             this.flowChart7.Text = "Loop";
             this.flowChart7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.flowChart7.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart7_FlowRun_1);
+            // 
+            // flowChart1_5
+            // 
+            this.flowChart1_5.BackColor = System.Drawing.Color.White;
+            this.flowChart1_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowChart1_5.CASE1 = null;
+            this.flowChart1_5.CASE2 = null;
+            this.flowChart1_5.CASE3 = null;
+            this.flowChart1_5.Location = new System.Drawing.Point(422, 304);
+            this.flowChart1_5.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.flowChart1_5.Name = "flowChart1_5";
+            this.flowChart1_5.NEXT = this.flowChart54;
+            this.flowChart1_5.Size = new System.Drawing.Size(378, 33);
+            this.flowChart1_5.TabIndex = 201;
+            this.flowChart1_5.Text = "End  1.05";
+            this.flowChart1_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flowChart1_5.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart1_5_FlowRun);
+            // 
+            // flowChart54
+            // 
+            this.flowChart54.BackColor = System.Drawing.Color.White;
+            this.flowChart54.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowChart54.CASE1 = null;
+            this.flowChart54.CASE2 = null;
+            this.flowChart54.CASE3 = null;
+            this.flowChart54.Location = new System.Drawing.Point(175, 304);
+            this.flowChart54.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.flowChart54.Name = "flowChart54";
+            this.flowChart54.NEXT = this.flowChart1_1;
+            this.flowChart54.Size = new System.Drawing.Size(72, 33);
+            this.flowChart54.TabIndex = 202;
+            this.flowChart54.Text = "Loop";
+            this.flowChart54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flowChart54.FlowRun += new JabilSDK.UserControlLib.FlowChart.FlowRunEvent(this.flowChart54_FlowRun);
             // 
             // tabPage14
             // 
@@ -2888,7 +2886,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 32);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(779, 551);
+            this.tabPage5.Size = new System.Drawing.Size(1804, 827);
             this.tabPage5.TabIndex = 7;
             this.tabPage5.Text = "Auto Nine Points Calibaration";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -4186,20 +4184,20 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(91, 69);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 23);
+            this.label5.Size = new System.Drawing.Size(40, 24);
             this.label5.TabIndex = 153;
             this.label5.Text = "IP :";
             // 
             // btnDisConnect
             // 
-            this.btnDisConnect.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnDisConnect.Location = new System.Drawing.Point(526, 65);
+            this.btnDisConnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnDisConnect.Location = new System.Drawing.Point(583, 65);
             this.btnDisConnect.Name = "btnDisConnect";
-            this.btnDisConnect.Size = new System.Drawing.Size(128, 38);
+            this.btnDisConnect.Size = new System.Drawing.Size(137, 38);
             this.btnDisConnect.TabIndex = 152;
             this.btnDisConnect.Text = "DisConnect";
             this.btnDisConnect.UseVisualStyleBackColor = true;
@@ -4207,10 +4205,10 @@
             // 
             // btnConnect
             // 
-            this.btnConnect.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnConnect.Location = new System.Drawing.Point(355, 65);
+            this.btnConnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnConnect.Location = new System.Drawing.Point(381, 65);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(131, 38);
+            this.btnConnect.Size = new System.Drawing.Size(155, 38);
             this.btnConnect.TabIndex = 151;
             this.btnConnect.Text = "Connect";
             this.btnConnect.UseVisualStyleBackColor = true;
@@ -4219,8 +4217,8 @@
             // textBox4
             // 
             this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "PSet.RobotIP", true));
-            this.textBox4.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBox4.Location = new System.Drawing.Point(133, 65);
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.textBox4.Location = new System.Drawing.Point(142, 69);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(187, 29);
             this.textBox4.TabIndex = 150;
@@ -4245,7 +4243,7 @@
             // 
             // button5
             // 
-            this.button5.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.button5.Location = new System.Drawing.Point(327, 440);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(109, 38);
@@ -4256,7 +4254,7 @@
             // 
             // T_ScrewData
             // 
-            this.T_ScrewData.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.T_ScrewData.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.T_ScrewData.Location = new System.Drawing.Point(103, 234);
             this.T_ScrewData.Multiline = true;
             this.T_ScrewData.Name = "T_ScrewData";
@@ -4265,7 +4263,7 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.button1.Location = new System.Drawing.Point(177, 440);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 38);
@@ -4277,7 +4275,7 @@
             // textBox12
             // 
             this.textBox12.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "PSet.ScrewPort", true));
-            this.textBox12.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.textBox12.Location = new System.Drawing.Point(260, 100);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(145, 29);
@@ -4286,29 +4284,29 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(214, 54);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 23);
+            this.label4.Size = new System.Drawing.Size(40, 24);
             this.label4.TabIndex = 116;
             this.label4.Text = "IP :";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(197, 102);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 23);
+            this.label6.Size = new System.Drawing.Size(59, 24);
             this.label6.TabIndex = 117;
             this.label6.Text = "Port :";
             // 
             // btnDisScrew
             // 
-            this.btnDisScrew.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnDisScrew.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnDisScrew.Location = new System.Drawing.Point(327, 154);
             this.btnDisScrew.Name = "btnDisScrew";
-            this.btnDisScrew.Size = new System.Drawing.Size(109, 38);
+            this.btnDisScrew.Size = new System.Drawing.Size(137, 38);
             this.btnDisScrew.TabIndex = 115;
             this.btnDisScrew.Text = "DisConnect";
             this.btnDisScrew.UseVisualStyleBackColor = true;
@@ -4316,10 +4314,10 @@
             // 
             // btnConnectScrew
             // 
-            this.btnConnectScrew.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnConnectScrew.Location = new System.Drawing.Point(177, 154);
+            this.btnConnectScrew.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnConnectScrew.Location = new System.Drawing.Point(150, 154);
             this.btnConnectScrew.Name = "btnConnectScrew";
-            this.btnConnectScrew.Size = new System.Drawing.Size(109, 38);
+            this.btnConnectScrew.Size = new System.Drawing.Size(136, 38);
             this.btnConnectScrew.TabIndex = 114;
             this.btnConnectScrew.Text = "Connect";
             this.btnConnectScrew.UseVisualStyleBackColor = true;
@@ -4328,7 +4326,7 @@
             // textBox13
             // 
             this.textBox13.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "PSet.ScrewIP", true));
-            this.textBox13.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.textBox13.Location = new System.Drawing.Point(260, 52);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(145, 29);
@@ -4372,7 +4370,7 @@
             // 
             // button14
             // 
-            this.button14.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button14.Location = new System.Drawing.Point(396, 420);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(109, 38);
@@ -4383,7 +4381,7 @@
             // 
             // button13
             // 
-            this.button13.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button13.Location = new System.Drawing.Point(150, 420);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(109, 38);
@@ -4402,10 +4400,10 @@
             // 
             // button11
             // 
-            this.button11.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(396, 117);
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(421, 117);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(109, 38);
+            this.button11.Size = new System.Drawing.Size(154, 38);
             this.button11.TabIndex = 124;
             this.button11.Text = "DisConnect";
             this.button11.UseVisualStyleBackColor = true;
@@ -4413,10 +4411,10 @@
             // 
             // button12
             // 
-            this.button12.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.Location = new System.Drawing.Point(162, 117);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(109, 38);
+            this.button12.Size = new System.Drawing.Size(149, 38);
             this.button12.TabIndex = 123;
             this.button12.Text = "Connect";
             this.button12.UseVisualStyleBackColor = true;
@@ -4425,7 +4423,7 @@
             // textBox18
             // 
             this.textBox18.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "PSet.PressureDelaytime", true));
-            this.textBox18.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox18.Location = new System.Drawing.Point(495, 50);
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(80, 29);
@@ -4434,14 +4432,15 @@
             // textBox17
             // 
             this.textBox17.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "PSet.PressureCOM", true));
-            this.textBox17.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(221, 47);
+            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox17.Location = new System.Drawing.Point(231, 47);
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(80, 29);
             this.textBox17.TabIndex = 121;
             // 
             // tabPage33
             // 
+            this.tabPage33.Controls.Add(this.label37);
             this.tabPage33.Controls.Add(this.textBox11);
             this.tabPage33.Controls.Add(this.label8);
             this.tabPage33.Controls.Add(this.textBox37);
@@ -4455,12 +4454,21 @@
             this.tabPage33.Text = "Displacement Sensor";
             this.tabPage33.UseVisualStyleBackColor = true;
             // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(102, 62);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(46, 23);
+            this.label37.TabIndex = 44;
+            this.label37.Text = "COM";
+            // 
             // textBox11
             // 
             this.textBox11.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "PSet.DisplacementCom", true));
-            this.textBox11.Location = new System.Drawing.Point(179, 59);
+            this.textBox11.Location = new System.Drawing.Point(187, 59);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 29);
+            this.textBox11.Size = new System.Drawing.Size(109, 29);
             this.textBox11.TabIndex = 43;
             // 
             // label8
@@ -4469,9 +4477,8 @@
             this.label8.Location = new System.Drawing.Point(119, 62);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 23);
+            this.label8.Size = new System.Drawing.Size(0, 23);
             this.label8.TabIndex = 42;
-            this.label8.Text = "COM";
             // 
             // textBox37
             // 
@@ -4483,9 +4490,9 @@
             // 
             // btnReadData
             // 
-            this.btnReadData.Location = new System.Drawing.Point(529, 63);
+            this.btnReadData.Location = new System.Drawing.Point(534, 59);
             this.btnReadData.Name = "btnReadData";
-            this.btnReadData.Size = new System.Drawing.Size(144, 34);
+            this.btnReadData.Size = new System.Drawing.Size(163, 34);
             this.btnReadData.TabIndex = 40;
             this.btnReadData.Text = "Read Data";
             this.btnReadData.UseVisualStyleBackColor = true;
@@ -4495,7 +4502,7 @@
             // 
             this.btnConnectDisplacement.Location = new System.Drawing.Point(338, 59);
             this.btnConnectDisplacement.Name = "btnConnectDisplacement";
-            this.btnConnectDisplacement.Size = new System.Drawing.Size(144, 34);
+            this.btnConnectDisplacement.Size = new System.Drawing.Size(166, 34);
             this.btnConnectDisplacement.TabIndex = 38;
             this.btnConnectDisplacement.Text = "Connect";
             this.btnConnectDisplacement.UseVisualStyleBackColor = true;
@@ -4505,7 +4512,7 @@
             // 
             this.btnDisConnectDisplacement.Location = new System.Drawing.Point(338, 110);
             this.btnDisConnectDisplacement.Name = "btnDisConnectDisplacement";
-            this.btnDisConnectDisplacement.Size = new System.Drawing.Size(144, 34);
+            this.btnDisConnectDisplacement.Size = new System.Drawing.Size(166, 34);
             this.btnDisConnectDisplacement.TabIndex = 39;
             this.btnDisConnectDisplacement.Text = "DisConnect";
             this.btnDisConnectDisplacement.UseVisualStyleBackColor = true;
@@ -4548,11 +4555,11 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.label25.Location = new System.Drawing.Point(60, 47);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(147, 23);
+            this.label25.Size = new System.Drawing.Size(182, 24);
             this.label25.TabIndex = 60;
             this.label25.Text = "Aixs Speed Ratio :";
             // 
@@ -4571,7 +4578,7 @@
             // 
             this.lbSpeedRatio.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbSpeedRatio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbSpeedRatio.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lbSpeedRatio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbSpeedRatio.Location = new System.Drawing.Point(947, 42);
             this.lbSpeedRatio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSpeedRatio.Name = "lbSpeedRatio";
@@ -4596,17 +4603,17 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.label22.Location = new System.Drawing.Point(735, 146);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(114, 23);
+            this.label22.Size = new System.Drawing.Size(140, 24);
             this.label22.TabIndex = 58;
             this.label22.Text = "Deceleration :";
             // 
             // textBox14
             // 
             this.textBox14.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "MSet.DecelerationAxisJacking", true));
-            this.textBox14.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.textBox14.Location = new System.Drawing.Point(888, 141);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(114, 29);
@@ -4615,17 +4622,17 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.label23.Location = new System.Drawing.Point(379, 146);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(114, 23);
+            this.label23.Size = new System.Drawing.Size(139, 24);
             this.label23.TabIndex = 56;
             this.label23.Text = "Acceleration :";
             // 
             // textBox15
             // 
             this.textBox15.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "MSet.AccelerationAxisJacking", true));
-            this.textBox15.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.textBox15.Location = new System.Drawing.Point(547, 141);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(114, 29);
@@ -4634,17 +4641,17 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.label24.Location = new System.Drawing.Point(60, 146);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(107, 23);
+            this.label24.Size = new System.Drawing.Size(131, 24);
             this.label24.TabIndex = 54;
             this.label24.Text = "WorkSpeed :";
             // 
             // textBox16
             // 
             this.textBox16.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.SettingData, "MSet.WorkSpeedAxisJacking", true));
-            this.textBox16.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.textBox16.Location = new System.Drawing.Point(206, 141);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(114, 29);
@@ -4675,7 +4682,7 @@
             this.T_McPosJacking.BackColor = System.Drawing.Color.WhiteSmoke;
             this.T_McPosJacking.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.T_McPosJacking.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.T_McPosJacking.Location = new System.Drawing.Point(282, 211);
+            this.T_McPosJacking.Location = new System.Drawing.Point(281, 184);
             this.T_McPosJacking.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.T_McPosJacking.Name = "T_McPosJacking";
             this.T_McPosJacking.Size = new System.Drawing.Size(77, 27);
@@ -4686,7 +4693,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(285, 43);
+            this.label7.Location = new System.Drawing.Point(284, 16);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 23);
             this.label7.TabIndex = 174;
@@ -5074,7 +5081,7 @@
             this.motorJog1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.motorJog1.Direction = JabilSDK.Controls.MotorJog.DirectionType.Up;
             this.motorJog1.JogDirection = JabilSDK.Controls.MotorJog.JogDirectionType.JogP;
-            this.motorJog1.Location = new System.Drawing.Point(289, 77);
+            this.motorJog1.Location = new System.Drawing.Point(288, 49);
             this.motorJog1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.motorJog1.MoveMode = JabilSDK.Controls.MotorJog.MoveModeType.Jog;
             this.motorJog1.Name = "motorJog1";
@@ -5092,7 +5099,7 @@
             this.motorJog2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.motorJog2.Direction = JabilSDK.Controls.MotorJog.DirectionType.Down;
             this.motorJog2.JogDirection = JabilSDK.Controls.MotorJog.JogDirectionType.JogN;
-            this.motorJog2.Location = new System.Drawing.Point(289, 147);
+            this.motorJog2.Location = new System.Drawing.Point(288, 119);
             this.motorJog2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.motorJog2.MoveMode = JabilSDK.Controls.MotorJog.MoveModeType.Jog;
             this.motorJog2.Name = "motorJog2";
@@ -5107,11 +5114,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(93, 65);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 23);
+            this.label3.Size = new System.Drawing.Size(197, 24);
             this.label3.TabIndex = 64;
             this.label3.Text = "Robot Speed Ratio :";
             // 
@@ -5130,7 +5137,7 @@
             // 
             this.label10.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label10.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.label10.Location = new System.Drawing.Point(980, 65);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
@@ -5157,7 +5164,7 @@
             this.tabControl11.Controls.Add(this.tabPage30);
             this.tabControl11.Controls.Add(this.tabPage31);
             this.tabControl11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl11.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.tabControl11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.tabControl11.Location = new System.Drawing.Point(0, 0);
             this.tabControl11.Name = "tabControl11";
             this.tabControl11.SelectedIndex = 0;
@@ -5176,10 +5183,10 @@
             this.tabPage30.Controls.Add(this.textBox14);
             this.tabPage30.Controls.Add(this.textBox15);
             this.tabPage30.Controls.Add(this.label23);
-            this.tabPage30.Location = new System.Drawing.Point(4, 32);
+            this.tabPage30.Location = new System.Drawing.Point(4, 33);
             this.tabPage30.Name = "tabPage30";
             this.tabPage30.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage30.Size = new System.Drawing.Size(1709, 633);
+            this.tabPage30.Size = new System.Drawing.Size(1816, 866);
             this.tabPage30.TabIndex = 0;
             this.tabPage30.Text = "Jacking Axis";
             this.tabPage30.UseVisualStyleBackColor = true;
@@ -5190,10 +5197,10 @@
             this.tabPage31.Controls.Add(this.trackBar2);
             this.tabPage31.Controls.Add(this.label9);
             this.tabPage31.Controls.Add(this.label10);
-            this.tabPage31.Location = new System.Drawing.Point(4, 32);
+            this.tabPage31.Location = new System.Drawing.Point(4, 33);
             this.tabPage31.Name = "tabPage31";
             this.tabPage31.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage31.Size = new System.Drawing.Size(1709, 633);
+            this.tabPage31.Size = new System.Drawing.Size(1816, 866);
             this.tabPage31.TabIndex = 1;
             this.tabPage31.Text = "Robot";
             this.tabPage31.UseVisualStyleBackColor = true;
@@ -5279,7 +5286,6 @@
             this.tabControl9.Controls.Add(this.tabPage25);
             this.tabControl9.Controls.Add(this.tabPage24);
             this.tabControl9.Controls.Add(this.tabPage9);
-            this.tabControl9.Controls.Add(this.tabPage26);
             this.tabControl9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl9.Location = new System.Drawing.Point(0, 0);
             this.tabControl9.Name = "tabControl9";
@@ -5327,7 +5333,7 @@
             this.tabPage25.Controls.Add(this.panel4);
             this.tabPage25.Location = new System.Drawing.Point(4, 32);
             this.tabPage25.Name = "tabPage25";
-            this.tabPage25.Size = new System.Drawing.Size(783, 565);
+            this.tabPage25.Size = new System.Drawing.Size(783, 555);
             this.tabPage25.TabIndex = 2;
             this.tabPage25.Text = "Screw Vision2";
             this.tabPage25.UseVisualStyleBackColor = true;
@@ -5338,7 +5344,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(783, 565);
+            this.panel4.Size = new System.Drawing.Size(783, 555);
             this.panel4.TabIndex = 1;
             // 
             // V_ScrewControl2
@@ -5350,7 +5356,7 @@
             this.V_ScrewControl2.Location = new System.Drawing.Point(0, 0);
             this.V_ScrewControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.V_ScrewControl2.Name = "V_ScrewControl2";
-            this.V_ScrewControl2.Size = new System.Drawing.Size(783, 565);
+            this.V_ScrewControl2.Size = new System.Drawing.Size(783, 555);
             this.V_ScrewControl2.TabIndex = 0;
             this.V_ScrewControl2.VppPath = "";
             this.V_ScrewControl2.WokId = 2;
@@ -5362,7 +5368,7 @@
             this.tabPage24.Location = new System.Drawing.Point(4, 32);
             this.tabPage24.Name = "tabPage24";
             this.tabPage24.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage24.Size = new System.Drawing.Size(783, 565);
+            this.tabPage24.Size = new System.Drawing.Size(783, 555);
             this.tabPage24.TabIndex = 1;
             this.tabPage24.Text = "Screw Calibration";
             this.tabPage24.UseVisualStyleBackColor = true;
@@ -5373,7 +5379,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(777, 559);
+            this.panel5.Size = new System.Drawing.Size(777, 549);
             this.panel5.TabIndex = 0;
             // 
             // H1_9Pos
@@ -5388,7 +5394,7 @@
             this.H1_9Pos.Location = new System.Drawing.Point(0, 0);
             this.H1_9Pos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.H1_9Pos.Name = "H1_9Pos";
-            this.H1_9Pos.Size = new System.Drawing.Size(777, 559);
+            this.H1_9Pos.Size = new System.Drawing.Size(777, 549);
             this.H1_9Pos.TabIndex = 0;
             this.H1_9Pos.WorkID = -1;
             // 
@@ -5404,7 +5410,7 @@
             this.tabPage9.Controls.Add(this.textBox9);
             this.tabPage9.Location = new System.Drawing.Point(4, 32);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(783, 565);
+            this.tabPage9.Size = new System.Drawing.Size(783, 555);
             this.tabPage9.TabIndex = 4;
             this.tabPage9.Text = "Vision offSet Limit Setting";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -5485,25 +5491,6 @@
             this.textBox9.Size = new System.Drawing.Size(114, 29);
             this.textBox9.TabIndex = 154;
             // 
-            // tabPage26
-            // 
-            this.tabPage26.Controls.Add(this.panel88);
-            this.tabPage26.Location = new System.Drawing.Point(4, 32);
-            this.tabPage26.Name = "tabPage26";
-            this.tabPage26.Size = new System.Drawing.Size(783, 565);
-            this.tabPage26.TabIndex = 3;
-            this.tabPage26.Text = "Auto 9Point Flow";
-            this.tabPage26.UseVisualStyleBackColor = true;
-            // 
-            // panel88
-            // 
-            this.panel88.AutoScroll = true;
-            this.panel88.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel88.Location = new System.Drawing.Point(0, 0);
-            this.panel88.Name = "panel88";
-            this.panel88.Size = new System.Drawing.Size(1032, 565);
-            this.panel88.TabIndex = 1;
-            // 
             // tabPage21
             // 
             this.tabPage21.Controls.Add(this.label97);
@@ -5523,14 +5510,14 @@
             this.label97.AutoSize = true;
             this.label97.Location = new System.Drawing.Point(397, 49);
             this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(59, 23);
+            this.label97.Size = new System.Drawing.Size(107, 23);
             this.label97.TabIndex = 14;
-            this.label97.Text = "MIN：";
+            this.label97.Text = "HeightMin：";
             // 
             // textBox41
             // 
             this.textBox41.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.RecipeData, "RSet.DisplacementMin", true));
-            this.textBox41.Location = new System.Drawing.Point(469, 46);
+            this.textBox41.Location = new System.Drawing.Point(519, 48);
             this.textBox41.Name = "textBox41";
             this.textBox41.Size = new System.Drawing.Size(100, 29);
             this.textBox41.TabIndex = 13;
@@ -5538,7 +5525,7 @@
             // textBox39
             // 
             this.textBox39.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.RecipeData, "RSet.DisplacementMax", true));
-            this.textBox39.Location = new System.Drawing.Point(185, 46);
+            this.textBox39.Location = new System.Drawing.Point(201, 49);
             this.textBox39.Name = "textBox39";
             this.textBox39.Size = new System.Drawing.Size(100, 29);
             this.textBox39.TabIndex = 11;
@@ -5546,11 +5533,11 @@
             // label96
             // 
             this.label96.AutoSize = true;
-            this.label96.Location = new System.Drawing.Point(114, 49);
+            this.label96.Location = new System.Drawing.Point(58, 51);
             this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(65, 23);
+            this.label96.Size = new System.Drawing.Size(111, 23);
             this.label96.TabIndex = 12;
-            this.label96.Text = "MAX：";
+            this.label96.Text = "HeightMax：";
             // 
             // tabPage7
             // 
@@ -5582,8 +5569,8 @@
             // textBox2
             // 
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.RecipeData, "RSet.PressureLimitOverLoad", true));
-            this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(253, 178);
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(284, 181);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(80, 29);
             this.textBox2.TabIndex = 136;
@@ -5591,8 +5578,8 @@
             // textBox1
             // 
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.RecipeData, "RSet.PressureLimitMin", true));
-            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(253, 111);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(284, 114);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(80, 29);
             this.textBox1.TabIndex = 134;
@@ -5600,8 +5587,8 @@
             // textBox5
             // 
             this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.RecipeData, "RSet.PressureLimitMax", true));
-            this.textBox5.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(253, 50);
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(284, 53);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(80, 29);
             this.textBox5.TabIndex = 132;
@@ -5628,10 +5615,10 @@
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(-5635, -5084);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(-3583, -4445);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(97, 23);
+            this.label11.Size = new System.Drawing.Size(119, 24);
             this.label11.TabIndex = 111;
             this.label11.Text = "Delay time :";
             // 
@@ -5639,10 +5626,10 @@
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(-5857, -5084);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(-3805, -4445);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 23);
+            this.label12.Size = new System.Drawing.Size(69, 24);
             this.label12.TabIndex = 109;
             this.label12.Text = "COM :";
             // 
@@ -5730,6 +5717,7 @@
             this.indexDataGridViewTextBoxColumn.HeaderText = "   Index";
             this.indexDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.indexDataGridViewTextBoxColumn.Name = "indexDataGridViewTextBoxColumn";
+            this.indexDataGridViewTextBoxColumn.Width = 120;
             // 
             // axisJackingDataGridViewTextBoxColumn
             // 
@@ -5764,6 +5752,7 @@
             // 
             this.tabControl4.Controls.Add(this.tabPage6);
             this.tabControl4.Controls.Add(this.tabPage8);
+            this.tabControl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl4.Location = new System.Drawing.Point(5, 373);
             this.tabControl4.Name = "tabControl4";
             this.tabControl4.SelectedIndex = 0;
@@ -5773,10 +5762,10 @@
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.D_PressureResultsShow);
-            this.tabPage6.Location = new System.Drawing.Point(4, 32);
+            this.tabPage6.Location = new System.Drawing.Point(4, 29);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1373, 298);
+            this.tabPage6.Size = new System.Drawing.Size(1373, 301);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "Screw Data";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -5802,7 +5791,7 @@
             this.D_PressureResultsShow.RowTemplate.Height = 46;
             this.D_PressureResultsShow.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.D_PressureResultsShow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.D_PressureResultsShow.Size = new System.Drawing.Size(1367, 292);
+            this.D_PressureResultsShow.Size = new System.Drawing.Size(1367, 295);
             this.D_PressureResultsShow.TabIndex = 15;
             // 
             // Column1
@@ -5869,10 +5858,10 @@
             // tabPage8
             // 
             this.tabPage8.Controls.Add(this.D_ScrewResultsShow);
-            this.tabPage8.Location = new System.Drawing.Point(4, 32);
+            this.tabPage8.Location = new System.Drawing.Point(4, 29);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1373, 298);
+            this.tabPage8.Size = new System.Drawing.Size(1373, 301);
             this.tabPage8.TabIndex = 1;
             this.tabPage8.Text = "Pressure Data";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -5900,7 +5889,7 @@
             this.D_ScrewResultsShow.RowTemplate.Height = 46;
             this.D_ScrewResultsShow.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.D_ScrewResultsShow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.D_ScrewResultsShow.Size = new System.Drawing.Size(1367, 292);
+            this.D_ScrewResultsShow.Size = new System.Drawing.Size(1367, 295);
             this.D_ScrewResultsShow.TabIndex = 16;
             // 
             // dataGridViewTextBoxColumn1
@@ -5986,7 +5975,7 @@
             this.ClientSize = new System.Drawing.Size(1838, 967);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PCBA_ScrewFasten_Module2";
-            this.Text = "PCBA_ScrewFasten_Module1";
+            this.Text = "PCBA_ScrewFasten_Module2";
             this.plMaintenance.ResumeLayout(false);
             this.plProductionSetting.ResumeLayout(false);
             this.plRecipeEditor.ResumeLayout(false);
@@ -6071,7 +6060,6 @@
             this.panel5.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
-            this.tabPage26.ResumeLayout(false);
             this.tabPage21.ResumeLayout(false);
             this.tabPage21.PerformLayout();
             this.tabPage7.ResumeLayout(false);
@@ -6321,7 +6309,6 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage18;
         private System.Windows.Forms.TabPage tabPage32;
-        private System.Windows.Forms.TabPage tabPage33;
         private System.Windows.Forms.TabPage tabPage34;
         private System.Windows.Forms.TextBox T_ScrewData;
         private System.Windows.Forms.Button button1;
@@ -6353,12 +6340,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Data.DataColumn dataColumn47;
         private OPTControl.OPTControl OPT_LightSourceController;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox37;
-        private System.Windows.Forms.Button btnReadData;
-        private System.Windows.Forms.Button btnConnectDisplacement;
-        private System.Windows.Forms.Button btnDisConnectDisplacement;
-        private System.Windows.Forms.TextBox textBox11;
         private System.Data.DataColumn dataColumn48;
         private System.Windows.Forms.TabControl tabControl3;
         private System.Windows.Forms.TabPage tabPage11;
@@ -6367,9 +6348,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView D_PcbPoint;
-        private System.Windows.Forms.DataGridViewTextBoxColumn indexDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn axisJackingDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn annotationDataGridViewTextBoxColumn1;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
@@ -6395,8 +6373,6 @@
         private System.Windows.Forms.TabPage tabPage24;
         private System.Windows.Forms.Panel panel5;
         private VppComp.CalibrationControl H1_9Pos;
-        private System.Windows.Forms.TabPage tabPage26;
-        private System.Windows.Forms.Panel panel88;
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label16;
@@ -6491,5 +6467,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.TabPage tabPage33;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox37;
+        private System.Windows.Forms.Button btnReadData;
+        private System.Windows.Forms.Button btnConnectDisplacement;
+        private System.Windows.Forms.Button btnDisConnectDisplacement;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.DataGridViewTextBoxColumn indexDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn axisJackingDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn annotationDataGridViewTextBoxColumn1;
     }
 }

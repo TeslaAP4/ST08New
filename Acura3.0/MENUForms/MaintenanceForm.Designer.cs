@@ -41,7 +41,7 @@
             this.tcMaintenance.Controls.Add(this.tabPage2);
             this.tcMaintenance.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcMaintenance.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcMaintenance.ItemSize = new System.Drawing.Size(350, 50);
+            this.tcMaintenance.ItemSize = new System.Drawing.Size(290, 50);
             this.tcMaintenance.Location = new System.Drawing.Point(0, 0);
             this.tcMaintenance.Margin = new System.Windows.Forms.Padding(0);
             this.tcMaintenance.Name = "tcMaintenance";
@@ -54,9 +54,9 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Location = new System.Drawing.Point(4, 54);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(714, 424);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Module #1";
@@ -65,9 +65,9 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
             this.tabPage2.Location = new System.Drawing.Point(4, 54);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(714, 424);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Module #2";
@@ -79,7 +79,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(722, 482);
             this.Controls.Add(this.tcMaintenance);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MaintenanceForm";
             this.Text = "Maintenance";
             this.Load += new System.EventHandler(this.MaintenanceForm_Load);

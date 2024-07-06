@@ -41,7 +41,7 @@ namespace Acura3._0.ModuleForms
         public bool B_ThrowScrewtestFlow = false;
         public bool B_PosFlow = false;
         public bool B_ScrewFasten = false;
-        public bool B_Press = false;
+        public bool B_JackingFlow = false;
         public bool B_ScrewVision = false;
 
         public bool B_ThrowScrew = false;
@@ -253,11 +253,13 @@ namespace Acura3._0.ModuleForms
 
         public override void StartRun()
         {
+            F_Robot.RobotContinue(OB_Robot_Maintain, OB_Robot_Start);
             RunTM.Restart();
         }
 
         public override void StopRun()
         {
+            F_Robot.RobotPause(OB_Robot_Maintain);
             MTR_Jacking.Stop();
         }
 
@@ -614,12 +616,13 @@ namespace Acura3._0.ModuleForms
             OB_ModuleAlram_Light.Off();
 
             B_ScrewFasten = false;
-            B_Press = false;
+            B_JackingFlow = false;
             B_ScrewVision = false;
 
             B_ThrowScrew = false;
             B_GetScrewData = false;
             B_StartReadPressure = false;
+            B_GantryResult = false;
             B_PressureOverlimit = false;
             I_NGCount = 1;
             I_ScrewCount = 1;
@@ -705,8 +708,8 @@ namespace Acura3._0.ModuleForms
         }
         private void btnConnectScrew_Click(object sender, EventArgs e)
         {
-            PFClient.IP = GetSettingValue("RSet", "ScrewIP");
-            PFClient.Port = GetSettingValue("RSet", "ScrewPort");
+            PFClient.IP = GetSettingValue("PSet", "ScrewIP");
+            PFClient.Port = GetSettingValue("PSet", "ScrewPort");
             BConnect();
             if (bConnect && bComStart && bSubscribe)
             {
@@ -746,7 +749,7 @@ namespace Acura3._0.ModuleForms
         public Fanuc_RobotControl F_Robot = new Fanuc_RobotControl();
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            F_Robot.RobotIP = GetSettingValue("RSet", "RobotIP");
+            F_Robot.RobotIP = GetSettingValue("PSet", "RobotIP");
             btnConnect.BackColor = F_Robot.ConnectToRobot() ? Color.LimeGreen : Color.Red;
         }
 
@@ -799,160 +802,152 @@ namespace Acura3._0.ModuleForms
                 switch (F_Robot.GetAlarmID())
                 {
                     case -1:
-                        JSDK.Alarm.Show("4033");
-                        if (flow != null && JSDK.Alarm.IsExistInSummary("4033", ref alarmDataClass))
+                        JSDK.Alarm.Show("4102");
+                        if (flow != null && JSDK.Alarm.IsExistInSummary("4102", ref alarmDataClass))
                         {
                             flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
-                    case -2:
-                        JSDK.Alarm.Show("4034");
-                        if (flow != null && JSDK.Alarm.IsExistInSummary("4034", ref alarmDataClass))
+                    case 1:
+                        JSDK.Alarm.Show("4103");
+                        if (flow != null && JSDK.Alarm.IsExistInSummary("4103", ref alarmDataClass))
                         {
                             flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
-                    case -3:
-                        JSDK.Alarm.Show("4035");
-                        if (flow != null && JSDK.Alarm.IsExistInSummary("4035", ref alarmDataClass))
+                    case 2:
+                        JSDK.Alarm.Show("4104");
+                        if (flow != null && JSDK.Alarm.IsExistInSummary("4104", ref alarmDataClass))
                         {
                             flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
-                    case -4:
-                        JSDK.Alarm.Show("4036");
-                        if (flow != null && JSDK.Alarm.IsExistInSummary("4036", ref alarmDataClass))
+                    case 3:
+                        JSDK.Alarm.Show("4105");
+                        if (flow != null && JSDK.Alarm.IsExistInSummary("4105", ref alarmDataClass))
                         {
                             flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
-                    case -5:
-                        JSDK.Alarm.Show("4037");
-                        if (flow != null && JSDK.Alarm.IsExistInSummary("4037", ref alarmDataClass))
+                    case 4:
+                        JSDK.Alarm.Show("4106");
+                        if (flow != null && JSDK.Alarm.IsExistInSummary("4106", ref alarmDataClass))
                         {
                             flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
-                    case -6:
-                        JSDK.Alarm.Show("4038");
-                        if (flow != null && JSDK.Alarm.IsExistInSummary("4038", ref alarmDataClass))
+                    case 5:
+                        JSDK.Alarm.Show("4107");
+                        if (flow != null && JSDK.Alarm.IsExistInSummary("4107", ref alarmDataClass))
                         {
                             flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
-                    case -7:
-                        JSDK.Alarm.Show("4039");
-                        if (flow != null && JSDK.Alarm.IsExistInSummary("4039", ref alarmDataClass))
+                    case 6:
+                        JSDK.Alarm.Show("4108");
+                        if (flow != null && JSDK.Alarm.IsExistInSummary("4108", ref alarmDataClass))
                         {
                             flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
-                    case -8:
-                        JSDK.Alarm.Show("4040");
-                        if (flow != null && JSDK.Alarm.IsExistInSummary("4040", ref alarmDataClass))
+                    case 7:
+                        JSDK.Alarm.Show("4109");
+                        if (flow != null && JSDK.Alarm.IsExistInSummary("4109", ref alarmDataClass))
                         {
                             flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
-                    case -9:
-                        JSDK.Alarm.Show("4041");
-                        if (flow != null && JSDK.Alarm.IsExistInSummary("4041", ref alarmDataClass))
+                    case 8:
+                        JSDK.Alarm.Show("4110");
+                        if (flow != null && JSDK.Alarm.IsExistInSummary("4110", ref alarmDataClass))
                         {
                             flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
-                    case -10:
-                        JSDK.Alarm.Show("4042");
-                        if (flow != null && JSDK.Alarm.IsExistInSummary("4042", ref alarmDataClass))
+                    case 9:
+                        JSDK.Alarm.Show("4111");
+                        if (flow != null && JSDK.Alarm.IsExistInSummary("4111", ref alarmDataClass))
                         {
                             flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
-                    case -11:
-                        JSDK.Alarm.Show("4043");
-                        if (flow != null && JSDK.Alarm.IsExistInSummary("4043", ref alarmDataClass))
+                    case 10:
+                        JSDK.Alarm.Show("4112");
+                        if (flow != null && JSDK.Alarm.IsExistInSummary("4112", ref alarmDataClass))
                         {
                             flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
-                    case -12:
-                        JSDK.Alarm.Show("4044");
-                        if (flow != null && JSDK.Alarm.IsExistInSummary("4044", ref alarmDataClass))
+                    case 11:
+                        JSDK.Alarm.Show("4113");
+                        if (flow != null && JSDK.Alarm.IsExistInSummary("4113", ref alarmDataClass))
                         {
                             flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
-                    case -13:
-                        JSDK.Alarm.Show("4045");
-                        if (flow != null && JSDK.Alarm.IsExistInSummary("4045", ref alarmDataClass))
+                    case 12:
+                        JSDK.Alarm.Show("4114");
+                        if (flow != null && JSDK.Alarm.IsExistInSummary("4114", ref alarmDataClass))
                         {
                             flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
-                    case -14:
-                        JSDK.Alarm.Show("4046");
-                        if (flow != null && JSDK.Alarm.IsExistInSummary("4046", ref alarmDataClass))
+                    case 13:
+                        JSDK.Alarm.Show("4115");
+                        if (flow != null && JSDK.Alarm.IsExistInSummary("4115", ref alarmDataClass))
                         {
                             flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
-                    case -15:
-                        JSDK.Alarm.Show("4047");
-                        if (flow != null && JSDK.Alarm.IsExistInSummary("4047", ref alarmDataClass))
+                    case 14:
+                        JSDK.Alarm.Show("4116");
+                        if (flow != null && JSDK.Alarm.IsExistInSummary("4116", ref alarmDataClass))
                         {
                             flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
-                    case -16:
-                        JSDK.Alarm.Show("4048");
-                        if (flow != null && JSDK.Alarm.IsExistInSummary("4048", ref alarmDataClass))
+                    case 15:
+                        JSDK.Alarm.Show("4117");
+                        if (flow != null && JSDK.Alarm.IsExistInSummary("4117", ref alarmDataClass))
                         {
                             flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
-                    case -17:
-                        JSDK.Alarm.Show("4049");
-                        if (flow != null && JSDK.Alarm.IsExistInSummary("4049", ref alarmDataClass))
+                    case 16:
+                        JSDK.Alarm.Show("4118");
+                        if (flow != null && JSDK.Alarm.IsExistInSummary("4118", ref alarmDataClass))
                         {
                             flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
-                    case -18:
-                        JSDK.Alarm.Show("4050");
-                        if (flow != null && JSDK.Alarm.IsExistInSummary("4050", ref alarmDataClass))
+                    case 17:
+                        JSDK.Alarm.Show("4119");
+                        if (flow != null && JSDK.Alarm.IsExistInSummary("4119", ref alarmDataClass))
                         {
                             flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
                         }
                         break;
-                    case -19:
-                        JSDK.Alarm.Show("4051");
-                        if (flow != null && JSDK.Alarm.IsExistInSummary("4051", ref alarmDataClass))
-                        {
-                            flow.Title = "PCBA_ScrewFasten_Module1";
-                            flow.Content = alarmDataClass.Content;
-                        }
-                        break;
-                    case -20:
-                        JSDK.Alarm.Show("4052");
-                        if (flow != null && JSDK.Alarm.IsExistInSummary("4052", ref alarmDataClass))
+                    case 18:
+                        JSDK.Alarm.Show("4120");
+                        if (flow != null && JSDK.Alarm.IsExistInSummary("4120", ref alarmDataClass))
                         {
                             flow.Title = "PCBA_ScrewFasten_Module1";
                             flow.Content = alarmDataClass.Content;
@@ -1037,7 +1032,7 @@ namespace Acura3._0.ModuleForms
                 DataRow D_dr = D_dt.Rows[D_dgv.CurrentRow.Index];
                 D_dr[0] = D_dr[0];
                 D_dr[1] = MTR_Jacking.GetCommandPosition().ToString("F3");
-                D_dr[2] = "";// AxisY.GetCommandPosition().ToString("F3");
+               /* D_dr[2] = "";*/// AxisY.GetCommandPosition().ToString("F3");
                              //LogShow(SysPara.UserName + "  " + "StressPos datagridview Row " + D_dr[0] + " replace point " + "X:" + D_dr[1] + " " + "Y:" + D_dr[2] + " " + "Z:" + D_dr[3], true);
             }
             else
@@ -1200,24 +1195,28 @@ namespace Acura3._0.ModuleForms
         private FCResultType flowChart0_1_FlowRun(object sender, EventArgs e)
         {
             J_AxisIniTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_1.Text} finish", true);
             return FCResultType.NEXT;
         }
 
         private FCResultType flowChart0_18_FlowRun(object sender, EventArgs e)
         {
-            PFClient.IP = GetSettingValue("RSet", "ScrewIP");
-            PFClient.Port = GetSettingValue("RSet", "ScrewPort");
+            if (SysPara.IsDryRun)
+            {
+                return FCResultType.NEXT;  //7.5空跑
+            }
+
+
+
+            PFClient.IP = GetSettingValue("PSet", "ScrewIP");
+            PFClient.Port = GetSettingValue("PSet", "ScrewPort");
             BConnect();
             if (bConnect && bComStart && bSubscribe)
             {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_18.Text} finish", true);
                 return FCResultType.NEXT;
             }
             if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "IOTimes")))
             {
                 J_AxisIniTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_18.Text} overtime", false);
                 JSDK.Alarm.Show("3000");
             }
             return FCResultType.IDLE;
@@ -1227,13 +1226,11 @@ namespace Acura3._0.ModuleForms
         {
             if (ConnectPressureCom())
             {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_20.Text} finish", true);
                 return FCResultType.NEXT;
             }
             if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "IOTimes")))
             {
                 J_AxisIniTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_20.Text} overtime", false);
                 JSDK.Alarm.Show("3002");
             }
             return FCResultType.IDLE;
@@ -1241,15 +1238,13 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart0_21_FlowRun(object sender, EventArgs e)
         {
-            if (SysPara.newReadCOM.SPCom.ConnectStates() || SysPara.newReadCOM.ConnectCom(GetSettingValue("RSet", "DisplacementCom")))
+            if (SysPara.newReadCOM.SPCom.ConnectStates() || SysPara.newReadCOM.ConnectCom(GetSettingValue("PSet", "DisplacementCom")))
             {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_21.Text} finish", true);
                 return FCResultType.NEXT;
             }
             if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "IOTimes")))
             {
                 J_AxisIniTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_21.Text} overtime", false);
                 JSDK.Alarm.Show("3004");
             }
             return FCResultType.IDLE;
@@ -1257,16 +1252,21 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart0_14_FlowRun(object sender, EventArgs e)
         {
+            if (SysPara.IsDryRun)
+            {
+                return FCResultType.NEXT;  //7.5空跑
+            }
+
+
+
             if (MTR_Jacking.Home())
             {
                 J_AxisIniTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_14.Text} finish", true);
                 return FCResultType.NEXT;
             }
             if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "AxisTimes")))
             {
                 J_AxisIniTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_14.Text} overtime", false);
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart0_14.Text);
                 GantryAlarm("3010", Alarm1_02, false);
                 return FCResultType.CASE2;
@@ -1276,17 +1276,21 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart0_15_FlowRun(object sender, EventArgs e)
         {
+            if (SysPara.IsDryRun)
+            {
+                return FCResultType.NEXT; // 7.5空跑
+            }
+
+
             JackingAxisPos AxisZ = GetJackingPointList("SafePos");
             bool bFinsh = MTR_Jacking.Goto(AxisZ.Position);
             if (bFinsh)
             {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_15.Text} finish", true);
                 return FCResultType.NEXT;
             }
             if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "AxisTimes")))
             {
                 J_AxisIniTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_15.Text} overtime", false);
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart0_15.Text);
                 GantryAlarm("3012", Alarm1_03, false);
                 return FCResultType.CASE2;
@@ -1297,14 +1301,12 @@ namespace Acura3._0.ModuleForms
         private FCResultType flowChart0_10_FlowRun(object sender, EventArgs e)
         {
             InitialStatus();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_10.Text} finish", true);
             return FCResultType.NEXT;
         }
 
         private FCResultType flowChart0_11_FlowRun(object sender, EventArgs e)
         {
             bInitialOk = true;
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_11.Text} finish", true);
             return FCResultType.IDLE;
         }
 
@@ -1316,9 +1318,14 @@ namespace Acura3._0.ModuleForms
             if (MiddleLayer.ConveyorF.Station1Start)
             {
                 MiddleLayer.ConveyorF.Station1Start = false;
-                B_Press = true;
+                int speed = GetSettingValue("MSet", "RobotSpeedRatio");
+                F_Robot.SetSpeed(speed);
+
+                //B_GantryResult = false;
+                //B_JackingFlow = true;    //7.5空跑
+                B_GantryResult = true;
+                B_JackingFlow = false;
                 I_ScrewCount = 1;
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart1_1.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -1326,15 +1333,13 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart1_2_FlowRun(object sender, EventArgs e)
         {
-            if (!B_Press)
+            if (!B_JackingFlow)
             {
                 if (!B_GantryResult)
                 {
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart1_2.Text} finish", true);
                     return FCResultType.CASE1;
                 }
                 B_ScrewVision = true;
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart1_2.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -1346,11 +1351,9 @@ namespace Acura3._0.ModuleForms
             {
                 if (!B_GantryResult)
                 {
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart1_2.Text} finish", true);
                     return FCResultType.CASE1;
                 }
                 B_ScrewFasten = true;
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart1_3.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -1362,10 +1365,8 @@ namespace Acura3._0.ModuleForms
             {
                 if (!B_GantryResult)
                 {
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart1_2.Text} finish", true);
                     return FCResultType.CASE1;
                 }
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart1_4.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -1373,12 +1374,10 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart1_6_FlowRun(object sender, EventArgs e)
         {
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_15.Text} finish", true);
             I_ScrewCount++;
             J_AxisAutoTm.Restart();
             if (I_ScrewCount > 10)
             {
-                //MiddleLayer.ConveyorF.myRFID1.ResultBool = true;
                 I_ScrewCount = 1;
                 return FCResultType.NEXT;
             }
@@ -1387,14 +1386,13 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart1_5_FlowRun(object sender, EventArgs e)
         {
+            MiddleLayer.ConveyorF.myRFID1.B_Result = true;
             MiddleLayer.ConveyorF.MachineAvailable1 = true;
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart1_5.Text} finish", true);
             return FCResultType.NEXT;
         }
         private FCResultType flowChart54_FlowRun(object sender, EventArgs e)
         {
             J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart54.Text} finish", true);
             return FCResultType.NEXT;
         }
         #endregion
@@ -1406,7 +1404,6 @@ namespace Acura3._0.ModuleForms
             {
                 B_GantryResult = true;
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_1.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -1426,7 +1423,6 @@ namespace Acura3._0.ModuleForms
             {
                 screwStartTime = DateTime.Now;
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_17.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -1437,13 +1433,11 @@ namespace Acura3._0.ModuleForms
             if (F_Robot.GetCurrentTaskState() == eRobotState.Done)
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart24.Text} finish", true);
                 return FCResultType.NEXT;
             }
             if (F_Robot.GetCurrentTaskState() == eRobotState.Alarm)
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart24.Text} robot alarm", false);
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart24.Text);
                 RefreshDifferentThreadUI(Alarm2_01, () =>
                 {
@@ -1456,7 +1450,6 @@ namespace Acura3._0.ModuleForms
             if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "RobotTimes")))
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart24.Text} robot overtime", false);
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart24.Text);
                 RefreshDifferentThreadUI(flowChartMessage4, () =>
                 {
@@ -1473,7 +1466,6 @@ namespace Acura3._0.ModuleForms
             if (SysPara.IsDryRun || B_GantryDryRun)
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "Dryrun Mode :" + $"{this.Text} Module {flowChart2_10.Text} finish", true);
                 return FCResultType.NEXT;
             }
             if (F_Robot.ReflashRobotR())
@@ -1481,7 +1473,6 @@ namespace Acura3._0.ModuleForms
                 if (B_ByPassScrew)
                 {
                     J_AxisAutoTm.Restart();
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "ByPass Screw Result Mode :" + $"{this.Text} Module {flowChart2_10.Text} finish", true);
                     return FCResultType.NEXT;
                 }
                 if (F_Robot.D_ReadRobotR[35] == 1)
@@ -1489,7 +1480,6 @@ namespace Acura3._0.ModuleForms
                     if (F_Robot.WriteR(30, 0))
                     {
                         J_AxisAutoTm.Restart();
-                        MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_10.Text} finish", true);
                         return FCResultType.NEXT;
                     }
                 }
@@ -1498,10 +1488,9 @@ namespace Acura3._0.ModuleForms
                     if (F_Robot.WriteR(30, 0))
                     {
                         B_GantryResult = false;
-                        MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_10.Text} screw result NG", false);
                         JSDK.Alarm.Show("3020");
                         J_AxisAutoTm.Restart();
-                        return FCResultType.CASE2;
+                        return FCResultType.NEXT;
                     }
                 }
             }
@@ -1510,15 +1499,13 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart2_12_FlowRun(object sender, EventArgs e)
         {
-            if (SysPara.IsDryRun || B_GantryDryRun || B_ByPassScrew)
+            if (SysPara.IsDryRun || B_GantryDryRun)
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "Dryrun Mode :" + $"{this.Text} Module {flowChart2_12.Text} finish", true);
                 return FCResultType.NEXT;
             }
             B_GetScrewData = true;
             J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_12.Text} finish", true);
             return FCResultType.NEXT;
         }
 
@@ -1527,7 +1514,6 @@ namespace Acura3._0.ModuleForms
             if (SysPara.IsDryRun || B_GantryDryRun)
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "Dryrun Mode :" + $"{this.Text} Module {flowChart2_22.Text} finish", true);
                 return FCResultType.NEXT;
             }
             string data = "";
@@ -1538,18 +1524,15 @@ namespace Acura3._0.ModuleForms
                 if ((Convert.ToDouble(data) < GetRecipeValue("RSet", "DisplacementMax") && Convert.ToDouble(data) > GetRecipeValue("RSet", "DisplacementMin")) || B_ByPassDisplacement)
                 {
                     J_AxisAutoTm.Restart();
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_22.Text} finish", true);
                     return FCResultType.NEXT;
                 }
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_22.Text} ---- Screw dispalcement height over limit", false);
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart2_22.Text);
                 GantryAlarm("3030", flowChartMessage17);
                 return FCResultType.CASE1;
             }
             if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
             {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_22.Text} overtime", false);
                 SysPara.newReadCOM.DisconnectCom3();
                 SysPara.newReadCOM.ConnectCom(GetSettingValue("RSet", "DisplacementCom"));
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart2_22.Text);
@@ -1564,7 +1547,6 @@ namespace Acura3._0.ModuleForms
             if (F_Robot.SetTaskIndex(1) && F_Robot.SetRobotTask(3))
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4_7.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -1572,7 +1554,6 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart2_15_FlowRun(object sender, EventArgs e)
         {
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_15.Text} finish", true);
             J_AxisAutoTm.Restart();
             if (I_ScrewCount > 9 || !B_GantryResult)
             {
@@ -1591,7 +1572,6 @@ namespace Acura3._0.ModuleForms
             if (F_Robot.GetCurrentTaskState() == eRobotState.Done)
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_19.Text} finish", true);
                 return FCResultType.NEXT;
             }
             if (F_Robot.GetCurrentTaskState() == eRobotState.Alarm)
@@ -1608,7 +1588,6 @@ namespace Acura3._0.ModuleForms
             if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "RobotTimes")))
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_19.Text} overtime", false);
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart2_19.Text);
                 RefreshDifferentThreadUI(flowChartMessage1, () =>
                 {
@@ -1625,7 +1604,6 @@ namespace Acura3._0.ModuleForms
         {
             B_ScrewFasten = false;
             J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2_16.Text} finish", true);
             return FCResultType.NEXT;
         }
 
@@ -1633,7 +1611,6 @@ namespace Acura3._0.ModuleForms
         {
             B_ThrowScrew = true;
             J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart43.Text} finish", true);
             return FCResultType.NEXT;
         }
 
@@ -1642,7 +1619,6 @@ namespace Acura3._0.ModuleForms
             if (!B_ThrowScrew)
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart44.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -1651,21 +1627,18 @@ namespace Acura3._0.ModuleForms
         private FCResultType flowChart2_FlowRun(object sender, EventArgs e)
         {
             J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2.Text} finish", true);
             return FCResultType.CASE1;
         }
 
         private FCResultType flowChart1_FlowRun(object sender, EventArgs e)
         {
             J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart1.Text} finish", true);
             return FCResultType.CASE1;
         }
 
         private FCResultType flowChart19_FlowRun(object sender, EventArgs e)
         {
             J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart19.Text} finish", true);
             return FCResultType.CASE1;
         }
 
@@ -1675,11 +1648,10 @@ namespace Acura3._0.ModuleForms
         #region Jacking Flow
         private FCResultType flowChart3_1_FlowRun(object sender, EventArgs e)
         {
-            if (B_Press)
+            if (B_JackingFlow)
             {
                 SetAxisSpeed();
                 B_GantryResult = true;
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_1.Text} finish", true);
                 J_AxisAutoTm.Restart();
                 return FCResultType.NEXT;
             }
@@ -1692,7 +1664,6 @@ namespace Acura3._0.ModuleForms
             bool bFinsh = MTR_Jacking.Goto(AxisZ.Position);
             if (bFinsh)
             {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_2.Text} finish", true);
                 MTR_Jacking.WorkSpeed = 1;
                 J_AxisAutoTm.Restart();
                 B_StartReadPressure = true;
@@ -1705,7 +1676,6 @@ namespace Acura3._0.ModuleForms
             if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "AxisTimes")))
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_2.Text} overtime", false);
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart3_2.Text);
                 GantryAlarm("3014", Alarm3_01, false);
                 return FCResultType.CASE2;
@@ -1728,12 +1698,15 @@ namespace Acura3._0.ModuleForms
                 if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "IOTimes")))
                 {
                     J_AxisIniTm.Restart();
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_3.Text} overtime", false);
                     JSDK.Alarm.Show("3002");
                     return FCResultType.IDLE;
                 }
             }
             pressureQueue.Clear();
+            RefreshDifferentThreadUI(MiddleLayer.RecordF.PressureCurves_Chart1, () =>
+            {
+                MiddleLayer.RecordF.PressureCurves_Chart1.ClearPoints();
+            });
             Task.Run(() =>
             {
                 while (B_StartReadPressure)
@@ -1755,7 +1728,6 @@ namespace Acura3._0.ModuleForms
                 }
             });
 
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_3.Text} finish", true);
             return FCResultType.NEXT;
         }
         private FCResultType flowChart3_5_FlowRun(object sender, EventArgs e)
@@ -1769,7 +1741,6 @@ namespace Acura3._0.ModuleForms
                 {
                     B_StartReadPressure = false;
                     B_PressureOverlimit = false;
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module  {flowChart3_5.Text}  number{j} PressureValue overlimit", false);
                     J_AxisAutoTm.Restart();
                     GantryAlarm("3036", Alarm3_02, true, j);
                     return FCResultType.CASE2;
@@ -1786,19 +1757,16 @@ namespace Acura3._0.ModuleForms
                     B_StartReadPressure = false;
                     if ((A || B || C || D || E || F) && !SysPara.IsDryRun && !B_GantryDryRun && !B_ByPassPressure)
                     {
-                        MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_5.Text} pressure NG", false);
                         J_AxisAutoTm.Restart();
                         GantryAlarm("3047", Alarm3_02);
                         return FCResultType.CASE2;
                     }
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_5.Text} finish", true);
                     J_AxisAutoTm.Restart();
                     return FCResultType.NEXT;
                 }
 
                 if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "AxisTimes")))
                 {
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_5.Text} overtime", false);
                     J_AxisAutoTm.Restart();
                     MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart3_5.Text);
                     GantryAlarm("3022", Alarm3_02);
@@ -1813,7 +1781,6 @@ namespace Acura3._0.ModuleForms
             if (SysPara.IsDryRun || B_GantryDryRun || B_ByPassPressure)
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_6.Text} finish", true);
                 return FCResultType.NEXT;
             }
             if (!myPressureCom.IsConnected)
@@ -1825,7 +1792,6 @@ namespace Acura3._0.ModuleForms
                 if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "IOTimes")))
                 {
                     J_AxisIniTm.Restart();
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_6.Text} overtime", false);
                     JSDK.Alarm.Show("3002");
                     return FCResultType.IDLE;
                 }
@@ -1853,14 +1819,12 @@ namespace Acura3._0.ModuleForms
                 }
                 PressureDataShowUI(pressureData);
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_6.Text} finish", true);
                 return FCResultType.NEXT;
             }
 
             if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_6.Text} overtime", false);
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart3_6.Text);
                 GantryAlarm("3026", Alarm3_03);
                 return FCResultType.CASE2;
@@ -1871,29 +1835,25 @@ namespace Acura3._0.ModuleForms
         private FCResultType flowChart3_4_FlowRun(object sender, EventArgs e)
         {
             SetAxisSpeed();
-            B_Press = false;
+            B_JackingFlow = false;
             J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3_4.Text} finish", true);
             return FCResultType.NEXT;
         }
 
         private FCResultType flowChart4_FlowRun(object sender, EventArgs e)
         {
             J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4.Text} finish", true);
             return FCResultType.CASE1;
         }
         private FCResultType flowChart21_FlowRun(object sender, EventArgs e)
         {
             J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart21.Text} finish", true);
             return FCResultType.NEXT;
         }
         private FCResultType flowChart5_FlowRun(object sender, EventArgs e)
         {
             B_GantryResult = false;
             J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart5.Text} finish", true);
             return FCResultType.NEXT;
         }
         #endregion
@@ -1905,7 +1865,6 @@ namespace Acura3._0.ModuleForms
             {
                 B_GantryResult = true;
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4_1.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -1916,7 +1875,6 @@ namespace Acura3._0.ModuleForms
             if (F_Robot.SetTaskIndex(I_ScrewCount) && F_Robot.SetRobotTask(3))
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4_7.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -1927,7 +1885,6 @@ namespace Acura3._0.ModuleForms
             if (F_Robot.GetCurrentTaskState() == eRobotState.Done)
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4_2.Text} finish", true);
                 return FCResultType.NEXT;
             }
             if (F_Robot.GetCurrentTaskState() == eRobotState.Alarm)
@@ -1940,7 +1897,6 @@ namespace Acura3._0.ModuleForms
             if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "AxisTimes")))
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4_2.Text} overtime", false);
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart4_2.Text);
                 RefreshDifferentThreadUI(Alarm4_02, () =>
                 {
@@ -1959,7 +1915,6 @@ namespace Acura3._0.ModuleForms
             if (SysPara.IsDryRun || B_GantryDryRun || B_ByPassVision)
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "Dryrun Mode : " + $"{this.Text} Module {flowChart4_3.Text} finish", true);
                 return FCResultType.NEXT;
             }
             bool B_OK = false;
@@ -1992,7 +1947,6 @@ namespace Acura3._0.ModuleForms
                     J_AxisAutoTm.Restart();
                     return FCResultType.NEXT;
                 }
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4_3.Text} NG", false);
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart4_3.Text);
                 GantryAlarm("3034", Alarm4_04);
                 return FCResultType.CASE2;
@@ -2000,7 +1954,6 @@ namespace Acura3._0.ModuleForms
             if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "IOTimes")))
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4_3.Text} overtime", false);
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart4_3.Text);
                 GantryAlarm("3034", Alarm4_04);
                 return FCResultType.CASE2;
@@ -2015,7 +1968,6 @@ namespace Acura3._0.ModuleForms
             if (SysPara.IsDryRun || B_GantryDryRun || B_ByPassVision)
             {
                 point3D = new VppComp.Point3D { x = 0, y = 0 };
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "Dryrun Mode : " + $"{this.Text} Module {flowChart4_4.Text} finish", true);
                 DelayMs(800);
                 OB_CCDLight.Off();
                 J_AxisAutoTm.Restart();
@@ -2059,13 +2011,11 @@ namespace Acura3._0.ModuleForms
                 if ((Math.Abs(point3D.x) < D_offSetXLimitMax) && (Math.Abs(point3D.y) < D_offSetYLimitMax))
                 {
                     J_AxisAutoTm.Restart();
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4_4.Text} finish", true);
                     return FCResultType.NEXT;
                 }
                 else
                 {
                     J_AxisAutoTm.Restart();
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4_4.Text} vision offset overlimit", false);
                     MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart4_4.Text);
                     GantryAlarm("8004", Alarm4_03);
                     return FCResultType.CASE2;
@@ -2074,7 +2024,6 @@ namespace Acura3._0.ModuleForms
             else
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4_4.Text} vision run NG", false);
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart4_4.Text);
                 GantryAlarm("3038", Alarm4_03);
                 return FCResultType.CASE2;
@@ -2085,7 +2034,6 @@ namespace Acura3._0.ModuleForms
         {
             B_ScrewVision = false;
             J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4_6.Text} finish", true);
             return FCResultType.NEXT;
         }
 
@@ -2093,13 +2041,11 @@ namespace Acura3._0.ModuleForms
         {
             B_GantryResult = false;
             J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3.Text} finish", true);
             return FCResultType.NEXT;
         }
         private FCResultType flowChart7_FlowRun(object sender, EventArgs e)
         {
             J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart7.Text} finish", true);
             return FCResultType.NEXT;
         }
 
@@ -2118,7 +2064,6 @@ namespace Acura3._0.ModuleForms
             if (B_ThrowScrew)
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6_1.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -2129,7 +2074,6 @@ namespace Acura3._0.ModuleForms
             if (F_Robot.SetTaskIndex(1) && F_Robot.SetRobotTask(5))
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6_2.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -2140,7 +2084,6 @@ namespace Acura3._0.ModuleForms
             if (F_Robot.GetCurrentTaskState() == eRobotState.Done)
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6_3.Text} finish", true);
                 return FCResultType.NEXT;
             }
             if (F_Robot.GetCurrentTaskState() == eRobotState.Alarm)
@@ -2153,7 +2096,6 @@ namespace Acura3._0.ModuleForms
             if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "AxisTimes")))
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6_3.Text} overtime", false);
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart6_3.Text);
                 RefreshDifferentThreadUI(flowChartMessage12, () =>
                 {
@@ -2170,13 +2112,11 @@ namespace Acura3._0.ModuleForms
         {
             B_ThrowScrew = false;
             J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6_7.Text} finish", true);
             return FCResultType.NEXT;
         }
         private FCResultType flowChart56_FlowRun(object sender, EventArgs e)
         {
             J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart56.Text} finish", true);
             return FCResultType.NEXT;
         }
         #endregion
@@ -2184,7 +2124,7 @@ namespace Acura3._0.ModuleForms
         #region Displacement
         private void btnConnectDisplacement_Click(object sender, EventArgs e)
         {
-            if (SysPara.newReadCOM.SPCom.ConnectStates() || SysPara.newReadCOM.ConnectCom(GetSettingValue("RSet", "DisplacementCom")))
+            if (SysPara.newReadCOM.SPCom.ConnectStates() || SysPara.newReadCOM.ConnectCom(GetSettingValue("PSet", "DisplacementCom")))
             {
                 btnConnectDisplacement.BackColor = Color.Green;
             }
@@ -2195,6 +2135,10 @@ namespace Acura3._0.ModuleForms
         private void btnDisConnectDisplacement_Click(object sender, EventArgs e)
         {
             SysPara.newReadCOM.DisconnectCom3();
+            if (!SysPara.newReadCOM.SPCom.ConnectStates())
+            {
+                btnConnectDisplacement.BackColor = Color.Transparent;
+            }
         }
 
         private void btnReadData_Click(object sender, EventArgs e)
@@ -2399,7 +2343,6 @@ namespace Acura3._0.ModuleForms
         {
             if (B_GetScrewData)
             {
-                B_GetScrewData = false;
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -2430,6 +2373,7 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart8_FlowRun(object sender, EventArgs e)
         {
+            B_GetScrewData = false;
             return FCResultType.NEXT;
         }
         #endregion
@@ -2442,15 +2386,14 @@ namespace Acura3._0.ModuleForms
         {
             B_GantryResult = false;
             J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart5.Text} finish", true);
             return FCResultType.NEXT;
         }
 
         private FCResultType flowChart12_FlowRun_1(object sender, EventArgs e)
         {
-            //MiddleLayer.ConveyorF.myRFID1.ResultBool = false;
+            MiddleLayer.ConveyorF.myRFID1.B_Result = false;
+            MiddleLayer.ConveyorF.MachineAvailable1 = true;
             J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart5.Text} finish", true);
             return FCResultType.NEXT;
         }
 
@@ -2461,7 +2404,6 @@ namespace Acura3._0.ModuleForms
                 B_ScrewVision = true;
             }
             J_AxisAutoTm.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart5.Text} finish", true);
             return FCResultType.NEXT;
         }
 
@@ -2483,7 +2425,7 @@ namespace Acura3._0.ModuleForms
         public bool ConnectPressureCom()
         {
             myPressureCom.DisConnect();
-            myPressureCom.PortName = GetSettingValue("RSet", "PressureCOM");
+            myPressureCom.PortName = GetSettingValue("PSet", "PressureCOM");
             return myPressureCom.Connect();
         }
 
@@ -2500,7 +2442,7 @@ namespace Acura3._0.ModuleForms
             try
             {
                 string[] result = new string[6];
-                int delaytime = GetSettingValue("RSet", "PressureDelaytime");
+                int delaytime = GetSettingValue("PSet", "PressureDelaytime");
                 result = myPressureCom.ReadAllPressureValue(6, delaytime);
                 for (int i = 0; i < result.Length; i++)
                 {
@@ -2520,10 +2462,9 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart13_FlowRun(object sender, EventArgs e)
         {
-            F_Robot.RobotIP = GetSettingValue("RSet", "RobotIP");
+            F_Robot.RobotIP = GetSettingValue("PSet", "RobotIP");
             if (F_Robot.ConnectToRobot())
             {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart13.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -2532,7 +2473,6 @@ namespace Acura3._0.ModuleForms
         private FCResultType flowChart14_FlowRun(object sender, EventArgs e)
         {
             RobotStart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart14.Text} finish", true);
             return FCResultType.NEXT;
         }
 
@@ -2540,7 +2480,6 @@ namespace Acura3._0.ModuleForms
         {
             if (F_Robot.SetSpeed(5))
             {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart15.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -2550,7 +2489,6 @@ namespace Acura3._0.ModuleForms
         {
             if (F_Robot.SetRobotMode(1))
             {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart16.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -2560,7 +2498,6 @@ namespace Acura3._0.ModuleForms
         {
             if (F_Robot.SetRecipe(1))
             {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart17.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -2572,7 +2509,6 @@ namespace Acura3._0.ModuleForms
             {
                 if (F_Robot.SetDryRun(1))
                 {
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart18.Text} finish", true);
                     return FCResultType.NEXT;
                 }
             }
@@ -2580,7 +2516,6 @@ namespace Acura3._0.ModuleForms
             {
                 if (F_Robot.SetDryRun(0))
                 {
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart18.Text} finish", true);
                     return FCResultType.NEXT;
                 }
             }
@@ -2592,7 +2527,6 @@ namespace Acura3._0.ModuleForms
             if (F_Robot.SetRobotTask(1))
             {
                 J_AxisIniTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart20.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -2603,7 +2537,6 @@ namespace Acura3._0.ModuleForms
             if (F_Robot.GetCurrentTaskState() == eRobotState.Done)
             {
                 J_AxisIniTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_9.Text} finish", true);
                 return FCResultType.NEXT;
             }
             if (F_Robot.GetCurrentTaskState() == eRobotState.Alarm)
@@ -2615,7 +2548,6 @@ namespace Acura3._0.ModuleForms
             if (J_AxisAutoTm.IsOn(GetSettingValue("PSet", "RobotTimes")))
             {
                 J_AxisIniTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart0_9.Text} robot overtime", false);
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart0_9.Text);
                 RefreshDifferentThreadUI(flowChartMessage3, () =>
                 {
@@ -2635,19 +2567,22 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart9_FlowRun(object sender, EventArgs e)
         {
+            if (SysPara.IsDryRun)
+            {
+                return FCResultType.NEXT; //7.5空跑
+            }
+
             SetAxisSpeed();
             JackingAxisPos AxisZ = GetJackingPointList("SafePos");
             bool bFinsh = MTR_Jacking.Goto(AxisZ.Position);
             if (bFinsh)
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart9.Text} finish", true);
                 return FCResultType.NEXT;
             }
             if (J_AxisIniTm.IsOn(GetSettingValue("PSet", "AxisTimes")))
             {
                 J_AxisAutoTm.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart9.Text} overtime", false);
                 MiddleLayer.SystemF.ErrorDataLogShow(this.Text, flowChart9.Text);
                 GantryAlarm("3012", flowChartMessage2, false);
                 return FCResultType.CASE1;

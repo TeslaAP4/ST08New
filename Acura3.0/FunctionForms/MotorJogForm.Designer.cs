@@ -46,9 +46,9 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(165, 109);
+            this.label1.Location = new System.Drawing.Point(119, 109);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 23);
+            this.label1.Size = new System.Drawing.Size(182, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Relative Distance :";
             // 
@@ -59,7 +59,7 @@
             this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(322, 60);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(57, 27);
+            this.radioButton1.Size = new System.Drawing.Size(62, 28);
             this.radioButton1.TabIndex = 2;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Jog";
@@ -72,7 +72,7 @@
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(394, 60);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(88, 27);
+            this.radioButton2.Size = new System.Drawing.Size(102, 28);
             this.radioButton2.TabIndex = 3;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Relative";
@@ -82,9 +82,9 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(204, 15);
+            this.label3.Location = new System.Drawing.Point(165, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 23);
+            this.label3.Size = new System.Drawing.Size(136, 24);
             this.label3.TabIndex = 4;
             this.label3.Text = "Speed Ratio :";
             // 
@@ -105,9 +105,9 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(208, 62);
+            this.label4.Location = new System.Drawing.Point(165, 60);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 23);
+            this.label4.Size = new System.Drawing.Size(132, 24);
             this.label4.TabIndex = 6;
             this.label4.Text = "Move Mode :";
             // 
@@ -170,7 +170,7 @@
             this.ClientSize = new System.Drawing.Size(692, 707);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

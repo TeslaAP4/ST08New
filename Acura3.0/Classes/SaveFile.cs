@@ -241,8 +241,7 @@ namespace Acura3._0.Classes
                         else//文件删除文件
                         {
                             File.Delete(info.FullName);
-                        }
-                        MiddleLayer.RecordF.LogShow(SysPara.UserName + "  " + "超过文件保存时间，自动删除文件", true);
+                        }  
                     }
                 }
             }

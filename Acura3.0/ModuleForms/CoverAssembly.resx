@@ -155,11 +155,35 @@
   <metadata name="State.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Numberturns.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="State.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="RecipeData.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>138, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="motorJog1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAABW5JREFUWEe92c9vFkUYB/D37oE/w4i0b4mJMYZqjAfFGA8oGBNPxniz9O7BA4nX
+        wgAADsIBFShKgAAABW5JREFUWEe92c9vFkUYB/D37oE/w4i0b4mJMYZqjAfFGA8oGBNPxniz9O7BA4nX
         qjXRhKZGAY0R26YQrZqA0EK1al8hTS20SvEitoX+eH+/pY7znR+7z8w+u7Nb1Df50re7z8x8djq7775s
         Ca/h4eH7ZI7JnD89Nl45N/3jn9/PXWv+fH1ZFM2sF64mFIwNw/hX3wzCppD2ZbDHP/r4xOSFmcoq10Fa
         FGrxpqggSzfFLyp/eDH7ZVBb9CCmry5My597DFeBB4C9fGW+ioKLlTnxxrG3RO8TT4oH9nUFs7dguD78
@@ -188,7 +212,7 @@
   <data name="motorJog2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAABXdJREFUWEe92e9PHEUYB3De+6J/hrEWjsbEGFM0xhdaY3xRbY2Jr4zxnZT3vvBF
+        wgAADsIBFShKgAAABXdJREFUWEe92e9PHEUYB3De+6J/hrEWjsbEGFM0xhdaY3xRbY2Jr4zxnZT3vvBF
         E9+iYqJJCUbbappWStAoatLaQouiQtsQpAUt+sYKVDjuJwc4zndmnt1nZ5/d2QPjJd/k2H1m5nNPZ+/2
         eh388fPtpX06b+rc0VG7ybQQqa5A1nRg2ed4yYc+UXJFZsDYxA/q9PDnwZy5gHyhPkFGMqLPoQa1pxFh
         Hh6sTQ5nKjmmfeCAO2EGHHnxJfXAgc5C2d9mpDmkwAALTM5m0foJtoHZAv0fDIqD/aQhXWp/ZyCo8cZJ
@@ -216,5 +240,11 @@
   </data>
   <metadata name="T_CurrPos.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>257, 17</value>
+  </metadata>
+  <metadata name="SettingData.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="SettingData.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
 </root>

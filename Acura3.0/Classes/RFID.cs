@@ -14,7 +14,7 @@ namespace Acura3._0.Classes
         /// <summary>
         /// 连接状态
         /// </summary>
-        public bool connect ;
+        public bool connect;
 
         public void ReceiveHandler()
         {
@@ -44,7 +44,7 @@ namespace Acura3._0.Classes
         /// <param name="ip"></param>
         /// <param name="port"></param>
         /// <returns></returns>
-        public bool RFID_Connect(string ip,ushort port,string id)
+        public bool RFID_Connect(string ip, ushort port, string id)
         {
             if (connect)
             {
@@ -96,7 +96,7 @@ namespace Acura3._0.Classes
         /// <param name="pos">起始地址（默认0）</param>
         /// <param name="len">读取的字节数（默认16）</param>
         /// <returns></returns>
-        public string RFID_ReadDataTostring(string id,string space=" ", string pos="0", string len="16")
+        public string RFID_ReadDataTostring(string id, string space = " ", string pos = "0", string len = "16")
         {
             Status_enum status = Status_enum.FAILURE;
             byte[] datas_r = new byte[16];
@@ -111,6 +111,30 @@ namespace Acura3._0.Classes
             }
         }
 
+
+        /// <summary>
+        /// 读取数据转成文字
+        /// </summary>
+        /// <param name="id">id</param>
+        /// <param name="space">默认“ ”</param>
+        /// <param name="pos">起始地址（默认0）</param>
+        /// <param name="len">读取的字节数（默认16）</param>
+        /// <returns></returns>
+        public string RFID_ReadDataString(string id, string space = " ", string pos = "0", string len = "16")
+        {
+            Status_enum status = Status_enum.FAILURE;
+            String datas_r = "";
+            status = reader.ReadBytes(byte.Parse(id), ushort.Parse(pos), byte.Parse(len), ref datas_r);
+            if (status == Status_enum.SUCCESS)
+            {
+                return datas_r;
+            }
+            else
+            {
+                return "fail";
+            }
+        }
+
         /// <summary>
         ///  写入RFID
         /// </summary>
@@ -120,10 +144,10 @@ namespace Acura3._0.Classes
         /// <param name="len">读取字节数（默认16）</param>
         /// <returns></returns>
 
-        public bool RFID_Write(string id, string data, string pos="0", string len="16")
+        public bool RFID_Write(string id, string data, string pos = "0", string len = "16")
         {
             Status_enum status = Status_enum.FAILURE;
-            status = reader.WriteBytes(byte.Parse(id), ushort.Parse( pos), byte.Parse(len), data);
+            status = reader.WriteBytes(byte.Parse(id), ushort.Parse(pos), byte.Parse(len), data);
             if (status == Status_enum.SUCCESS)
             {
                 return true;
@@ -134,7 +158,7 @@ namespace Acura3._0.Classes
             }
         }
 
-        
+
         /// <summary>
         /// 清除数据
         /// </summary>
@@ -173,7 +197,7 @@ namespace Acura3._0.Classes
             for (int i = 0; i < b.Length; i++)
             {
                 result += Convert.ToString(b[i], 16).ToUpper();
-                
+
             }
             return result;
         }
@@ -186,11 +210,11 @@ namespace Acura3._0.Classes
         public string HexToString(string Hexdata)
         {
             string result = string.Empty;
-            string hex= Hexdata.Substring(0, 2);
+            string hex = Hexdata.Substring(0, 2);
             hex += Hexdata.Substring(3, 2);
-            byte[] arrByte = new byte[hex.Length/2];
+            byte[] arrByte = new byte[hex.Length / 2];
             int index = 0;
-            for (int i = 0; i < hex.Length; i+=2)
+            for (int i = 0; i < hex.Length; i += 2)
             {
                 arrByte[index++] = Convert.ToByte(hex.Substring(i, 2), 16);
             }

@@ -127,12 +127,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\x64\Debug\BaslerGige.dll</HintPath>
     </Reference>
-    <Reference Include="CFX, Version=1.3.4.0, Culture=neutral, PublicKeyToken=545a74e2dca3496a, processorArchitecture=MSIL">
+    <Reference Include="CFX, Version=1.3.8.0, Culture=neutral, PublicKeyToken=545a74e2dca3496a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>ReferenceDLL\CFX.dll</HintPath>
+      <HintPath>bin\x64\Debug\CFX.dll</HintPath>
     </Reference>
-    <Reference Include="CFX_Adapter">
-      <HintPath>ReferenceDLL\CFX_Adapter.dll</HintPath>
+    <Reference Include="CFX_Adapter, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\CFX_Adapter.dll</HintPath>
     </Reference>
     <Reference Include="Cognex.FieldCalibrationApplication.Plugin, Version=81.0.0.0, Culture=neutral, PublicKeyToken=ef0f902af9dee505, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
@@ -610,6 +611,10 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="PressureCurves, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\PressureCurves.dll</HintPath>
+    </Reference>
     <Reference Include="QWhale.Common, Version=1.62.4104.36375, Culture=neutral, PublicKeyToken=da632fd1713dff10" />
     <Reference Include="QWhale.Editor, Version=1.62.4104.36377, Culture=neutral, PublicKeyToken=da632fd1713dff10" />
     <Reference Include="QWhale.Syntax, Version=1.62.4104.36376, Culture=neutral, PublicKeyToken=da632fd1713dff10" />
@@ -670,9 +675,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="SystemCommon">
       <HintPath>ReferenceDLL\SystemCommon.dll</HintPath>
-    </Reference>
-    <Reference Include="TighteningCurves">
-      <HintPath>..\..\..\AcuRA_ST04 20240605\AcuRA_ST04\Acura3.0\bin\x64\Debug\TighteningCurves.dll</HintPath>
     </Reference>
     <Reference Include="TwinCAT.Ads, Version=4.3.0.0, Culture=neutral, PublicKeyToken=180016cd49e5e8c3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

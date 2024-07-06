@@ -47,12 +47,12 @@
             this.tcProductionSetting.Controls.Add(this.tabPage2);
             this.tcProductionSetting.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcProductionSetting.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcProductionSetting.ItemSize = new System.Drawing.Size(200, 50);
+            this.tcProductionSetting.ItemSize = new System.Drawing.Size(290, 50);
             this.tcProductionSetting.Location = new System.Drawing.Point(0, 0);
             this.tcProductionSetting.Margin = new System.Windows.Forms.Padding(0);
             this.tcProductionSetting.Name = "tcProductionSetting";
             this.tcProductionSetting.SelectedIndex = 0;
-            this.tcProductionSetting.Size = new System.Drawing.Size(1062, 670);
+            this.tcProductionSetting.Size = new System.Drawing.Size(1062, 615);
             this.tcProductionSetting.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tcProductionSetting.TabIndex = 2;
             // 
@@ -63,7 +63,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(1054, 612);
+            this.tabPage1.Size = new System.Drawing.Size(1054, 557);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Module #1";
             // 
@@ -74,7 +74,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(1054, 612);
+            this.tabPage2.Size = new System.Drawing.Size(1054, 557);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Module #2";
             // 
@@ -117,15 +117,15 @@
             this.panel1.Location = new System.Drawing.Point(0, 39);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1062, 670);
+            this.panel1.Size = new System.Drawing.Size(1062, 615);
             this.panel1.TabIndex = 0;
             // 
             // ProductionSettingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1062, 709);
+            this.ClientSize = new System.Drawing.Size(1062, 654);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Margin = new System.Windows.Forms.Padding(2);

@@ -113,13 +113,6 @@
             this.IB_Robot_Enable = new JabilSDK.Controls.Input();
             this.OB_ModuleAlram_Light = new JabilSDK.Controls.Output();
             this.OB_CCDLight = new JabilSDK.Controls.Output();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numberturns = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.label49 = new System.Windows.Forms.Label();
@@ -231,6 +224,14 @@
             this.dataColumn10 = new System.Data.DataColumn();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.dataColumn11 = new System.Data.DataColumn();
+            this.Numberturns = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.plMaintenance.SuspendLayout();
             this.plProductionSetting.SuspendLayout();
             this.plRecipeEditor.SuspendLayout();
@@ -249,7 +250,6 @@
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -275,13 +275,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // plMaintenance
             // 
             this.plMaintenance.Controls.Add(this.panel2);
             this.plMaintenance.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.plMaintenance.Size = new System.Drawing.Size(1528, 580);
+            this.plMaintenance.Size = new System.Drawing.Size(1824, 903);
             // 
             // plProductionSetting
             // 
@@ -290,13 +292,13 @@
             this.plProductionSetting.Controls.Add(this.checkBox2);
             this.plProductionSetting.Controls.Add(this.checkBox1);
             this.plProductionSetting.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.plProductionSetting.Size = new System.Drawing.Size(799, 627);
+            this.plProductionSetting.Size = new System.Drawing.Size(1824, 903);
             // 
             // plRecipeEditor
             // 
             this.plRecipeEditor.Controls.Add(this.tabControl3);
             this.plRecipeEditor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.plRecipeEditor.Size = new System.Drawing.Size(799, 627);
+            this.plRecipeEditor.Size = new System.Drawing.Size(1824, 903);
             // 
             // plFlowInitial
             // 
@@ -320,22 +322,22 @@
             this.plFlowInitial.Controls.Add(this.flowChart2);
             this.plFlowInitial.Controls.Add(this.flowChart1);
             this.plFlowInitial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.plFlowInitial.Size = new System.Drawing.Size(1528, 580);
+            this.plFlowInitial.Size = new System.Drawing.Size(1824, 903);
             // 
             // plFlowAuto
             // 
             this.plFlowAuto.Controls.Add(this.panel1);
             this.plFlowAuto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.plFlowAuto.Size = new System.Drawing.Size(799, 627);
+            this.plFlowAuto.Size = new System.Drawing.Size(1824, 903);
             // 
             // plMachineStatus
             // 
+            this.plMachineStatus.Controls.Add(this.panel3);
             this.plMachineStatus.Controls.Add(this.pictureBox1);
-            this.plMachineStatus.Controls.Add(this.dataGridView1);
             this.plMachineStatus.Controls.Add(this.groupBox7);
             this.plMachineStatus.Controls.Add(this.pictureBox2);
             this.plMachineStatus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.plMachineStatus.Size = new System.Drawing.Size(799, 627);
+            this.plMachineStatus.Size = new System.Drawing.Size(1824, 903);
             // 
             // plMotionSetup
             // 
@@ -344,7 +346,7 @@
             this.plMotionSetup.Controls.Add(this.lbSpeedRatio);
             this.plMotionSetup.Controls.Add(this.trackBar1);
             this.plMotionSetup.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.plMotionSetup.Size = new System.Drawing.Size(799, 627);
+            this.plMotionSetup.Size = new System.Drawing.Size(1824, 903);
             // 
             // plMotorControl
             // 
@@ -383,11 +385,11 @@
             this.flowChart1.CASE2 = null;
             this.flowChart1.CASE3 = null;
             this.flowChart1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart1.Location = new System.Drawing.Point(322, 41);
+            this.flowChart1.Location = new System.Drawing.Point(235, 41);
             this.flowChart1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart1.Name = "flowChart1";
             this.flowChart1.NEXT = this.flowChart2;
-            this.flowChart1.Size = new System.Drawing.Size(369, 31);
+            this.flowChart1.Size = new System.Drawing.Size(456, 31);
             this.flowChart1.TabIndex = 19;
             this.flowChart1.Text = "Start  1.01";
             this.flowChart1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -401,11 +403,11 @@
             this.flowChart2.CASE2 = this.flowChartMessage1;
             this.flowChart2.CASE3 = null;
             this.flowChart2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart2.Location = new System.Drawing.Point(322, 84);
+            this.flowChart2.Location = new System.Drawing.Point(235, 84);
             this.flowChart2.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart2.Name = "flowChart2";
             this.flowChart2.NEXT = this.flowChart3;
-            this.flowChart2.Size = new System.Drawing.Size(369, 31);
+            this.flowChart2.Size = new System.Drawing.Size(456, 31);
             this.flowChart2.TabIndex = 20;
             this.flowChart2.Text = "Connect height measure laser  1.02";
             this.flowChart2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -444,11 +446,11 @@
             this.flowChart3.CASE2 = this.flowChartMessage2;
             this.flowChart3.CASE3 = null;
             this.flowChart3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart3.Location = new System.Drawing.Point(322, 127);
+            this.flowChart3.Location = new System.Drawing.Point(235, 127);
             this.flowChart3.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart3.Name = "flowChart3";
             this.flowChart3.NEXT = this.flowChart33;
-            this.flowChart3.Size = new System.Drawing.Size(369, 31);
+            this.flowChart3.Size = new System.Drawing.Size(456, 31);
             this.flowChart3.TabIndex = 21;
             this.flowChart3.Text = "Connect scara  1.03";
             this.flowChart3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -487,11 +489,11 @@
             this.flowChart33.CASE2 = this.flowChartMessage3;
             this.flowChart33.CASE3 = null;
             this.flowChart33.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart33.Location = new System.Drawing.Point(322, 170);
+            this.flowChart33.Location = new System.Drawing.Point(235, 170);
             this.flowChart33.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart33.Name = "flowChart33";
             this.flowChart33.NEXT = this.flowChart4;
-            this.flowChart33.Size = new System.Drawing.Size(369, 31);
+            this.flowChart33.Size = new System.Drawing.Size(456, 31);
             this.flowChart33.TabIndex = 29;
             this.flowChart33.Text = "Set initial speed  1.08";
             this.flowChart33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -530,11 +532,11 @@
             this.flowChart4.CASE2 = null;
             this.flowChart4.CASE3 = null;
             this.flowChart4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart4.Location = new System.Drawing.Point(322, 213);
+            this.flowChart4.Location = new System.Drawing.Point(235, 213);
             this.flowChart4.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart4.Name = "flowChart4";
             this.flowChart4.NEXT = this.flowChart19;
-            this.flowChart4.Size = new System.Drawing.Size(369, 31);
+            this.flowChart4.Size = new System.Drawing.Size(456, 31);
             this.flowChart4.TabIndex = 22;
             this.flowChart4.Text = "Scara start  1.04";
             this.flowChart4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -548,11 +550,11 @@
             this.flowChart19.CASE2 = this.flowChartMessage4;
             this.flowChart19.CASE3 = null;
             this.flowChart19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart19.Location = new System.Drawing.Point(322, 257);
+            this.flowChart19.Location = new System.Drawing.Point(235, 257);
             this.flowChart19.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart19.Name = "flowChart19";
             this.flowChart19.NEXT = this.flowChart28;
-            this.flowChart19.Size = new System.Drawing.Size(369, 31);
+            this.flowChart19.Size = new System.Drawing.Size(456, 31);
             this.flowChart19.TabIndex = 27;
             this.flowChart19.Text = "Set robot recipe  1.05";
             this.flowChart19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -591,11 +593,11 @@
             this.flowChart28.CASE2 = this.flowChartMessage5;
             this.flowChart28.CASE3 = null;
             this.flowChart28.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart28.Location = new System.Drawing.Point(322, 299);
+            this.flowChart28.Location = new System.Drawing.Point(235, 299);
             this.flowChart28.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart28.Name = "flowChart28";
             this.flowChart28.NEXT = this.flowChart8;
-            this.flowChart28.Size = new System.Drawing.Size(369, 31);
+            this.flowChart28.Size = new System.Drawing.Size(456, 31);
             this.flowChart28.TabIndex = 28;
             this.flowChart28.Text = "Set robot auto mode  1.06";
             this.flowChart28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -634,11 +636,11 @@
             this.flowChart8.CASE2 = this.flowChartMessage6;
             this.flowChart8.CASE3 = null;
             this.flowChart8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart8.Location = new System.Drawing.Point(322, 342);
+            this.flowChart8.Location = new System.Drawing.Point(235, 342);
             this.flowChart8.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart8.Name = "flowChart8";
             this.flowChart8.NEXT = this.flowChart5;
-            this.flowChart8.Size = new System.Drawing.Size(369, 31);
+            this.flowChart8.Size = new System.Drawing.Size(456, 31);
             this.flowChart8.TabIndex = 26;
             this.flowChart8.Text = "Set dryrun or normal mode  1.07";
             this.flowChart8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -677,11 +679,11 @@
             this.flowChart5.CASE2 = this.flowChartMessage7;
             this.flowChart5.CASE3 = null;
             this.flowChart5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart5.Location = new System.Drawing.Point(322, 385);
+            this.flowChart5.Location = new System.Drawing.Point(235, 385);
             this.flowChart5.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart5.Name = "flowChart5";
             this.flowChart5.NEXT = this.flowChart6;
-            this.flowChart5.Size = new System.Drawing.Size(369, 31);
+            this.flowChart5.Size = new System.Drawing.Size(456, 31);
             this.flowChart5.TabIndex = 23;
             this.flowChart5.Text = "Notify scara start initial  1.09";
             this.flowChart5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -720,11 +722,11 @@
             this.flowChart6.CASE2 = this.flowChartMessage8;
             this.flowChart6.CASE3 = null;
             this.flowChart6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart6.Location = new System.Drawing.Point(322, 427);
+            this.flowChart6.Location = new System.Drawing.Point(235, 427);
             this.flowChart6.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart6.Name = "flowChart6";
             this.flowChart6.NEXT = this.flowChart7;
-            this.flowChart6.Size = new System.Drawing.Size(369, 31);
+            this.flowChart6.Size = new System.Drawing.Size(456, 31);
             this.flowChart6.TabIndex = 24;
             this.flowChart6.Text = "Wait scara initial finish  1.10";
             this.flowChart6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -763,11 +765,11 @@
             this.flowChart7.CASE2 = null;
             this.flowChart7.CASE3 = null;
             this.flowChart7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart7.Location = new System.Drawing.Point(322, 471);
+            this.flowChart7.Location = new System.Drawing.Point(235, 471);
             this.flowChart7.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart7.Name = "flowChart7";
             this.flowChart7.NEXT = null;
-            this.flowChart7.Size = new System.Drawing.Size(369, 31);
+            this.flowChart7.Size = new System.Drawing.Size(456, 31);
             this.flowChart7.TabIndex = 25;
             this.flowChart7.Text = "Finish  1.11";
             this.flowChart7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -780,7 +782,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(782, 1569);
+            this.panel1.Size = new System.Drawing.Size(1807, 1569);
             this.panel1.TabIndex = 0;
             // 
             // tabControl2
@@ -792,7 +794,7 @@
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(782, 1569);
+            this.tabControl2.Size = new System.Drawing.Size(1807, 1569);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage1
@@ -815,7 +817,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 32);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1503, 1533);
+            this.tabPage1.Size = new System.Drawing.Size(1799, 1533);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main Flow";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -827,7 +829,7 @@
             this.flowChart42.CASE1 = this.flowChart15;
             this.flowChart42.CASE2 = null;
             this.flowChart42.CASE3 = null;
-            this.flowChart42.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowChart42.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.flowChart42.Location = new System.Drawing.Point(331, 163);
             this.flowChart42.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart42.Name = "flowChart42";
@@ -845,12 +847,12 @@
             this.flowChart15.CASE1 = null;
             this.flowChart15.CASE2 = null;
             this.flowChart15.CASE3 = null;
-            this.flowChart15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowChart15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.flowChart15.Location = new System.Drawing.Point(446, 295);
             this.flowChart15.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart15.Name = "flowChart15";
             this.flowChart15.NEXT = this.flowChart35;
-            this.flowChart15.Size = new System.Drawing.Size(373, 31);
+            this.flowChart15.Size = new System.Drawing.Size(414, 31);
             this.flowChart15.TabIndex = 26;
             this.flowChart15.Text = "Send finish signal to conveyor  1.07";
             this.flowChart15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -863,12 +865,12 @@
             this.flowChart35.CASE1 = null;
             this.flowChart35.CASE2 = this.flowChartMessage9;
             this.flowChart35.CASE3 = null;
-            this.flowChart35.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowChart35.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.flowChart35.Location = new System.Drawing.Point(446, 339);
             this.flowChart35.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart35.Name = "flowChart35";
             this.flowChart35.NEXT = this.flowChart36;
-            this.flowChart35.Size = new System.Drawing.Size(373, 31);
+            this.flowChart35.Size = new System.Drawing.Size(414, 31);
             this.flowChart35.TabIndex = 30;
             this.flowChart35.Text = "Robot goto first detection pos  1.08";
             this.flowChart35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -884,7 +886,7 @@
             this.flowChartMessage9.CASE2 = null;
             this.flowChartMessage9.CASE3 = null;
             this.flowChartMessage9.Content = null;
-            this.flowChartMessage9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowChartMessage9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.flowChartMessage9.HideButtonMute = false;
             this.flowChartMessage9.HideButtonPause = false;
             this.flowChartMessage9.HideButtonRetry = false;
@@ -906,12 +908,12 @@
             this.flowChart36.CASE1 = null;
             this.flowChart36.CASE2 = this.flowChartMessage10;
             this.flowChart36.CASE3 = null;
-            this.flowChart36.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowChart36.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.flowChart36.Location = new System.Drawing.Point(446, 383);
             this.flowChart36.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart36.Name = "flowChart36";
             this.flowChart36.NEXT = this.flowChart17;
-            this.flowChart36.Size = new System.Drawing.Size(373, 31);
+            this.flowChart36.Size = new System.Drawing.Size(414, 31);
             this.flowChart36.TabIndex = 31;
             this.flowChart36.Text = "Wait robot finish  1.09";
             this.flowChart36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -927,7 +929,7 @@
             this.flowChartMessage10.CASE2 = null;
             this.flowChartMessage10.CASE3 = null;
             this.flowChartMessage10.Content = null;
-            this.flowChartMessage10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowChartMessage10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.flowChartMessage10.HideButtonMute = false;
             this.flowChartMessage10.HideButtonPause = false;
             this.flowChartMessage10.HideButtonRetry = false;
@@ -949,12 +951,12 @@
             this.flowChart17.CASE1 = null;
             this.flowChart17.CASE2 = null;
             this.flowChart17.CASE3 = null;
-            this.flowChart17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowChart17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.flowChart17.Location = new System.Drawing.Point(446, 427);
             this.flowChart17.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart17.Name = "flowChart17";
             this.flowChart17.NEXT = this.flowChart16;
-            this.flowChart17.Size = new System.Drawing.Size(373, 31);
+            this.flowChart17.Size = new System.Drawing.Size(414, 31);
             this.flowChart17.TabIndex = 28;
             this.flowChart17.Text = "Finish  1.10";
             this.flowChart17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -967,8 +969,8 @@
             this.flowChart16.CASE1 = null;
             this.flowChart16.CASE2 = null;
             this.flowChart16.CASE3 = null;
-            this.flowChart16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flowChart16.Location = new System.Drawing.Point(848, 31);
+            this.flowChart16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.flowChart16.Location = new System.Drawing.Point(899, 31);
             this.flowChart16.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart16.Name = "flowChart16";
             this.flowChart16.NEXT = this.flowChart9;
@@ -985,12 +987,12 @@
             this.flowChart9.CASE1 = null;
             this.flowChart9.CASE2 = null;
             this.flowChart9.CASE3 = null;
-            this.flowChart9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowChart9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.flowChart9.Location = new System.Drawing.Point(446, 31);
             this.flowChart9.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart9.Name = "flowChart9";
             this.flowChart9.NEXT = this.flowChart10;
-            this.flowChart9.Size = new System.Drawing.Size(373, 31);
+            this.flowChart9.Size = new System.Drawing.Size(414, 31);
             this.flowChart9.TabIndex = 20;
             this.flowChart9.Text = "Start  1.01";
             this.flowChart9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1003,12 +1005,12 @@
             this.flowChart10.CASE1 = null;
             this.flowChart10.CASE2 = null;
             this.flowChart10.CASE3 = null;
-            this.flowChart10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowChart10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.flowChart10.Location = new System.Drawing.Point(446, 75);
             this.flowChart10.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart10.Name = "flowChart10";
             this.flowChart10.NEXT = this.flowChart12;
-            this.flowChart10.Size = new System.Drawing.Size(373, 31);
+            this.flowChart10.Size = new System.Drawing.Size(414, 31);
             this.flowChart10.TabIndex = 21;
             this.flowChart10.Text = "Wait can work signal from conveyor  1.02";
             this.flowChart10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1021,12 +1023,12 @@
             this.flowChart12.CASE1 = null;
             this.flowChart12.CASE2 = null;
             this.flowChart12.CASE3 = null;
-            this.flowChart12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowChart12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.flowChart12.Location = new System.Drawing.Point(446, 119);
             this.flowChart12.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart12.Name = "flowChart12";
             this.flowChart12.NEXT = this.flowChart11;
-            this.flowChart12.Size = new System.Drawing.Size(373, 31);
+            this.flowChart12.Size = new System.Drawing.Size(414, 31);
             this.flowChart12.TabIndex = 22;
             this.flowChart12.Text = "Start detection flow  1.03";
             this.flowChart12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1039,12 +1041,12 @@
             this.flowChart11.CASE1 = this.flowChart42;
             this.flowChart11.CASE2 = null;
             this.flowChart11.CASE3 = null;
-            this.flowChart11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowChart11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.flowChart11.Location = new System.Drawing.Point(446, 163);
             this.flowChart11.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart11.Name = "flowChart11";
             this.flowChart11.NEXT = this.flowChart14;
-            this.flowChart11.Size = new System.Drawing.Size(373, 31);
+            this.flowChart11.Size = new System.Drawing.Size(414, 31);
             this.flowChart11.TabIndex = 23;
             this.flowChart11.Text = "Wait detection flow finish  1.04";
             this.flowChart11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1057,12 +1059,12 @@
             this.flowChart14.CASE1 = null;
             this.flowChart14.CASE2 = null;
             this.flowChart14.CASE3 = null;
-            this.flowChart14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowChart14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.flowChart14.Location = new System.Drawing.Point(446, 207);
             this.flowChart14.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart14.Name = "flowChart14";
             this.flowChart14.NEXT = this.flowChart13;
-            this.flowChart14.Size = new System.Drawing.Size(373, 31);
+            this.flowChart14.Size = new System.Drawing.Size(414, 31);
             this.flowChart14.TabIndex = 24;
             this.flowChart14.Text = "Start floating height measure flow  1.05";
             this.flowChart14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1075,12 +1077,12 @@
             this.flowChart13.CASE1 = null;
             this.flowChart13.CASE2 = null;
             this.flowChart13.CASE3 = null;
-            this.flowChart13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flowChart13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.flowChart13.Location = new System.Drawing.Point(446, 251);
             this.flowChart13.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart13.Name = "flowChart13";
             this.flowChart13.NEXT = this.flowChart15;
-            this.flowChart13.Size = new System.Drawing.Size(373, 31);
+            this.flowChart13.Size = new System.Drawing.Size(414, 31);
             this.flowChart13.TabIndex = 25;
             this.flowChart13.Text = "Wait floating height measure flow finish  1.06 ";
             this.flowChart13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1118,7 +1120,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 32);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1503, 1533);
+            this.tabPage2.Size = new System.Drawing.Size(1799, 1533);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Detection Flow";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1138,7 +1140,7 @@
             this.flowChartMessage14.HideButtonPause = false;
             this.flowChartMessage14.HideButtonRetry = false;
             this.flowChartMessage14.HideButtonSkip = false;
-            this.flowChartMessage14.Location = new System.Drawing.Point(297, 246);
+            this.flowChartMessage14.Location = new System.Drawing.Point(253, 246);
             this.flowChartMessage14.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChartMessage14.Name = "flowChartMessage14";
             this.flowChartMessage14.NEXT = null;
@@ -1156,11 +1158,11 @@
             this.flowChart30.CASE2 = null;
             this.flowChart30.CASE3 = null;
             this.flowChart30.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart30.Location = new System.Drawing.Point(580, 375);
+            this.flowChart30.Location = new System.Drawing.Point(553, 375);
             this.flowChart30.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart30.Name = "flowChart30";
             this.flowChart30.NEXT = this.flowChart31;
-            this.flowChart30.Size = new System.Drawing.Size(349, 31);
+            this.flowChart30.Size = new System.Drawing.Size(376, 31);
             this.flowChart30.TabIndex = 41;
             this.flowChart30.Text = "Finish  2.11";
             this.flowChart30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1210,11 +1212,11 @@
             this.flowChart20.CASE2 = null;
             this.flowChart20.CASE3 = null;
             this.flowChart20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart20.Location = new System.Drawing.Point(580, 31);
+            this.flowChart20.Location = new System.Drawing.Point(553, 31);
             this.flowChart20.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart20.Name = "flowChart20";
             this.flowChart20.NEXT = this.flowChart21;
-            this.flowChart20.Size = new System.Drawing.Size(349, 31);
+            this.flowChart20.Size = new System.Drawing.Size(376, 31);
             this.flowChart20.TabIndex = 29;
             this.flowChart20.Text = "Start  2.01";
             this.flowChart20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1228,11 +1230,11 @@
             this.flowChart21.CASE2 = this.flowChartMessage11;
             this.flowChart21.CASE3 = null;
             this.flowChart21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart21.Location = new System.Drawing.Point(580, 74);
+            this.flowChart21.Location = new System.Drawing.Point(553, 74);
             this.flowChart21.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart21.Name = "flowChart21";
             this.flowChart21.NEXT = this.flowChart22;
-            this.flowChart21.Size = new System.Drawing.Size(349, 31);
+            this.flowChart21.Size = new System.Drawing.Size(376, 31);
             this.flowChart21.TabIndex = 30;
             this.flowChart21.Text = "Robot goto photo pos  2.02";
             this.flowChart21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1253,7 +1255,7 @@
             this.flowChartMessage11.HideButtonPause = false;
             this.flowChartMessage11.HideButtonRetry = false;
             this.flowChartMessage11.HideButtonSkip = false;
-            this.flowChartMessage11.Location = new System.Drawing.Point(297, 74);
+            this.flowChartMessage11.Location = new System.Drawing.Point(253, 74);
             this.flowChartMessage11.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChartMessage11.Name = "flowChartMessage11";
             this.flowChartMessage11.NEXT = null;
@@ -1271,11 +1273,11 @@
             this.flowChart22.CASE2 = this.flowChartMessage12;
             this.flowChart22.CASE3 = null;
             this.flowChart22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart22.Location = new System.Drawing.Point(580, 117);
+            this.flowChart22.Location = new System.Drawing.Point(553, 117);
             this.flowChart22.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart22.Name = "flowChart22";
             this.flowChart22.NEXT = this.flowChart23;
-            this.flowChart22.Size = new System.Drawing.Size(349, 31);
+            this.flowChart22.Size = new System.Drawing.Size(376, 31);
             this.flowChart22.TabIndex = 31;
             this.flowChart22.Text = "Wait robot finish  2.03";
             this.flowChart22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1296,7 +1298,7 @@
             this.flowChartMessage12.HideButtonPause = false;
             this.flowChartMessage12.HideButtonRetry = false;
             this.flowChartMessage12.HideButtonSkip = false;
-            this.flowChartMessage12.Location = new System.Drawing.Point(297, 117);
+            this.flowChartMessage12.Location = new System.Drawing.Point(253, 117);
             this.flowChartMessage12.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChartMessage12.Name = "flowChartMessage12";
             this.flowChartMessage12.NEXT = null;
@@ -1314,11 +1316,11 @@
             this.flowChart23.CASE2 = null;
             this.flowChart23.CASE3 = null;
             this.flowChart23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart23.Location = new System.Drawing.Point(580, 161);
+            this.flowChart23.Location = new System.Drawing.Point(553, 161);
             this.flowChart23.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart23.Name = "flowChart23";
             this.flowChart23.NEXT = this.flowChart24;
-            this.flowChart23.Size = new System.Drawing.Size(349, 31);
+            this.flowChart23.Size = new System.Drawing.Size(376, 31);
             this.flowChart23.TabIndex = 32;
             this.flowChart23.Text = "Light on  2.04";
             this.flowChart23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1332,11 +1334,11 @@
             this.flowChart24.CASE2 = this.flowChart32;
             this.flowChart24.CASE3 = null;
             this.flowChart24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart24.Location = new System.Drawing.Point(580, 203);
+            this.flowChart24.Location = new System.Drawing.Point(553, 203);
             this.flowChart24.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart24.Name = "flowChart24";
             this.flowChart24.NEXT = this.flowChart25;
-            this.flowChart24.Size = new System.Drawing.Size(349, 31);
+            this.flowChart24.Size = new System.Drawing.Size(376, 31);
             this.flowChart24.TabIndex = 33;
             this.flowChart24.Text = "Snap  2.05";
             this.flowChart24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1350,7 +1352,7 @@
             this.flowChart32.CASE2 = this.flowChartMessage13;
             this.flowChart32.CASE3 = null;
             this.flowChart32.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart32.Location = new System.Drawing.Point(297, 203);
+            this.flowChart32.Location = new System.Drawing.Point(253, 203);
             this.flowChart32.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart32.Name = "flowChart32";
             this.flowChart32.NEXT = null;
@@ -1375,7 +1377,7 @@
             this.flowChartMessage13.HideButtonPause = false;
             this.flowChartMessage13.HideButtonRetry = false;
             this.flowChartMessage13.HideButtonSkip = false;
-            this.flowChartMessage13.Location = new System.Drawing.Point(297, 161);
+            this.flowChartMessage13.Location = new System.Drawing.Point(253, 161);
             this.flowChartMessage13.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChartMessage13.Name = "flowChartMessage13";
             this.flowChartMessage13.NEXT = null;
@@ -1393,11 +1395,11 @@
             this.flowChart25.CASE2 = this.flowChartMessage14;
             this.flowChart25.CASE3 = null;
             this.flowChart25.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart25.Location = new System.Drawing.Point(580, 246);
+            this.flowChart25.Location = new System.Drawing.Point(553, 246);
             this.flowChart25.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart25.Name = "flowChart25";
             this.flowChart25.NEXT = this.flowChart26;
-            this.flowChart25.Size = new System.Drawing.Size(349, 31);
+            this.flowChart25.Size = new System.Drawing.Size(376, 31);
             this.flowChart25.TabIndex = 34;
             this.flowChart25.Text = "Vison run  2.06";
             this.flowChart25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1411,11 +1413,11 @@
             this.flowChart26.CASE2 = null;
             this.flowChart26.CASE3 = null;
             this.flowChart26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart26.Location = new System.Drawing.Point(580, 289);
+            this.flowChart26.Location = new System.Drawing.Point(553, 289);
             this.flowChart26.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart26.Name = "flowChart26";
             this.flowChart26.NEXT = this.flowChart18;
-            this.flowChart26.Size = new System.Drawing.Size(349, 31);
+            this.flowChart26.Size = new System.Drawing.Size(376, 31);
             this.flowChart26.TabIndex = 35;
             this.flowChart26.Text = "Light off  2.07";
             this.flowChart26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1429,11 +1431,11 @@
             this.flowChart18.CASE2 = null;
             this.flowChart18.CASE3 = null;
             this.flowChart18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart18.Location = new System.Drawing.Point(580, 331);
+            this.flowChart18.Location = new System.Drawing.Point(553, 331);
             this.flowChart18.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart18.Name = "flowChart18";
             this.flowChart18.NEXT = this.flowChart30;
-            this.flowChart18.Size = new System.Drawing.Size(349, 31);
+            this.flowChart18.Size = new System.Drawing.Size(376, 31);
             this.flowChart18.TabIndex = 37;
             this.flowChart18.Text = "All photoed ?  2.08";
             this.flowChart18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1473,7 +1475,7 @@
             this.tabPage3.Controls.Add(this.flowChart47);
             this.tabPage3.Location = new System.Drawing.Point(4, 32);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1503, 1533);
+            this.tabPage3.Size = new System.Drawing.Size(1799, 1533);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Floating Height Measure Flow";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1493,7 +1495,7 @@
             this.flowChartMessage17.HideButtonPause = false;
             this.flowChartMessage17.HideButtonRetry = false;
             this.flowChartMessage17.HideButtonSkip = false;
-            this.flowChartMessage17.Location = new System.Drawing.Point(306, 167);
+            this.flowChartMessage17.Location = new System.Drawing.Point(199, 167);
             this.flowChartMessage17.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChartMessage17.Name = "flowChartMessage17";
             this.flowChartMessage17.NEXT = null;
@@ -1511,11 +1513,11 @@
             this.flowChart44.CASE2 = null;
             this.flowChart44.CASE3 = null;
             this.flowChart44.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart44.Location = new System.Drawing.Point(577, 257);
+            this.flowChart44.Location = new System.Drawing.Point(485, 257);
             this.flowChart44.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart44.Name = "flowChart44";
             this.flowChart44.NEXT = this.flowChart46;
-            this.flowChart44.Size = new System.Drawing.Size(357, 31);
+            this.flowChart44.Size = new System.Drawing.Size(449, 31);
             this.flowChart44.TabIndex = 56;
             this.flowChart44.Text = "Finish  3.06";
             this.flowChart44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1565,11 +1567,11 @@
             this.flowChart47.CASE2 = null;
             this.flowChart47.CASE3 = null;
             this.flowChart47.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart47.Location = new System.Drawing.Point(577, 38);
+            this.flowChart47.Location = new System.Drawing.Point(485, 38);
             this.flowChart47.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart47.Name = "flowChart47";
             this.flowChart47.NEXT = this.flowChart40;
-            this.flowChart47.Size = new System.Drawing.Size(357, 31);
+            this.flowChart47.Size = new System.Drawing.Size(449, 31);
             this.flowChart47.TabIndex = 44;
             this.flowChart47.Text = "Start  3.01";
             this.flowChart47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1583,11 +1585,11 @@
             this.flowChart40.CASE2 = this.flowChartMessage15;
             this.flowChart40.CASE3 = null;
             this.flowChart40.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart40.Location = new System.Drawing.Point(577, 81);
+            this.flowChart40.Location = new System.Drawing.Point(485, 81);
             this.flowChart40.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart40.Name = "flowChart40";
             this.flowChart40.NEXT = this.flowChart41;
-            this.flowChart40.Size = new System.Drawing.Size(357, 31);
+            this.flowChart40.Size = new System.Drawing.Size(449, 31);
             this.flowChart40.TabIndex = 45;
             this.flowChart40.Text = "Robot goto height measure pos  3.02";
             this.flowChart40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1608,7 +1610,7 @@
             this.flowChartMessage15.HideButtonPause = false;
             this.flowChartMessage15.HideButtonRetry = false;
             this.flowChartMessage15.HideButtonSkip = false;
-            this.flowChartMessage15.Location = new System.Drawing.Point(306, 81);
+            this.flowChartMessage15.Location = new System.Drawing.Point(199, 81);
             this.flowChartMessage15.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChartMessage15.Name = "flowChartMessage15";
             this.flowChartMessage15.NEXT = null;
@@ -1626,11 +1628,11 @@
             this.flowChart41.CASE2 = this.flowChartMessage16;
             this.flowChart41.CASE3 = null;
             this.flowChart41.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart41.Location = new System.Drawing.Point(577, 125);
+            this.flowChart41.Location = new System.Drawing.Point(485, 125);
             this.flowChart41.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart41.Name = "flowChart41";
             this.flowChart41.NEXT = this.flowChart34;
-            this.flowChart41.Size = new System.Drawing.Size(357, 31);
+            this.flowChart41.Size = new System.Drawing.Size(449, 31);
             this.flowChart41.TabIndex = 46;
             this.flowChart41.Text = "Wait robot finish  3.03";
             this.flowChart41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1651,7 +1653,7 @@
             this.flowChartMessage16.HideButtonPause = false;
             this.flowChartMessage16.HideButtonRetry = false;
             this.flowChartMessage16.HideButtonSkip = false;
-            this.flowChartMessage16.Location = new System.Drawing.Point(306, 125);
+            this.flowChartMessage16.Location = new System.Drawing.Point(199, 125);
             this.flowChartMessage16.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChartMessage16.Name = "flowChartMessage16";
             this.flowChartMessage16.NEXT = null;
@@ -1669,11 +1671,11 @@
             this.flowChart34.CASE2 = this.flowChartMessage17;
             this.flowChart34.CASE3 = null;
             this.flowChart34.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart34.Location = new System.Drawing.Point(577, 167);
+            this.flowChart34.Location = new System.Drawing.Point(485, 167);
             this.flowChart34.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart34.Name = "flowChart34";
             this.flowChart34.NEXT = this.flowChart38;
-            this.flowChart34.Size = new System.Drawing.Size(357, 31);
+            this.flowChart34.Size = new System.Drawing.Size(449, 31);
             this.flowChart34.TabIndex = 47;
             this.flowChart34.Text = "Trigger to measure  3.04";
             this.flowChart34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1687,11 +1689,11 @@
             this.flowChart38.CASE2 = null;
             this.flowChart38.CASE3 = null;
             this.flowChart38.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.flowChart38.Location = new System.Drawing.Point(577, 210);
+            this.flowChart38.Location = new System.Drawing.Point(485, 210);
             this.flowChart38.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.flowChart38.Name = "flowChart38";
             this.flowChart38.NEXT = this.flowChart44;
-            this.flowChart38.Size = new System.Drawing.Size(357, 31);
+            this.flowChart38.Size = new System.Drawing.Size(449, 31);
             this.flowChart38.TabIndex = 52;
             this.flowChart38.Text = "All photoed ?  3.05";
             this.flowChart38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1736,19 +1738,19 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1511, 1182);
+            this.panel2.Size = new System.Drawing.Size(1807, 1182);
             this.panel2.TabIndex = 0;
             // 
             // OB_Robot_Program4
             // 
             this.OB_Robot_Program4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Robot_Program4.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Robot_Program4.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.OB_Robot_Program4.Location = new System.Drawing.Point(506, 360);
+            this.OB_Robot_Program4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_Robot_Program4.Location = new System.Drawing.Point(493, 360);
             this.OB_Robot_Program4.Margin = new System.Windows.Forms.Padding(5);
             this.OB_Robot_Program4.Name = "OB_Robot_Program4";
             this.OB_Robot_Program4.Port = "16007";
-            this.OB_Robot_Program4.Size = new System.Drawing.Size(376, 35);
+            this.OB_Robot_Program4.Size = new System.Drawing.Size(389, 35);
             this.OB_Robot_Program4.TabIndex = 127;
             this.OB_Robot_Program4.Text = "Robot 3# - Program 4";
             this.OB_Robot_Program4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1757,12 +1759,12 @@
             // 
             this.OB_Robot_Program3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Robot_Program3.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Robot_Program3.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.OB_Robot_Program3.Location = new System.Drawing.Point(506, 315);
+            this.OB_Robot_Program3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_Robot_Program3.Location = new System.Drawing.Point(493, 315);
             this.OB_Robot_Program3.Margin = new System.Windows.Forms.Padding(5);
             this.OB_Robot_Program3.Name = "OB_Robot_Program3";
             this.OB_Robot_Program3.Port = "16006";
-            this.OB_Robot_Program3.Size = new System.Drawing.Size(376, 35);
+            this.OB_Robot_Program3.Size = new System.Drawing.Size(389, 35);
             this.OB_Robot_Program3.TabIndex = 126;
             this.OB_Robot_Program3.Text = "Robot 3# - Program 3";
             this.OB_Robot_Program3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1771,12 +1773,12 @@
             // 
             this.IB_Robot_EStop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_Robot_EStop.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Robot_EStop.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.IB_Robot_EStop.Location = new System.Drawing.Point(74, 225);
+            this.IB_Robot_EStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_Robot_EStop.Location = new System.Drawing.Point(55, 225);
             this.IB_Robot_EStop.Margin = new System.Windows.Forms.Padding(5);
             this.IB_Robot_EStop.Name = "IB_Robot_EStop";
             this.IB_Robot_EStop.Port = "06008";
-            this.IB_Robot_EStop.Size = new System.Drawing.Size(361, 35);
+            this.IB_Robot_EStop.Size = new System.Drawing.Size(380, 35);
             this.IB_Robot_EStop.TabIndex = 125;
             this.IB_Robot_EStop.Text = "Robot 3# E-Stop press";
             this.IB_Robot_EStop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1785,12 +1787,12 @@
             // 
             this.OB_Robot_Stop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Robot_Stop.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Robot_Stop.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.OB_Robot_Stop.Location = new System.Drawing.Point(506, 270);
+            this.OB_Robot_Stop.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_Robot_Stop.Location = new System.Drawing.Point(493, 270);
             this.OB_Robot_Stop.Margin = new System.Windows.Forms.Padding(5);
             this.OB_Robot_Stop.Name = "OB_Robot_Stop";
             this.OB_Robot_Stop.Port = "16005";
-            this.OB_Robot_Stop.Size = new System.Drawing.Size(376, 35);
+            this.OB_Robot_Stop.Size = new System.Drawing.Size(389, 35);
             this.OB_Robot_Stop.TabIndex = 111;
             this.OB_Robot_Stop.Text = "Robot 3# - Program 2 / STOP";
             this.OB_Robot_Stop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1799,12 +1801,12 @@
             // 
             this.OB_Robot_Program1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Robot_Program1.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Robot_Program1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.OB_Robot_Program1.Location = new System.Drawing.Point(506, 225);
+            this.OB_Robot_Program1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_Robot_Program1.Location = new System.Drawing.Point(493, 225);
             this.OB_Robot_Program1.Margin = new System.Windows.Forms.Padding(5);
             this.OB_Robot_Program1.Name = "OB_Robot_Program1";
             this.OB_Robot_Program1.Port = "16004";
-            this.OB_Robot_Program1.Size = new System.Drawing.Size(376, 35);
+            this.OB_Robot_Program1.Size = new System.Drawing.Size(389, 35);
             this.OB_Robot_Program1.TabIndex = 110;
             this.OB_Robot_Program1.Text = "Robot 3# - Program 1";
             this.OB_Robot_Program1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1813,12 +1815,12 @@
             // 
             this.OB_Robot_Enable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Robot_Enable.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Robot_Enable.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.OB_Robot_Enable.Location = new System.Drawing.Point(506, 178);
+            this.OB_Robot_Enable.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_Robot_Enable.Location = new System.Drawing.Point(493, 178);
             this.OB_Robot_Enable.Margin = new System.Windows.Forms.Padding(5);
             this.OB_Robot_Enable.Name = "OB_Robot_Enable";
             this.OB_Robot_Enable.Port = "16003";
-            this.OB_Robot_Enable.Size = new System.Drawing.Size(376, 35);
+            this.OB_Robot_Enable.Size = new System.Drawing.Size(389, 35);
             this.OB_Robot_Enable.TabIndex = 109;
             this.OB_Robot_Enable.Text = "Robot 3# - Enable";
             this.OB_Robot_Enable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1827,12 +1829,12 @@
             // 
             this.OB_Robot_Start.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Robot_Start.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Robot_Start.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.OB_Robot_Start.Location = new System.Drawing.Point(506, 133);
+            this.OB_Robot_Start.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_Robot_Start.Location = new System.Drawing.Point(493, 133);
             this.OB_Robot_Start.Margin = new System.Windows.Forms.Padding(5);
             this.OB_Robot_Start.Name = "OB_Robot_Start";
             this.OB_Robot_Start.Port = "16002";
-            this.OB_Robot_Start.Size = new System.Drawing.Size(376, 35);
+            this.OB_Robot_Start.Size = new System.Drawing.Size(389, 35);
             this.OB_Robot_Start.TabIndex = 108;
             this.OB_Robot_Start.Text = "Robot 3# - Start";
             this.OB_Robot_Start.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1841,12 +1843,12 @@
             // 
             this.OB_Robot_Reset.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Robot_Reset.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Robot_Reset.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.OB_Robot_Reset.Location = new System.Drawing.Point(506, 89);
+            this.OB_Robot_Reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_Robot_Reset.Location = new System.Drawing.Point(493, 89);
             this.OB_Robot_Reset.Margin = new System.Windows.Forms.Padding(5);
             this.OB_Robot_Reset.Name = "OB_Robot_Reset";
             this.OB_Robot_Reset.Port = "16001";
-            this.OB_Robot_Reset.Size = new System.Drawing.Size(376, 35);
+            this.OB_Robot_Reset.Size = new System.Drawing.Size(389, 35);
             this.OB_Robot_Reset.TabIndex = 107;
             this.OB_Robot_Reset.Text = "Robot 3# - Reset";
             this.OB_Robot_Reset.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1855,12 +1857,12 @@
             // 
             this.OB_Robot_Maintain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Robot_Maintain.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Robot_Maintain.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.OB_Robot_Maintain.Location = new System.Drawing.Point(506, 41);
+            this.OB_Robot_Maintain.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_Robot_Maintain.Location = new System.Drawing.Point(493, 41);
             this.OB_Robot_Maintain.Margin = new System.Windows.Forms.Padding(5);
             this.OB_Robot_Maintain.Name = "OB_Robot_Maintain";
             this.OB_Robot_Maintain.Port = "16000";
-            this.OB_Robot_Maintain.Size = new System.Drawing.Size(376, 35);
+            this.OB_Robot_Maintain.Size = new System.Drawing.Size(389, 35);
             this.OB_Robot_Maintain.TabIndex = 106;
             this.OB_Robot_Maintain.Text = "Robot 3# - Pause";
             this.OB_Robot_Maintain.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1869,12 +1871,12 @@
             // 
             this.IB_Robot_Busy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_Robot_Busy.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Robot_Busy.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.IB_Robot_Busy.Location = new System.Drawing.Point(74, 178);
+            this.IB_Robot_Busy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_Robot_Busy.Location = new System.Drawing.Point(55, 178);
             this.IB_Robot_Busy.Margin = new System.Windows.Forms.Padding(5);
             this.IB_Robot_Busy.Name = "IB_Robot_Busy";
             this.IB_Robot_Busy.Port = "06003";
-            this.IB_Robot_Busy.Size = new System.Drawing.Size(361, 35);
+            this.IB_Robot_Busy.Size = new System.Drawing.Size(380, 35);
             this.IB_Robot_Busy.TabIndex = 105;
             this.IB_Robot_Busy.Text = "Robot 3# Busy";
             this.IB_Robot_Busy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1883,12 +1885,12 @@
             // 
             this.IB_Robot_BatteryAlarm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_Robot_BatteryAlarm.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Robot_BatteryAlarm.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.IB_Robot_BatteryAlarm.Location = new System.Drawing.Point(74, 133);
+            this.IB_Robot_BatteryAlarm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_Robot_BatteryAlarm.Location = new System.Drawing.Point(55, 133);
             this.IB_Robot_BatteryAlarm.Margin = new System.Windows.Forms.Padding(5);
             this.IB_Robot_BatteryAlarm.Name = "IB_Robot_BatteryAlarm";
             this.IB_Robot_BatteryAlarm.Port = "06002";
-            this.IB_Robot_BatteryAlarm.Size = new System.Drawing.Size(361, 35);
+            this.IB_Robot_BatteryAlarm.Size = new System.Drawing.Size(380, 35);
             this.IB_Robot_BatteryAlarm.TabIndex = 104;
             this.IB_Robot_BatteryAlarm.Text = "Robot 3# Battery alarm";
             this.IB_Robot_BatteryAlarm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1897,12 +1899,12 @@
             // 
             this.IB_Robot_AbnormalAlarm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_Robot_AbnormalAlarm.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Robot_AbnormalAlarm.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.IB_Robot_AbnormalAlarm.Location = new System.Drawing.Point(74, 89);
+            this.IB_Robot_AbnormalAlarm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_Robot_AbnormalAlarm.Location = new System.Drawing.Point(55, 89);
             this.IB_Robot_AbnormalAlarm.Margin = new System.Windows.Forms.Padding(5);
             this.IB_Robot_AbnormalAlarm.Name = "IB_Robot_AbnormalAlarm";
             this.IB_Robot_AbnormalAlarm.Port = "06001";
-            this.IB_Robot_AbnormalAlarm.Size = new System.Drawing.Size(361, 35);
+            this.IB_Robot_AbnormalAlarm.Size = new System.Drawing.Size(380, 35);
             this.IB_Robot_AbnormalAlarm.TabIndex = 103;
             this.IB_Robot_AbnormalAlarm.Text = "Robot 3# Abnormal alarm";
             this.IB_Robot_AbnormalAlarm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1911,12 +1913,12 @@
             // 
             this.IB_Robot_Enable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_Robot_Enable.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Robot_Enable.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
-            this.IB_Robot_Enable.Location = new System.Drawing.Point(74, 43);
+            this.IB_Robot_Enable.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.IB_Robot_Enable.Location = new System.Drawing.Point(55, 43);
             this.IB_Robot_Enable.Margin = new System.Windows.Forms.Padding(5);
             this.IB_Robot_Enable.Name = "IB_Robot_Enable";
             this.IB_Robot_Enable.Port = "06000";
-            this.IB_Robot_Enable.Size = new System.Drawing.Size(361, 35);
+            this.IB_Robot_Enable.Size = new System.Drawing.Size(380, 35);
             this.IB_Robot_Enable.TabIndex = 102;
             this.IB_Robot_Enable.Text = "Robot 3# Enable feedback";
             this.IB_Robot_Enable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1925,12 +1927,12 @@
             // 
             this.OB_ModuleAlram_Light.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_ModuleAlram_Light.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_ModuleAlram_Light.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_ModuleAlram_Light.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.OB_ModuleAlram_Light.Location = new System.Drawing.Point(946, 86);
             this.OB_ModuleAlram_Light.Margin = new System.Windows.Forms.Padding(5);
             this.OB_ModuleAlram_Light.Name = "OB_ModuleAlram_Light";
             this.OB_ModuleAlram_Light.Port = "13114";
-            this.OB_ModuleAlram_Light.Size = new System.Drawing.Size(329, 35);
+            this.OB_ModuleAlram_Light.Size = new System.Drawing.Size(371, 35);
             this.OB_ModuleAlram_Light.TabIndex = 101;
             this.OB_ModuleAlram_Light.Text = "Module 3 Alarm Light";
             this.OB_ModuleAlram_Light.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1939,92 +1941,15 @@
             // 
             this.OB_CCDLight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_CCDLight.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_CCDLight.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold);
+            this.OB_CCDLight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.OB_CCDLight.Location = new System.Drawing.Point(946, 41);
             this.OB_CCDLight.Margin = new System.Windows.Forms.Padding(5);
             this.OB_CCDLight.Name = "OB_CCDLight";
             this.OB_CCDLight.Port = "13001";
-            this.OB_CCDLight.Size = new System.Drawing.Size(329, 35);
+            this.OB_CCDLight.Size = new System.Drawing.Size(371, 35);
             this.OB_CCDLight.TabIndex = 100;
             this.OB_CCDLight.Text = "Robot3 CCD Light";
             this.OB_CCDLight.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column5,
-            this.Column3,
-            this.Column2,
-            this.Column4,
-            this.Numberturns});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 414);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 46;
-            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1745, 261);
-            this.dataGridView1.TabIndex = 14;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column1.DataPropertyName = "ScrewName";
-            this.Column1.FillWeight = 89.53652F;
-            this.Column1.HeaderText = "Index";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 74;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column5.HeaderText = "         Start Time";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 220;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column3.DataPropertyName = "Angle";
-            this.Column3.FillWeight = 174.3918F;
-            this.Column3.HeaderText = "CCD Result";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 150;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column2.DataPropertyName = "Finaltorque";
-            this.Column2.FillWeight = 156.2348F;
-            this.Column2.HeaderText = "                                                                                 " +
-    "     Screw Floating Height  （mm）";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 1110;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column4.FillWeight = 75.96993F;
-            this.Column4.HeaderText = "CT（S）";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 110;
-            // 
-            // Numberturns
-            // 
-            this.Numberturns.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Numberturns.FillWeight = 34.99223F;
-            this.Numberturns.HeaderText = "  State";
-            this.Numberturns.Name = "Numberturns";
-            this.Numberturns.Width = 80;
             // 
             // groupBox7
             // 
@@ -2352,7 +2277,7 @@
             this.tabControl3.Location = new System.Drawing.Point(0, 0);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(799, 627);
+            this.tabControl3.Size = new System.Drawing.Size(1824, 903);
             this.tabControl3.TabIndex = 0;
             // 
             // tabPage4
@@ -2396,7 +2321,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 32);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(791, 591);
+            this.tabPage4.Size = new System.Drawing.Size(1816, 867);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Robot Setting";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -2930,7 +2855,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 32);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(791, 591);
+            this.tabPage5.Size = new System.Drawing.Size(1816, 867);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Keyence Laser Setting";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -3376,11 +3301,99 @@
             this.dataColumn11.ColumnName = "DisableLaser";
             this.dataColumn11.DataType = typeof(bool);
             // 
+            // Numberturns
+            // 
+            this.Numberturns.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Numberturns.FillWeight = 34.99223F;
+            this.Numberturns.HeaderText = "  State";
+            this.Numberturns.Name = "Numberturns";
+            this.Numberturns.Width = 80;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column4.FillWeight = 75.96993F;
+            this.Column4.HeaderText = "CT（S）";
+            this.Column4.MinimumWidth = 8;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 110;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column2.DataPropertyName = "Finaltorque";
+            this.Column2.FillWeight = 156.2348F;
+            this.Column2.HeaderText = "                                                                                 " +
+    "     Screw Floating Height  （mm）";
+            this.Column2.MinimumWidth = 8;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 1110;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column3.DataPropertyName = "Angle";
+            this.Column3.FillWeight = 174.3918F;
+            this.Column3.HeaderText = "CCD Result";
+            this.Column3.MinimumWidth = 8;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 150;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column5.HeaderText = "         Start Time";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 220;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column1.DataPropertyName = "ScrewName";
+            this.Column1.FillWeight = 89.53652F;
+            this.Column1.HeaderText = "Index";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 74;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column5,
+            this.Column3,
+            this.Column2,
+            this.Column4,
+            this.Numberturns});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 46;
+            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1495, 230);
+            this.dataGridView1.TabIndex = 14;
+            // 
+            // panel3
+            // 
+            this.panel3.AutoScroll = true;
+            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.Location = new System.Drawing.Point(5, 414);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1495, 230);
+            this.panel3.TabIndex = 16;
+            // 
             // AP_PCBA_Vision
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1542, 644);
+            this.ClientSize = new System.Drawing.Size(1838, 967);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AP_PCBA_Vision";
             this.Text = "AP_PCBA_Vision";
@@ -3404,7 +3417,6 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel10.PerformLayout();
@@ -3433,6 +3445,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -3495,7 +3509,6 @@
         public JabilSDK.Controls.Output OB_Robot_Stop;
         public JabilSDK.Controls.Input IB_Robot_EStop;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Label label49;
@@ -3633,13 +3646,15 @@
         private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem1;
+        private JabilSDK.UserControlLib.FlowChart flowChart42;
+        private AcuraLibrary.Forms.FlowChartMessage flowChartMessage17;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Numberturns;
-        private JabilSDK.UserControlLib.FlowChart flowChart42;
-        private AcuraLibrary.Forms.FlowChartMessage flowChartMessage17;
+        private System.Windows.Forms.Panel panel3;
     }
 }

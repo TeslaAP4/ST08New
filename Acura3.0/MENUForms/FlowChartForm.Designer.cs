@@ -78,7 +78,7 @@
             this.tcFlowInitial.Controls.Add(this.tabPage4);
             this.tcFlowInitial.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcFlowInitial.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcFlowInitial.ItemSize = new System.Drawing.Size(350, 50);
+            this.tcFlowInitial.ItemSize = new System.Drawing.Size(290, 50);
             this.tcFlowInitial.Location = new System.Drawing.Point(0, 0);
             this.tcFlowInitial.Margin = new System.Windows.Forms.Padding(0);
             this.tcFlowInitial.Name = "tcFlowInitial";
@@ -127,7 +127,7 @@
             this.tcFlowAuto.Controls.Add(this.tabPage6);
             this.tcFlowAuto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcFlowAuto.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcFlowAuto.ItemSize = new System.Drawing.Size(200, 50);
+            this.tcFlowAuto.ItemSize = new System.Drawing.Size(290, 50);
             this.tcFlowAuto.Location = new System.Drawing.Point(0, 0);
             this.tcFlowAuto.Margin = new System.Windows.Forms.Padding(0);
             this.tcFlowAuto.Name = "tcFlowAuto";
@@ -154,7 +154,7 @@
             this.tabPage6.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage6.Size = new System.Drawing.Size(732, 382);
+            this.tabPage6.Size = new System.Drawing.Size(807, 427);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "Module #2";
             // 

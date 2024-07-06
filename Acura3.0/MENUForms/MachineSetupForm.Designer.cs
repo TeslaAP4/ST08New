@@ -115,7 +115,7 @@
             this.tcMotorSetup.Controls.Add(this.tabPage2);
             this.tcMotorSetup.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tcMotorSetup.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcMotorSetup.ItemSize = new System.Drawing.Size(200, 50);
+            this.tcMotorSetup.ItemSize = new System.Drawing.Size(290, 50);
             this.tcMotorSetup.Location = new System.Drawing.Point(0, 294);
             this.tcMotorSetup.Margin = new System.Windows.Forms.Padding(0);
             this.tcMotorSetup.Name = "tcMotorSetup";

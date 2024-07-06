@@ -49,12 +49,12 @@
             this.tcRecipeEditor.Controls.Add(this.tabPage2);
             this.tcRecipeEditor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcRecipeEditor.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcRecipeEditor.ItemSize = new System.Drawing.Size(200, 50);
+            this.tcRecipeEditor.ItemSize = new System.Drawing.Size(290, 50);
             this.tcRecipeEditor.Location = new System.Drawing.Point(0, 0);
             this.tcRecipeEditor.Margin = new System.Windows.Forms.Padding(0);
             this.tcRecipeEditor.Name = "tcRecipeEditor";
             this.tcRecipeEditor.SelectedIndex = 0;
-            this.tcRecipeEditor.Size = new System.Drawing.Size(1351, 834);
+            this.tcRecipeEditor.Size = new System.Drawing.Size(1013, 616);
             this.tcRecipeEditor.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tcRecipeEditor.TabIndex = 3;
             // 
@@ -62,10 +62,10 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Location = new System.Drawing.Point(4, 54);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1343, 776);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Size = new System.Drawing.Size(1005, 558);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Module #1";
             // 
@@ -73,10 +73,10 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
             this.tabPage2.Location = new System.Drawing.Point(4, 54);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1343, 767);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Size = new System.Drawing.Size(1005, 568);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Module #2";
             // 
@@ -91,7 +91,7 @@
             this.tsbNew});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1351, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(1013, 39);
             this.toolStrip1.TabIndex = 9;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -101,7 +101,7 @@
             this.tsbOpen.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbOpen.Name = "tsbOpen";
-            this.tsbOpen.Size = new System.Drawing.Size(99, 36);
+            this.tsbOpen.Size = new System.Drawing.Size(87, 36);
             this.tsbOpen.Text = "Open";
             this.tsbOpen.Click += new System.EventHandler(this.tsbOpen_Click);
             // 
@@ -111,7 +111,7 @@
             this.tsbSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbSave.Name = "tsbSave";
-            this.tsbSave.Size = new System.Drawing.Size(95, 36);
+            this.tsbSave.Size = new System.Drawing.Size(83, 36);
             this.tsbSave.Text = "Save";
             this.tsbSave.Click += new System.EventHandler(this.tsbSave_Click);
             // 
@@ -121,7 +121,7 @@
             this.tsbCancel.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbCancel.Name = "tsbCancel";
-            this.tsbCancel.Size = new System.Drawing.Size(113, 36);
+            this.tsbCancel.Size = new System.Drawing.Size(98, 36);
             this.tsbCancel.Text = "Cancel";
             this.tsbCancel.Click += new System.EventHandler(this.tsbCancel_Click);
             // 
@@ -131,7 +131,7 @@
             this.tsbNew.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNew.Name = "tsbNew";
-            this.tsbNew.Size = new System.Drawing.Size(89, 36);
+            this.tsbNew.Size = new System.Drawing.Size(78, 36);
             this.tsbNew.Text = "New";
             this.tsbNew.Click += new System.EventHandler(this.tsbNew_Click);
             // 
@@ -140,19 +140,18 @@
             this.panel1.Controls.Add(this.tcRecipeEditor);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 39);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1351, 834);
+            this.panel1.Size = new System.Drawing.Size(1013, 616);
             this.panel1.TabIndex = 10;
             // 
             // RecipeEditorForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1351, 873);
+            this.ClientSize = new System.Drawing.Size(1013, 655);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RecipeEditorForm";
             this.Text = "Recipe Editor";
             this.Load += new System.EventHandler(this.RecipeEditorForm_Load);

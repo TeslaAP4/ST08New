@@ -38,7 +38,7 @@ namespace Acura3._0.Forms
             MachineInitialize,
             MachineRunning,
             MessageError,
-            //MessageInformation, /*Hidden*/
+            MessageInformation, /*Hidden*/
             MessageWarning,
             MachineStarving, /*Add*/
             MachineBlocked, /*Add*/

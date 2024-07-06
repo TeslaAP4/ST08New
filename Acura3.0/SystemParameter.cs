@@ -75,6 +75,7 @@ namespace Acura3._0
 
         #region Screw
         public static ReadDisplacement newReadCOM = new ReadDisplacement();
+        public static ReadDisplacement newReadCOM1 = new ReadDisplacement();
         #endregion
 
         //CFX 
@@ -166,6 +167,8 @@ namespace Acura3._0
         Maintenance,
         Administrator,
         None,
+        Programmer,
+        Supervisor
     }
 
     public enum LanguageType

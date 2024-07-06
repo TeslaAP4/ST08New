@@ -41,7 +41,7 @@
             this.tcMachineStatus.Controls.Add(this.tabPage2);
             this.tcMachineStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcMachineStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcMachineStatus.ItemSize = new System.Drawing.Size(350, 50);
+            this.tcMachineStatus.ItemSize = new System.Drawing.Size(290, 50);
             this.tcMachineStatus.Location = new System.Drawing.Point(0, 0);
             this.tcMachineStatus.Margin = new System.Windows.Forms.Padding(0);
             this.tcMachineStatus.Name = "tcMachineStatus";

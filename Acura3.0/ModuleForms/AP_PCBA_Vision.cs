@@ -314,7 +314,6 @@ namespace Acura3._0.ModuleForms
             CogRecordList.Add(MiddleLayer.RecordF.cogRecord_Robot2);
             CogRecordList.Add(MiddleLayer.RecordF.cogRecord_Robot3);
             CogRecordList.Add(MiddleLayer.RecordF.cogRecord_Robot4);
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart1.Text} finish", true);
             return FCResultType.NEXT;
         }
 
@@ -322,10 +321,8 @@ namespace Acura3._0.ModuleForms
         {
             if (ConnectIX())
             {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2.Text} finish", true);
                 return FCResultType.NEXT;
             }
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart2.Text} failed", false);
             JSDK.Alarm.Show("4200");
             flowChartMessage1.Title = "Connect failed alarm !";
             flowChartMessage1.Content = "4200: Keyence height measure sensor connect failed";
@@ -337,10 +334,8 @@ namespace Acura3._0.ModuleForms
             F_Robot.RobotIP = GetRecipeValue("RSet", "RobotIP");
             if (F_Robot.ConnectToRobot())
             {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3.Text} finish", true);
                 return FCResultType.NEXT;
             }
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart3.Text} failed", false);
             JSDK.Alarm.Show("4201");
             flowChartMessage2.Title = "Connect failed alarm !";
             flowChartMessage2.Content = "4201: 4-Axis robot connect failed";
@@ -351,7 +346,6 @@ namespace Acura3._0.ModuleForms
         {
             RobotStart();
             J_Initial.Restart();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart4.Text} finish", true);
             return FCResultType.NEXT;
         }
 
@@ -360,13 +354,11 @@ namespace Acura3._0.ModuleForms
             if (F_Robot.GetCurrentTaskState() == eRobotState.Done)
             {
                 J_Initial.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6.Text} finish", true);
                 return FCResultType.NEXT;
             }
             if (J_Initial.IsOn(SysPara.Robot_Overtime))
             {
                 J_Initial.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart6.Text} overtime", false);
                 JSDK.Alarm.Show("4210");
                 flowChartMessage8.Title = "Robot move overtime alarm !";
                 flowChartMessage8.Content = "4210: 4-axis robot initial overtime";
@@ -381,10 +373,8 @@ namespace Acura3._0.ModuleForms
             {
                 if (F_Robot.SetDryRun(1))
                 {
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart8.Text} finish", true);
                     return FCResultType.NEXT;
                 }
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart8.Text} failed", false);
                 JSDK.Alarm.Show("4204");
                 flowChartMessage6.Title = "Set robot dryrun mode failed alarm !";
                 flowChartMessage6.Content = "4203: Acura write dryrun mode to 4-axis robot failed";
@@ -394,10 +384,8 @@ namespace Acura3._0.ModuleForms
             {
                 if (F_Robot.SetDryRun(0))
                 {
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart8.Text} finish", true);
                     return FCResultType.NEXT;
                 }
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart8.Text} failed", false);
                 JSDK.Alarm.Show("4205");
                 flowChartMessage6.Title = "Set robot dryrun mode failed alarm !";
                 flowChartMessage6.Content = "4205: Acura write normal run mode to 4-axis robot failed";
@@ -408,7 +396,6 @@ namespace Acura3._0.ModuleForms
         private FCResultType flowChart7_FlowRun(object sender, EventArgs e)
         {
             bInitialOk = true;
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart7.Text} finish", true);
             return FCResultType.IDLE;
         }
 
@@ -416,7 +403,6 @@ namespace Acura3._0.ModuleForms
         {
             int speed = GetSettingValue("MSet", "RobotSpeedRatio");
             F_Robot.SetSpeed(speed);
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart9.Text} finish", true);
             return FCResultType.NEXT;
         }
 
@@ -432,7 +418,6 @@ namespace Acura3._0.ModuleForms
                 TimeStart = DateTime.Now;
                 B_Start = false;
                 MiddleLayer.ConveyorF.ConveyorBStation1Robot1Start = false;
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart10.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -441,7 +426,6 @@ namespace Acura3._0.ModuleForms
         private FCResultType flowChart12_FlowRun(object sender, EventArgs e)
         {
             B_DetectionFlow = true;
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart12.Text} finish", true);
             return FCResultType.NEXT;
         }
 
@@ -449,7 +433,6 @@ namespace Acura3._0.ModuleForms
         {
             if (!B_DetectionFlow)
             {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart11.Text} finish", true);
                 if (!B_DetectionResult)
                 {
                     return FCResultType.CASE2;
@@ -462,7 +445,6 @@ namespace Acura3._0.ModuleForms
         private FCResultType flowChart14_FlowRun(object sender, EventArgs e)
         {
             B_HeightMeasureFlow = true;
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart14.Text} finish", true);
             return FCResultType.NEXT;
         }
 
@@ -470,7 +452,6 @@ namespace Acura3._0.ModuleForms
         {
             if (!B_HeightMeasureFlow)
             {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart13.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -480,25 +461,22 @@ namespace Acura3._0.ModuleForms
         {
             if (B_DetectionResult && B_HeightMeasureResult)
             {
-                //MiddleLayer.ConveyorF.myRFID3.ResultBool = true;
+                MiddleLayer.ConveyorF.myRFID3.B_Result = true;
             }
             else
-                //MiddleLayer.ConveyorF.myRFID3.ResultBool = false;
-                MiddleLayer.ConveyorF.ConveyorBStation1Robot1Comp = true;
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart15.Text} finish", true);
+                MiddleLayer.ConveyorF.myRFID3.B_Result = false;
+            MiddleLayer.ConveyorF.ConveyorBStation1Robot1Comp = true;
             J_AutoRun.Restart();
             return FCResultType.NEXT;
         }
 
         private FCResultType flowChart17_FlowRun(object sender, EventArgs e)
         {
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart17.Text} finish", true);
             return FCResultType.NEXT;
         }
 
         private FCResultType flowChart16_FlowRun(object sender, EventArgs e)
         {
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart16.Text} finish", true);
             return FCResultType.NEXT;
         }
 
@@ -508,7 +486,6 @@ namespace Acura3._0.ModuleForms
             {
                 detection_Index = 1;
                 J_AutoRun.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart20.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -521,14 +498,12 @@ namespace Acura3._0.ModuleForms
                 if (F_Robot.SetRobotTask(3))
                 {
                     J_AutoRun.Restart();
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart21.Text} finish", true);
                     return FCResultType.NEXT;
                 }
             }
             if (J_AutoRun.IsOn(SysPara.IO_OverTime))
             {
                 J_AutoRun.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart21.Text} failed", false);
                 JSDK.Alarm.Show("4212");
                 flowChartMessage11.Title = "Set robot taskindex failed alarm !";
                 flowChartMessage11.Content = "4212: Acura write task index to 4-axis robot failed";
@@ -542,13 +517,11 @@ namespace Acura3._0.ModuleForms
             if (F_Robot.GetCurrentTaskState() == eRobotState.Done)
             {
                 J_AutoRun.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart22.Text} finish", true);
                 return FCResultType.NEXT;
             }
             if (J_AutoRun.IsOn(SysPara.Robot_Overtime))
             {
                 J_AutoRun.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart22.Text} overtime", false);
                 JSDK.Alarm.Show("4213");
                 flowChartMessage12.Title = "Robot move overtime alarm !";
                 flowChartMessage12.Content = "4213: 4-axis robot move overtime";
@@ -560,7 +533,6 @@ namespace Acura3._0.ModuleForms
         private FCResultType flowChart23_FlowRun(object sender, EventArgs e)
         {
             OB_CCDLight.On();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart23.Text} finish", true);
             return FCResultType.NEXT;
         }
 
@@ -574,7 +546,6 @@ namespace Acura3._0.ModuleForms
         {
             if (SysPara.IsDryRun || DisableCCD)
             {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "DryRun Mode: " + $"{this.Text} Module {flowChart24.Text} finish", true);
                 return FCResultType.NEXT;
             }
 
@@ -592,7 +563,6 @@ namespace Acura3._0.ModuleForms
             if (B_Snap)
             {
                 I_SnapNGtimes = 0;
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart24.Text} finish", true);
                 return FCResultType.NEXT;
             }
             I_SnapNGtimes++;
@@ -604,7 +574,6 @@ namespace Acura3._0.ModuleForms
             if (SysPara.IsDryRun || DisableCCD)
             {
                 B_DetectionResult = true;
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "DryRun Mode: " + $"{this.Text} Module {flowChart25.Text} finish", true);
                 return FCResultType.NEXT;
             }
 
@@ -629,11 +598,9 @@ namespace Acura3._0.ModuleForms
             if (B_DetectionResult || B_byPassVisionResult)
             {
                 B_DetectionResult = true;
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart25.Text} finish", true);
                 return FCResultType.NEXT;
             }
             B_DetectionResult = false;
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart25.Text} Vision failed", false);
             JSDK.Alarm.Show("8001");
             flowChartMessage14.Title = "Vision run failed alarm !";
             flowChartMessage14.Content = "8001: 4-axis vision run failed";
@@ -647,14 +614,12 @@ namespace Acura3._0.ModuleForms
                 MiddleLayer.SystemF.DelayMs(1000);
             }
             OB_CCDLight.Off();
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart26.Text} finish", true);
             return FCResultType.NEXT;
         }
 
         private FCResultType flowChart18_FlowRun(object sender, EventArgs e)
         {
             detection_Index++;
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart18.Text} finish", true);
             if (detection_Index > 4)
             {
                 detection_Index = 1;
@@ -665,14 +630,12 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart27_FlowRun(object sender, EventArgs e)
         {
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart27.Text} finish", true);
             return FCResultType.CASE1;
         }
 
         private FCResultType flowChart30_FlowRun(object sender, EventArgs e)
         {
             B_DetectionFlow = false;
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart30.Text} finish", true);
             return FCResultType.NEXT;
         }
 
@@ -689,7 +652,6 @@ namespace Acura3._0.ModuleForms
                 HeightArrayList.Clear();
                 heightMeasure_Index = 1;
                 J_AutoRun.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart47.Text} finish", true);
                 return FCResultType.NEXT;
             }
             return FCResultType.IDLE;
@@ -702,14 +664,12 @@ namespace Acura3._0.ModuleForms
                 if (F_Robot.SetRobotTask(4))
                 {
                     J_AutoRun.Restart();
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart40.Text} finish", true);
                     return FCResultType.NEXT;
                 }
             }
             if (J_AutoRun.IsOn(SysPara.IO_OverTime))
             {
                 J_AutoRun.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart40.Text} failed", false);
                 JSDK.Alarm.Show("4212");
                 flowChartMessage15.Title = "Set robot taskindex failed alarm !";
                 flowChartMessage15.Content = "4212: Acura write task index to 4-axis robot failed";
@@ -723,13 +683,11 @@ namespace Acura3._0.ModuleForms
             if (F_Robot.GetCurrentTaskState() == eRobotState.Done)
             {
                 J_AutoRun.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart41.Text} finish", true);
                 return FCResultType.NEXT;
             }
             if (J_AutoRun.IsOn(SysPara.Robot_Overtime))
             {
                 J_AutoRun.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart41.Text} overtime", false);
                 JSDK.Alarm.Show("4213");
                 flowChartMessage16.Title = "Robot move overtime alarm !";
                 flowChartMessage16.Content = "4213: 4-axis robot move overtime";
@@ -744,7 +702,6 @@ namespace Acura3._0.ModuleForms
             {
                 B_HeightMeasureResult = true;
                 MiddleLayer.SystemF.DelayMs(1000);
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + "DryRun Mode: " + $"{this.Text} Module {flowChart34.Text} finish", true);
                 return FCResultType.NEXT;
             }
 
@@ -761,7 +718,6 @@ namespace Acura3._0.ModuleForms
                 else
                 {
                     B_HeightMeasureResult &= false;
-                    MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart34.Text} Laser measure NG", false);
                     JSDK.Alarm.Show("8006");
                     flowChartMessage17.Title = "Laser measure data over limit !";
                     flowChartMessage17.Content = "8006: 4-axis robot laser measure data over limit";
@@ -771,20 +727,17 @@ namespace Acura3._0.ModuleForms
             else
             {
                 B_HeightMeasureResult &= false;
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart34.Text} Laser measure NG", false);
                 JSDK.Alarm.Show("8005");
                 flowChartMessage16.Title = "Laser measure NG !";
                 flowChartMessage16.Content = "8005: 4-axis robot laser measure NG";
                 return FCResultType.CASE2;
             }
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart34.Text} finish", true);
             return FCResultType.NEXT;
         }
 
         private FCResultType flowChart38_FlowRun(object sender, EventArgs e)
         {
             heightMeasure_Index++;
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart38.Text} finish", true);
             if (heightMeasure_Index > 8)
             {
                 heightMeasure_Index = 1;
@@ -795,7 +748,6 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart44_FlowRun(object sender, EventArgs e)
         {
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart44.Text} finish", true);
             B_HeightMeasureFlow = false;
             if (SysPara.IsDryRun || DisableCCD || DisableLaser)
             {
@@ -815,10 +767,8 @@ namespace Acura3._0.ModuleForms
         {
             if (F_Robot.SetRecipe(1))
             {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart19.Text} finish", true);
                 return FCResultType.NEXT;
             }
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart19.Text} failed", false);
             JSDK.Alarm.Show("4206");
             flowChartMessage4.Title = "Set robot recipe failed alarm !";
             flowChartMessage4.Content = "4206: Acura write recipe to 4-axis robot failed";
@@ -829,10 +779,8 @@ namespace Acura3._0.ModuleForms
         {
             if (F_Robot.SetRobotMode(1))
             {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart28.Text} finish", true);
                 return FCResultType.NEXT;
             }
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart28.Text} failed", false);
             JSDK.Alarm.Show("4203");
             flowChartMessage5.Title = "Set robot auto mode failed alarm !";
             flowChartMessage5.Content = "4203: Acura write auto mode to 4-axis robot failed";
@@ -844,10 +792,8 @@ namespace Acura3._0.ModuleForms
             if (F_Robot.SetRobotTask(1))
             {
                 J_Initial.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart5.Text} finish", true);
                 return FCResultType.NEXT;
             }
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart5.Text} failed", false);
             JSDK.Alarm.Show("4207");
             flowChartMessage7.Title = "Set robot run task failed alarm !";
             flowChartMessage7.Content = "4207: Acura write initial task to 4-axis robot failed";
@@ -861,7 +807,6 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart39_FlowRun(object sender, EventArgs e)
         {
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart39.Text} finish", true);
             return FCResultType.CASE1;
         }
 
@@ -869,10 +814,8 @@ namespace Acura3._0.ModuleForms
         {
             if (F_Robot.SetSpeed(5))
             {
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart33.Text} finish", true);
                 return FCResultType.NEXT;
             }
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart33.Text} failed", false);
             JSDK.Alarm.Show("4214");
             flowChartMessage3.Title = "Set robot speed failed alarm !";
             flowChartMessage3.Content = "4214: Acura write initial speed to 4-axis robot failed";
@@ -890,13 +833,11 @@ namespace Acura3._0.ModuleForms
             if (F_Robot.SetTaskIndex(1) && F_Robot.SetRobotTask(3))
             {
                 J_AutoRun.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart35.Text} finish", true);
                 return FCResultType.NEXT;
             }
             if (J_AutoRun.IsOn(SysPara.IO_OverTime))
             {
                 J_AutoRun.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart35.Text} failed", false);
                 JSDK.Alarm.Show("4212");
                 flowChartMessage9.Title = "Set robot taskindex failed alarm !";
                 flowChartMessage9.Content = "4212: Acura write task index to 4-axis robot failed";
@@ -910,13 +851,11 @@ namespace Acura3._0.ModuleForms
             if (F_Robot.GetCurrentTaskState() == eRobotState.Done)
             {
                 J_AutoRun.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart36.Text} finish", true);
                 return FCResultType.NEXT;
             }
             if (J_AutoRun.IsOn(SysPara.Robot_Overtime))
             {
-                J_AutoRun.Restart();
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart36.Text} overtime", false);
+                J_AutoRun.Restart();     
                 JSDK.Alarm.Show("4213");
                 flowChartMessage10.Title = "Robot move overtime alarm !";
                 flowChartMessage10.Content = "4213: 4-axis robot move overtime";
@@ -930,7 +869,6 @@ namespace Acura3._0.ModuleForms
             if (I_SnapNGtimes >= 3)
             {
                 I_SnapNGtimes = 0;
-                MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart32.Text} CCD Snap NG", false);
                 JSDK.Alarm.Show("8000");
                 flowChartMessage13.Title = "CCD snap NG alarm !";
                 flowChartMessage13.Content = "8000: 4-axis CCD snap failed over 3 times";
@@ -1043,7 +981,6 @@ namespace Acura3._0.ModuleForms
 
         private FCResultType flowChart42_FlowRun(object sender, EventArgs e)
         {
-            MiddleLayer.RecordF.LogShow(SysPara.UserName + " " + $"{this.Text} Module {flowChart42.Text} finish", true);
             return FCResultType.CASE1;
         }
     }

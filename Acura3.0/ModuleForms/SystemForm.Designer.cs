@@ -311,38 +311,38 @@
             // plProductionSetting
             // 
             this.plProductionSetting.Controls.Add(this.tabControl2);
-            this.plProductionSetting.Size = new System.Drawing.Size(1839, 723);
+            this.plProductionSetting.Size = new System.Drawing.Size(799, 685);
             // 
             // plRecipeEditor
             // 
             this.plRecipeEditor.Controls.Add(this.panel);
             this.plRecipeEditor.Enabled = false;
-            this.plRecipeEditor.Size = new System.Drawing.Size(799, 627);
+            this.plRecipeEditor.Size = new System.Drawing.Size(799, 685);
             // 
             // plFlowInitial
             // 
             this.plFlowInitial.Enabled = false;
-            this.plFlowInitial.Size = new System.Drawing.Size(799, 627);
+            this.plFlowInitial.Size = new System.Drawing.Size(799, 685);
             // 
             // plFlowAuto
             // 
             this.plFlowAuto.Enabled = false;
-            this.plFlowAuto.Size = new System.Drawing.Size(799, 627);
+            this.plFlowAuto.Size = new System.Drawing.Size(799, 685);
             // 
             // plMachineStatus
             // 
             this.plMachineStatus.Controls.Add(this.tableLayoutPanel3);
-            this.plMachineStatus.Size = new System.Drawing.Size(799, 627);
+            this.plMachineStatus.Size = new System.Drawing.Size(799, 685);
             // 
             // plMotionSetup
             // 
             this.plMotionSetup.Enabled = false;
-            this.plMotionSetup.Size = new System.Drawing.Size(799, 627);
+            this.plMotionSetup.Size = new System.Drawing.Size(799, 685);
             // 
             // plMotorControl
             // 
             this.plMotorControl.Enabled = false;
-            this.plMotorControl.Size = new System.Drawing.Size(799, 627);
+            this.plMotorControl.Size = new System.Drawing.Size(799, 685);
             // 
             // PSet
             // 
@@ -372,7 +372,7 @@
             this.checkBox4.Location = new System.Drawing.Point(260, 35);
             this.checkBox4.Margin = new System.Windows.Forms.Padding(5);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(141, 27);
+            this.checkBox4.Size = new System.Drawing.Size(168, 28);
             this.checkBox4.TabIndex = 13;
             this.checkBox4.Text = "Disable Buzzer";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -403,7 +403,7 @@
             this.panel.Enabled = false;
             this.panel.Location = new System.Drawing.Point(0, 0);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(799, 627);
+            this.panel.Size = new System.Drawing.Size(799, 685);
             this.panel.TabIndex = 0;
             this.panel.Visible = false;
             // 
@@ -414,7 +414,7 @@
             this.cbDryRunMode.Location = new System.Drawing.Point(11, 35);
             this.cbDryRunMode.Margin = new System.Windows.Forms.Padding(5);
             this.cbDryRunMode.Name = "cbDryRunMode";
-            this.cbDryRunMode.Size = new System.Drawing.Size(136, 27);
+            this.cbDryRunMode.Size = new System.Drawing.Size(163, 28);
             this.cbDryRunMode.TabIndex = 17;
             this.cbDryRunMode.Text = "Dry Run Mode";
             this.cbDryRunMode.UseVisualStyleBackColor = true;
@@ -443,7 +443,7 @@
             this.checkBox7.Location = new System.Drawing.Point(11, 146);
             this.checkBox7.Margin = new System.Windows.Forms.Padding(5);
             this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(200, 27);
+            this.checkBox7.Size = new System.Drawing.Size(239, 28);
             this.checkBox7.TabIndex = 26;
             this.checkBox7.Text = "Dry Run GantryScrew2";
             this.checkBox7.UseVisualStyleBackColor = true;
@@ -455,7 +455,7 @@
             this.checkBox6.Location = new System.Drawing.Point(11, 220);
             this.checkBox6.Margin = new System.Windows.Forms.Padding(5);
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(214, 27);
+            this.checkBox6.Size = new System.Drawing.Size(255, 28);
             this.checkBox6.TabIndex = 25;
             this.checkBox6.Text = "Dry Run CoverAssembly";
             this.checkBox6.UseVisualStyleBackColor = true;
@@ -467,7 +467,7 @@
             this.checkBox5.Location = new System.Drawing.Point(11, 183);
             this.checkBox5.Margin = new System.Windows.Forms.Padding(5);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(158, 27);
+            this.checkBox5.Size = new System.Drawing.Size(191, 28);
             this.checkBox5.TabIndex = 24;
             this.checkBox5.Text = "Dry Run APPCBA";
             this.checkBox5.UseVisualStyleBackColor = true;
@@ -479,7 +479,7 @@
             this.checkBox3.Location = new System.Drawing.Point(11, 72);
             this.checkBox3.Margin = new System.Windows.Forms.Padding(5);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(121, 27);
+            this.checkBox3.Size = new System.Drawing.Size(140, 28);
             this.checkBox3.TabIndex = 19;
             this.checkBox3.Text = "ByPass Run";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -491,7 +491,7 @@
             this.checkBox2.Location = new System.Drawing.Point(11, 109);
             this.checkBox2.Margin = new System.Windows.Forms.Padding(5);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(200, 27);
+            this.checkBox2.Size = new System.Drawing.Size(239, 28);
             this.checkBox2.TabIndex = 18;
             this.checkBox2.Text = "Dry Run GantryScrew1";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -503,7 +503,7 @@
             this.checkBox1.Location = new System.Drawing.Point(260, 72);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(5);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(154, 27);
+            this.checkBox1.Size = new System.Drawing.Size(184, 28);
             this.checkBox1.TabIndex = 23;
             this.checkBox1.Text = "Save Debug Log";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -551,7 +551,7 @@
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1839, 723);
+            this.tabControl2.Size = new System.Drawing.Size(799, 685);
             this.tabControl2.TabIndex = 24;
             // 
             // tabPage1
@@ -560,7 +560,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 54);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1831, 665);
+            this.tabPage1.Size = new System.Drawing.Size(791, 627);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Machine Setting";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -572,7 +572,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1825, 659);
+            this.panel2.Size = new System.Drawing.Size(785, 621);
             this.panel2.TabIndex = 26;
             // 
             // dataColumn12
@@ -638,7 +638,7 @@
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(799, 627);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(799, 685);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // panel4
@@ -647,7 +647,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(793, 621);
+            this.panel4.Size = new System.Drawing.Size(793, 679);
             this.panel4.TabIndex = 0;
             // 
             // panel3
@@ -667,7 +667,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(793, 621);
+            this.panel3.Size = new System.Drawing.Size(793, 679);
             this.panel3.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -755,7 +755,7 @@
             this.groupBox9.Controls.Add(this.textBox1);
             this.groupBox9.Controls.Add(this.textBox9);
             this.groupBox9.Controls.Add(this.label82);
-            this.groupBox9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox9.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox9.Location = new System.Drawing.Point(616, 245);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(607, 221);
@@ -907,7 +907,7 @@
             this.groupBox7.Controls.Add(this.label72);
             this.groupBox7.Controls.Add(this.label73);
             this.groupBox7.Controls.Add(this.label74);
-            this.groupBox7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(1353, 3);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(469, 235);
@@ -1242,7 +1242,7 @@
             this.groupBox6.Controls.Add(this.label78);
             this.groupBox6.Controls.Add(this.label79);
             this.groupBox6.Controls.Add(this.label80);
-            this.groupBox6.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(962, 3);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(390, 235);
@@ -1493,7 +1493,7 @@
             this.groupBox4.Controls.Add(this.label35);
             this.groupBox4.Controls.Add(this.label36);
             this.groupBox4.Controls.Add(this.label37);
-            this.groupBox4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(479, 3);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(482, 235);
@@ -1830,7 +1830,7 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.lblPassCount);
             this.groupBox2.Controls.Add(this.label23);
-            this.groupBox2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(475, 235);
@@ -2149,7 +2149,7 @@
             this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox7.Location = new System.Drawing.Point(0, 0);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(793, 621);
+            this.pictureBox7.Size = new System.Drawing.Size(793, 679);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 45;
             this.pictureBox7.TabStop = false;
@@ -2159,7 +2159,7 @@
             this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox6.Location = new System.Drawing.Point(0, 0);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(793, 621);
+            this.pictureBox6.Size = new System.Drawing.Size(793, 679);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 44;
             this.pictureBox6.TabStop = false;
@@ -2170,7 +2170,7 @@
             this.pictureBox5.Image = global::Acura3._0.Properties.Resources._1715242262977;
             this.pictureBox5.Location = new System.Drawing.Point(0, 0);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(793, 621);
+            this.pictureBox5.Size = new System.Drawing.Size(793, 679);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 43;
             this.pictureBox5.TabStop = false;
@@ -2181,7 +2181,7 @@
             this.pictureBox4.Image = global::Acura3._0.Properties.Resources._1715242262977;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(793, 621);
+            this.pictureBox4.Size = new System.Drawing.Size(793, 679);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 41;
             this.pictureBox4.TabStop = false;
@@ -2190,11 +2190,11 @@
             // 
             this.OB_FluorescentLight2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_FluorescentLight2.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_FluorescentLight2.Location = new System.Drawing.Point(363, 391);
+            this.OB_FluorescentLight2.Location = new System.Drawing.Point(352, 391);
             this.OB_FluorescentLight2.Margin = new System.Windows.Forms.Padding(5);
             this.OB_FluorescentLight2.Name = "OB_FluorescentLight2";
             this.OB_FluorescentLight2.Port = "10014";
-            this.OB_FluorescentLight2.Size = new System.Drawing.Size(280, 35);
+            this.OB_FluorescentLight2.Size = new System.Drawing.Size(291, 35);
             this.OB_FluorescentLight2.TabIndex = 123;
             this.OB_FluorescentLight2.Text = "Fluorescent Light 2";
             this.OB_FluorescentLight2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2207,7 +2207,7 @@
             this.IB_BtnAlarmReset3.Margin = new System.Windows.Forms.Padding(5);
             this.IB_BtnAlarmReset3.Name = "IB_BtnAlarmReset3";
             this.IB_BtnAlarmReset3.Port = "00109";
-            this.IB_BtnAlarmReset3.Size = new System.Drawing.Size(280, 35);
+            this.IB_BtnAlarmReset3.Size = new System.Drawing.Size(299, 35);
             this.IB_BtnAlarmReset3.TabIndex = 122;
             this.IB_BtnAlarmReset3.Text = "Alarm Reset Button 3";
             this.IB_BtnAlarmReset3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2220,7 +2220,7 @@
             this.IB_BtnAlarmReset2.Margin = new System.Windows.Forms.Padding(5);
             this.IB_BtnAlarmReset2.Name = "IB_BtnAlarmReset2";
             this.IB_BtnAlarmReset2.Port = "00108";
-            this.IB_BtnAlarmReset2.Size = new System.Drawing.Size(280, 35);
+            this.IB_BtnAlarmReset2.Size = new System.Drawing.Size(299, 35);
             this.IB_BtnAlarmReset2.TabIndex = 121;
             this.IB_BtnAlarmReset2.Text = "Alarm Reset Button 2";
             this.IB_BtnAlarmReset2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2234,7 +2234,7 @@
             this.IB_BtnStop3.Name = "IB_BtnStop3";
             this.IB_BtnStop3.Port = "00106";
             this.IB_BtnStop3.ReverseStatus = true;
-            this.IB_BtnStop3.Size = new System.Drawing.Size(280, 35);
+            this.IB_BtnStop3.Size = new System.Drawing.Size(299, 35);
             this.IB_BtnStop3.TabIndex = 120;
             this.IB_BtnStop3.Text = "Stop Button 3";
             this.IB_BtnStop3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2248,7 +2248,7 @@
             this.IB_BtnStop2.Name = "IB_BtnStop2";
             this.IB_BtnStop2.Port = "00104";
             this.IB_BtnStop2.ReverseStatus = true;
-            this.IB_BtnStop2.Size = new System.Drawing.Size(280, 35);
+            this.IB_BtnStop2.Size = new System.Drawing.Size(299, 35);
             this.IB_BtnStop2.TabIndex = 119;
             this.IB_BtnStop2.Text = "Stop Button 2";
             this.IB_BtnStop2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2261,7 +2261,7 @@
             this.IB_BtnStart3.Margin = new System.Windows.Forms.Padding(5);
             this.IB_BtnStart3.Name = "IB_BtnStart3";
             this.IB_BtnStart3.Port = "00105";
-            this.IB_BtnStart3.Size = new System.Drawing.Size(280, 35);
+            this.IB_BtnStart3.Size = new System.Drawing.Size(299, 35);
             this.IB_BtnStart3.TabIndex = 118;
             this.IB_BtnStart3.Text = "Start Button 3";
             this.IB_BtnStart3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2274,7 +2274,7 @@
             this.IB_BtnStart2.Margin = new System.Windows.Forms.Padding(5);
             this.IB_BtnStart2.Name = "IB_BtnStart2";
             this.IB_BtnStart2.Port = "00103";
-            this.IB_BtnStart2.Size = new System.Drawing.Size(280, 35);
+            this.IB_BtnStart2.Size = new System.Drawing.Size(299, 35);
             this.IB_BtnStart2.TabIndex = 117;
             this.IB_BtnStart2.Text = "Start Button 2";
             this.IB_BtnStart2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2283,12 +2283,12 @@
             // 
             this.IB_Contactor_Safety.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_Contactor_Safety.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Contactor_Safety.Location = new System.Drawing.Point(713, 243);
+            this.IB_Contactor_Safety.Location = new System.Drawing.Point(689, 243);
             this.IB_Contactor_Safety.Margin = new System.Windows.Forms.Padding(5);
             this.IB_Contactor_Safety.Name = "IB_Contactor_Safety";
-            this.IB_Contactor_Safety.Port = "00202";
+            this.IB_Contactor_Safety.Port = "00203";
             this.IB_Contactor_Safety.ReverseStatus = true;
-            this.IB_Contactor_Safety.Size = new System.Drawing.Size(280, 35);
+            this.IB_Contactor_Safety.Size = new System.Drawing.Size(317, 35);
             this.IB_Contactor_Safety.TabIndex = 116;
             this.IB_Contactor_Safety.Text = "Contactor Safety Signal ";
             this.IB_Contactor_Safety.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2297,12 +2297,12 @@
             // 
             this.IB_Front_ManualSwtitch2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_Front_ManualSwtitch2.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Front_ManualSwtitch2.Location = new System.Drawing.Point(713, 108);
+            this.IB_Front_ManualSwtitch2.Location = new System.Drawing.Point(689, 108);
             this.IB_Front_ManualSwtitch2.Margin = new System.Windows.Forms.Padding(5);
             this.IB_Front_ManualSwtitch2.Name = "IB_Front_ManualSwtitch2";
             this.IB_Front_ManualSwtitch2.Port = "00111";
             this.IB_Front_ManualSwtitch2.ReverseStatus = true;
-            this.IB_Front_ManualSwtitch2.Size = new System.Drawing.Size(280, 35);
+            this.IB_Front_ManualSwtitch2.Size = new System.Drawing.Size(317, 35);
             this.IB_Front_ManualSwtitch2.TabIndex = 115;
             this.IB_Front_ManualSwtitch2.Text = "Front Auto/Manual Swtich 2";
             this.IB_Front_ManualSwtitch2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2311,11 +2311,11 @@
             // 
             this.OB_BlueLight2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_BlueLight2.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_BlueLight2.Location = new System.Drawing.Point(363, 200);
+            this.OB_BlueLight2.Location = new System.Drawing.Point(352, 200);
             this.OB_BlueLight2.Margin = new System.Windows.Forms.Padding(5);
             this.OB_BlueLight2.Name = "OB_BlueLight2";
             this.OB_BlueLight2.Port = "10011";
-            this.OB_BlueLight2.Size = new System.Drawing.Size(280, 35);
+            this.OB_BlueLight2.Size = new System.Drawing.Size(291, 35);
             this.OB_BlueLight2.TabIndex = 114;
             this.OB_BlueLight2.Text = "Blue Light";
             this.OB_BlueLight2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2335,11 +2335,11 @@
             // 
             this.OB_GreenLight2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_GreenLight2.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_GreenLight2.Location = new System.Drawing.Point(363, 65);
+            this.OB_GreenLight2.Location = new System.Drawing.Point(352, 65);
             this.OB_GreenLight2.Margin = new System.Windows.Forms.Padding(5);
             this.OB_GreenLight2.Name = "OB_GreenLight2";
             this.OB_GreenLight2.Port = "10008";
-            this.OB_GreenLight2.Size = new System.Drawing.Size(280, 35);
+            this.OB_GreenLight2.Size = new System.Drawing.Size(291, 35);
             this.OB_GreenLight2.TabIndex = 109;
             this.OB_GreenLight2.Text = "Green Light";
             this.OB_GreenLight2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2348,11 +2348,11 @@
             // 
             this.OB_YellowLight2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_YellowLight2.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_YellowLight2.Location = new System.Drawing.Point(363, 110);
+            this.OB_YellowLight2.Location = new System.Drawing.Point(352, 110);
             this.OB_YellowLight2.Margin = new System.Windows.Forms.Padding(5);
             this.OB_YellowLight2.Name = "OB_YellowLight2";
             this.OB_YellowLight2.Port = "10009";
-            this.OB_YellowLight2.Size = new System.Drawing.Size(280, 35);
+            this.OB_YellowLight2.Size = new System.Drawing.Size(291, 35);
             this.OB_YellowLight2.TabIndex = 110;
             this.OB_YellowLight2.Text = "Yellow Light";
             this.OB_YellowLight2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2361,11 +2361,11 @@
             // 
             this.OB_Buzzer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Buzzer2.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Buzzer2.Location = new System.Drawing.Point(363, 245);
+            this.OB_Buzzer2.Location = new System.Drawing.Point(352, 245);
             this.OB_Buzzer2.Margin = new System.Windows.Forms.Padding(5);
             this.OB_Buzzer2.Name = "OB_Buzzer2";
             this.OB_Buzzer2.Port = "10012";
-            this.OB_Buzzer2.Size = new System.Drawing.Size(280, 35);
+            this.OB_Buzzer2.Size = new System.Drawing.Size(291, 35);
             this.OB_Buzzer2.TabIndex = 112;
             this.OB_Buzzer2.Text = "Buzz";
             this.OB_Buzzer2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2374,11 +2374,11 @@
             // 
             this.OB_RedLight2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_RedLight2.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_RedLight2.Location = new System.Drawing.Point(363, 155);
+            this.OB_RedLight2.Location = new System.Drawing.Point(352, 155);
             this.OB_RedLight2.Margin = new System.Windows.Forms.Padding(5);
             this.OB_RedLight2.Name = "OB_RedLight2";
             this.OB_RedLight2.Port = "10010";
-            this.OB_RedLight2.Size = new System.Drawing.Size(280, 35);
+            this.OB_RedLight2.Size = new System.Drawing.Size(291, 35);
             this.OB_RedLight2.TabIndex = 111;
             this.OB_RedLight2.Text = "Red Light";
             this.OB_RedLight2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2400,12 +2400,12 @@
             // 
             this.IB_Back_ManualSwtitch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_Back_ManualSwtitch.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Back_ManualSwtitch.Location = new System.Drawing.Point(713, 153);
+            this.IB_Back_ManualSwtitch.Location = new System.Drawing.Point(689, 153);
             this.IB_Back_ManualSwtitch.Margin = new System.Windows.Forms.Padding(5);
             this.IB_Back_ManualSwtitch.Name = "IB_Back_ManualSwtitch";
             this.IB_Back_ManualSwtitch.Port = "00112";
             this.IB_Back_ManualSwtitch.ReverseStatus = true;
-            this.IB_Back_ManualSwtitch.Size = new System.Drawing.Size(280, 35);
+            this.IB_Back_ManualSwtitch.Size = new System.Drawing.Size(317, 35);
             this.IB_Back_ManualSwtitch.TabIndex = 107;
             this.IB_Back_ManualSwtitch.Text = "Back Auto/Manual Swtich";
             this.IB_Back_ManualSwtitch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2414,11 +2414,11 @@
             // 
             this.IB_SafetyReady.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_SafetyReady.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_SafetyReady.Location = new System.Drawing.Point(713, 288);
+            this.IB_SafetyReady.Location = new System.Drawing.Point(689, 288);
             this.IB_SafetyReady.Margin = new System.Windows.Forms.Padding(5);
             this.IB_SafetyReady.Name = "IB_SafetyReady";
-            this.IB_SafetyReady.Port = "00203";
-            this.IB_SafetyReady.Size = new System.Drawing.Size(280, 35);
+            this.IB_SafetyReady.Port = "00202";
+            this.IB_SafetyReady.Size = new System.Drawing.Size(317, 35);
             this.IB_SafetyReady.TabIndex = 106;
             this.IB_SafetyReady.Text = "Safety Ready";
             this.IB_SafetyReady.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2431,7 +2431,7 @@
             this.IB_BtnAlarmReset1.Margin = new System.Windows.Forms.Padding(5);
             this.IB_BtnAlarmReset1.Name = "IB_BtnAlarmReset1";
             this.IB_BtnAlarmReset1.Port = "00107";
-            this.IB_BtnAlarmReset1.Size = new System.Drawing.Size(280, 35);
+            this.IB_BtnAlarmReset1.Size = new System.Drawing.Size(299, 35);
             this.IB_BtnAlarmReset1.TabIndex = 105;
             this.IB_BtnAlarmReset1.Text = "Alarm Reset Button 1";
             this.IB_BtnAlarmReset1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2440,11 +2440,11 @@
             // 
             this.IB_AirPressure.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_AirPressure.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_AirPressure.Location = new System.Drawing.Point(713, 198);
+            this.IB_AirPressure.Location = new System.Drawing.Point(689, 198);
             this.IB_AirPressure.Margin = new System.Windows.Forms.Padding(5);
             this.IB_AirPressure.Name = "IB_AirPressure";
             this.IB_AirPressure.Port = "00100";
-            this.IB_AirPressure.Size = new System.Drawing.Size(280, 35);
+            this.IB_AirPressure.Size = new System.Drawing.Size(317, 35);
             this.IB_AirPressure.TabIndex = 104;
             this.IB_AirPressure.Text = "Air Pressure";
             this.IB_AirPressure.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2453,12 +2453,12 @@
             // 
             this.IB_Front_ManualSwtitch1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IB_Front_ManualSwtitch1.CardType = JabilSDK.Enums.InputCardType.BECKHOFF;
-            this.IB_Front_ManualSwtitch1.Location = new System.Drawing.Point(713, 63);
+            this.IB_Front_ManualSwtitch1.Location = new System.Drawing.Point(689, 63);
             this.IB_Front_ManualSwtitch1.Margin = new System.Windows.Forms.Padding(5);
             this.IB_Front_ManualSwtitch1.Name = "IB_Front_ManualSwtitch1";
             this.IB_Front_ManualSwtitch1.Port = "00110";
             this.IB_Front_ManualSwtitch1.ReverseStatus = true;
-            this.IB_Front_ManualSwtitch1.Size = new System.Drawing.Size(280, 35);
+            this.IB_Front_ManualSwtitch1.Size = new System.Drawing.Size(317, 35);
             this.IB_Front_ManualSwtitch1.TabIndex = 103;
             this.IB_Front_ManualSwtitch1.Text = "Front Auto/Manual Swtich 1";
             this.IB_Front_ManualSwtitch1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2511,11 +2511,11 @@
             // 
             this.OB_FluorescentLight1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_FluorescentLight1.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_FluorescentLight1.Location = new System.Drawing.Point(363, 346);
+            this.OB_FluorescentLight1.Location = new System.Drawing.Point(352, 346);
             this.OB_FluorescentLight1.Margin = new System.Windows.Forms.Padding(5);
             this.OB_FluorescentLight1.Name = "OB_FluorescentLight1";
             this.OB_FluorescentLight1.Port = "10013";
-            this.OB_FluorescentLight1.Size = new System.Drawing.Size(280, 35);
+            this.OB_FluorescentLight1.Size = new System.Drawing.Size(291, 35);
             this.OB_FluorescentLight1.TabIndex = 100;
             this.OB_FluorescentLight1.Text = "Fluorescent Light 1";
             this.OB_FluorescentLight1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2529,7 +2529,7 @@
             this.IB_BtnStop1.Name = "IB_BtnStop1";
             this.IB_BtnStop1.Port = "00102";
             this.IB_BtnStop1.ReverseStatus = true;
-            this.IB_BtnStop1.Size = new System.Drawing.Size(280, 35);
+            this.IB_BtnStop1.Size = new System.Drawing.Size(299, 35);
             this.IB_BtnStop1.TabIndex = 99;
             this.IB_BtnStop1.Text = "Stop Button 1";
             this.IB_BtnStop1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2542,7 +2542,7 @@
             this.IB_BtnStart1.Margin = new System.Windows.Forms.Padding(5);
             this.IB_BtnStart1.Name = "IB_BtnStart1";
             this.IB_BtnStart1.Port = "00101";
-            this.IB_BtnStart1.Size = new System.Drawing.Size(280, 35);
+            this.IB_BtnStart1.Size = new System.Drawing.Size(299, 35);
             this.IB_BtnStart1.TabIndex = 98;
             this.IB_BtnStart1.Text = "Start Button 1";
             this.IB_BtnStart1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2603,11 +2603,11 @@
             // 
             this.OB_Start_Stop_ButtonLED3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Start_Stop_ButtonLED3.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Start_Stop_ButtonLED3.Location = new System.Drawing.Point(1426, 180);
+            this.OB_Start_Stop_ButtonLED3.Location = new System.Drawing.Point(1408, 180);
             this.OB_Start_Stop_ButtonLED3.Margin = new System.Windows.Forms.Padding(5);
             this.OB_Start_Stop_ButtonLED3.Name = "OB_Start_Stop_ButtonLED3";
             this.OB_Start_Stop_ButtonLED3.Port = "10002";
-            this.OB_Start_Stop_ButtonLED3.Size = new System.Drawing.Size(280, 35);
+            this.OB_Start_Stop_ButtonLED3.Size = new System.Drawing.Size(298, 35);
             this.OB_Start_Stop_ButtonLED3.TabIndex = 126;
             this.OB_Start_Stop_ButtonLED3.Text = "Start / Stop 3 LED";
             this.OB_Start_Stop_ButtonLED3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2616,11 +2616,11 @@
             // 
             this.OB_Start_Stop_ButtonLED2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Start_Stop_ButtonLED2.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Start_Stop_ButtonLED2.Location = new System.Drawing.Point(1426, 123);
+            this.OB_Start_Stop_ButtonLED2.Location = new System.Drawing.Point(1408, 123);
             this.OB_Start_Stop_ButtonLED2.Margin = new System.Windows.Forms.Padding(5);
             this.OB_Start_Stop_ButtonLED2.Name = "OB_Start_Stop_ButtonLED2";
             this.OB_Start_Stop_ButtonLED2.Port = "10001";
-            this.OB_Start_Stop_ButtonLED2.Size = new System.Drawing.Size(280, 35);
+            this.OB_Start_Stop_ButtonLED2.Size = new System.Drawing.Size(298, 35);
             this.OB_Start_Stop_ButtonLED2.TabIndex = 125;
             this.OB_Start_Stop_ButtonLED2.Text = "Start / Stop 2 LED";
             this.OB_Start_Stop_ButtonLED2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2629,11 +2629,11 @@
             // 
             this.OB_Start_Stop_ButtonLED1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.OB_Start_Stop_ButtonLED1.CardType = JabilSDK.Enums.OutputCardType.BECKHOFF;
-            this.OB_Start_Stop_ButtonLED1.Location = new System.Drawing.Point(1426, 65);
+            this.OB_Start_Stop_ButtonLED1.Location = new System.Drawing.Point(1408, 65);
             this.OB_Start_Stop_ButtonLED1.Margin = new System.Windows.Forms.Padding(5);
             this.OB_Start_Stop_ButtonLED1.Name = "OB_Start_Stop_ButtonLED1";
             this.OB_Start_Stop_ButtonLED1.Port = "10000";
-            this.OB_Start_Stop_ButtonLED1.Size = new System.Drawing.Size(280, 35);
+            this.OB_Start_Stop_ButtonLED1.Size = new System.Drawing.Size(298, 35);
             this.OB_Start_Stop_ButtonLED1.TabIndex = 124;
             this.OB_Start_Stop_ButtonLED1.Text = "Start / Stop 1 LED";
             this.OB_Start_Stop_ButtonLED1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
